@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://entities/player/PlayerBound.gd" type="Script" id=1]
+
+[node name="PlayerBoundLeft" type="VisibilityNotifier" groups=["PlayerCameraBounds"]]
+aabb = AABB( 0, 0, 0, 0.1, 0.1, 0.1 )
+script = ExtResource( 1 )

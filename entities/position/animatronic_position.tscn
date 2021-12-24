@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://entities/position/animatronic_position.gd" type="Script" id=1]
+
+[node name="animatronic_position" type="Spatial" groups=["AnimatronicPosition"]]
+script = ExtResource( 1 )

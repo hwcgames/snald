@@ -1,0 +1,40 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+class_options = "----------------------------------------------------------------"
+classname = "Camera"
+description = "A camera, usable from the player's camera pad."
+qodot_internal = false
+base_classes = [  ]
+class_properties = {
+"angle": 0.0,
+"camera_id": "lobby_cam",
+"circuit": "",
+"elevation": 0.0,
+"fov": "70",
+"name": "Lobby",
+"requires_circuit": 0,
+"room": "lobby"
+}
+class_property_descriptions = {
+"angle": "The camera's facing angle.",
+"camera_id": "The ID of this camera.",
+"circuit": "The circuit this camera depends on, if any.",
+"elevation": "The camera's elevation angle.",
+"fov": "The camera's field of view, in degrees.",
+"name": "The human-friendly name of this camera.",
+"requires_circuit": "Whether the camera requires a circuit to be viewed.",
+"room": "The room to which this camera corresponds."
+}
+meta_properties = {
+"color": Color( 0.8, 0.8, 0.8, 1 ),
+"size": AABB( -8, -8, -8, 8, 8, 8 )
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false
+scene = "----------------------------------------------------------------"
+scripting = "----------------------------------------------------------------"

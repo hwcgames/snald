@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://fgd.tres" type="Resource" id=1]
+[ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=2]
+[ext_resource path="res://scenes/gameplay.gd" type="Script" id=3]
+[ext_resource path="res://textures/ps1-post.tres" type="Material" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[sub_resource type="Environment" id=3]
+background_energy = 0.0
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.0
+ambient_light_sky_contribution = 0.0
+fog_enabled = true
+fog_color = Color( 0, 0, 0, 1 )
+fog_sun_color = Color( 0, 0, 0, 1 )
+fog_depth_end = 20.0
+glow_bloom = 1.0
+
+[sub_resource type="QuadMesh" id=6]
+size = Vector2( 2, 2 )
+
+[node name="gameplay" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="QodotMap" type="Spatial" parent="."]
+script = ExtResource( 2 )
+map_file = ""
+inverse_scale_factor = 16.0
+entity_fgd = ExtResource( 1 )
+base_texture_dir = "res://textures"
+texture_file_extensions = PoolStringArray( "png" )
+worldspawn_layers = [  ]
+brush_clip_texture = "special/clip"
+face_skip_texture = "special/skip"
+texture_wads = [  ]
+material_file_extension = "material"
+default_material = SubResource( 1 )
+uv_unwrap_texel_size = 1.0
+print_profiling_data = false
+use_trenchbroom_group_hierarchy = false
+tree_attach_batch_size = 16
+set_owner_batch_size = 16
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+material_override = ExtResource( 4 )
+extra_cull_margin = 16384.0
+mesh = SubResource( 6 )
+material/0 = null
+
+[connection signal="build_complete" from="QodotMap" to="." method="completed_build"]

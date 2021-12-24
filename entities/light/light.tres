@@ -1,0 +1,40 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" type="Script" id=1]
+[ext_resource path="res://entities/light/light.tscn" type="PackedScene" id=2]
+
+[resource]
+script = ExtResource( 1 )
+class_options = "----------------------------------------------------------------"
+classname = "SnaldLight"
+description = ""
+qodot_internal = false
+base_classes = [  ]
+class_properties = {
+"always_on": 1,
+"circuit": "",
+"energy": ".5",
+"flicker_below": 10.0,
+"flicker_chance": 0.01,
+"power": 0.1,
+"radius": 16.0
+}
+class_property_descriptions = {
+"always_on": "Whether the light is always on, rather than part of a circuit.",
+"circuit": "The circuit the light will listen to.",
+"energy": "The energy of the light.",
+"flicker_below": "The power threshold below which the light will flicker.",
+"flicker_chance": "The chance every frame for the light to start a flicker.",
+"power": "The power consumed by the light each power tick",
+"radius": "The radius of the light"
+}
+meta_properties = {
+"color": Color( 0.8, 0.8, 0.8, 1 ),
+"size": AABB( -8, -8, -8, 8, 8, 8 )
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false
+scene = "----------------------------------------------------------------"
+scene_file = ExtResource( 2 )
+scripting = "----------------------------------------------------------------"

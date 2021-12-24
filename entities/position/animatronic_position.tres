@@ -1,0 +1,36 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" type="Script" id=1]
+[ext_resource path="res://entities/position/animatronic_position.tscn" type="PackedScene" id=2]
+
+[resource]
+script = ExtResource( 1 )
+class_options = "----------------------------------------------------------------"
+classname = "AnimatronicPosition"
+description = "A position corresponding to a given state for the named animatronic."
+qodot_internal = false
+base_classes = [  ]
+class_properties = {
+"angle": 0.0,
+"animation": "idle",
+"animatronic_id": "randy",
+"room_id": "lobby",
+"state_id": 0
+}
+class_property_descriptions = {
+"angle": "The facing angle of the animatronic when using this position.",
+"animation": "The named animation to play when using this position.",
+"animatronic_id": "The internal name of the animatronic which uses this position.",
+"room_id": "The internal name of the room to which this position corresponds.",
+"state_id": "The numbered state to which this position corresponds. Doesn't need to be unique ;)"
+}
+meta_properties = {
+"color": Color( 0.8, 0.8, 0.8, 1 ),
+"size": AABB( -8, -8, -8, 8, 8, 8 )
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false
+scene = "----------------------------------------------------------------"
+scene_file = ExtResource( 2 )
+scripting = "----------------------------------------------------------------"

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=13 format=2]
+
+[ext_resource path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" type="Script" id=1]
+[ext_resource path="res://entities/player/player.tres" type="Resource" id=2]
+[ext_resource path="res://entities/player/player_left_bound.tres" type="Resource" id=3]
+[ext_resource path="res://entities/player/player_right_bound.tres" type="Resource" id=4]
+[ext_resource path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" type="Resource" id=5]
+[ext_resource path="res://entities/position/animatronic_position.tres" type="Resource" id=6]
+[ext_resource path="res://entities/light/light.tres" type="Resource" id=7]
+[ext_resource path="res://entities/button/button.tres" type="Resource" id=8]
+[ext_resource path="res://entities/door/door.tres" type="Resource" id=9]
+[ext_resource path="res://entities/toggler/toggler.tres" type="Resource" id=10]
+[ext_resource path="res://entities/camera/camera.tres" type="Resource" id=11]
+[ext_resource path="res://entities/map/map_segment.tres" type="Resource" id=12]
+
+[resource]
+script = ExtResource( 1 )
+export_file = false
+target_folder = ""
+fgd_name = "SNALD"
+base_fgd_files = [ ExtResource( 5 ) ]
+entity_definitions = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 11 ), null ]
