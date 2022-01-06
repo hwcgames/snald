@@ -24,16 +24,6 @@ steps:
   when:
     event: tag
 
-# SETUP GODOT
-
-- name: godot-setup
-  image: barichello/godot-ci:3.4.1
-  commands:
-    - mkdir -v -p ~/.local/share/godot/templates
-    - mv /root/.local/share/godot/templates/3.4.1.stable ~/.local/share/godot/templates/3.4.1.stable
-  when:
-    event: tag
-
 # WINDOWS
 
 - name: build-win
@@ -51,7 +41,6 @@ steps:
     event: tag
   depends_on:
     - gpg-setup
-    - godot-setup
 - name: package-win
   image: ubuntu
   commands:
@@ -86,7 +75,6 @@ steps:
     event: tag
   depends_on:
     - gpg-setup
-    - godot-setup
 - name: package-linux
   image: ubuntu
   commands:
@@ -119,7 +107,6 @@ steps:
     event: tag
   depends_on:
     - gpg-setup
-    - godot-setup
 - name: package-mac
   image: ubuntu
   commands:
