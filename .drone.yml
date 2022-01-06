@@ -49,7 +49,7 @@ steps:
     - cp -r addons/qodot/bin/* build/windows/addons/qodot/bin
   when:
     event: tag
-  depends-on:
+  depends_on:
     - gpg-setup
     - godot-setup
 - name: package-win
@@ -58,7 +58,7 @@ steps:
     - tar -czvf win.tar.gz build/windows/*
   when:
     event: tag
-  depends-on:
+  depends_on:
     - build-win
 - name: sign-win
   image: bleala/gpg
@@ -66,7 +66,7 @@ steps:
     - gpg --output win.tar.gz.sig --detach-sig win.tar.gz
   when:
     event: tag
-  depends-on:
+  depends_on:
     - package-win
 
 # LINUX
@@ -84,7 +84,7 @@ steps:
     - cp -r addons/qodot/bin/* build/linux/addons/qodot/bin
   when:
     event: tag
-  depends-on:
+  depends_on:
     - gpg-setup
     - godot-setup
 - name: package-linux
@@ -93,7 +93,7 @@ steps:
     - tar -czvf linux.tar.gz build/linux/*
   when:
     event: tag
-  depends-on:
+  depends_on:
     - build-linux
 - name: sign-linux
   image: bleala/gpg
@@ -101,7 +101,7 @@ steps:
     - gpg --output linux.tar.gz.sig --detach-sig linux.tar.gz
   when:
     event: tag
-  depends-on:
+  depends_on:
     - package-linux
 
 # MACOS
@@ -117,7 +117,7 @@ steps:
     - cp -r addons/qodot/bin/* build/mac/addons/qodot/bin
   when:
     event: tag
-  depends-on:
+  depends_on:
     - gpg-setup
     - godot-setup
 - name: package-mac
@@ -126,7 +126,7 @@ steps:
     - tar -czvf linux.tar.gz build/linux/*
   when:
     event: tag
-  depends-on:
+  depends_on:
     - build-mac
 - name: sign-mac
   image: bleala/gpg
@@ -134,7 +134,7 @@ steps:
     - gpg --output mac.tar.gz.sig --detach-sig mac.tar.gz
   when:
     event: tag
-  depends-on:
+  depends_on:
     - package-mac
 
 # PUBLISH
@@ -154,7 +154,7 @@ steps:
       - ci.wolo.dev.pub.asc
   when:
     event: tag
-  depends-on:
+  depends_on:
     - package-win
     - package-linux
     - package-mac
