@@ -135,8 +135,8 @@ steps:
       - win.tar.gz.sig
       - linux.tar.gz
       - linux.tar.gz.sig
-      - macos.tar.gz
-      - macos.tar.gz.sig
+      - mac.tar.gz
+      - mac.tar.gz.sig
       - ci.wolo.dev.pub.asc
   when:
     event: tag
