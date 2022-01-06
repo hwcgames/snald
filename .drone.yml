@@ -1,0 +1,160 @@
+kind: pipeline
+type: docker
+name: autobuild
+when:
+	event: tag
+
+steps:
+
+# SETUP GPG
+
+- name: gpg-setup
+	image: bleala/gpg
+  environment:
+    PRIVATE:
+      from_secret: wolosign
+    PUBLIC:
+      from_secret: wolopub
+  commands:
+    - echo $PRIVATE | base64 -d > ci.key
+    - echo $PUBLIC | base64 -d > pub.key
+    - ls -la ci.key
+    - gpg --import ci.key pub.key
+    - gpg --armor --output ci.wolo.dev.pub.asc --export 7A439D884F34F915A63DC15A8E5E774E31D79A4F
+  when:
+    event: tag
+
+# SETUP GODOT
+
+- name: godot-setup
+	image: barichello/godot-ci:3.4.1
+	commands:
+		- mkdir -v -p ~/.local/share/godot/templates
+		- mv /root/.local/share/godot/templates/3.4.1.stable ~/.local/share/godot/templates/3.4.1.stable
+  when:
+    event: tag
+
+# WINDOWS
+
+- name: build-win
+	image: barichello/godot-ci:3.4.1
+	commands:
+		- mkdir -v -p ~/.local/share/godot/templates
+		- mv /root/.local/share/godot/templates/3.4.1.stable ~/.local/share/godot/templates/3.4.1.stable
+		- mkdir -v -p build/windows
+		- godot -v --export "Windows Desktop" build/windows/$EXPORT_NAME.exe
+		- mkdir -p build/windows/addons build/windows/maps
+		- cp -r maps/*.map build/windows/maps
+		- mkdir -p build/windows/addons/qodot/bin
+		- cp -r addons/qodot/bin/* build/windows/addons/qodot/bin
+  when:
+    event: tag
+	depends-on:
+		- gpg-setup
+		- godot-setup
+- name: package-win
+	image: ubuntu
+	commands:
+		- tar -czvf win.tar.gz build/windows/*
+  when:
+    event: tag
+	depends-on:
+		- build-win
+- name: sign-win
+  image: bleala/gpg
+	commands:
+    - gpg --output win.tar.gz.sig --detach-sig win.tar.gz
+  when:
+    event: tag
+	depends-on:
+		- package-win
+
+# LINUX
+
+- name: build-linux
+	image: barichello/godot-ci:3.4.1
+	commands:
+		- mkdir -v -p ~/.local/share/godot/templates
+		- mv /root/.local/share/godot/templates/3.4.1.stable ~/.local/share/godot/templates/3.4.1.stable
+		- mkdir -v -p build/linux
+		- godot -v --export "Linux/X11" build/linux/$EXPORT_NAME.x86_64
+		- mkdir -p build/linux/addons build/linux/maps
+		- cp -r maps/*.map build/linux/maps
+		- mkdir -p build/linux/addons/qodot/bin
+		- cp -r addons/qodot/bin/* build/linux/addons/qodot/bin
+  when:
+    event: tag
+	depends-on:
+		- gpg-setup
+		- godot-setup
+- name: package-linux
+	image: ubuntu
+	commands:
+		- tar -czvf linux.tar.gz build/linux/*
+  when:
+    event: tag
+	depends-on:
+		- build-linux
+- name: sign-linux
+  image: bleala/gpg
+	commands:
+    - gpg --output linux.tar.gz.sig --detach-sig linux.tar.gz
+  when:
+    event: tag
+	depends-on:
+		- package-linux
+
+# MACOS
+
+- name: build-mac
+	image: barichello/godot-ci:3.4.1
+	commands:
+		- mkdir -v -p build/mac
+		- godot -v --export "Mac OSX" build/mac/$EXPORT_NAME.zip
+		- mkdir -p build/mac/addons build/mac/maps
+		- cp -r maps/*.map build/mac/maps
+		- mkdir -p build/mac/addons/qodot/bin
+		- cp -r addons/qodot/bin/* build/mac/addons/qodot/bin
+  when:
+    event: tag
+	depends-on:
+		- gpg-setup
+		- godot-setup
+- name: package-mac
+	image: ubuntu
+	commands:
+		- tar -czvf linux.tar.gz build/linux/*
+  when:
+    event: tag
+	depends-on:
+		- build-mac
+- name: sign-mac
+  image: bleala/gpg
+	commands:
+    - gpg --output mac.tar.gz.sig --detach-sig mac.tar.gz
+  when:
+    event: tag
+	depends-on:
+		- package-mac
+
+# PUBLISH
+
+- name: publish
+  image: plugins/github-release
+  settings:
+    api_key:
+      from_secret: pat
+    files:
+      - win.tar.gz
+      - win.tar.gz.sig
+      - linux.tar.gz
+      - linux.tar.gz.sig
+      - macos.tar.gz
+      - macos.tar.gz.sig
+      - ci.wolo.dev.pub.asc
+  when:
+    event: tag
+	depends-on:
+		- package-win
+		- package-linux
+		- package-mac
