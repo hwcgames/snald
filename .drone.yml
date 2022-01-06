@@ -155,6 +155,6 @@ steps:
   when:
     event: tag
   depends_on:
-    - package-win
-    - package-linux
-    - package-mac
+    - sign-win
+    - sign-linux
+    - sign-mac
