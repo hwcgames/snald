@@ -16,6 +16,15 @@ func _ready():
 				aabb.size.y = max(aabb.position.y + aabb.size.y, point.y) - aabb.position.y
 			var polygon2d = Polygon2D.new()
 			polygon2d.polygon = polygon
+			match s.properties["type"]:
+				"room":
+					polygon2d.color = Color(1,1,1,.75)
+				"vent":
+					polygon2d.color = Color(.75,.75,.75,.5)
+				"outdoors":
+					polygon2d.color = Color(.75,.75,.75,0)
+				"door":
+					polygon2d.color = Color(0,0,0,1)
 			add_child(polygon2d)
 	pass # Replace with function body.
 
