@@ -1449,15 +1449,6 @@
 "type" "outdoors"
 // brush 0
 {
-( -192 -144 152 ) ( -192 -143 152 ) ( -192 -144 153 ) factorywall/factory_wall 0 8 0 0.01 0.01
-( -192 -144 152 ) ( -192 -144 153 ) ( -191 -144 152 ) factorywall/factory_wall 0 8 0 0.01 0.01
-( -192 -144 152 ) ( -191 -144 152 ) ( -192 -143 152 ) factorywall/factory_wall 0 0 0 0.01 0.01
-( -80 -32 168 ) ( -80 -31 168 ) ( -79 -32 168 ) factorywall/factory_wall 0 0 0 0.01 0.01
-( -80 -32 168 ) ( -79 -32 168 ) ( -80 -32 169 ) factorywall/factory_wall 0 8 0 0.01 0.01
-( -80 -32 168 ) ( -80 -32 169 ) ( -80 -31 168 ) factorywall/factory_wall 0 8 0 0.01 0.01
-}
-// brush 1
-{
 ( -192 -240 152 ) ( -192 -239 152 ) ( -192 -240 153 ) factorywall/factory_wall 0 8 0 0.01 0.01
 ( -192 -240 152 ) ( -192 -240 153 ) ( -191 -240 152 ) factorywall/factory_wall 0 8 0 0.01 0.01
 ( -192 -240 152 ) ( -191 -240 152 ) ( -192 -239 152 ) factorywall/factory_wall 0 0 0 0.01 0.01
@@ -1804,24 +1795,6 @@
 ( -192 192 280 ) ( -191 192 280 ) ( -192 192 281 ) factorywall/factory_wall 0 120 0 1 1
 ( -192 192 280 ) ( -192 192 281 ) ( -192 193 280 ) factorywall/factory_wall 0 120 0 1 1
 }
-// brush 1
-{
-( -304 192 272 ) ( -304 193 272 ) ( -304 192 273 ) factorywall/factory_wall 0 120 0 1 1
-( -304 192 272 ) ( -304 192 273 ) ( -303 192 272 ) factorywall/factory_wall 0 120 0 1 1
-( -304 192 272 ) ( -303 192 272 ) ( -304 193 272 ) factorywall/factory_wall 0 0 0 1 1
-( -240 824 280 ) ( -240 825 280 ) ( -239 824 280 ) factorywall/factory_wall 0 0 0 1 1
-( -240 824 280 ) ( -239 824 280 ) ( -240 824 281 ) factorywall/factory_wall 0 120 0 1 1
-( -240 824 280 ) ( -240 824 281 ) ( -240 825 280 ) factorywall/factory_wall 0 120 0 1 1
-}
-// brush 2
-{
-( -240 824 280 ) ( -240 768 280 ) ( -240 768 272 ) factorywall/factory_wall 0 120 0 1 1
-( -240 768 280 ) ( -64 768 280 ) ( -64 768 272 ) factorywall/factory_wall 0 120 0 1 1
-( -64 768 272 ) ( -64 824 272 ) ( -240 824 272 ) factorywall/factory_wall 0 0 0 1 1
-( -240 824 280 ) ( -64 824 280 ) ( -64 768 280 ) factorywall/factory_wall 0 0 0 1 1
-( -64 824 272 ) ( -64 824 280 ) ( -240 824 280 ) factorywall/factory_wall 0 120 0 1 1
-( -64 768 280 ) ( -64 824 280 ) ( -64 824 272 ) factorywall/factory_wall 0 120 0 1 1
-}
 }
 // entity 38
 {
@@ -1837,7 +1810,93 @@
 ( -128 368 280 ) ( -127 368 280 ) ( -128 368 281 ) factorywall/factory_wall 0 0 0 1 1
 ( -128 368 280 ) ( -128 368 281 ) ( -128 369 280 ) factorywall/factory_wall 0 0 0 1 1
 }
-// brush 1
+}
+// entity 39
+{
+"classname" "SnaldButton"
+"circuit" "window"
+// brush 0
+{
+( -20 -124 60 ) ( -20 -128 60 ) ( -20 -128 48 ) beamwall1/beam_wall_01 0 0 0 0.05 0.05
+( -20 -128 60 ) ( -12 -128 60 ) ( -12 -128 48 ) beamwall1/beam_wall_01 0 0 0 0.05 0.05
+( -12 -128 48 ) ( -12 -124 48 ) ( -20 -124 48 ) beamwall1/beam_wall_01 0 0 0 0.05 0.05
+( -20 -124 60 ) ( -12 -124 60 ) ( -12 -128 60 ) beamwall1/beam_wall_01 0 0 0 0.05 0.05
+( -12 -124 48 ) ( -12 -124 60 ) ( -20 -124 60 ) beamwall1/beam_wall_01 0 0 0 0.05 0.05
+( -12 -128 60 ) ( -12 -124 60 ) ( -12 -124 48 ) beamwall1/beam_wall_01 0 0 0 0.05 0.05
+}
+}
+// entity 40
+{
+"classname" "SnaldDoor"
+"circuit" "window_toggle"
+// brush 0
+{
+( -8 -132 84 ) ( -8 -140 84 ) ( -8 -140 32 ) __TB_empty 0 0 0 1 1
+( -8 -140 84 ) ( 72 -140 84 ) ( 72 -140 32 ) __TB_empty 0 0 0 1 1
+( 72 -140 32 ) ( 72 -132 32 ) ( -8 -132 32 ) __TB_empty 0 0 0 1 1
+( -8 -132 84 ) ( 72 -132 84 ) ( 72 -140 84 ) __TB_empty 0 0 0 1 1
+( 72 -132 32 ) ( 72 -132 84 ) ( -8 -132 84 ) __TB_empty 0 0 0 1 1
+( 72 -140 84 ) ( 72 -132 84 ) ( 72 -132 32 ) __TB_empty 0 0 0 1 1
+}
+}
+// entity 41
+{
+"classname" "Toggler"
+"origin" "84 -152 88"
+"in_circuit" "window"
+"out_circuit" "window_toggle"
+}
+// entity 42
+{
+"classname" "MapSegment"
+"room" "vent"
+"type" "vent"
+// brush 0
+{
+( -304 192 272 ) ( -304 193 272 ) ( -304 192 273 ) factorywall/factory_wall 0 120 0 1 1
+( -304 192 272 ) ( -304 192 273 ) ( -303 192 272 ) factorywall/factory_wall 0 120 0 1 1
+( -304 192 272 ) ( -303 192 272 ) ( -304 193 272 ) factorywall/factory_wall 0 0 0 1 1
+( -240 824 280 ) ( -240 825 280 ) ( -239 824 280 ) factorywall/factory_wall 0 0 0 1 1
+( -240 824 280 ) ( -239 824 280 ) ( -240 824 281 ) factorywall/factory_wall 0 120 0 1 1
+( -240 824 280 ) ( -240 824 281 ) ( -240 825 280 ) factorywall/factory_wall 0 120 0 1 1
+}
+}
+// entity 43
+{
+"classname" "MapSegment"
+"type" "vent"
+"room" "vebt"
+// brush 0
+{
+( -240 824 280 ) ( -240 768 280 ) ( -240 768 272 ) factorywall/factory_wall 0 120 0 1 1
+( -240 768 280 ) ( -64 768 280 ) ( -64 768 272 ) factorywall/factory_wall 0 120 0 1 1
+( -64 768 272 ) ( -64 824 272 ) ( -240 824 272 ) factorywall/factory_wall 0 0 0 1 1
+( -240 824 280 ) ( -64 824 280 ) ( -64 768 280 ) factorywall/factory_wall 0 0 0 1 1
+( -64 824 272 ) ( -64 824 280 ) ( -240 824 280 ) factorywall/factory_wall 0 120 0 1 1
+( -64 768 280 ) ( -64 824 280 ) ( -64 824 272 ) factorywall/factory_wall 0 120 0 1 1
+}
+}
+// entity 44
+{
+"classname" "MapSegment"
+"room" "backyard"
+"type" "outdoors"
+// brush 0
+{
+( -192 -144 152 ) ( -192 -143 152 ) ( -192 -144 153 ) factorywall/factory_wall 0 8 0 0.01 0.01
+( -192 -144 152 ) ( -192 -144 153 ) ( -191 -144 152 ) factorywall/factory_wall 0 8 0 0.01 0.01
+( -192 -144 152 ) ( -191 -144 152 ) ( -192 -143 152 ) factorywall/factory_wall 0 0 0 0.01 0.01
+( -80 -32 168 ) ( -80 -31 168 ) ( -79 -32 168 ) factorywall/factory_wall 0 0 0 0.01 0.01
+( -80 -32 168 ) ( -79 -32 168 ) ( -80 -32 169 ) factorywall/factory_wall 0 8 0 0.01 0.01
+( -80 -32 168 ) ( -80 -32 169 ) ( -80 -31 168 ) factorywall/factory_wall 0 8 0 0.01 0.01
+}
+}
+// entity 45
+{
+"classname" "MapSegment"
+"room" "vent"
+"type" "vent"
+// brush 0
 {
 ( -192 440 280 ) ( -192 368 280 ) ( -192 368 272 ) factorywall/factory_wall 0 24 0 1 1
 ( -192 368 280 ) ( 192 368 280 ) ( 192 368 272 ) factorywall/factory_wall -8 24 0 1 1

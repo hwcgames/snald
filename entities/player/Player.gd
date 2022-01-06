@@ -1,13 +1,14 @@
 extends QodotEntity
 
+var CAMERA = preload("res://scenes/camera_ui/camera_ui.tscn")
+onready var camera: Control = CAMERA.instance()
+
 func _ready():
-	# Set angle correctly
-	call_deferred("ready")
-func ready():
-	while not "angle" in properties:
-		yield(get_tree(), "idle_frame")
+	yield(get_parent(), "build_complete")
 	print("Set player angle to default")
 	rotation_degrees.y = properties["angle"]
+	print("Bringing camera UI into tree")
+	add_child(camera)
 
 func _process(delta):
 	# Get mouse X

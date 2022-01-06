@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" type="Script" id=1]
+[ext_resource path="res://entities/camera/camera.tscn" type="PackedScene" id=2]
 
 [resource]
 script = ExtResource( 1 )
@@ -15,9 +16,12 @@ class_properties = {
 "circuit": "",
 "elevation": 0.0,
 "fov": "70",
+"max_angle": 45,
+"min_angle": -45,
 "name": "Lobby",
 "requires_circuit": 0,
-"room": "lobby"
+"room": "lobby",
+"rotates_manually": 0
 }
 class_property_descriptions = {
 "angle": "The camera's facing angle.",
@@ -25,9 +29,12 @@ class_property_descriptions = {
 "circuit": "The circuit this camera depends on, if any.",
 "elevation": "The camera's elevation angle.",
 "fov": "The camera's field of view, in degrees.",
+"max_angle": "The highest angle the camera can rotate",
+"min_angle": "The lowest angle the camera can rotate",
 "name": "The human-friendly name of this camera.",
 "requires_circuit": "Whether the camera requires a circuit to be viewed.",
-"room": "The room to which this camera corresponds."
+"room": "The room to which this camera corresponds.",
+"rotates_manually": "Whether the camera is manually rotated, as opposed to automatically."
 }
 meta_properties = {
 "color": Color( 0.8, 0.8, 0.8, 1 ),
@@ -37,4 +44,5 @@ node_options = "----------------------------------------------------------------
 node_class = ""
 transient_node = false
 scene = "----------------------------------------------------------------"
+scene_file = ExtResource( 2 )
 scripting = "----------------------------------------------------------------"
