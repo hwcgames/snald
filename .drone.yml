@@ -108,7 +108,7 @@ steps:
 - name: package-mac
   image: ubuntu
   commands:
-    - tar -czvf linux.tar.gz build/linux/*
+    - tar -czvf mac.tar.gz build/mac/*
   when:
     event: tag
   depends_on:
