@@ -5,20 +5,22 @@ extends QodotEntity
 # var a = 2
 # var b = "text"
 
+var camera: Camera
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("camera")
 	yield(get_parent(), "build_complete")
-	var camera = $Camera
-	var transform = camera.global_transform;
+	camera = $Camera
+	remove_child(camera)
 	$Viewport.add_child(camera)
-	camera.global_transform = transform
-	camera.rotation_degrees.x = properties["elevation"] if "elevation" in properties else -20
-	camera.rotation_degrees.y = properties["angle"] if "angle" in properties else 0
+	rotation_degrees.x = properties["elevation"] if "elevation" in properties else -20
+	rotation_degrees.y = 180 + properties["angle"] if "angle" in properties else 0
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
+func _process(delta):
+	if camera:
+		camera.global_transform = global_transform
 #	pass

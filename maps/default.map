@@ -2049,6 +2049,8 @@
 "origin" "82 -96 56"
 "angle" "90"
 "" ""
+"max_angle" "230"
+"min_angle" "0"
 }
 // entity 2
 {
@@ -2974,4 +2976,184 @@
 ( 508 176 0 ) ( 508 176 96 ) ( 500 176 96 ) __TB_empty 0 0 180 1 -1
 ( 508 80 96 ) ( 508 176 96 ) ( 508 176 0 ) __TB_empty -28 0 0 1 1
 }
+}
+// entity 75
+{
+"classname" "SnaldLight"
+"origin" "120 168 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
+}
+// entity 76
+{
+"classname" "SnaldLight"
+"origin" "-72 408 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
+}
+// entity 77
+{
+"classname" "SnaldLight"
+"origin" "88 456 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
+}
+// entity 78
+{
+"classname" "SnaldLight"
+"origin" "88 776 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
+}
+// entity 79
+{
+"classname" "SnaldLight"
+"origin" "360 696 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
+}
+// entity 80
+{
+"classname" "SnaldLight"
+"origin" "568 584 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
+}
+// entity 81
+{
+"classname" "SnaldLight"
+"origin" "712 584 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
+}
+// entity 82
+{
+"classname" "SnaldLight"
+"origin" "680 696 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
+}
+// entity 83
+{
+"classname" "SnaldLight"
+"origin" "936 728 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
+}
+// entity 84
+{
+"classname" "SnaldLight"
+"origin" "840 600 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
+}
+// entity 85
+{
+"classname" "SnaldLight"
+"origin" "696 152 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
+}
+// entity 86
+{
+"classname" "SnaldLight"
+"origin" "680 344 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
+}
+// entity 87
+{
+"classname" "SnaldLight"
+"origin" "552 216 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
+}
+// entity 88
+{
+"classname" "SnaldLight"
+"origin" "344 328 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "15"
+}
+// entity 89
+{
+"classname" "SnaldLight"
+"origin" "312 120 88"
+"always_on" "1"
+"circuit" ""
+"energy" ".25"
+"flicker_below" "10"
+"flicker_chance" ".001"
+"power" "0"
+"radius" "13"
 }

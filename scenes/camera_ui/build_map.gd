@@ -37,8 +37,10 @@ func _ready():
 	average_center /= len(rooms)
 	camera = Camera2D.new()
 	add_child(camera)
-	width = top_right.x - bottom_left.x
-	height = top_right.y - bottom_left.y
+	camera.rotating = true
+	camera.rotation_degrees = 90
+	height = top_right.x - bottom_left.x
+	width = top_right.y - bottom_left.y
 	camera.current = true
 	camera.transform.origin = average_center + Vector2(0, 10)
 	print(width,' ',height)

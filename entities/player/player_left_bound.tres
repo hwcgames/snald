@@ -7,7 +7,7 @@
 script = ExtResource( 1 )
 class_options = "----------------------------------------------------------------"
 classname = "PlayerLeftBound"
-description = "The player won't be able to look any further to the left when this entity is in view."
+description = "Now unused"
 qodot_internal = false
 base_classes = [  ]
 class_properties = {

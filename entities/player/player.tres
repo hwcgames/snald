@@ -11,7 +11,9 @@ description = "The player's position."
 qodot_internal = false
 base_classes = [  ]
 class_properties = {
-"angle": 0.0
+"angle": 0.0,
+"max_angle": 180,
+"min_angle": 0
 }
 class_property_descriptions = {
 "angle": "The angle the player will look towards when they start the game."
