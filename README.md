@@ -4,7 +4,7 @@ spooky door-controllin' vent-patrollin' game in Godot
 
 ## Spoilers
 
-There are secrets in the game, so if you decide to peruse this source code you should be ready for spoilers.
+There are secrets in the game, so if you decide to peruse this source code you should treat anything you find as a potential spoiler.
 
 ## Usage
 
