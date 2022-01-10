@@ -45,6 +45,8 @@ func circuit_on(name):
 	if circuit != "" and name == circuit and not depleted:
 		on_now = true
 		goal_energy = energy
+		if "instant_on" in properties and properties["instant_on"] == 1:
+			$OmniLight.light_energy = goal_energy
 
 func circuit_off(name):
 	if circuit != "" and name == circuit:

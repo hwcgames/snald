@@ -2088,11 +2088,11 @@
 "origin" "24 -40 88"
 "always_on" "1"
 "circuit" ""
-"energy" ".25"
+"energy" ".5"
 "flicker_below" "10"
 "flicker_chance" ".001"
 "power" "0"
-"radius" "13"
+"radius" "17"
 }
 // entity 7
 {
@@ -3156,4 +3156,38 @@
 "flicker_chance" ".001"
 "power" "0"
 "radius" "13"
+}
+// entity 90
+{
+"classname" "SnaldLight"
+"origin" "-18 8 88"
+"instant_on" "1"
+"circuit" "office_vent_flash_momentary"
+"energy" "1000"
+"radius" "25"
+"always_on" "0"
+"flicker_below" "10"
+"flicker_chance" "0.01"
+"power" "1"
+}
+// entity 91
+{
+"classname" "SnaldButton"
+"circuit" "office_vent_flash"
+// brush 0
+{
+( -64 -26 52 ) ( -64 -18 36 ) ( -64 -18 52 ) beamwall1/beam_wall_01 0 0 0 1 1
+( -60 -26 52 ) ( -64 -26 36 ) ( -64 -26 52 ) beamwall1/beam_wall_01 0 0 0 1 1
+( -60 -18 36 ) ( -64 -26 36 ) ( -60 -26 36 ) beamwall1/beam_wall_01 0 0 0 1 1
+( -60 -18 52 ) ( -64 -26 52 ) ( -64 -18 52 ) beamwall1/beam_wall_01 0 0 0 1 1
+( -60 -18 52 ) ( -64 -18 36 ) ( -60 -18 36 ) beamwall1/beam_wall_01 0 0 0 1 1
+( -60 -18 52 ) ( -60 -26 36 ) ( -60 -26 52 ) beamwall1/beam_wall_01 0 0 0 1 1
+}
+}
+// entity 92
+{
+"classname" "Momentary"
+"origin" "-56 8 82"
+"in_circuit" "office_vent_flash"
+"out_circuit" "office_vent_flash_momentary"
 }
