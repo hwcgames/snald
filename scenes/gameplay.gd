@@ -33,4 +33,5 @@ func _ready():
 			print("Tried to load an animatronic ", animatronic, " which does not exist.")
 
 func completed_build():
+	return
 	print($QodotMap.get_children())

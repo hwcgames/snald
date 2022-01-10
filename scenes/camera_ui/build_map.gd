@@ -6,10 +6,16 @@ extends Viewport
 # var b = "text"
 
 var MAP_SEGMENT = preload("res://scenes/camera_ui/map_segment.tscn")
+var CAMERA = preload("res://scenes/camera_ui/camera.tscn")
 var CAMERA_MARGIN = 5
+var width: float
+var height: float
+var camera: Camera2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_tree().get_root().connect("size_changed", self, "setup_camera")
+	# BUILD ROOM GEOMETRY
 	var rooms = PoolStringArray([])
 	for i in get_tree().get_nodes_in_group("map_segment"):
 		if not i.properties["room"] in rooms:
@@ -27,21 +33,31 @@ func _ready():
 		top_right.y = max(top_right.y, center.y + CAMERA_MARGIN)
 		bottom_left.x = min(bottom_left.x, center.x - CAMERA_MARGIN)
 		bottom_left.y = min(bottom_left.y, center.y - CAMERA_MARGIN)
+	# SET UP VIEWPOINT
 	average_center /= len(rooms)
-	var width = top_right.x - bottom_left.x
-	var height = top_right.y - bottom_left.y
-	var camera = Camera2D.new()
+	camera = Camera2D.new()
 	add_child(camera)
+	width = top_right.x - bottom_left.x
+	height = top_right.y - bottom_left.y
 	camera.current = true
-	camera.transform.origin = average_center
+	camera.transform.origin = average_center + Vector2(0, 10)
 	print(width,' ',height)
-	width /= self.size.x
-	height /= self.size.y
-	var zoom = max(width, height)
-	camera.zoom = Vector2(1,1) * zoom
-	print(width,' ',height)
-	pass # Replace with function body.
+	call_deferred("setup_camera")
+	# SET UP CAMERAS
+	for i in get_tree().get_nodes_in_group("camera"):
+		var camera_icon = CAMERA.instance()
+		camera_icon.camera_id = i.properties["camera_id"]
+		camera_icon.rotation_degrees = 180 - i.properties["angle"]
+		camera_icon.transform.origin = Vector2(i.transform.origin.x, i.transform.origin.z)
+		camera_icon.scale = Vector2(1,1) * 0.1
+		add_child(camera_icon)
 
+func setup_camera():
+	var rel_width = width / self.size.x
+	var rel_height = height / self.size.y
+	var zoom = max(rel_width, rel_height)
+	camera.zoom = Vector2(1,1) * zoom * 1.2
+	print(rel_width,' ',rel_height)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

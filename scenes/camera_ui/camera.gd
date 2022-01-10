@@ -5,6 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
+export var camera_id = "set-me"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
