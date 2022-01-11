@@ -148,9 +148,11 @@ steps:
   image: ubuntu
   commands:
     - apt-get update && apt-get install -y zip
-    - zip win.zip build/windows/*
-    - zip linux.zip build/linux/*
-    - zip mac.zip build/mac/*
+    - zip -r win.zip build/windows/*
+    - zip -r linux.zip build/linux/*
+    - zip -r mac.zip build/mac/*
+  when:
+    event: tag
   depends_on:
     - build-win
     - build-linux
