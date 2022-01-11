@@ -66,7 +66,7 @@ jobs:
           cp -r maps/*.map build/linux/maps
           mkdir -p build/linux/addons/qodot/bin
           cp -r addons/qodot/bin/* build/linux/addons/qodot/bin
-          tar -czvf linux.tar.gz build/linux/*
+          zip linux.zip build/linux/*
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
@@ -79,7 +79,7 @@ jobs:
           CHANNEL: linux-rolling
           ITCH_GAME: snald
           ITCH_USER: handlewithcaregames
-          PACKAGE: linux.tar.gz
+          PACKAGE: linux.zip
           VERSION: ${{ github.sha }}
 
   export-mac:
@@ -104,7 +104,7 @@ jobs:
           cp -r maps/*.map build/mac/maps
           mkdir -p build/mac/addons/qodot/bin
           cp -r addons/qodot/bin/* build/mac/addons/qodot/bin
-          tar -czvf mac.tar.gz build/mac/*
+          zip mac.zip build/mac/*
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
@@ -117,5 +117,5 @@ jobs:
           CHANNEL: mac-rolling
           ITCH_GAME: snald
           ITCH_USER: handlewithcaregames
-          PACKAGE: mac.tar.gz
+          PACKAGE: mac.zip
           VERSION: ${{ github.sha }}
