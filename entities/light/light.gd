@@ -28,6 +28,7 @@ func _ready():
 	energy = float(properties["energy"]) if "energy" in properties else 0.5
 	goal_energy = energy * (1 if on_now else 0)
 	power = properties["power"] if "power" in properties else 0.1
+	$AudioStreamPlayer3D.stream = load(properties["buzz"]) if "buzz" in properties else null
 	$OmniLight.omni_range = properties["radius"] if "radius" in properties else 16
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

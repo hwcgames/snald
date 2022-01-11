@@ -2381,6 +2381,7 @@
 "flicker_chance" ".001"
 "power" "0"
 "radius" "9"
+"buzz" "res://entities/light/stare.wav"
 }
 // entity 7
 {
@@ -2407,6 +2408,7 @@
 "flicker_chance" "0.01"
 "power" "1"
 "radius" "8"
+"buzz" "res://entities/light/stare.wav"
 }
 // entity 9
 {

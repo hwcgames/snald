@@ -12,6 +12,7 @@ qodot_internal = false
 base_classes = [  ]
 class_properties = {
 "always_on": 1,
+"buzz": "res://entities/light/stare.wav",
 "circuit": "",
 "energy": ".5",
 "flicker_below": 10.0,
