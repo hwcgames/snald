@@ -159,7 +159,7 @@ steps:
   image: glassblade/butler
   environment:
     BUTLER_API_KEY:
-      from-secret: itchiodeploy
+      from_secret: itchiodeploy
   commands:
     - butler push win.zip handlewithcaregames/snald:win-stable
     - butler push linux.zip handlewithcaregames/snald:linux-stable
