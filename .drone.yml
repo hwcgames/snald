@@ -144,21 +144,26 @@ steps:
     - sign-win
     - sign-linux
     - sign-mac
+- name: repack-itchio
+  image: ubuntu
+  commands:
+    - zip win.zip build/windows/*
+    - zip linux.zip build/linux/*
+    - zip mac.zip build/mac/*
+  depends_on:
+    - build-win
+    - build-linux
+    - build-mac
 - name: publish-itchio
   image: glassblade/butler
   environment:
     BUTLER_API_KEY:
       from-secret: itchiodeploy
   commands:
-    - zip win.zip build/windows/*
     - butler push win.zip handlewithcaregames/snald:win-stable
-    - zip linux.zip build/linux/*
     - butler push linux.zip handlewithcaregames/snald:linux-stable
-    - zip mac.zip build/mac/*
     - butler push mac.zip handlewithcaregames/snald:mac-stable
   when:
     event: tag
   depends_on:
-    - build-win
-    - build-linux
-    - build-mac
+    - repack-itchio
