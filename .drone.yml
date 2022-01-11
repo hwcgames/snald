@@ -147,6 +147,7 @@ steps:
 - name: repack-itchio
   image: ubuntu
   commands:
+    - apt-get update && apt-get install -y zip
     - zip win.zip build/windows/*
     - zip linux.zip build/linux/*
     - zip mac.zip build/mac/*
