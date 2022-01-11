@@ -28,21 +28,11 @@ jobs:
           cp -r maps/*.map build/windows/maps
           mkdir -p build/windows/addons/qodot/bin
           cp -r addons/qodot/bin/* build/windows/addons/qodot/bin
-          zip -r win.zip build/windows/*
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
           name: windows
           path: build/windows
-      - name: Itch.io (Windows)
-        uses: josephbmanley/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.ITCHIO_DEPLOY }}
-          CHANNEL: win-rolling
-          ITCH_GAME: snald
-          ITCH_USER: handlewithcaregames
-          PACKAGE: win.zip
-          VERSION: ${{ github.sha }}
 
   export-linux:
     name: Linux Export
@@ -66,21 +56,11 @@ jobs:
           cp -r maps/*.map build/linux/maps
           mkdir -p build/linux/addons/qodot/bin
           cp -r addons/qodot/bin/* build/linux/addons/qodot/bin
-          zip -r linux.zip build/linux/*
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
           name: linux
           path: build/linux
-      - name: Itch.io (Linux)
-        uses: josephbmanley/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.ITCHIO_DEPLOY }}
-          CHANNEL: linux-rolling
-          ITCH_GAME: snald
-          ITCH_USER: handlewithcaregames
-          PACKAGE: linux.zip
-          VERSION: ${{ github.sha }}
 
   export-mac:
     name: Mac Export
@@ -104,18 +84,8 @@ jobs:
           cp -r maps/*.map build/mac/maps
           mkdir -p build/mac/addons/qodot/bin
           cp -r addons/qodot/bin/* build/mac/addons/qodot/bin
-          zip -r mac.zip build/mac/*
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
           name: mac
           path: build/mac
-      - name: Itch.io (MacOS)
-        uses: josephbmanley/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.ITCHIO_DEPLOY }}
-          CHANNEL: mac-rolling
-          ITCH_GAME: snald
-          ITCH_USER: handlewithcaregames
-          PACKAGE: mac.zip
-          VERSION: ${{ github.sha }}
