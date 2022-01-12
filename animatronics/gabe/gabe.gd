@@ -71,6 +71,6 @@ func on(circuit: String):
 func shoot():
 	if state == 11:
 		$GunShotPlayer.play()
-		print("Death!")
+		$"/root/EventMan".jumpscare("gabe", "gabe")
 		$AimingTimer.stop()
 		pass

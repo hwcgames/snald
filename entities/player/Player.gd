@@ -14,6 +14,8 @@ func _ready():
 	max_angle = properties["max_angle"]
 	print("Bringing camera UI into tree")
 	add_child(camera)
+	print("Setting up jumpscare handler")
+	$"/root/EventMan".connect("jumpscare", self, "jumpscare")
 
 func _process(delta):
 	# Get mouse X
@@ -34,3 +36,12 @@ func _process(delta):
 		DEBUG = true
 	if DEBUG and Input.is_key_pressed(KEY_W):
 		translate(Vector3.FORWARD * delta * -5)
+
+func jumpscare(character: String, scene: String):
+	var jumpscare_packed = load("res://jumpscares/"+character+"/"+scene+".tscn")
+	var jumpscare = jumpscare_packed.instance()
+	$JumpscareRoot.add_child(jumpscare)
+	yield(jumpscare, "finished")
+	var kill_player = jumpscare.kill_player
+	if kill_player:
+		get_tree().change_scene("res://jumpscares/"+character+"/"+scene+"_dead.tscn")

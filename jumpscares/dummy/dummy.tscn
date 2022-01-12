@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://jumpscares/base/base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://jumpscares/dummy/dummy.gd" type="Script" id=2]
+
+[node name="BaseJumpscare" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="." index="0"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_right = 40.152
+margin_bottom = 14.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 29.335, 11.006 )
+text = "BOO!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="." index="1"]
+wait_time = 5.0

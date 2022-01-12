@@ -9,6 +9,8 @@ extends Node
 signal on(circuit_id)
 signal off(circuit_id)
 
+signal jumpscare(character, scene)
+
 signal animatronic_tick
 
 signal power_tick
@@ -54,6 +56,12 @@ func reset():
 	passive_temperature = 0
 	circuit_states = {}
 	night_index = 0
+	power_timer.stop()
+	power_timer.start()
+	temperature_timer.stop()
+	temperature_timer.start()
+	animatronic_timer.stop()
+	animatronic_timer.start()
 
 func register(animatronic_id: String, difficulty: int):
 	difficulties[animatronic_id] = difficulty
@@ -86,3 +94,10 @@ func circuit_off(name):
 
 func circuit(name):
 	return circuit_states[name]
+
+func jumpscare(character, scene_name):
+	emit_signal("jumpscare", character, scene_name)
+
+func return_to_title():
+	reset()
+	get_tree().change_scene("res://scenes/menu.tscn")

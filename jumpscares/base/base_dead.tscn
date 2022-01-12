@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Button
+
+func _pressed():
+	$\"/root/EventMan\".return_to_title()
+"
+
+[node name="Dead" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 255.0
+margin_right = 1024.0
+margin_bottom = 320.0
+text = "Dead from base class jumpscare.
+This *probably* shouldn't happen?
+Let's just... Pretend it was a secret.
+Yeah. Just forget you saw this."
+align = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 456.0
+margin_top = 324.0
+margin_right = 567.0
+margin_bottom = 344.0
+size_flags_horizontal = 4
+text = "Return to Menu"
+script = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="Button"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="pressed" from="Button" to="Button" method="_pressed"]
+[connection signal="ready" from="Button" to="Button" method="hide"]
+[connection signal="timeout" from="Button/Timer" to="Button" method="show"]
