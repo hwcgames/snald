@@ -39,7 +39,7 @@ func _process(delta):
 
 func jumpscare(character: String, scene: String):
 	if DEBUG:
-    print("DIE FROM " + character + " WITH ANIMATION " + scene)
+		print("DIE FROM " + character + " WITH ANIMATION " + scene)
 		return # Don't allow the player to die in debug mode
 	var jumpscare_packed = load("res://jumpscares/"+character+"/"+scene+".tscn")
 	var jumpscare = jumpscare_packed.instance()
