@@ -12,6 +12,7 @@ func _ready():
 	$"/root/EventMan".connect("animatronic_tick", self, "animatronic_tick")
 	$"/root/EventMan".connect("on", self, "on")
 	$AimingTimer.connect("timeout", self, "shoot")
+	animation_player = get_node("gabe/AnimationPlayer")
 
 func state_machine():
 	match state:

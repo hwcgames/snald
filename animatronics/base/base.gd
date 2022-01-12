@@ -6,6 +6,7 @@ export var id = "base"
 export var state = 0
 export var room = ""
 export var difficulty = 10
+onready var animation_player = $AnimationPlayer
 
 func state_machine():
 	return 0

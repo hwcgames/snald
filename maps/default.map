@@ -3357,12 +3357,12 @@
 // entity 56
 {
 "classname" "AnimatronicPosition"
-"origin" "-90 12 24"
+"origin" "-90 12 17"
 "room_id" "office"
 "animatronic_id" "gabe"
 "animation" "preparingshot"
 "state_id" "11"
-"angle" "0"
+"angle" "-30"
 }
 // entity 57
 {
@@ -3954,7 +3954,7 @@
 // entity 107
 {
 "classname" "AnimatronicPosition"
-"origin" "-90 12 24"
+"origin" "-90 12 17"
 "room_id" "office"
 "animatronic_id" "gabe"
 "animation" "flashbanged"
