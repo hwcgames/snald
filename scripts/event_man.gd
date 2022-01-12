@@ -21,6 +21,7 @@ export var passive_power: float = 0.0
 export var passive_temperature: float = 0.0
 export var temperature: float = 298.0
 export var circuit_states = {}
+export var night_index = 0
 
 onready var power_timer = Timer.new()
 onready var temperature_timer = Timer.new()
@@ -51,6 +52,8 @@ func reset():
 	passive_power = 0
 	temperature = 298.0
 	passive_temperature = 0
+	circuit_states = {}
+	night_index = 0
 
 func register(animatronic_id: String, difficulty: int):
 	difficulties[animatronic_id] = difficulty
