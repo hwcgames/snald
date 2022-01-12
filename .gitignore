@@ -1,4 +1,5 @@
-*.import
+/.import
+/addons/**/*.import
 /snald_folder.tres
 /maps/autosave
 /build

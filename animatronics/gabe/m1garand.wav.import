@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/m1garand.wav-84f7c569bcc534ccae6f32d892c5e150.sample"
+
+[deps]
+
+source_file="res://animatronics/gabe/m1garand.wav"
+dest_files=[ "res://.import/m1garand.wav-84f7c569bcc534ccae6f32d892c5e150.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
