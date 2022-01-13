@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
+[ext_resource path="res://entities/player/hud_label.gd" type="Script" id=2]
 
 [sub_resource type="CylinderMesh" id=1]
 top_radius = 0.0
@@ -22,5 +23,30 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0
 current = true
 fov = 50.0
 
+[node name="Control" type="Control" parent="Camera"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Camera/Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+text = "Power: Uninitialized
+Temperature: Uninitialized"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="JumpscareRoot" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0.3386 )
+light_energy = 0.1
+spot_range = 15.386
+spot_attenuation = 0.159321
+spot_angle = 20.68

@@ -25,8 +25,9 @@ func assume_state(new_state: int):
 	global_transform.origin = target.global_transform.origin
 	rotation_degrees.y = target.get_angle()
 	animation_player.play(target.get_animation())
-	$"/root/EventMan".circuit_off(id + "." + str(state))
-	$"/root/EventMan".circuit_on(id + "." + str(new_state))
+	if new_state != state:
+		$"/root/EventMan".circuit_off(id + "." + str(state))
+		$"/root/EventMan".circuit_on(id + "." + str(new_state))
 	if room != target.get_room():
 		$"/root/EventMan".circuit_off(id + "." + room)
 		$"/root/EventMan".circuit_on(id + "." + target.get_room())

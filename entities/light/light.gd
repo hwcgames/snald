@@ -34,7 +34,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$OmniLight.light_energy = lerp($OmniLight.light_energy, goal_energy, 0.1)
-	if flickering and on_now:
+	if flickering and on_now and not depleted:
 		var rand = randf()
 		if rand <= flicker_chance:
 			$OmniLight.light_energy = 0
@@ -57,8 +57,10 @@ func circuit_off(name):
 func power_tick():
 	if on_now:
 		$"/root/EventMan".power -= power
-	if $"/root/EventMan".power < 0:
-		depleted = true
+	if $"/root/EventMan".power <= 0:
 		goal_energy = 0
+		depleted = true
+		$OmniLight.light_energy /= 2
+		on_now = false
 	if $"/root/EventMan".power < flicker_below:
 		flickering = true

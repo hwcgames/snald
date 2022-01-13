@@ -54,4 +54,5 @@ func shoot():
 		$GunShotPlayer.play()
 		$"/root/EventMan".jumpscare("gabe", "gabe")
 		$AimingTimer.stop()
+		assume_state(12)
 		pass

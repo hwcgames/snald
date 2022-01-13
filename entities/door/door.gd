@@ -47,7 +47,7 @@ func off(name: String):
 		since_updated = 0
 
 func power_tick():
-	if $"/root/EventMan".power <= 0:
+	if $"/root/EventMan".power <= 0 and not depleted:
 		open = true
 		since_updated = 0
 		depleted = true
