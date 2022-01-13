@@ -5,14 +5,13 @@ var original_difficulty = 0;
 export var flashbang_circuit = "office_vent_flash_momentary"
 
 func _ready():
+	animation_player = get_node("gabe/AnimationPlayer")
 	if night_index == 0:
 		assume_state(0)
 	else:
 		assume_state(16)
-	$"/root/EventMan".connect("animatronic_tick", self, "animatronic_tick")
 	$"/root/EventMan".connect("on", self, "on")
 	$AimingTimer.connect("timeout", self, "shoot")
-	animation_player = get_node("gabe/AnimationPlayer")
 
 func state_machine():
 	match state:
