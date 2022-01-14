@@ -58,17 +58,26 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/ColorRect/ScrollContainer"]
-margin_right = 290.0
-margin_bottom = 20.0
+margin_right = 278.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RandysTheme" type="Button" parent="CenterContainer/VBoxContainer/ColorRect/ScrollContainer/VBoxContainer"]
-margin_right = 290.0
+margin_right = 278.0
 margin_bottom = 20.0
 text = "Cylindrical Test Subject"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GabesTheme" type="Button" parent="CenterContainer/VBoxContainer/ColorRect/ScrollContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 278.0
+margin_bottom = 44.0
+text = "You have been promoted to Deceased"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -95,4 +104,5 @@ margin_bottom = 120.0
 script = SubResource( 1 )
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ColorRect/ScrollContainer/VBoxContainer/RandysTheme" to="AudioStreamPlayer" method="load_file" binds= [ "res://animatronics/randy/Cylindrical_Test_Subject.ogg" ]]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ColorRect/ScrollContainer/VBoxContainer/GabesTheme" to="AudioStreamPlayer" method="load_file" binds= [ "res://jumpscares/gabe/Congratulations_You_have_been_promoted_to_Deceased.wav" ]]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="AudioStreamPlayer" method="play"]
