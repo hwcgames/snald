@@ -1,5 +1,7 @@
 extends Spatial
 
+const LOADING_BAR: PackedScene = preload("res://scenes/loading_bar.tscn")
+
 func _ready():
 	randomize()
 	var map = $"/root/LevelLoader".map
@@ -20,7 +22,11 @@ func _ready():
 	else:
 		print("Tried to load a map that doesn't exist, exiting to menu")
 		get_tree().change_scene("res://scenes/menu.tscn")
+	var loading_bar = LOADING_BAR.instance()
+	add_child(loading_bar)
+	$QodotMap.connect("build_progress", loading_bar, "progress")
 	yield($QodotMap, "build_complete")
+	loading_bar.remove_and_skip()
 	var difficulties = $"/root/EventMan".difficulties
 	for animatronic in difficulties.keys():
 		var scene = "res://animatronics/" + animatronic + "/" + animatronic + ".tscn"
