@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource( 3 )
 export_file = false
-trenchbroom_games_folder = "/home/willow/.TrenchBroom/games"
+trenchbroom_games_folder = "C:/Users/Tanner Carlson-Huber/Documents/benchtroom/games"
 game_name = "SNALD"
 icon = ExtResource( 2 )
 game_config_file = ExtResource( 5 )

@@ -3381,7 +3381,7 @@
 "room_id" "foyer"
 "animatronic_id" "lucas"
 "animation" "foyer_exiting"
-"state_id" "1"
+"state_id" "18"
 "angle" "90"
 }
 // entity 59
@@ -3960,4 +3960,164 @@
 "animation" "flashbanged"
 "state_id" "12"
 "angle" "0"
+}
+// entity 108
+{
+"classname" "AnimatronicPosition"
+"origin" "56 504 8"
+"room_id" "ns_hallway"
+"animatronic_id" "lucas"
+"animation" "lucas_ns_hall"
+"state_id" "1"
+"angle" "90"
+}
+// entity 109
+{
+"classname" "AnimatronicPosition"
+"origin" "344 664 8"
+"room_id" "window_hallway"
+"animatronic_id" "lucas"
+"animation" "windowhall"
+"state_id" "3"
+"angle" "90"
+}
+// entity 110
+{
+"classname" "AnimatronicPosition"
+"origin" "680 552 8"
+"room_id" "observation"
+"animatronic_id" "lucas"
+"animation" "observation_hide"
+"state_id" "4"
+"angle" "90"
+}
+// entity 111
+{
+"classname" "AnimatronicPosition"
+"origin" "888 568 8"
+"room_id" "armory"
+"animatronic_id" "lucas"
+"animation" "armory_peek"
+"state_id" "5"
+"angle" "90"
+}
+// entity 112
+{
+"classname" "AnimatronicPosition"
+"origin" "696 104 8"
+"room_id" "liminal"
+"animatronic_id" "lucas"
+"animation" "liminal_hide"
+"state_id" "6"
+"angle" "90"
+}
+// entity 113
+{
+"classname" "AnimatronicPosition"
+"origin" "296 152 8"
+"room_id" "we_hallway"
+"animatronic_id" "lucas"
+"animation" "wehall"
+"state_id" "7"
+"angle" "90"
+}
+// entity 114
+{
+"classname" "AnimatronicPosition"
+"origin" "328 248 -56"
+"room_id" "mine"
+"animatronic_id" "lucas"
+"animation" "mine"
+"state_id" "8"
+"angle" "90"
+}
+// entity 115
+{
+"classname" "AnimatronicPosition"
+"origin" "-72 968 8"
+"room_id" "outside"
+"animatronic_id" "lucas"
+"animation" "observation_hide"
+"state_id" "9"
+"angle" "90"
+}
+// entity 116
+{
+"classname" "AnimatronicPosition"
+"origin" "-120 -136 8"
+"room_id" "outside"
+"animatronic_id" "lucas"
+"animation" "walking to window"
+"state_id" "10"
+"angle" "90"
+}
+// entity 117
+{
+"classname" "AnimatronicPosition"
+"origin" "40 -168 8"
+"room_id" "outside"
+"animatronic_id" "lucas"
+"animation" "walking from window"
+"state_id" "11"
+"angle" "90"
+}
+// entity 118
+{
+"classname" "AnimatronicPosition"
+"origin" "104 88 8"
+"room_id" "nearby"
+"animatronic_id" "lucas"
+"animation" "nearby_stare"
+"state_id" "13"
+"angle" "90"
+}
+// entity 119
+{
+"classname" "AnimatronicPosition"
+"origin" "-276 632 24"
+"room_id" "vent"
+"animatronic_id" "lucas"
+"animation" "a"
+"state_id" "14"
+"angle" "90"
+}
+// entity 120
+{
+"classname" "AnimatronicPosition"
+"origin" "-118 402 -56"
+"room_id" "vent"
+"animatronic_id" "lucas"
+"animation" "a"
+"state_id" "15"
+"angle" "90"
+}
+// entity 121
+{
+"classname" "AnimatronicPosition"
+"origin" "-160 160 50"
+"room_id" "vent"
+"animatronic_id" "lucas"
+"animation" "a"
+"state_id" "16"
+"angle" "90"
+}
+// entity 122
+{
+"classname" "AnimatronicPosition"
+"origin" "-112 12 24"
+"room_id" "vent"
+"animatronic_id" "lucas"
+"animation" "a"
+"state_id" "17"
+"angle" "90"
+}
+// entity 123
+{
+"classname" "AnimatronicPosition"
+"origin" "40 -168 8"
+"room_id" "outside"
+"animatronic_id" "lucas"
+"animation" "walking from window"
+"state_id" "12"
+"angle" "90"
 }
