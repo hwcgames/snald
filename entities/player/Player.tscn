@@ -23,14 +23,7 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0
 current = true
 fov = 50.0
 
-[node name="Control" type="Control" parent="Camera"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Camera/Control"]
+[node name="Label" type="Label" parent="Camera"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 grow_vertical = 0
