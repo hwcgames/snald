@@ -5,6 +5,7 @@ var original_difficulty = 0;
 export var flashbang_circuit = "office_vent_flash_momentary"
 
 func _ready():
+	
 	animation_player = get_node("gabe/AnimationPlayer")
 	if night_index == 0:
 		assume_state(0)
@@ -14,6 +15,8 @@ func _ready():
 	$AimingTimer.connect("timeout", self, "shoot")
 
 func state_machine():
+	if "lucas.vent" in $"/root/EventMan".circuit_states and $"/root/EventMan".circuit_states["lucas.vent"]:
+		return state
 	match state:
 		0:
 			$GlassBreakingPlayer.play()

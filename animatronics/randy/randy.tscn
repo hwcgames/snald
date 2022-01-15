@@ -98,3 +98,6 @@ anims/idle = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 mesh = SubResource( 3 )
 material/0 = null
+
+[node name="MovementTimer" parent="." index="2"]
+wait_time = 1.0

@@ -7,20 +7,24 @@ export var state = 0
 export var room = ""
 export var difficulty = 10
 onready var animation_player: AnimationPlayer = $AnimationPlayer
+var last_state = 0
 
 func state_machine():
 	return 0
 
 func animatronic_tick():
+	$MovementTimer.start()
 	var random = floor(rand_range(1,21))
 	if difficulty >= random:
 		assume_state(state_machine())
 
 func _ready():
 	assume_state(0)
-	$"/root/EventMan".connect("animatronic_tick", self, "animatronic_tick")
+	$MovementTimer.connect("timeout", self, "animatronic_tick")
+	$MovementTimer.start()
 
 func assume_state(new_state: int):
+	last_state = state
 	var target = get_node_for_state(new_state)
 	global_transform.origin = target.global_transform.origin
 	rotation_degrees.y = target.get_angle()
