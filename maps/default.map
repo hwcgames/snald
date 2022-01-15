@@ -3357,12 +3357,12 @@
 // entity 56
 {
 "classname" "AnimatronicPosition"
-"origin" "-90 12 17"
+"origin" "-90 12 24"
 "room_id" "office"
 "animatronic_id" "gabe"
 "animation" "preparingshot"
 "state_id" "11"
-"angle" "-30"
+"angle" "0"
 }
 // entity 57
 {
@@ -3954,7 +3954,7 @@
 // entity 107
 {
 "classname" "AnimatronicPosition"
-"origin" "-90 12 17"
+"origin" "-90 12 24"
 "room_id" "office"
 "animatronic_id" "gabe"
 "animation" "flashbanged"
@@ -4057,7 +4057,7 @@
 "origin" "40 -168 8"
 "room_id" "outside"
 "animatronic_id" "lucas"
-"animation" "walking from window"
+"animation" "window_stare"
 "state_id" "11"
 "angle" "90"
 }
