@@ -4,3 +4,4 @@
 
 [node name="NightConfig" type="Node"]
 script = ExtResource( 1 )
+night_index = 3

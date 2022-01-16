@@ -85,9 +85,11 @@ func state_machine():
 			return 12
 		12:
 			# return 12
+			hunt_target = null
+			hunt_accumulation = 0.0
 			return 0
 		13:
-			if $"/root/EventMan".circuit_states[office_door_circuit]:
+			if office_door_circuit in $"/root/EventMan".circuit_states and not $"/root/EventMan".circuit_states[office_door_circuit]:
 				return 0
 			else:
 				$"/root/EventMan".jumpscare("lucas", "door")
@@ -113,12 +115,15 @@ func check_hunting():
 	if hunt_target == null:
 		if randf() < hunt_accumulation:
 			var hunt_target_number = randf()
+			var accumulator = 0
 			for key in HUNT_TARGETS.keys():
 				if key == "vent" and "gabe.vent" in $"/root/EventMan".circuit_states and $"/root/EventMan".circuit_states["gabe.vent"]:
 					continue
-				if hunt_target_number < HUNT_TARGETS[key]:
+				if hunt_target_number < HUNT_TARGETS[key]+accumulator:
 					hunt_target = key
 					break
+				else:
+					accumulator += HUNT_TARGETS[key]
 		else:
 			hunt_accumulation += 0.02 * difficulty
 
