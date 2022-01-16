@@ -27,6 +27,8 @@ func state_machine():
 				return 3
 			else:
 				return 7
+		6:
+			return 10
 		10:
 			$GunFumblePlayer.play()
 			$AimingTimer.wait_time = 50 / difficulty
@@ -46,6 +48,7 @@ func state_machine():
 		16:
 			return 2
 	return state + 1
+	# ISSUE HERE
 
 func on(circuit: String):
 	if circuit == flashbang_circuit and state == 11:

@@ -125,7 +125,7 @@ func check_hunting():
 				else:
 					accumulator += HUNT_TARGETS[key]
 		else:
-			hunt_accumulation += 0.02 * difficulty
+			hunt_accumulation += 0.01 * difficulty
 
 func roll_wander():
 	var possibilities = ROOM_CANDIDATES[state]
