@@ -89,7 +89,7 @@ func state_machine():
 			hunt_accumulation = 0.0
 			return 0
 		13:
-			if office_door_circuit in $"/root/EventMan".circuit_states and not $"/root/EventMan".circuit_states[office_door_circuit]:
+			if (office_door_circuit in $"/root/EventMan".circuit_states) and ($"/root/EventMan".circuit_states[office_door_circuit]):
 				$"/root/EventMan".jumpscare("lucas", "door")
 				return 0
 			else:
