@@ -9,6 +9,7 @@ format = 1
 
 [sub_resource type="CapsuleMesh" id=2]
 radius = 0.424
+mid_height = 3.0
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.101961, 0.180392, 0.698039, 1 )
@@ -20,9 +21,9 @@ script = ExtResource( 2 )
 stream = SubResource( 1 )
 
 [node name="MovementTimer" parent="." index="2"]
-wait_time = 15.0
+wait_time = 12.0
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.01196, 0 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )

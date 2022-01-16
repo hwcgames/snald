@@ -9,13 +9,16 @@ export var difficulty = 10
 onready var animation_player: AnimationPlayer = $AnimationPlayer
 var last_state = 0
 
+func difficulty_offset():
+	return 0
+
 func state_machine():
 	return 0
 
 func animatronic_tick():
 	$MovementTimer.start()
 	var random = floor(rand_range(1,21))
-	if difficulty >= random:
+	if difficulty + difficulty_offset() >= random:
 		assume_state(state_machine())
 
 func _ready():

@@ -3,6 +3,7 @@ extends AnimatronicBase
 export var window_circuit = "window_toggle"
 export var office_door_circuit = "office_door_toggle"
 export var office_vent_flash = "office_vent_flash_momentary"
+export var camera_entrance = "camera.foyer"
 
 var hunt_accumulation = 0.0
 var hunt_target = null
@@ -69,20 +70,22 @@ var HUNT_PATHS = {
 }
 
 func state_machine():
+	if hunt_target == "window" and night == 0 and not have_hunted and state in [1,2,3]:
+		have_hunted = true
+		$"/root/EventMan".connect("off", self, "wait_for_camera_entrance")
+		return 18
 	match state:
-		1:
-			if hunt_target == "window" and night == 0 and not have_hunted:
-				have_hunted = true
-				return 18
 		10:
-			animation_player.connect("animation_finished", self, "walked_up_to_window")
-			return 10
+			# animation_player.connect("animation_finished", self, "walked_up_to_window")
+			# return 10
+			return 11
 		11:
 			$"/root/EventMan".disconnect("off", self, "attack_if_window_opens_circuit_handler")
-			return 12
-		12:
 			animation_player.connect("animation_finished", self, "walked_away_from_window")
 			return 12
+		12:
+			# return 12
+			return 0
 		13:
 			if $"/root/EventMan".circuit_states[office_door_circuit]:
 				return 0
@@ -98,6 +101,8 @@ func state_machine():
 			hunt_target = null
 			hunt_accumulation = 0.0
 			return 0
+		18:
+			return 18
 	check_hunting()
 	if hunt_target == null:
 		return roll_wander()
@@ -115,11 +120,11 @@ func check_hunting():
 					hunt_target = key
 					break
 		else:
-			hunt_accumulation += 0.0075 * difficulty
+			hunt_accumulation += 0.02 * difficulty
 
 func roll_wander():
 	var possibilities = ROOM_CANDIDATES[state]
-	var index = rand_range(0, len(possibilities))
+	var index = floor(rand_range(0, len(possibilities)))
 	return possibilities[index]
 
 func hunt_path():
@@ -143,3 +148,11 @@ func walked_away_from_window():
 func vent_flashbang(circuit: String):
 	if circuit == office_vent_flash:
 		$"/root/EventMan".jumpscare("lucas", "vent")
+
+func wait_for_camera_entrance(circuit: String):
+	if circuit == camera_entrance:
+		$"/root/EventMan".disconnect("off", self, "wait_for_camera_entrance")
+		assume_state(9)
+
+func difficulty_offset():
+	return 10

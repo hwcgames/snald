@@ -37,10 +37,9 @@ text = "Load Default Level"
 [node name="NightConfig" parent="CenterContainer/VBoxContainer/Button" instance=ExtResource( 1 )]
 difficulties = {
 "gabe": 7,
-"jojo": 20,
-"lucas": 3,
-"randy": 20
+"lucas": 5
 }
+night_index = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 42.0
