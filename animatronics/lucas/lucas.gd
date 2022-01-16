@@ -88,9 +88,9 @@ func state_machine():
 			return 0
 		13:
 			if $"/root/EventMan".circuit_states[office_door_circuit]:
+				$"/root/EventMan".jumpscare("lucas", "door")
 				return 0
 			else:
-				$"/root/EventMan".jumpscare("lucas", "door")
 				return 0
 		16:
 			$AudioStreamPlayer3D.play()
@@ -119,6 +119,7 @@ func check_hunting():
 				if hunt_target_number < HUNT_TARGETS[key]:
 					hunt_target = key
 					break
+			print("Lucas begins hunting for ", hunt_target)
 		else:
 			hunt_accumulation += 0.02 * difficulty
 
