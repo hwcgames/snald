@@ -3284,9 +3284,9 @@
 // entity 46
 {
 "classname" "AnimatronicPosition"
-"origin" "942 640 8"
+"origin" "974 624 8"
 "room_id" "armory"
-"angle" "180"
+"angle" "0"
 "animatronic_id" "gabe"
 "animation" "armory_inspect"
 "state_id" "0"
@@ -3304,22 +3304,22 @@
 // entity 48
 {
 "classname" "AnimatronicPosition"
-"origin" "679 313 8"
+"origin" "615 265 8"
 "room_id" "liminal"
-"angle" "315"
 "animatronic_id" "gabe"
-"animation" "liminal_idle"
+"animation" "walking"
 "state_id" "3"
+"angle" "235"
 }
 // entity 49
 {
 "classname" "AnimatronicPosition"
 "origin" "354 366 -56"
 "room_id" "mine"
-"angle" "315"
 "animatronic_id" "gabe"
-"animation" "mine_crawl"
+"animation" "walking"
 "state_id" "5"
+"angle" "160"
 }
 // entity 50
 {
@@ -3338,7 +3338,7 @@
 "room_id" "vent"
 "angle" "315"
 "animatronic_id" "gabe"
-"animation" "none"
+"animation" "preparingshot"
 "state_id" "6"
 }
 // entity 52
@@ -3346,17 +3346,17 @@
 "classname" "AnimatronicPosition"
 "origin" "404 722 8"
 "room_id" "hallway_windows"
-"angle" "315"
+"angle" "180"
 "animatronic_id" "gabe"
-"animation" "windowhall_idle"
+"animation" "walking"
 "state_id" "7"
 }
 // entity 53
 {
 "classname" "AnimatronicPosition"
-"origin" "-34 798 8"
+"origin" "-50 798 8"
 "room_id" "foyer"
-"angle" "315"
+"angle" "180"
 "animatronic_id" "gabe"
 "animation" "foyer_crawl"
 "state_id" "8"
@@ -3378,13 +3378,13 @@
 "room_id" "vent"
 "angle" "315"
 "animatronic_id" "gabe"
-"animation" "none"
+"animation" "preparingshot"
 "state_id" "10"
 }
 // entity 56
 {
 "classname" "AnimatronicPosition"
-"origin" "-90 12 24"
+"origin" "-170 12 24"
 "room_id" "office"
 "animatronic_id" "gabe"
 "animation" "preparingshot"
@@ -3923,7 +3923,7 @@
 "classname" "AnimatronicPosition"
 "origin" "587 586 8"
 "room_id" "observation"
-"angle" "315"
+"angle" "248"
 "animatronic_id" "gabe"
 "animation" "observation_point"
 "state_id" "2"
@@ -3933,7 +3933,7 @@
 "classname" "AnimatronicPosition"
 "origin" "447 161 8"
 "room_id" "we_hallway"
-"angle" "315"
+"angle" "90"
 "animatronic_id" "gabe"
 "animation" "we_hall_sneak"
 "state_id" "4"
@@ -3944,7 +3944,7 @@
 "origin" "126 708 8"
 "room_id" "foyer"
 "animatronic_id" "gabe"
-"animation" "foyer_run"
+"animation" "run"
 "state_id" "13"
 "angle" "0"
 }
@@ -3954,7 +3954,7 @@
 "origin" "404 722 8"
 "room_id" "window_hallway"
 "animatronic_id" "gabe"
-"animation" "window_hall_run"
+"animation" "run"
 "state_id" "14"
 "angle" "0"
 }
@@ -3964,7 +3964,7 @@
 "origin" "598 694 8"
 "room_id" "observation"
 "animatronic_id" "gabe"
-"animation" "observation_run"
+"animation" "run"
 "state_id" "15"
 "angle" "0"
 }
@@ -3973,7 +3973,7 @@
 "classname" "AnimatronicPosition"
 "origin" "977 737 8"
 "room_id" "armory"
-"angle" "180"
+"angle" "0"
 "animatronic_id" "gabe"
 "animation" "armory_reload"
 "state_id" "16"
@@ -3981,7 +3981,7 @@
 // entity 107
 {
 "classname" "AnimatronicPosition"
-"origin" "-90 12 24"
+"origin" "-138 12 24"
 "room_id" "office"
 "animatronic_id" "gabe"
 "animation" "flashbanged"
@@ -4131,7 +4131,7 @@
 // entity 122
 {
 "classname" "AnimatronicPosition"
-"origin" "-112 12 24"
+"origin" "-176 12 24"
 "room_id" "vent"
 "animatronic_id" "lucas"
 "animation" "a"
