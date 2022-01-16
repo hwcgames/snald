@@ -7,7 +7,7 @@ export var office_vent_flash = "office_vent_flash_momentary"
 var hunt_accumulation = 0.0
 var hunt_target = null
 var have_hunted = false
-var night = $"/root/EventMan".night_index
+onready var night = $"/root/EventMan".night_index
 
 onready var HUNT_TARGETS = [
 	{"window": 1},
