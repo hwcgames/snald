@@ -40,6 +40,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
 [node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0.3386 )
 light_energy = 0.1
-spot_range = 15.386
-spot_attenuation = 0.159321
+spot_range = 2.915
+spot_attenuation = 0.0625005
 spot_angle = 20.68
+spot_angle_attenuation = 0.153893

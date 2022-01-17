@@ -223,11 +223,11 @@
 }
 // brush 24
 {
-( -128 56 64 ) ( -128 40 64 ) ( -128 40 0 ) __TB_empty 0 0 0 1 1
-( -128 40 64 ) ( -80 40 64 ) ( -80 40 0 ) __TB_empty 0 0 0 1 1
-( -80 40 0 ) ( -80 56 0 ) ( -128 56 0 ) __TB_empty 0 0 0 1 1
-( -128 56 64 ) ( -80 56 64 ) ( -80 40 64 ) __TB_empty 0 0 0 1 1
-( -80 56 0 ) ( -80 56 64 ) ( -128 56 64 ) __TB_empty 0 0 0 1 1
+( -192 56 64 ) ( -192 40 64 ) ( -192 40 0 ) __TB_empty 0 0 0 1 1
+( -192 40 64 ) ( -80 40 64 ) ( -80 40 0 ) __TB_empty 0 0 0 1 1
+( -80 40 0 ) ( -80 56 0 ) ( -192 56 0 ) __TB_empty 0 0 0 1 1
+( -192 56 64 ) ( -80 56 64 ) ( -80 40 64 ) __TB_empty 0 0 0 1 1
+( -80 56 0 ) ( -80 56 64 ) ( -192 56 64 ) __TB_empty 0 0 0 1 1
 ( -80 40 64 ) ( -80 56 64 ) ( -80 56 0 ) __TB_empty 0 0 0 1 1
 }
 // brush 25
@@ -3294,9 +3294,9 @@
 // entity 47
 {
 "classname" "AnimatronicPosition"
-"origin" "602 740 8"
+"origin" "602 740 -8"
 "room_id" "observation"
-"angle" "315"
+"angle" "0"
 "animatronic_id" "gabe"
 "animation" "observation_chair"
 "state_id" "2"
@@ -3354,7 +3354,7 @@
 // entity 53
 {
 "classname" "AnimatronicPosition"
-"origin" "-50 798 8"
+"origin" "-30 798 8"
 "room_id" "foyer"
 "angle" "180"
 "animatronic_id" "gabe"
@@ -3971,7 +3971,7 @@
 // entity 106
 {
 "classname" "AnimatronicPosition"
-"origin" "977 737 8"
+"origin" "969 737 4"
 "room_id" "armory"
 "angle" "0"
 "animatronic_id" "gabe"
@@ -3981,7 +3981,7 @@
 // entity 107
 {
 "classname" "AnimatronicPosition"
-"origin" "-138 12 24"
+"origin" "-98 12 16"
 "room_id" "office"
 "animatronic_id" "gabe"
 "animation" "flashbanged"
