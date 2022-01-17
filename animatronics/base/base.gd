@@ -16,10 +16,10 @@ func state_machine():
 	return 0
 
 func animatronic_tick():
-	$MovementTimer.start()
 	var random = floor(rand_range(1,21))
 	if difficulty + difficulty_offset() >= random:
 		assume_state(state_machine())
+	$MovementTimer.start()
 
 func _ready():
 	assume_state(0)
