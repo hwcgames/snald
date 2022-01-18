@@ -75,6 +75,9 @@ func state_machine():
 		$"/root/EventMan".connect("off", self, "wait_for_camera_entrance")
 		return 18
 	match state:
+		9:
+			play_approach_sound()
+			return 10
 		10:
 			# animation_player.connect("animation_finished", self, "walked_up_to_window")
 			# return 10
@@ -82,6 +85,7 @@ func state_machine():
 		11:
 			$"/root/EventMan".disconnect("off", self, "attack_if_window_opens_circuit_handler")
 			animation_player.connect("animation_finished", self, "walked_away_from_window")
+			play_depart_sound()
 			return 12
 		12:
 			# return 12
@@ -97,7 +101,7 @@ func state_machine():
 				hunt_accumulation = 0
 				return 0
 		16:
-			$AudioStreamPlayer3D.play()
+			$fakereload.play()
 			$"/root/EventMan".connect("on", self, "vent_flashbang")
 			return 17
 		17:
@@ -129,7 +133,17 @@ func check_hunting():
 			print("Lucas begins hunting for ", hunt_target)
 		else:
 			hunt_accumulation += 0.01 * difficulty
-
+func play_approach_sound():
+	if 0 == floor(rand_range(0,1)):
+		$approach1.play()
+	else:
+		$approach2.play()
+func play_depart_sound():
+	if 0 == floor(rand_range(0,1)):
+		$depart1.play()
+	else:
+		$depart2.play()
+		
 func roll_wander():
 	var possibilities = ROOM_CANDIDATES[state]
 	var index = floor(rand_range(0, len(possibilities)))
@@ -143,12 +157,14 @@ func attack_if_window_opens_circuit_handler(circuit: String):
 		$"/root/EventMan".jumpscare("lucas", "window")
 
 func walked_up_to_window():
-	animation_player.disconnect("animation_finished", self, "walked_up_to_window")
+	#animation_player.disconnect("animation_finished", self, "walked_up_to_window")
+	play_approach_sound()
 	$"/root/EventMan".connect("off", self, "attack_if_window_opens_circuit_handler")
 	assume_state(11)
 
 func walked_away_from_window():
-	animation_player.disconnect("animation_finished", self, "walked_away_from_window")
+	#animation_player.disconnect("animation_finished", self, "walked_away_from_window")
+	play_depart_sound()
 	hunt_target = null
 	hunt_accumulation = 0.0
 	assume_state(0)

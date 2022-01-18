@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/approach2.wav-4724b8a21389792e316a6bb03e56aa99.sample"
+
+[deps]
+
+source_file="res://animatronics/lucas/approach2.wav"
+dest_files=[ "res://.import/approach2.wav-4724b8a21389792e316a6bb03e56aa99.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

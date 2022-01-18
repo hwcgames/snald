@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/depart1.wav-e9ad5251f36b1913d231a4d05a6ae628.sample"
+
+[deps]
+
+source_file="res://animatronics/lucas/depart1.wav"
+dest_files=[ "res://.import/depart1.wav-e9ad5251f36b1913d231a4d05a6ae628.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
