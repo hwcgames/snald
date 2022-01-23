@@ -1,6 +1,6 @@
 extends Node
 
-const GAMEPLAY = preload("res://scenes/gameplay.tscn")
+const GAMEPLAY = preload("res://scenes/gameplay/gameplay.tscn")
 
 var map = null
 

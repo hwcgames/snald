@@ -100,4 +100,4 @@ func jumpscare(character, scene_name):
 
 func return_to_title():
 	reset()
-	get_tree().change_scene("res://scenes/menu.tscn")
+	get_tree().change_scene("res://scenes/menu/menu.tscn")

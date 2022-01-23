@@ -21,7 +21,7 @@ func _ready():
 		$QodotMap.verify_and_build()
 	else:
 		print("Tried to load a map that doesn't exist, exiting to menu")
-		get_tree().change_scene("res://scenes/menu.tscn")
+		get_tree().change_scene("res://scenes/menu/menu.tscn")
 	var loading_bar = LOADING_BAR.instance()
 	add_child(loading_bar)
 	$QodotMap.connect("build_progress", loading_bar, "progress")
@@ -29,6 +29,8 @@ func _ready():
 	loading_bar.remove_and_skip()
 	var difficulties = $"/root/EventMan".difficulties
 	for animatronic in difficulties.keys():
+		if difficulties[animatronic] == 0:
+			continue
 		var scene = "res://animatronics/" + animatronic + "/" + animatronic + ".tscn"
 		if File.new().file_exists(scene):
 			var instance = load(scene).instance()

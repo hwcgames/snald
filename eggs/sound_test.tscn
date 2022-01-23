@@ -4,7 +4,7 @@
 script/source = "extends Button
 
 func _pressed():
-	get_tree().change_scene(\"res://scenes/menu.tscn\")
+	get_tree().change_scene(\"res://scenes/menu/menu.tscn\")
 "
 
 [sub_resource type="GDScript" id=1]

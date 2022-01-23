@@ -18,3 +18,6 @@ func run():
 
 func set_map(map):
 	map_path = map
+
+func set_difficulty(character: String, difficulty: int):
+	difficulties[character] = difficulty

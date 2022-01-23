@@ -213,7 +213,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Several Nights at Lucas's Domicile"
-run/main_scene="res://scenes/menu.tscn"
+run/main_scene="res://scenes/menu/menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

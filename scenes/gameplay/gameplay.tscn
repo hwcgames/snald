@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://fgd.tres" type="Resource" id=1]
-[ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=2]
-[ext_resource path="res://scenes/gameplay.gd" type="Script" id=3]
+[ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=1]
+[ext_resource path="res://fgd.tres" type="Resource" id=2]
+[ext_resource path="res://scenes/gameplay/gameplay.gd" type="Script" id=3]
 [ext_resource path="res://textures/ps1-post.tres" type="Material" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
@@ -28,10 +28,10 @@ size = Vector2( 2, 2 )
 script = ExtResource( 3 )
 
 [node name="QodotMap" type="Spatial" parent="."]
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 map_file = ""
 inverse_scale_factor = 16.0
-entity_fgd = ExtResource( 1 )
+entity_fgd = ExtResource( 2 )
 base_texture_dir = "res://textures"
 texture_file_extensions = PoolStringArray( "png" )
 worldspawn_layers = [  ]
