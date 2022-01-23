@@ -24,6 +24,7 @@ export var passive_temperature: float = 0.0
 export var temperature: float = 298.0
 export var circuit_states = {}
 export var night_index = 0
+export var completion_flag = "n1"
 
 onready var power_timer = Timer.new()
 onready var temperature_timer = Timer.new()

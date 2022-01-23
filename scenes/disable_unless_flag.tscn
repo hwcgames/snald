@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/disable_unless_flag.gd" type="Script" id=1]
+
+[node name="DisableUnlessFlag" type="Node"]
+script = ExtResource( 1 )

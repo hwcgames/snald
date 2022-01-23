@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://eggs/chicken.gd" type="Script" id=1]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/disable_unless_flag.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/menu/scene_button.tscn" type="PackedScene" id=4]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -10,64 +12,136 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_right = 1.0
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_right = 0.5
 anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -32.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 402.0
-margin_top = 267.0
-margin_right = 621.0
-margin_bottom = 333.0
-
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 219.0
-margin_bottom = 14.0
-text = "Several Nights at Lucas's Domicile"
-
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 219.0
-margin_bottom = 38.0
-text = "Load Default Level"
-
-[node name="NightConfig" parent="CenterContainer/VBoxContainer/Button" instance=ExtResource( 2 )]
-difficulties = {
-"gabe": 10,
-"jojo": 10,
-"lucas": 15
-}
-night_index = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 42.0
-margin_right = 219.0
-margin_bottom = 66.0
+[node name="Choose a Night" type="VBoxContainer" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 alignment = 1
 
-[node name="TextEdit" type="LineEdit" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 22.0
-margin_right = 150.0
+[node name="Night 1" type="Button" parent="TabContainer/Choose a Night"]
+margin_left = 191.0
+margin_top = 180.0
+margin_right = 249.0
+margin_bottom = 200.0
+size_flags_horizontal = 4
+text = "Night 1"
+
+[node name="NightConfig" parent="TabContainer/Choose a Night/Night 1" instance=ExtResource( 2 )]
+
+[node name="Night 2" type="Button" parent="TabContainer/Choose a Night"]
+margin_left = 191.0
+margin_top = 204.0
+margin_right = 249.0
+margin_bottom = 224.0
+size_flags_horizontal = 4
+text = "Night 2"
+
+[node name="DisableUnlessFlag" parent="TabContainer/Choose a Night/Night 2" instance=ExtResource( 3 )]
+flag_to_check = "n1"
+
+[node name="NightConfig" parent="TabContainer/Choose a Night/Night 2" instance=ExtResource( 2 )]
+
+[node name="Night 3" type="Button" parent="TabContainer/Choose a Night"]
+margin_left = 191.0
+margin_top = 228.0
+margin_right = 249.0
+margin_bottom = 248.0
+size_flags_horizontal = 4
+text = "Night 3"
+
+[node name="DisableUnlessFlag" parent="TabContainer/Choose a Night/Night 3" instance=ExtResource( 3 )]
+flag_to_check = "n2"
+
+[node name="NightConfig" parent="TabContainer/Choose a Night/Night 3" instance=ExtResource( 2 )]
+
+[node name="Night 4" type="Button" parent="TabContainer/Choose a Night"]
+margin_left = 191.0
+margin_top = 252.0
+margin_right = 249.0
+margin_bottom = 272.0
+size_flags_horizontal = 4
+text = "Night 4"
+
+[node name="DisableUnlessFlag" parent="TabContainer/Choose a Night/Night 4" instance=ExtResource( 3 )]
+flag_to_check = "n3"
+
+[node name="NightConfig" parent="TabContainer/Choose a Night/Night 4" instance=ExtResource( 2 )]
+
+[node name="Night 5" type="Button" parent="TabContainer/Choose a Night"]
+margin_left = 191.0
+margin_top = 276.0
+margin_right = 249.0
+margin_bottom = 296.0
+size_flags_horizontal = 4
+text = "Night 5"
+
+[node name="DisableUnlessFlag" parent="TabContainer/Choose a Night/Night 5" instance=ExtResource( 3 )]
+flag_to_check = "n4"
+
+[node name="NightConfig" parent="TabContainer/Choose a Night/Night 5" instance=ExtResource( 2 )]
+
+[node name="CustomNight" parent="TabContainer/Choose a Night" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 192.0
+margin_top = 300.0
+margin_right = 248.0
+margin_bottom = 320.0
+size_flags_horizontal = 4
+text = "Night ?"
+target = "res://scenes/menu/custom_night.tscn"
+
+[node name="Settings" type="VBoxContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Settings"]
+margin_right = 179.0
+margin_bottom = 14.0
+text = "There are no settings, sorry.
+Here's a text field to play with instead..."
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Settings"]
+margin_top = 242.0
+margin_right = 440.0
+margin_bottom = 266.0
+alignment = 1
+
+[node name="TextEdit" type="LineEdit" parent="TabContainer/Settings/HBoxContainer"]
+margin_left = 133.0
+margin_right = 261.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 128, 0 )
 align = 1
-placeholder_text = "Level Path"
+placeholder_text = "How fun!"
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 154.0
-margin_right = 196.0
-margin_bottom = 24.0
-text = "Load"
-
-[node name="NightConfig" parent="CenterContainer/VBoxContainer/HBoxContainer/Button" instance=ExtResource( 2 )]
-
-[node name="EasterEggChicken" type="Node" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="EasterEggChicken" type="Node" parent="TabContainer/Settings/HBoxContainer"]
 script = ExtResource( 1 )
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="CenterContainer/VBoxContainer/Button/NightConfig" method="run"]
-[connection signal="text_changed" from="CenterContainer/VBoxContainer/HBoxContainer/TextEdit" to="CenterContainer/VBoxContainer/HBoxContainer/Button/NightConfig" method="set_map"]
-[connection signal="text_changed" from="CenterContainer/VBoxContainer/HBoxContainer/TextEdit" to="CenterContainer/VBoxContainer/HBoxContainer/EasterEggChicken" method="new_text"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button" to="CenterContainer/VBoxContainer/HBoxContainer/Button/NightConfig" method="run"]
+[connection signal="pressed" from="TabContainer/Choose a Night/Night 1" to="TabContainer/Choose a Night/Night 1/NightConfig" method="run"]
+[connection signal="pressed" from="TabContainer/Choose a Night/Night 2" to="TabContainer/Choose a Night/Night 2/NightConfig" method="run"]
+[connection signal="pressed" from="TabContainer/Choose a Night/Night 3" to="TabContainer/Choose a Night/Night 3/NightConfig" method="run"]
+[connection signal="pressed" from="TabContainer/Choose a Night/Night 4" to="TabContainer/Choose a Night/Night 4/NightConfig" method="run"]
+[connection signal="pressed" from="TabContainer/Choose a Night/Night 5" to="TabContainer/Choose a Night/Night 5/NightConfig" method="run"]
+[connection signal="text_changed" from="TabContainer/Settings/HBoxContainer/TextEdit" to="TabContainer/Settings/HBoxContainer/EasterEggChicken" method="new_text"]

@@ -221,6 +221,7 @@ config/icon="res://icon.png"
 LevelLoader="*res://scripts/level_loader.gd"
 EventMan="*res://scripts/event_man.gd"
 SpeedrunTimer="*res://eggs/speedrun_timer.gd"
+PersistMan="*res://scripts/persist_man.gd"
 
 [editor_plugins]
 

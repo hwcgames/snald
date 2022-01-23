@@ -8,10 +8,10 @@ script/source = "extends Button
 # var a = 2
 # var b = \"text\"
 
-export var target: PackedScene
+export var target: String
 
 func _pressed():
-	get_tree().change_scene_to(target)
+	get_tree().change_scene(target)
 "
 
 [node name="Control" type="Button"]
