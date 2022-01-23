@@ -15,12 +15,17 @@ func _ready():
 func state_machine():
 	if state in [0,1,2]:
 		$MovementTimer.wait_time = rand_range(30 - difficulty, 70 - difficulty)
+		$Particles.emitting = 1 
+		$Particles.amount = state * 8
 		return state + 1 
 	if state in [4,5,6,7,8,9]:
+		$Particles.emitting = 0
+		$Particles.amount = 0
 		return state + 1
 	match state:
 		3:
 			$MovementTimer.wait_time = 1
+			$Particles.amount = state * 8
 			return 4
 		10:
 			if (office_door_circuit in $"/root/EventMan".circuit_states) and ($"/root/EventMan".circuit_states[office_door_circuit]):

@@ -4370,7 +4370,7 @@
 "animatronic_id" "jojo"
 "animation" "sleep"
 "state_id" "0"
-"angle" "90"
+"angle" "0"
 }
 // entity 123
 {
@@ -4380,7 +4380,7 @@
 "animatronic_id" "jojo"
 "animation" "sleep"
 "state_id" "1"
-"angle" "90"
+"angle" "0"
 }
 // entity 124
 {
@@ -4390,7 +4390,7 @@
 "animatronic_id" "jojo"
 "animation" "sleep"
 "state_id" "2"
-"angle" "90"
+"angle" "0"
 }
 // entity 125
 {
@@ -4400,7 +4400,7 @@
 "animatronic_id" "jojo"
 "animation" "sleep"
 "state_id" "3"
-"angle" "90"
+"angle" "0"
 }
 // entity 126
 {
@@ -4471,4 +4471,43 @@
 "animation" "run"
 "state_id" "10"
 "angle" "270"
+}
+// entity 133
+{
+"classname" "particle"
+"origin" "40 -168 88"
+"always_on" "1"
+"material" "res://particles/snow/snow.tres"
+"drawpass" "res://particles/snow/snowball.tres"
+"amount" "60"
+"explosiveness" ".2"
+"lifetime" "2.5"
+"one_shot" "0"
+"randomness" ".55"
+}
+// entity 134
+{
+"classname" "particle"
+"origin" "584 808 88"
+"always_on" "1"
+"material" "res://particles/snow/snow.tres"
+"drawpass" "res://particles/snow/snowball.tres"
+"amount" "60"
+"explosiveness" ".2"
+"lifetime" "2.5"
+"one_shot" "0"
+"randomness" ".55"
+}
+// entity 135
+{
+"classname" "particle"
+"origin" "696 808 88"
+"always_on" "1"
+"material" "res://particles/snow/snow.tres"
+"drawpass" "res://particles/snow/snowball.tres"
+"amount" "60"
+"explosiveness" ".2"
+"lifetime" "2.5"
+"one_shot" "0"
+"randomness" ".55"
 }

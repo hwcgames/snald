@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://particles/snow/snow.tres" type="Material" id=1]
+[ext_resource path="res://particles/snow/snowball.tres" type="SphereMesh" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Particles" type="Particles" parent="."]
+amount = 120
+lifetime = 2.41
+explosiveness = 0.2
+randomness = 0.55
+process_material = ExtResource( 1 )
+draw_pass_1 = ExtResource( 2 )
