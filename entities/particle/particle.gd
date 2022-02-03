@@ -26,9 +26,11 @@ func _ready():
 	$emitter.one_shot = properties["one_shot"] if "one_shot" in properties else 0
 	$emitter.explosiveness = properties["explosiveness"] if "explosiveness" in properties else 0
 	$emitter.draw_pass_1 = load (properties["drawpass"])
-	
 
+func circuit_on(name):
+	if circuit != "" and name == circuit:
+		$emitter.emitting = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func circuit_off(name):
+	if circuit != "" and name == circuit:
+		$emitter.emitting = true
