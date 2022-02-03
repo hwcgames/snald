@@ -30,7 +30,7 @@ func _process(delta):
 	if mouse_x > 0.9 and not left_bounded:
 		movement -= 1
 	# Move
-	rotation_degrees.y += movement * delta * (properties["speed"] if "speed" in properties else 30)
+	rotation_degrees.y += movement * delta * (float(properties["speed"]) if "speed" in properties else 30)
 	# Debug move
 	if Input.is_key_pressed(KEY_PAGEDOWN):
 		DEBUG = true

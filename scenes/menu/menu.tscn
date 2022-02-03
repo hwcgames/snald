@@ -41,6 +41,9 @@ size_flags_horizontal = 4
 text = "Night 1"
 
 [node name="NightConfig" parent="TabContainer/Choose a Night/Night 1" instance=ExtResource( 2 )]
+difficulties = {
+"redman": 10
+}
 
 [node name="Night 2" type="Button" parent="TabContainer/Choose a Night"]
 margin_left = 191.0

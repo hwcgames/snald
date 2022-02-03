@@ -37,16 +37,16 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
-margin_top = 160.0
+margin_top = 146.0
 margin_right = 448.0
-margin_bottom = 174.0
+margin_bottom = 160.0
 text = "-- LEVEL --"
 align = 1
 
 [node name="EffectiveNight" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_top = 178.0
+margin_top = 164.0
 margin_right = 448.0
-margin_bottom = 202.0
+margin_bottom = 188.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/EffectiveNight"]
@@ -69,9 +69,9 @@ align = 1
 prefix = "Night"
 
 [node name="map" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_top = 206.0
+margin_top = 192.0
 margin_right = 448.0
-margin_bottom = 230.0
+margin_bottom = 216.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/map"]
@@ -90,16 +90,16 @@ rect_min_size = Vector2( 200, 0 )
 text = "res://maps/default.map"
 
 [node name="Label2" type="Label" parent="Panel/VBoxContainer"]
-margin_top = 234.0
+margin_top = 220.0
 margin_right = 448.0
-margin_bottom = 248.0
+margin_bottom = 234.0
 text = "-- DIFFICULTY  --"
 align = 1
 
 [node name="Lucas" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_top = 252.0
+margin_top = 238.0
 margin_right = 448.0
-margin_bottom = 276.0
+margin_bottom = 262.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/Lucas"]
@@ -120,9 +120,9 @@ align = 1
 prefix = "Level"
 
 [node name="Gabe" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_top = 280.0
+margin_top = 266.0
 margin_right = 448.0
-margin_bottom = 304.0
+margin_bottom = 290.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/Gabe"]
@@ -143,9 +143,9 @@ align = 1
 prefix = "Level"
 
 [node name="Jojo" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_top = 308.0
+margin_top = 294.0
 margin_right = 448.0
-margin_bottom = 332.0
+margin_bottom = 318.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/Jojo"]
@@ -165,11 +165,34 @@ max_value = 20.0
 align = 1
 prefix = "Level"
 
+[node name="Redman" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 322.0
+margin_right = 448.0
+margin_bottom = 346.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Redman"]
+margin_left = 146.0
+margin_top = 5.0
+margin_right = 198.0
+margin_bottom = 19.0
+text = "Redman"
+align = 1
+
+[node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/Redman"]
+margin_left = 202.0
+margin_right = 302.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+max_value = 20.0
+align = 1
+prefix = "Level"
+
 [node name="Button" type="Button" parent="Panel/VBoxContainer"]
 margin_left = 201.0
-margin_top = 336.0
+margin_top = 350.0
 margin_right = 246.0
-margin_bottom = 356.0
+margin_bottom = 370.0
 size_flags_horizontal = 4
 text = "Start!"
 
@@ -182,4 +205,5 @@ difficulties = {
 [connection signal="value_changed" from="Panel/VBoxContainer/Lucas/SpinBox" to="NightConfig" method="set_difficulty" binds= [ "lucas" ]]
 [connection signal="value_changed" from="Panel/VBoxContainer/Gabe/SpinBox" to="NightConfig" method="set_difficulty" binds= [ "gabe" ]]
 [connection signal="value_changed" from="Panel/VBoxContainer/Jojo/SpinBox" to="NightConfig" method="set_difficulty" binds= [ "jojo" ]]
+[connection signal="value_changed" from="Panel/VBoxContainer/Redman/SpinBox" to="NightConfig" method="set_difficulty" binds= [ "redman" ]]
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="NightConfig" method="run"]
