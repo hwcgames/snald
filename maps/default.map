@@ -4587,7 +4587,7 @@
 // entity 136
 {
 "classname" "particle"
-"origin" "744 120 8"
+"origin" "728 120 8"
 "always_on" "0"
 "amount" "2"
 "drawpass" "res://particles/jojo_menacing/menacing_spatial.tres"
@@ -4596,6 +4596,7 @@
 "lifetime" "1.8"
 "one_shot" "0"
 "randomness" ".4"
+"circuit" "jojo.1"
 }
 // entity 137
 {
@@ -4649,4 +4650,32 @@
 "animatronic_id" "redman"
 "room_id" "window_hallway"
 "state_id" "3"
+}
+// entity 144
+{
+"classname" "particle"
+"origin" "728 120 8"
+"always_on" "0"
+"amount" "10"
+"drawpass" "res://particles/jojo_menacing/menacing_spatial.tres"
+"material" "res://particles/jojo_menacing/menacing.tres"
+"explosiveness" "0"
+"lifetime" "1.8"
+"one_shot" "0"
+"randomness" ".4"
+"circuit" "jojo.2"
+}
+// entity 145
+{
+"classname" "particle"
+"origin" "728 120 8"
+"always_on" "0"
+"amount" "15"
+"drawpass" "res://particles/jojo_menacing/menacing_spatial.tres"
+"material" "res://particles/jojo_menacing/menacing.tres"
+"explosiveness" "0"
+"lifetime" "1.8"
+"one_shot" "0"
+"randomness" ".4"
+"circuit" "jojo.3"
 }
