@@ -2,7 +2,6 @@
 
 [ext_resource path="res://particles/jojo_menacing/menacing.png" type="Texture" id=1]
 
-
 [resource]
 flags_transparent = true
 params_billboard_mode = 1
