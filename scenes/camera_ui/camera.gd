@@ -11,22 +11,23 @@ export var camera_id = "set-me"
 func _ready():
 	$"/root/EventMan".connect("on", self, "on")
 	$"/root/EventMan".connect("off", self, "off")
-	
 
 func on(circuit: String):
 	if circuit == "camera." + camera_id:
 		for child in get_children():
-			child.color.a = 1
+			if child is Polygon2D:
+				child.color.a = 1
 func off(circuit: String):
 	if circuit == "camera." + camera_id:
 		for child in get_children():
-			child.color.a = 0.3
+			if child is Polygon2D:
+				child.color.a = 0.3
 
 func on_input_event(event):
 	if event is InputEventMouseButton:
 		print(event)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _pressed():
+	for i in get_tree().get_nodes_in_group("camera"):
+		if i.properties["camera_id"] == camera_id:
+			get_node("../../../TabletScreenBase/CameraViewport").apply_camera(i)
