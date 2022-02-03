@@ -14,6 +14,7 @@ base_classes = [  ]
 class_properties = {
 "always_on": 0,
 "amount": 0,
+"angle": 0,
 "circuit": "",
 "drawpass": "",
 "explosiveness": 0.0,

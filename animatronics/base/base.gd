@@ -3,7 +3,7 @@ extends Spatial
 class_name AnimatronicBase
 
 export var id = "base"
-export var state = 0
+export var state = -1
 export var room = ""
 export var difficulty = 10
 onready var animation_player: AnimationPlayer = $AnimationPlayer

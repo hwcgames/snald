@@ -21,16 +21,18 @@ func _ready():
 	circuit = properties["circuit"] if "circuit" in properties else ""
 	$emitter.process_material = load (properties["material"])
 	$emitter.lifetime = properties["lifetime"] if "lifetime" in properties else 3
-	$emitter.amount = properties["amount"] if "amount" in properties else 8
+	$emitter.emitting = always_on
 	$emitter.randomness = properties["randomness"] if "randomness" in properties else 0
 	$emitter.one_shot = properties["one_shot"] if "one_shot" in properties else 0
 	$emitter.explosiveness = properties["explosiveness"] if "explosiveness" in properties else 0
 	$emitter.draw_pass_1 = load (properties["drawpass"])
+	rotation_degrees.y = float(properties["angle"]) if "angle" in properties else 0
 
 func circuit_on(name):
 	if circuit != "" and name == circuit:
+		print("Go!")
 		$emitter.emitting = true
 
 func circuit_off(name):
 	if circuit != "" and name == circuit:
-		$emitter.emitting = true
+		$emitter.emitting = false
