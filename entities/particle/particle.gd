@@ -19,6 +19,7 @@ func _ready():
 	on_now = (properties["always_on"] == 1) if "always_on" in properties else false
 	always_on = (properties["always_on"] == 1) if "always_on" in properties else false
 	circuit = properties["circuit"] if "circuit" in properties else ""
+	$emitter.amount = int(properties["amount"]) if "amount" in properties else 8
 	$emitter.process_material = load (properties["material"])
 	$emitter.lifetime = properties["lifetime"] if "lifetime" in properties else 3
 	$emitter.emitting = always_on
