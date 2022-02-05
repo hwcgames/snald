@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Congratulations! You have been promoted to Deceased.ogg-90564a5950b861cee84828a36c57ee9e.oggstr"
+
+[deps]
+
+source_file="res://music/Congratulations! You have been promoted to Deceased.ogg"
+dest_files=[ "res://.import/Congratulations! You have been promoted to Deceased.ogg-90564a5950b861cee84828a36c57ee9e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
