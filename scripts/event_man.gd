@@ -21,7 +21,7 @@ export var difficulties: Dictionary = {}
 export var power: float = 100.0
 export var passive_power: float = 0.0
 export var passive_temperature: float = 0.0
-export var temperature: float = 298.0
+export var temperature: float = 70.0
 export var circuit_states = {}
 export var night_index = 0
 export var completion_flag = "n1"
@@ -32,11 +32,11 @@ onready var animatronic_timer = Timer.new()
 
 func _ready():
 	add_child(power_timer)
-	power_timer.wait_time = 5.0
+	power_timer.wait_time = .5
 	power_timer.start()
 	power_timer.connect("timeout", self, "power_tick")
 	add_child(temperature_timer)
-	temperature_timer.wait_time = 5.0
+	temperature_timer.wait_time = 3
 	temperature_timer.start()
 	temperature_timer.connect("timeout", self, "temperature_tick")
 	add_child(animatronic_timer)
@@ -53,7 +53,7 @@ func reset():
 	difficulties = {}
 	power = 100.0
 	passive_power = 0
-	temperature = 298.0
+	temperature = 70.0
 	passive_temperature = 0
 	circuit_states = {}
 	night_index = 0
@@ -74,6 +74,11 @@ func power_tick():
 	power_timer.start()
 
 func temperature_tick():
+	if temperature > 120:
+		temperature = 120
+		passive_power = .2
+	else:
+		passive_power = 0
 	temperature -= passive_temperature
 	emit_signal("temperature_tick")
 	print(temperature)

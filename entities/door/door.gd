@@ -2,12 +2,14 @@ extends QodotEntity
 
 var height = -INF
 var starting_position = Vector3.ZERO
-var open = false
+var open = true
 var since_updated = 0.0
 var open_time = 1.0
 var easing = -2
 var circuit = "default"
 var depleted = false
+var power_consumption = 1
+var affects_temperature = 0
 
 func _ready():
 	yield(get_parent(), "build_complete")
@@ -23,9 +25,13 @@ func _ready():
 	open_time = properties["open_time"] if "open_time" in properties else open_time
 	easing = properties["easing"] if "easing" in properties else easing
 	circuit = properties["circuit"] if "circuit" in properties else circuit
+	power_consumption = properties["power_consumption"] if "power_consumption" in properties else 0
+	affects_temperature = properties["affects_temperature"] if "affects_temperature" in properties else 0
 	$"/root/EventMan".connect("on", self, "on")
 	$"/root/EventMan".connect("off", self, "off")
 	$"/root/EventMan".connect("power_tick", self, "power_tick")
+	if affects_temperature == 1:
+		$"/root/EventMan".connect("temperature_tick", self, "temperature_tick")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,3 +57,11 @@ func power_tick():
 		open = true
 		since_updated = 0
 		depleted = true
+	if not open:
+		$"/root/EventMan".power -= power_consumption
+
+func temperature_tick():
+	if open == false:
+		$"/root/EventMan".temperature += 1
+	else:
+		$'/root/EventMan'.temperature -= 1

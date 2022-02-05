@@ -18,7 +18,7 @@ func temperature_tick():
 
 func power_tick():
 	power = $"/root/EventMan".power
-	update()
+	call_deferred("update")
 
 func jumpscare(char_, anim_):
 	if not $"../../../".DEBUG:

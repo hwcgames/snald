@@ -11,6 +11,7 @@ export var camera_id = "set-me"
 func _ready():
 	$"/root/EventMan".connect("on", self, "on")
 	$"/root/EventMan".connect("off", self, "off")
+	$"/root/EventMan".connect("power_tick", self, "power_tick")
 
 func on(circuit: String):
 	if circuit == "camera." + camera_id:
@@ -22,7 +23,6 @@ func off(circuit: String):
 		for child in get_children():
 			if child is Polygon2D:
 				child.color.a = 0.3
-
 func on_input_event(event):
 	if event is InputEventMouseButton:
 		print(event)

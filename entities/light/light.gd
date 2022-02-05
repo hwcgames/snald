@@ -47,6 +47,7 @@ func circuit_on(name):
 		on_now = true
 		goal_energy = energy
 		if "instant_on" in properties and properties["instant_on"] == 1:
+			$"/root/EventMan".power -= power
 			$OmniLight.light_energy = goal_energy
 
 func circuit_off(name):

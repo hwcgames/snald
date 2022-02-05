@@ -11,9 +11,11 @@ description = ""
 qodot_internal = false
 base_classes = [  ]
 class_properties = {
+"affects_temperature": 0,
 "circuit": "default",
 "easing": -2.0,
 "open_time": 1.0,
+"power_consumption": 0.0,
 "sound": "res://sounds/door.ogg"
 }
 class_property_descriptions = {

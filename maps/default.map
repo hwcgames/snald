@@ -3718,6 +3718,7 @@
 {
 "classname" "SnaldDoor"
 "circuit" "office_door_toggle"
+"power_consumption" "1"
 // brush 0
 {
 ( -36 76 92 ) ( -36 68 92 ) ( -36 68 0 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
@@ -4136,6 +4137,7 @@
 {
 "classname" "SnaldDoor"
 "circuit" "window_toggle"
+"affects_temperature" "1"
 // brush 0
 {
 ( 68 -132 84 ) ( 68 -140 84 ) ( 68 -132 32 ) __TB_empty 8 0 0 1 1
@@ -4723,7 +4725,7 @@
 "always_on" "0"
 "flicker_below" "10"
 "flicker_chance" "0.01"
-"power" "1"
+"power" "15"
 }
 // entity 85
 {
@@ -5356,7 +5358,7 @@
 "classname" "particle"
 "origin" "728 112 8"
 "always_on" "0"
-"amount" "20"
+"amount" "50"
 "drawpass" "res://particles/jojo_menacing/jojo_menacing_ex.tres"
 "material" "res://particles/jojo_menacing/menacing.tres"
 "explosiveness" "0"
@@ -5404,4 +5406,18 @@
 "lifetime" "2.5"
 "one_shot" "0"
 "randomness" ".55"
+}
+// entity 149
+{
+"classname" "SnaldButton"
+"circuit" "generator"
+// brush 0
+{
+( 112 -104 60 ) ( 112 -120 60 ) ( 112 -120 44 ) __TB_empty 20 0 0 1 1
+( 112 -120 60 ) ( 128 -120 60 ) ( 128 -120 44 ) __TB_empty 0 0 0 1 1
+( 128 -120 44 ) ( 128 -104 44 ) ( 112 -104 44 ) __TB_empty 0 -20 0 1 1
+( 112 -104 60 ) ( 128 -104 60 ) ( 128 -120 60 ) __TB_empty 0 -20 0 1 1
+( 128 -104 44 ) ( 128 -104 60 ) ( 112 -104 60 ) __TB_empty 0 0 0 1 1
+( 128 -120 60 ) ( 128 -104 60 ) ( 128 -104 44 ) __TB_empty 20 0 0 1 1
+}
 }

@@ -42,7 +42,10 @@ text = "Night 1"
 
 [node name="NightConfig" parent="TabContainer/Choose a Night/Night 1" instance=ExtResource( 2 )]
 difficulties = {
-"redman": 10
+"gabe": 5,
+"jojo": 2,
+"lucas": 2,
+"redman": 3
 }
 
 [node name="Night 2" type="Button" parent="TabContainer/Choose a Night"]
@@ -57,6 +60,12 @@ text = "Night 2"
 flag_to_check = "n1"
 
 [node name="NightConfig" parent="TabContainer/Choose a Night/Night 2" instance=ExtResource( 2 )]
+difficulties = {
+"gabe": 9,
+"jojo": 6,
+"lucas": 5,
+"redman": 7
+}
 
 [node name="Night 3" type="Button" parent="TabContainer/Choose a Night"]
 margin_left = 191.0

@@ -56,3 +56,5 @@ func power_tick():
 	if $"/root/EventMan".power <= 0 and not depleted:
 		depleted = true
 		down()
+	if active == true:
+		$"/root/EventMan".power -= .1

@@ -7,14 +7,14 @@ var difficulty_offset_2 = 0
 	# heat and noise makes the funny
 func _ready():
 	animation_player = get_node("AnimationPlayer")
-	$MovementTimer.wait_time = rand_range(30 - difficulty, 70 - difficulty)
+	$MovementTimer.wait_time = rand_range(130 - (6 * difficulty), 180 - (8 * difficulty))
 	$MovementTimer.connect("timeout", self, "animatronic_tick")
 	$MovementTimer.start()
 	assume_state(0)
 	
 func state_machine():
 	if state in [0,1,2]:
-		$MovementTimer.wait_time = rand_range(30 - difficulty, 70 - difficulty)
+		$MovementTimer.wait_time = rand_range((130 - (6 * difficulty)), (180 - (8 * difficulty)))
 		return state + 1 
 	if state in [4,5,6,7,8,9]:
 		return state + 1
@@ -28,5 +28,5 @@ func state_machine():
 				return 0
 			else:
 				# $DogSoundsPlayer.play()   #actually add that sound ok???
-				$MovementTimer.wait_time = rand_range(30 - difficulty, 70 - difficulty)
+				$MovementTimer.wait_time = rand_range(130 - (6 * difficulty), 180 - (8 * difficulty))
 				return 0
