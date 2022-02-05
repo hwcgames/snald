@@ -10,6 +10,7 @@ description = "Creates power when activated, at the cost of temperature and nois
 qodot_internal = false
 base_classes = [  ]
 class_properties = {
+"angle": 0.0,
 "circuit": "generator",
 "noise": 0.0,
 "noise_time": 10,

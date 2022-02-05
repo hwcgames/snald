@@ -13,6 +13,7 @@ var suppress = false
 
 func ready():
 	yield(get_parent(), "build_complete")
+	rotation_degrees.y = properties["angle"] if "angle" in properties else 0
 	noise = properties["noise"] if "noise" in properties else 1
 	power_regen = properties["power"] if "power" in properties else 10
 	circuit = properties["circuit"] if "circuit" in properties else "generator"
