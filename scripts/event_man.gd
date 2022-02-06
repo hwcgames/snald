@@ -68,6 +68,8 @@ func register(animatronic_id: String, difficulty: int):
 	difficulties[animatronic_id] = difficulty
 
 func power_tick():
+	if power >= 100:
+		power = 100
 	power -= passive_power
 	emit_signal("power_tick")
 	print(power)
@@ -99,6 +101,8 @@ func circuit_off(name):
 	emit_signal("off", name)
 
 func circuit(name):
+	if not name in circuit_states:
+		circuit_states[name] = false
 	return circuit_states[name]
 
 func jumpscare(character, scene_name):

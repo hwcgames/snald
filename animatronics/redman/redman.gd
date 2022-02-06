@@ -1,6 +1,16 @@
 extends AnimatronicBase
 export var office_door_circuit = "office_door_toggle"
-
+func difficulty_offset():
+	var heat_increase = 0
+	var noise_increase = 0
+	if $"/root/EventMan".temperature >= 90:
+		heat_increase = ($"/root/EventMan".temperature - 90) / 6
+	if $"/root/EventMan".circuit("noisy") == true:
+		noise_increase = 2
+	#if the music playin do the thin
+	print (heat_increase + noise_increase)
+	return (heat_increase + noise_increase)
+	
 func state_machine():
 	match state:
 		0:
