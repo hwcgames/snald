@@ -12,7 +12,8 @@ qodot_internal = false
 base_classes = [  ]
 class_properties = {
 "in_circuit": "default",
-"out_circuit": "default_toggle"
+"out_circuit": "default_toggle",
+"starts_on": 0
 }
 class_property_descriptions = {
 }

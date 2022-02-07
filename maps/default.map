@@ -3749,6 +3749,7 @@
 "origin" "40 56 88"
 "in_circuit" "office_door"
 "out_circuit" "office_door_toggle"
+"starts_on" "1"
 }
 // entity 12
 {
@@ -4181,6 +4182,7 @@
 "origin" "84 -152 88"
 "in_circuit" "window"
 "out_circuit" "window_toggle"
+"starts_on" "1"
 }
 // entity 39
 {

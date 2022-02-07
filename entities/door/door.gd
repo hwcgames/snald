@@ -2,7 +2,7 @@ extends QodotEntity
 
 var height = -INF
 var starting_position = Vector3.ZERO
-var open = true
+var open = false
 var since_updated = 0.0
 var open_time = 1.0
 var easing = -2
