@@ -54,7 +54,6 @@ difficulties = {
 "lucas": 2,
 "redman": 3
 }
-time_to_completion = 1
 victory_scene = "res://scenes/victory/victory_n1.tscn"
 
 [node name="Night 2" type="Button" parent="TabContainer/Choose a Night"]
