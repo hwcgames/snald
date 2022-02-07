@@ -51,9 +51,10 @@ text = "Night 1"
 difficulties = {
 "gabe": 6,
 "jojo": 3,
-"lucas": 4,
+"lucas": 20,
 "redman": 5
 }
+night_index = 0
 victory_scene = "res://scenes/victory/victory_n1.tscn"
 
 [node name="Night 2" type="Button" parent="TabContainer/Choose a Night"]
@@ -71,9 +72,11 @@ flag_to_check = "n1"
 difficulties = {
 "gabe": 9,
 "jojo": 6,
-"lucas": 5,
-"redman": 7
+"lucas": 7,
+"redman": 8
 }
+night_index = 1
+completion_flag = "n2"
 
 [node name="Night 3" type="Button" parent="TabContainer/Choose a Night"]
 margin_left = 191.0
@@ -87,6 +90,8 @@ text = "Night 3"
 flag_to_check = "n2"
 
 [node name="NightConfig" parent="TabContainer/Choose a Night/Night 3" instance=ExtResource( 2 )]
+night_index = 2
+completion_flag = "n3"
 
 [node name="Night 4" type="Button" parent="TabContainer/Choose a Night"]
 margin_left = 191.0
@@ -100,6 +105,7 @@ text = "Night 4"
 flag_to_check = "n3"
 
 [node name="NightConfig" parent="TabContainer/Choose a Night/Night 4" instance=ExtResource( 2 )]
+completion_flag = "n4"
 
 [node name="Night 5" type="Button" parent="TabContainer/Choose a Night"]
 margin_left = 191.0
@@ -113,6 +119,8 @@ text = "Night 5"
 flag_to_check = "n4"
 
 [node name="NightConfig" parent="TabContainer/Choose a Night/Night 5" instance=ExtResource( 2 )]
+night_index = 4
+completion_flag = "n5"
 
 [node name="CustomNight" parent="TabContainer/Choose a Night" instance=ExtResource( 4 )]
 anchor_right = 0.0
