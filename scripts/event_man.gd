@@ -36,7 +36,7 @@ func _ready():
 	power_timer.start()
 	power_timer.connect("timeout", self, "power_tick")
 	add_child(temperature_timer)
-	temperature_timer.wait_time = 3
+	temperature_timer.wait_time = 1.5
 	temperature_timer.start()
 	temperature_timer.connect("timeout", self, "temperature_tick")
 	add_child(animatronic_timer)
@@ -72,18 +72,19 @@ func power_tick():
 		power = 100
 	power -= passive_power
 	emit_signal("power_tick")
-	print(power)
 	power_timer.start()
 
 func temperature_tick():
 	if temperature > 120:
 		temperature = 120
 		passive_power = .2
+	if temperature < 20:
+		temperature = 20
+		passive_power = .2
 	else:
 		passive_power = 0
 	temperature -= passive_temperature
 	emit_signal("temperature_tick")
-	print(temperature)
 	temperature_timer.start()
 
 func animatronic_tick():

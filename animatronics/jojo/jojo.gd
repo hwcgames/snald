@@ -14,9 +14,7 @@ func animatronic_tick():
 	heat_increase = ($"/root/EventMan".temperature - 90) / 6 if $"/root/EventMan".temperature >= 90 else 0
 	noise_increase = 2 if $"/root/EventMan".circuit("noisy") == true else 0
 	$MovementTimer.wait_time = rand_range(130 - (6 * (difficulty + heat_increase + noise_increase)), 180 - (8 * difficulty + heat_increase + noise_increase))
-	var random = floor(rand_range(1,21))
-	if difficulty + difficulty_offset() >= random:
-		assume_state(state_machine())
+	assume_state(state_machine())
 	$MovementTimer.start()
 
 func _ready():

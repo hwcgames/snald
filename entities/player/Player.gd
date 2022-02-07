@@ -4,6 +4,7 @@ var CAMERA = preload("res://scenes/camera_ui/camera_ui.tscn")
 onready var camera: Control = CAMERA.instance()
 var min_angle = 0
 var max_angle = 0
+var turn_speed = 30
 export var DEBUG = false
 
 func _ready():
@@ -12,11 +13,17 @@ func _ready():
 	rotation_degrees.y = properties["angle"]
 	min_angle = properties["min_angle"]
 	max_angle = properties["max_angle"]
+	turn_speed = float(properties["speed"])
+	$"/root/EventMan".connect("temperature_tick", self, "temperature_tick")
 	print("Bringing camera UI into tree")
 	add_child(camera)
 	print("Setting up jumpscare handler")
 	$"/root/EventMan".connect("jumpscare", self, "jumpscare")
-
+func temperature_tick():
+	if $"/root/EventMan".temperature <= 50:
+		turn_speed = 60 - (50 - $"/root/EventMan".temperature)
+	else:
+		turn_speed = float(properties["speed"])
 func _process(delta):
 	# Get mouse X
 	var mouse_x = get_viewport().get_mouse_position().x / get_viewport().size.x
@@ -30,7 +37,7 @@ func _process(delta):
 	if mouse_x > 0.9 and not left_bounded:
 		movement -= 1
 	# Move
-	rotation_degrees.y += movement * delta * (float(properties["speed"]) if "speed" in properties else 30)
+	rotation_degrees.y += movement * delta * turn_speed
 	# Debug move
 	if Input.is_key_pressed(KEY_PAGEDOWN):
 		DEBUG = true
