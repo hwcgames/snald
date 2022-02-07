@@ -62,6 +62,6 @@ func power_tick():
 
 func temperature_tick():
 	if open == false:
-		$"/root/EventMan".temperature += 1
+		$"/root/EventMan".temperature += 2
 	else:
 		$'/root/EventMan'.temperature -= 1
