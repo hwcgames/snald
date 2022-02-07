@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Button
+
+func _pressed():
+	$\"/root/EventMan\".return_to_title()
+"
+
+[node name="Node2D" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+visible = false
+margin_left = -291.0
+margin_top = -260.0
+margin_right = -180.0
+margin_bottom = -240.0
+size_flags_horizontal = 4
+text = "Exit to Menu"
+script = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="CenterContainer/VBoxContainer/Button"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="CenterContainer/VBoxContainer/Button" method="_pressed"]
+[connection signal="ready" from="CenterContainer/VBoxContainer/Button" to="CenterContainer/VBoxContainer/Button" method="hide"]
+[connection signal="timeout" from="CenterContainer/VBoxContainer/Button/Timer" to="CenterContainer/VBoxContainer/Button" method="show"]

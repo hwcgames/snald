@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Cylindrical_Test_Subject.ogg-9796290b83de6e0b86ca9032631cff00.oggstr"
+
+[deps]
+
+source_file="res://music/Cylindrical_Test_Subject.ogg"
+dest_files=[ "res://.import/Cylindrical_Test_Subject.ogg-9796290b83de6e0b86ca9032631cff00.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

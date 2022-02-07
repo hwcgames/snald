@@ -1,7 +1,7 @@
 extends Node
 
 export var flag_to_check = ""
-onready var flag = $"/root/PersistMan".persistent_dict[flag_to_check] if flag_to_check in $"/root/PersistMan".persistent_dict else false
+onready var flag: bool = $"/root/PersistMan".persistent_dict[flag_to_check] if flag_to_check in $"/root/PersistMan".persistent_dict else false
 
 func _ready():
 	if flag:

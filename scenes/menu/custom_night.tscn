@@ -199,6 +199,7 @@ text = "Start!"
 [node name="NightConfig" parent="." instance=ExtResource( 3 )]
 difficulties = {
 }
+completion_flag = "n7"
 
 [connection signal="value_changed" from="Panel/VBoxContainer/EffectiveNight/SpinBox" to="NightConfig" method="set_night"]
 [connection signal="text_changed" from="Panel/VBoxContainer/map/LineEdit" to="NightConfig" method="set_map"]

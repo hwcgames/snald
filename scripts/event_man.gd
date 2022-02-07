@@ -25,6 +25,8 @@ export var temperature: float = 70.0
 export var circuit_states = {}
 export var night_index = 0
 export var completion_flag = "n1"
+export var time_to_completion = 600
+export var completion_scene: PackedScene
 
 onready var power_timer = Timer.new()
 onready var temperature_timer = Timer.new()
@@ -63,6 +65,10 @@ func reset():
 	temperature_timer.start()
 	animatronic_timer.stop()
 	animatronic_timer.start()
+	night_index = 0
+	completion_flag = "n1"
+	time_to_completion = 600
+	completion_scene = null
 
 func register(animatronic_id: String, difficulty: int):
 	difficulties[animatronic_id] = difficulty
@@ -112,3 +118,7 @@ func jumpscare(character, scene_name):
 func return_to_title():
 	reset()
 	get_tree().change_scene("res://scenes/menu/menu.tscn")
+
+func completed():
+	$"/root/PersistMan".persistent_dict[completion_flag] = true
+	$"/root/PersistMan".save_game()

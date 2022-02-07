@@ -16,9 +16,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_top = 255.0
+margin_top = 267.0
 margin_right = 1024.0
-margin_bottom = 320.0
+margin_bottom = 332.0
 text = "Dead from base class jumpscare.
 This *probably* shouldn't happen?
 Let's just... Pretend it was a secret.
@@ -26,6 +26,7 @@ Yeah. Just forget you saw this."
 align = 1
 
 [node name="Button" type="Button" parent="."]
+visible = false
 margin_left = 456.0
 margin_top = 324.0
 margin_right = 567.0

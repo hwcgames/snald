@@ -48,10 +48,20 @@ func jumpscare(character: String, scene: String):
 	if DEBUG:
 		print("DIE FROM " + character + " WITH ANIMATION " + scene)
 		return # Don't allow the player to die in debug mode
-	var jumpscare_packed = load("res://jumpscares/"+character+"/"+scene+".tscn")
+	var file = File.new()
+	var path = "res://jumpscares/"+character+"/"+scene+".tscn"
+	var jumpscare_packed
+	if file.file_exists(path):
+		jumpscare_packed = load(path)
+	else:
+		jumpscare_packed = load("res://jumpscares/dummy/dummy.tscn")
 	var jumpscare = jumpscare_packed.instance()
 	$JumpscareRoot.add_child(jumpscare)
 	yield(jumpscare, "finished")
 	var kill_player = jumpscare.kill_player
+	path = "res://jumpscares/"+character+"/"+scene+"_dead.tscn"
 	if kill_player:
-		get_tree().change_scene("res://jumpscares/"+character+"/"+scene+"_dead.tscn")
+		if file.file_exists(path):
+			get_tree().change_scene(path)
+		else:
+			get_tree().change_scene("res://jumpscares/dummy/dummy_dead.tscn")

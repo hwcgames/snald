@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=1]
 [ext_resource path="res://fgd.tres" type="Resource" id=2]
 [ext_resource path="res://scenes/gameplay/gameplay.gd" type="Script" id=3]
 [ext_resource path="res://textures/ps1-post.tres" type="Material" id=4]
+[ext_resource path="res://music/night_ambience.wav" type="AudioStream" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -55,4 +56,16 @@ extra_cull_margin = 16384.0
 mesh = SubResource( 6 )
 material/0 = null
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="MusicStarter" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[node name="CompletionTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="build_complete" from="QodotMap" to="." method="completed_build"]
+[connection signal="timeout" from="MusicStarter" to="AudioStreamPlayer" method="play"]

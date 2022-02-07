@@ -21,3 +21,8 @@ func save_game():
 	var game = File.new()
 	game.open("user://snald.save", File.WRITE)
 	game.store_string(to_json(persistent_dict))
+
+func reset():
+	persistent_dict = {}
+	save_game()
+	get_tree().quit()

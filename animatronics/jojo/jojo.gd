@@ -29,6 +29,7 @@ func state_machine():
 		$MovementTimer.wait_time = rand_range((130 - (6 * difficulty + heat_increase + noise_increase)), (180 - (8 * difficulty + heat_increase + noise_increase)))
 		return state + 1 
 	if state in [4,5,6,7,8,9]:
+		$MovementTimer.wait_time = 1
 		return state + 1
 	match state:
 		3:
