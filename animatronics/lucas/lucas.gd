@@ -83,7 +83,7 @@ func state_machine():
 			# return 10
 			return 11
 		11:
-			$"/root/EventMan".disconnect("off", self, "attack_if_window_opens_circuit_handler")
+			$"/root/EventMan".disconnect("on", self, "attack_if_window_opens_circuit_handler")
 			animation_player.connect("animation_finished", self, "walked_away_from_window")
 			play_depart_sound()
 			return 12
@@ -159,7 +159,7 @@ func attack_if_window_opens_circuit_handler(circuit: String):
 func walked_up_to_window():
 	#animation_player.disconnect("animation_finished", self, "walked_up_to_window")
 	play_approach_sound()
-	$"/root/EventMan".connect("off", self, "attack_if_window_opens_circuit_handler")
+	$"/root/EventMan".connect("on", self, "attack_if_window_opens_circuit_handler")
 	assume_state(11)
 
 func walked_away_from_window():
