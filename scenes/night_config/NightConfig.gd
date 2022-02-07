@@ -8,7 +8,7 @@ export var passive_power = 0.0
 export var passive_temperature = 0.0
 export var night_index = 0
 export var completion_flag = "n1"
-export var time_to_completion = 600
+export var time_to_completion = 360
 export var victory_scene = "res://scenes/victory/victory.tscn"
 
 func run():
