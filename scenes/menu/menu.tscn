@@ -49,10 +49,10 @@ text = "Night 1"
 
 [node name="NightConfig" parent="TabContainer/Choose a Night/Night 1" instance=ExtResource( 2 )]
 difficulties = {
-"gabe": 5,
-"jojo": 2,
-"lucas": 2,
-"redman": 3
+"gabe": 6,
+"jojo": 3,
+"lucas": 4,
+"redman": 5
 }
 victory_scene = "res://scenes/victory/victory_n1.tscn"
 

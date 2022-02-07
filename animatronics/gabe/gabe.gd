@@ -52,7 +52,7 @@ func state_machine():
 			return 11
 		12:
 			original_difficulty = difficulty
-			difficulty = 20
+			difficulty = 25
 			return 13
 		15:
 			difficulty = original_difficulty
