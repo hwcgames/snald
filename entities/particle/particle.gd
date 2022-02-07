@@ -14,8 +14,8 @@ var on_now = false
 func _ready():
 	# Set angle correctly
 	yield(get_parent(), "build_complete")
-	$"/root/EventMan".connect("on", self, "circuit_on")
-	$"/root/EventMan".connect("off", self, "circuit_off")
+	var _err = $"/root/EventMan".connect("on", self, "circuit_on")
+	_err = $"/root/EventMan".connect("off", self, "circuit_off")
 	on_now = (properties["always_on"] == 1) if "always_on" in properties else false
 	always_on = (properties["always_on"] == 1) if "always_on" in properties else false
 	circuit = properties["circuit"] if "circuit" in properties else ""
@@ -27,7 +27,7 @@ func _ready():
 	$emitter.one_shot = properties["one_shot"] if "one_shot" in properties else 0
 	$emitter.explosiveness = properties["explosiveness"] if "explosiveness" in properties else 0
 	$emitter.draw_pass_1 = load (properties["drawpass"])
-	rotation_degrees.y = float(properties["angle"]) if "angle" in properties else 0
+	rotation_degrees.y = float(properties["angle"]) if "angle" in properties else 0.0
 
 func circuit_on(name):
 	if circuit != "" and name == circuit:

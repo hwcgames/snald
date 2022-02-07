@@ -14,11 +14,11 @@ func _ready():
 	min_angle = properties["min_angle"]
 	max_angle = properties["max_angle"]
 	turn_speed = float(properties["speed"])
-	$"/root/EventMan".connect("temperature_tick", self, "temperature_tick")
+	var _err = $"/root/EventMan".connect("temperature_tick", self, "temperature_tick")
 	print("Bringing camera UI into tree")
 	add_child(camera)
 	print("Setting up jumpscare handler")
-	$"/root/EventMan".connect("jumpscare", self, "jumpscare")
+	_err = $"/root/EventMan".connect("jumpscare", self, "jumpscare")
 func temperature_tick():
 	if $"/root/EventMan".temperature <= 50:
 		turn_speed = 60 - (50 - $"/root/EventMan".temperature)
@@ -62,6 +62,6 @@ func jumpscare(character: String, scene: String):
 	path = "res://jumpscares/"+character+"/"+scene+"_dead.tscn"
 	if kill_player:
 		if file.file_exists(path):
-			get_tree().change_scene(path)
+			var _err = get_tree().change_scene(path)
 		else:
-			get_tree().change_scene("res://jumpscares/dummy/dummy_dead.tscn")
+			var _err = get_tree().change_scene("res://jumpscares/dummy/dummy_dead.tscn")

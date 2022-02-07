@@ -23,8 +23,8 @@ func _ready():
 			self.polygon2ds.push_back(polygon2d)
 			set_color()
 			add_child(polygon2d)
-	$"/root/EventMan".connect("on", self, "on")
-	$"/root/EventMan".connect("off", self, "off")
+	var _err = $"/root/EventMan".connect("on", self, "on")
+	_err = $"/root/EventMan".connect("off", self, "off")
 	pass # Replace with function body.
 
 func set_color(white = false):

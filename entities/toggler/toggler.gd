@@ -12,7 +12,7 @@ func _ready():
 	if (int(properties["starts_on"])>0) if "starts_on" in properties else false:
 		out_state = true
 		$"/root/EventMan".circuit_on(out_circuit)
-	$"/root/EventMan".connect("on", self, "on")
+	var _err = $"/root/EventMan".connect("on", self, "on")
 
 func on(name: String):
 	if name == in_circuit:

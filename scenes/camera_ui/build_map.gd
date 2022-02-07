@@ -14,7 +14,7 @@ var camera: Camera2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_tree().get_root().connect("size_changed", self, "setup_camera")
+	var _err = get_tree().get_root().connect("size_changed", self, "setup_camera")
 	# BUILD ROOM GEOMETRY
 	var rooms = PoolStringArray([])
 	for i in get_tree().get_nodes_in_group("map_segment"):

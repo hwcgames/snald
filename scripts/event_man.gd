@@ -117,7 +117,7 @@ func jumpscare(character, scene_name):
 
 func return_to_title():
 	reset()
-	get_tree().change_scene("res://scenes/menu/menu.tscn")
+	var _err = get_tree().change_scene("res://scenes/menu/menu.tscn")
 
 func completed():
 	$"/root/PersistMan".persistent_dict[completion_flag] = true

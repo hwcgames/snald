@@ -11,9 +11,9 @@ var depleted = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_tree().get_root().connect("size_changed", self, "resize")
-	$"/root/EventMan".connect("jumpscare", self, "jumpscare")
-	$"/root/EventMan".connect("power_tick", self, "power_tick")
+	var _err = get_tree().get_root().connect("size_changed", self, "resize")
+	_err = $"/root/EventMan".connect("jumpscare", self, "jumpscare")
+	_err = $"/root/EventMan".connect("power_tick", self, "power_tick")
 	resize();
 	anchor_top = interp_target
 	anchor_bottom = interp_target
@@ -49,7 +49,7 @@ func resize():
 	margin_right = get_viewport_rect().size.x
 	margin_bottom = get_viewport_rect().size.y
 
-func jumpscare(character_, scene_):
+func jumpscare(_character, _scene):
 	down()
 
 func power_tick():

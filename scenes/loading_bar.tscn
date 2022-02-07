@@ -6,7 +6,7 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends TextureProgress
 
-func progress(step_, value: float):
+func progress(_step, value: float):
 	self.value = value
 "
 
