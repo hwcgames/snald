@@ -8,6 +8,7 @@ export var camera_entrance = "camera.foyer"
 var hunt_accumulation = 0.0
 var hunt_target = null
 var have_hunted = false
+
 onready var night = $"/root/EventMan".night_index
 
 onready var HUNT_TARGETS = [
@@ -69,6 +70,7 @@ var HUNT_PATHS = {
 	}
 }
 
+	
 func state_machine():
 	if hunt_target == "window" and night == 0 and not have_hunted and state in [1,2,3]:
 		have_hunted = true
@@ -179,4 +181,11 @@ func wait_for_camera_entrance(circuit: String):
 		assume_state(9)
 
 func difficulty_offset():
-	return 10
+	var heat_increase = 0
+	var noise_increase = 0
+	if $"/root/EventMan".temperature >= 90:
+		heat_increase = ($"/root/EventMan".temperature - 90) / 6
+	if $"/root/EventMan".circuit("noisy") == true:
+		noise_increase = 2
+	#if the music playin do the thin
+	return (heat_increase + noise_increase)

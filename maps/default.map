@@ -3633,6 +3633,24 @@
 ( 290 83 44 ) ( 278 83 42 ) ( 290 83 42 ) __TB_empty 10 0 0 1 1
 ( 290 83 44 ) ( 290 82 42 ) ( 290 82 44 ) __TB_empty -18 0 0 0.5 1
 }
+// brush 392
+{
+( 500 756 96 ) ( 500 668 96 ) ( 500 668 0 ) __TB_empty 0 0 0 1 1
+( 500 668 96 ) ( 508 668 96 ) ( 508 668 0 ) __TB_empty 0 0 0 1 1
+( 508 668 0 ) ( 508 756 0 ) ( 500 756 0 ) __TB_empty 0 0 0 1 1
+( 500 756 96 ) ( 508 756 96 ) ( 508 668 96 ) __TB_empty 0 0 0 1 1
+( 508 756 0 ) ( 508 756 96 ) ( 500 756 96 ) __TB_empty 0 0 0 1 1
+( 508 668 96 ) ( 508 756 96 ) ( 508 756 0 ) __TB_empty 0 0 0 1 1
+}
+// brush 393
+{
+( 0 900 96 ) ( 0 908 0 ) ( 0 908 96 ) __TB_empty 0 0 0 1 1
+( 88 900 96 ) ( 0 900 0 ) ( 0 900 96 ) __TB_empty 0 0 0 1 1
+( 88 908 0 ) ( 0 900 0 ) ( 88 900 0 ) __TB_empty 0 0 0 1 1
+( 88 908 96 ) ( 0 900 96 ) ( 0 908 96 ) __TB_empty 0 0 0 1 1
+( 88 908 96 ) ( 0 908 0 ) ( 88 908 0 ) __TB_empty 0 0 0 1 1
+( 88 908 96 ) ( 88 900 0 ) ( 88 900 96 ) __TB_empty 0 0 0 1 1
+}
 }
 // entity 1
 {
@@ -3646,15 +3664,10 @@
 }
 // entity 2
 {
-"classname" "PlayerRightBound"
-"origin" "120 -120 56"
-}
-// entity 3
-{
 "classname" "PlayerLeftBound"
 "origin" "72 -184 56"
 }
-// entity 4
+// entity 3
 {
 "classname" "AnimatronicPosition"
 "origin" "-16 20.6863 8"
@@ -3664,7 +3677,7 @@
 "animation" "idle"
 "state_id" "0"
 }
-// entity 5
+// entity 4
 {
 "classname" "AnimatronicPosition"
 "origin" "-21.6569 150.202 8"
@@ -3674,7 +3687,7 @@
 "animation" "idle"
 "animatronic_id" "redman"
 }
-// entity 6
+// entity 5
 {
 "classname" "SnaldLight"
 "origin" "24 -16 88"
@@ -3687,7 +3700,7 @@
 "radius" "9"
 "buzz" "res://entities/light/stare.wav"
 }
-// entity 7
+// entity 6
 {
 "classname" "SnaldButton"
 "circuit" "outdoor_light"
@@ -3701,7 +3714,7 @@
 ( 36 60 64 ) ( 36 64 64 ) ( 36 64 52 ) concretewall1/concrete_wall_001 0 0 0 1 1
 }
 }
-// entity 8
+// entity 7
 {
 "classname" "SnaldLight"
 "origin" "-4 104 88"
@@ -3714,22 +3727,49 @@
 "radius" "8"
 "buzz" "res://entities/light/stare.wav"
 }
-// entity 9
+// entity 8
 {
 "classname" "SnaldDoor"
 "circuit" "office_door_toggle"
-"power_consumption" "1"
+"power_consumption" ".5"
 // brush 0
 {
-( -36 76 92 ) ( -36 68 92 ) ( -36 68 0 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
-( -36 68 92 ) ( 24 68 92 ) ( 24 68 0 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
-( 24 68 0 ) ( 24 76 0 ) ( -36 76 0 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
-( -36 76 92 ) ( 24 76 92 ) ( 24 68 92 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
-( 24 76 0 ) ( 24 76 92 ) ( -36 76 92 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
-( 24 68 92 ) ( 24 76 92 ) ( 24 76 0 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
+( 16 76 92 ) ( 16 68 92 ) ( 16 76 0 ) __TB_empty -8 0 0 1 1
+( 24 68 0 ) ( 16 68 0 ) ( 24 68 92 ) __TB_empty 0 0 0 1 1
+( 24 76 0 ) ( 16 76 0 ) ( 24 68 0 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
+( 24 68 92 ) ( 16 68 92 ) ( 24 76 92 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
+( 24 76 92 ) ( 16 76 92 ) ( 24 76 0 ) __TB_empty 0 0 0 1 1
+( 24 68 92 ) ( 24 76 92 ) ( 24 68 0 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
+}
+// brush 1
+{
+( -36 68 0 ) ( -36 76 0 ) ( -36 68 92 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
+( -36 68 92 ) ( 0 68 92 ) ( -36 68 0 ) __TB_empty 0 0 0 1 1
+( -36 68 0 ) ( 0 68 0 ) ( -36 76 0 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
+( -36 76 92 ) ( 0 76 92 ) ( -36 68 92 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
+( -36 76 0 ) ( 0 76 0 ) ( -36 76 92 ) __TB_empty 0 0 0 1 1
+( 0 68 0 ) ( 0 68 92 ) ( 0 76 0 ) __TB_empty -8 0 0 1 1
+}
+// brush 2
+{
+( 0 68 92 ) ( 0 68 80 ) ( 0 76 92 ) __TB_empty -8 0 0 1 1
+( 16 68 92 ) ( 16 68 80 ) ( 0 68 92 ) __TB_empty 0 0 0 1 1
+( 16 68 80 ) ( 16 76 80 ) ( 0 68 80 ) __TB_empty 0 8 0 1 1
+( 16 68 92 ) ( 0 68 92 ) ( 16 76 92 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
+( 0 76 92 ) ( 0 76 80 ) ( 16 76 92 ) __TB_empty 0 0 0 1 1
+( 16 76 92 ) ( 16 76 80 ) ( 16 68 92 ) __TB_empty -8 0 0 1 1
+}
+// brush 3
+{
+( 0 76 0 ) ( 0 76 8 ) ( 0 68 0 ) __TB_empty -8 0 0 1 1
+( 0 68 0 ) ( 0 68 8 ) ( 16 68 0 ) __TB_empty 0 0 0 1 1
+( 16 76 0 ) ( 0 76 0 ) ( 16 68 0 ) beamwall1/beam_wall_01 0 0 90 0.1 0.05
+( 0 76 8 ) ( 16 76 8 ) ( 0 68 8 ) __TB_empty 0 8 0 1 1
+( 16 76 0 ) ( 16 76 8 ) ( 0 76 0 ) __TB_empty 0 0 0 1 1
+( 16 68 0 ) ( 16 68 8 ) ( 16 76 0 ) __TB_empty -8 0 0 1 1
 }
 }
-// entity 10
+// entity 9
 {
 "classname" "SnaldButton"
 "circuit" "office_door"
@@ -3743,7 +3783,7 @@
 ( 36 60 48 ) ( 36 64 48 ) ( 36 64 36 ) brickwall3/brick_wall_003 0 0 0 0.1 0.1
 }
 }
-// entity 11
+// entity 10
 {
 "classname" "Toggler"
 "origin" "40 56 88"
@@ -3751,7 +3791,7 @@
 "out_circuit" "office_door_toggle"
 "starts_on" "1"
 }
-// entity 12
+// entity 11
 {
 "classname" "MapSegment"
 "room" "backyard"
@@ -3766,7 +3806,7 @@
 ( 128 -144 168 ) ( 128 -144 169 ) ( 128 -143 168 ) factorywall/factory_wall 0 8 0 0.01 0.01
 }
 }
-// entity 13
+// entity 12
 {
 "classname" "MapSegment"
 "room" "backyard"
@@ -3781,7 +3821,7 @@
 ( 72 -144 168 ) ( 72 -128 168 ) ( 72 -128 152 ) factorywall/factory_wall 0 8 0 0.01 0.01
 }
 }
-// entity 14
+// entity 13
 {
 "classname" "MapSegment"
 "room" "office"
@@ -3796,7 +3836,7 @@
 ( 128 64 160 ) ( 128 64 161 ) ( 128 65 160 ) factorywall/factory_wall 0 8 0 0.01 0.01
 }
 }
-// entity 15
+// entity 14
 {
 "classname" "MapSegment"
 "room" "office"
@@ -3811,7 +3851,7 @@
 ( 24 64 168 ) ( 24 80 168 ) ( 24 80 152 ) factorywall/factory_wall 0 0 0 0.01 0.01
 }
 }
-// entity 16
+// entity 15
 {
 "classname" "MapSegment"
 "room" "nearby"
@@ -3826,7 +3866,7 @@
 ( 144 80 168 ) ( 144 224 168 ) ( 144 224 152 ) factorywall/factory_wall 0 0 0 0.01 0.01
 }
 }
-// entity 17
+// entity 16
 {
 "classname" "MapSegment"
 "room" "hallway_we"
@@ -3841,7 +3881,7 @@
 ( 512 80 168 ) ( 512 176 168 ) ( 512 176 152 ) factorywall/factory_wall 0 0 0 0.01 0.01
 }
 }
-// entity 18
+// entity 17
 {
 "classname" "MapSegment"
 "room" "mine"
@@ -3856,7 +3896,7 @@
 ( 464 256 168 ) ( 464 256 169 ) ( 464 257 168 ) factorywall/factory_wall 0 0 0 0.01 0.01
 }
 }
-// entity 19
+// entity 18
 {
 "classname" "MapSegment"
 "room" "mine"
@@ -3880,7 +3920,7 @@
 ( 384 464 168 ) ( 384 464 169 ) ( 384 465 168 ) factorywall/factory_wall 0 24 0 0.01 0.01
 }
 }
-// entity 20
+// entity 19
 {
 "classname" "MapSegment"
 "room" "hallway_ns"
@@ -3895,7 +3935,7 @@
 ( 128 656 168 ) ( 128 656 169 ) ( 128 657 168 ) factorywall/factory_wall 0 0 0 0.01 0.01
 }
 }
-// entity 21
+// entity 20
 {
 "classname" "MapSegment"
 "room" "foyer"
@@ -3910,7 +3950,7 @@
 ( 256 896 168 ) ( 256 896 169 ) ( 256 897 168 ) factorywall/factory_wall 0 0 0 0.01 0.01
 }
 }
-// entity 22
+// entity 21
 {
 "classname" "MapSegment"
 "room" "frontyard"
@@ -3925,7 +3965,7 @@
 ( 88 896 240 ) ( 88 912 240 ) ( 88 912 224 ) factorywall/factory_wall 0 8 0 0.01 0.01
 }
 }
-// entity 23
+// entity 22
 {
 "classname" "MapSegment"
 "room" "frontyard"
@@ -3940,7 +3980,7 @@
 ( 272 912 240 ) ( 272 1024 240 ) ( 272 1024 224 ) factorywall/factory_wall 0 0 0 0.01 0.01
 }
 }
-// entity 24
+// entity 23
 {
 "classname" "MapSegment"
 "room" "liminal"
@@ -3955,7 +3995,7 @@
 ( 768 408 168 ) ( 768 408 169 ) ( 768 409 168 ) factorywall/factory_wall 0 0 0 0.01 0.01
 }
 }
-// entity 25
+// entity 24
 {
 "classname" "MapSegment"
 "room" "liminal"
@@ -3970,7 +4010,7 @@
 ( 744 424 168 ) ( 744 424 169 ) ( 744 425 168 ) factorywall/factory_wall 0 0 0 0.01 0.01
 }
 }
-// entity 26
+// entity 25
 {
 "classname" "MapSegment"
 "room" "observation"
@@ -3985,7 +4025,7 @@
 ( 768 768 168 ) ( 768 768 169 ) ( 768 769 168 ) factorywall/factory_wall 0 0 0 0.01 0.01
 }
 }
-// entity 27
+// entity 26
 {
 "classname" "MapSegment"
 "room" "observation"
@@ -4000,7 +4040,7 @@
 ( 784 640 168 ) ( 784 716 168 ) ( 784 716 152 ) factorywall/factory_wall 0 0 0 0.01 0.01
 }
 }
-// entity 28
+// entity 27
 {
 "classname" "MapSegment"
 "room" "armory"
@@ -4015,7 +4055,7 @@
 ( 1024 768 168 ) ( 1024 768 169 ) ( 1024 769 168 ) factorywall/factory_wall 0 24 0 0.01 0.01
 }
 }
-// entity 29
+// entity 28
 {
 "classname" "MapSegment"
 "room" "hallway_windows"
@@ -4030,7 +4070,7 @@
 ( 512 768 168 ) ( 512 768 169 ) ( 512 769 168 ) factorywall/factory_wall 0 0 0 0.01 0.01
 }
 }
-// entity 30
+// entity 29
 {
 "classname" "MapSegment"
 "room" "trains"
@@ -4045,7 +4085,7 @@
 ( 32 456 168 ) ( 32 456 169 ) ( 32 457 168 ) factorywall/factory_wall 0 0 0 1 1
 }
 }
-// entity 31
+// entity 30
 {
 "classname" "MapSegment"
 "room" "trains"
@@ -4060,7 +4100,7 @@
 ( 16 560 168 ) ( 16 560 169 ) ( 16 561 168 ) factorywall/factory_wall 0 0 0 1 1
 }
 }
-// entity 32
+// entity 31
 {
 "classname" "MapSegment"
 "room" "vent"
@@ -4075,7 +4115,7 @@
 ( -64 40 280 ) ( -64 40 281 ) ( -64 41 280 ) factorywall/factory_wall 0 120 0 1 1
 }
 }
-// entity 33
+// entity 32
 {
 "classname" "MapSegment"
 "room" "vent"
@@ -4090,7 +4130,7 @@
 ( -128 192 280 ) ( -128 192 281 ) ( -128 193 280 ) factorywall/factory_wall 0 120 0 1 1
 }
 }
-// entity 34
+// entity 33
 {
 "classname" "MapSegment"
 "room" "vent"
@@ -4105,7 +4145,7 @@
 ( -192 192 280 ) ( -192 192 281 ) ( -192 193 280 ) factorywall/factory_wall 0 120 0 1 1
 }
 }
-// entity 35
+// entity 34
 {
 "classname" "MapSegment"
 "room" "vent"
@@ -4120,7 +4160,7 @@
 ( -128 368 280 ) ( -128 368 281 ) ( -128 369 280 ) factorywall/factory_wall 0 0 0 1 1
 }
 }
-// entity 36
+// entity 35
 {
 "classname" "SnaldButton"
 "circuit" "window"
@@ -4134,7 +4174,7 @@
 ( 20 -128 60 ) ( 20 -124 60 ) ( 20 -124 48 ) beamwall1/beam_wall_01 0 0 0 0.05 0.05
 }
 }
-// entity 37
+// entity 36
 {
 "classname" "SnaldDoor"
 "circuit" "window_toggle"
@@ -4176,7 +4216,7 @@
 ( 68 -140 32 ) ( 68 -140 36 ) ( 68 -132 32 ) __TB_empty 8 0 0 1 1
 }
 }
-// entity 38
+// entity 37
 {
 "classname" "Toggler"
 "origin" "84 -152 88"
@@ -4184,7 +4224,7 @@
 "out_circuit" "window_toggle"
 "starts_on" "1"
 }
-// entity 39
+// entity 38
 {
 "classname" "MapSegment"
 "room" "vent"
@@ -4199,7 +4239,7 @@
 ( -240 824 280 ) ( -240 824 281 ) ( -240 825 280 ) factorywall/factory_wall 0 120 0 1 1
 }
 }
-// entity 40
+// entity 39
 {
 "classname" "MapSegment"
 "type" "vent"
@@ -4214,7 +4254,7 @@
 ( -64 768 280 ) ( -64 824 280 ) ( -64 824 272 ) factorywall/factory_wall 0 120 0 1 1
 }
 }
-// entity 41
+// entity 40
 {
 "classname" "MapSegment"
 "room" "backyard"
@@ -4229,7 +4269,7 @@
 ( -80 -32 168 ) ( -80 -32 169 ) ( -80 -31 168 ) factorywall/factory_wall 0 8 0 0.01 0.01
 }
 }
-// entity 42
+// entity 41
 {
 "classname" "MapSegment"
 "room" "vent"
@@ -4244,7 +4284,7 @@
 ( 192 368 280 ) ( 192 440 280 ) ( 192 440 272 ) factorywall/factory_wall 0 24 0 1 1
 }
 }
-// entity 43
+// entity 42
 {
 "classname" "AnimatronicPosition"
 "origin" "974 624 8"
@@ -4254,7 +4294,7 @@
 "animation" "armory_inspect"
 "state_id" "0"
 }
-// entity 44
+// entity 43
 {
 "classname" "AnimatronicPosition"
 "origin" "602 740 -8"
@@ -4264,7 +4304,7 @@
 "animation" "observation_chair"
 "state_id" "2"
 }
-// entity 45
+// entity 44
 {
 "classname" "AnimatronicPosition"
 "origin" "683 301 8"
@@ -4274,7 +4314,7 @@
 "state_id" "3"
 "angle" "235"
 }
-// entity 46
+// entity 45
 {
 "classname" "AnimatronicPosition"
 "origin" "354 366 -56"
@@ -4284,7 +4324,7 @@
 "state_id" "5"
 "angle" "160"
 }
-// entity 47
+// entity 46
 {
 "classname" "AnimatronicPosition"
 "origin" "842 664 4"
@@ -4294,7 +4334,7 @@
 "animation" "armory_equip"
 "state_id" "1"
 }
-// entity 48
+// entity 47
 {
 "classname" "AnimatronicPosition"
 "origin" "-80 402 -56"
@@ -4304,7 +4344,7 @@
 "animation" "preparingshot"
 "state_id" "6"
 }
-// entity 49
+// entity 48
 {
 "classname" "AnimatronicPosition"
 "origin" "404 722 8"
@@ -4314,7 +4354,7 @@
 "animation" "walking"
 "state_id" "7"
 }
-// entity 50
+// entity 49
 {
 "classname" "AnimatronicPosition"
 "origin" "-30 798 8"
@@ -4324,7 +4364,7 @@
 "animation" "foyer_crawl"
 "state_id" "8"
 }
-// entity 51
+// entity 50
 {
 "classname" "AnimatronicPosition"
 "origin" "-276 608 24"
@@ -4334,7 +4374,7 @@
 "animation" "none"
 "state_id" "9"
 }
-// entity 52
+// entity 51
 {
 "classname" "AnimatronicPosition"
 "origin" "-160 160 30"
@@ -4344,7 +4384,7 @@
 "animation" "preparingshot"
 "state_id" "10"
 }
-// entity 53
+// entity 52
 {
 "classname" "AnimatronicPosition"
 "origin" "-170 12 24"
@@ -4354,7 +4394,7 @@
 "state_id" "11"
 "angle" "0"
 }
-// entity 54
+// entity 53
 {
 "classname" "AnimatronicPosition"
 "origin" "-70 424 8"
@@ -4364,7 +4404,7 @@
 "state_id" "0"
 "angle" "0"
 }
-// entity 55
+// entity 54
 {
 "classname" "AnimatronicPosition"
 "origin" "42 880 8"
@@ -4374,7 +4414,7 @@
 "state_id" "18"
 "angle" "90"
 }
-// entity 56
+// entity 55
 {
 "classname" "AnimatronicPosition"
 "origin" "-22 680 8"
@@ -4384,7 +4424,7 @@
 "state_id" "2"
 "angle" "90"
 }
-// entity 57
+// entity 56
 {
 "classname" "AnimatronicPosition"
 "origin" "240 804 8"
@@ -4394,7 +4434,7 @@
 "state_id" "2"
 "angle" "90"
 }
-// entity 58
+// entity 57
 {
 "classname" "Camera"
 "origin" "48 116 88"
@@ -4405,7 +4445,7 @@
 "elevation" "-65"
 "room" "Nearby"
 }
-// entity 59
+// entity 58
 {
 "classname" "Camera"
 "origin" "152 88 88"
@@ -4416,7 +4456,7 @@
 "room" "hallway_we"
 "elevation" "-15"
 }
-// entity 60
+// entity 59
 {
 "classname" "Camera"
 "origin" "80 232 88"
@@ -4427,24 +4467,7 @@
 "fov" "70"
 "elevation" "-15"
 }
-// entity 61
-{
-"classname" "SnaldDoor"
-"circuit" "lucas.1"
-"easing" "-2"
-"open_time" "1"
-"sound" "res://sounds/door.ogg"
-// brush 0
-{
-( 0 908 96 ) ( 0 900 96 ) ( 0 900 0 ) largesandstoneblocks/large_sandstone_blocks 0 0 0 0.1 0.1
-( 0 900 96 ) ( 88 900 96 ) ( 88 900 0 ) largesandstoneblocks/large_sandstone_blocks 0 0 0 0.1 0.1
-( 88 900 0 ) ( 88 908 0 ) ( 0 908 0 ) largesandstoneblocks/large_sandstone_blocks 0 0 0 0.1 0.1
-( 0 908 96 ) ( 88 908 96 ) ( 88 900 96 ) largesandstoneblocks/large_sandstone_blocks 0 0 0 0.1 0.1
-( 88 908 0 ) ( 88 908 96 ) ( 0 908 96 ) largesandstoneblocks/large_sandstone_blocks 0 0 0 0.1 0.1
-( 88 900 96 ) ( 88 908 96 ) ( 88 908 0 ) largesandstoneblocks/large_sandstone_blocks 0 0 0 0.1 0.1
-}
-}
-// entity 62
+// entity 60
 {
 "classname" "SnaldDoor"
 // brush 0
@@ -4457,20 +4480,7 @@
 ( 112 644 96 ) ( 112 652 96 ) ( 112 652 0 ) __TB_empty 0 0 0 1 1
 }
 }
-// entity 63
-{
-"classname" "SnaldDoor"
-// brush 0
-{
-( 500 756 0 ) ( 500 756 96 ) ( 500 668 96 ) __TB_empty 4 0 0 1 1
-( 500 668 96 ) ( 508 668 96 ) ( 508 668 0 ) __TB_empty 0 0 180 1 -1
-( 508 756 0 ) ( 500 756 0 ) ( 500 668 0 ) __TB_empty 4 0 90 1 1
-( 500 668 96 ) ( 500 756 96 ) ( 508 756 96 ) __TB_empty 4 0 90 1 1
-( 508 756 96 ) ( 500 756 96 ) ( 500 756 0 ) __TB_empty 0 0 180 1 -1
-( 508 668 96 ) ( 508 756 96 ) ( 508 756 0 ) __TB_empty 4 0 0 1 1
-}
-}
-// entity 64
+// entity 61
 {
 "classname" "Camera"
 "origin" "15 424 88"
@@ -4483,7 +4493,7 @@
 "max_angle" "195"
 "min_angle" "165"
 }
-// entity 65
+// entity 62
 {
 "classname" "Camera"
 "origin" "236 676 88"
@@ -4496,7 +4506,7 @@
 "min_angle" "125"
 "max_angle" "145"
 }
-// entity 66
+// entity 63
 {
 "classname" "Camera"
 "origin" "272 756 88"
@@ -4507,7 +4517,7 @@
 "camera_id" "hallway_windows_cam"
 "elevation" "-15"
 }
-// entity 67
+// entity 64
 {
 "classname" "Camera"
 "origin" "528 440 88"
@@ -4520,7 +4530,7 @@
 "max_angle" "60"
 "min_angle" "30"
 }
-// entity 68
+// entity 65
 {
 "classname" "Camera"
 "origin" "528 392 88"
@@ -4533,7 +4543,7 @@
 "max_angle" "325"
 "min_angle" "305"
 }
-// entity 69
+// entity 66
 {
 "classname" "Camera"
 "origin" "792 760 88"
@@ -4546,7 +4556,7 @@
 "max_angle" "325"
 "min_angle" "305"
 }
-// entity 70
+// entity 67
 {
 "classname" "Camera"
 "origin" "216 216 88"
@@ -4559,7 +4569,7 @@
 "max_angle" "75"
 "min_angle" "25"
 }
-// entity 71
+// entity 68
 {
 "classname" "SnaldDoor"
 // brush 0
@@ -4572,7 +4582,7 @@
 ( 508 80 96 ) ( 508 176 96 ) ( 508 176 0 ) __TB_empty -28 0 0 1 1
 }
 }
-// entity 72
+// entity 69
 {
 "classname" "SnaldLight"
 "origin" "-108 424 88"
@@ -4584,7 +4594,7 @@
 "power" "0"
 "radius" "13"
 }
-// entity 73
+// entity 70
 {
 "classname" "SnaldLight"
 "origin" "80 352 88"
@@ -4596,7 +4606,7 @@
 "power" "0"
 "radius" "13"
 }
-// entity 74
+// entity 71
 {
 "classname" "SnaldLight"
 "origin" "88 776 88"
@@ -4608,7 +4618,7 @@
 "power" "0"
 "radius" "18"
 }
-// entity 75
+// entity 72
 {
 "classname" "SnaldLight"
 "origin" "360 696 88"
@@ -4620,7 +4630,7 @@
 "power" "0"
 "radius" "13"
 }
-// entity 76
+// entity 73
 {
 "classname" "SnaldLight"
 "origin" "568 584 88"
@@ -4632,7 +4642,7 @@
 "power" "0"
 "radius" "13"
 }
-// entity 77
+// entity 74
 {
 "classname" "SnaldLight"
 "origin" "712 584 88"
@@ -4644,7 +4654,7 @@
 "power" "0"
 "radius" "13"
 }
-// entity 78
+// entity 75
 {
 "classname" "SnaldLight"
 "origin" "680 696 88"
@@ -4656,7 +4666,7 @@
 "power" "0"
 "radius" "13"
 }
-// entity 79
+// entity 76
 {
 "classname" "SnaldLight"
 "origin" "888 652 60"
@@ -4668,7 +4678,7 @@
 "power" "0"
 "radius" "10"
 }
-// entity 80
+// entity 77
 {
 "classname" "SnaldLight"
 "origin" "606 110 88"
@@ -4680,7 +4690,7 @@
 "power" "0"
 "radius" "13"
 }
-// entity 81
+// entity 78
 {
 "classname" "SnaldLight"
 "origin" "680 344 88"
@@ -4692,7 +4702,7 @@
 "power" "0"
 "radius" "13"
 }
-// entity 82
+// entity 79
 {
 "classname" "SnaldLight"
 "origin" "552 216 88"
@@ -4704,7 +4714,7 @@
 "power" "0"
 "radius" "13"
 }
-// entity 83
+// entity 80
 {
 "classname" "SnaldLight"
 "origin" "312 120 88"
@@ -4716,7 +4726,7 @@
 "power" "0"
 "radius" "13"
 }
-// entity 84
+// entity 81
 {
 "classname" "SnaldLight"
 "origin" "-82 12 52"
@@ -4729,7 +4739,7 @@
 "flicker_chance" "0.01"
 "power" "15"
 }
-// entity 85
+// entity 82
 {
 "classname" "SnaldButton"
 "circuit" "office_vent_flash"
@@ -4743,14 +4753,14 @@
 ( -60 -18 52 ) ( -60 -26 36 ) ( -60 -26 52 ) beamwall1/beam_wall_01 0 0 0 1 1
 }
 }
-// entity 86
+// entity 83
 {
 "classname" "Momentary"
 "origin" "-56 8 82"
 "in_circuit" "office_vent_flash"
 "out_circuit" "office_vent_flash_momentary"
 }
-// entity 87
+// entity 84
 {
 "classname" "SnaldLight"
 "origin" "257 389 58"
@@ -4762,7 +4772,7 @@
 "power" "0"
 "radius" "15"
 }
-// entity 88
+// entity 85
 {
 "classname" "SnaldLight"
 "origin" "385 389 58"
@@ -4774,7 +4784,7 @@
 "power" "0"
 "radius" "15"
 }
-// entity 89
+// entity 86
 {
 "classname" "SnaldLight"
 "origin" "385 257 58"
@@ -4786,7 +4796,7 @@
 "power" "0"
 "radius" "15"
 }
-// entity 90
+// entity 87
 {
 "classname" "SnaldLight"
 "origin" "644 741 50"
@@ -4797,7 +4807,7 @@
 "flicker_chance" ".2"
 "energy" ".1"
 }
-// entity 91
+// entity 88
 {
 "classname" "SnaldLight"
 "origin" "1008 528 79"
@@ -4809,7 +4819,7 @@
 "power" "0"
 "radius" "6"
 }
-// entity 92
+// entity 89
 {
 "classname" "SnaldLight"
 "origin" "912 528 79"
@@ -4821,7 +4831,7 @@
 "power" "0"
 "radius" "4"
 }
-// entity 93
+// entity 90
 {
 "classname" "SnaldLight"
 "origin" "1008 624 76"
@@ -4833,7 +4843,7 @@
 "power" "0"
 "radius" "14"
 }
-// entity 94
+// entity 91
 {
 "classname" "SnaldLight"
 "origin" "80 528 88"
@@ -4845,7 +4855,7 @@
 "power" "0"
 "radius" "13"
 }
-// entity 95
+// entity 92
 {
 "classname" "SnaldLight"
 "origin" "104 128 40"
@@ -4857,7 +4867,7 @@
 "radius" "10"
 "energy" ".1"
 }
-// entity 96
+// entity 93
 {
 "classname" "SnaldLight"
 "origin" "84 -52 88"
@@ -4869,7 +4879,7 @@
 "power" "0"
 "radius" "9"
 }
-// entity 97
+// entity 94
 {
 "classname" "SnaldLight"
 "origin" "-44 -84 52"
@@ -4881,7 +4891,7 @@
 "power" "0"
 "radius" "12"
 }
-// entity 98
+// entity 95
 {
 "classname" "AnimatronicPosition"
 "origin" "587 586 8"
@@ -4891,7 +4901,7 @@
 "animation" "observation_point"
 "state_id" "2"
 }
-// entity 99
+// entity 96
 {
 "classname" "AnimatronicPosition"
 "origin" "447 161 8"
@@ -4901,7 +4911,7 @@
 "animation" "we_hall_sneak"
 "state_id" "4"
 }
-// entity 100
+// entity 97
 {
 "classname" "AnimatronicPosition"
 "origin" "126 708 8"
@@ -4911,7 +4921,7 @@
 "state_id" "13"
 "angle" "0"
 }
-// entity 101
+// entity 98
 {
 "classname" "AnimatronicPosition"
 "origin" "404 722 8"
@@ -4921,7 +4931,7 @@
 "state_id" "14"
 "angle" "0"
 }
-// entity 102
+// entity 99
 {
 "classname" "AnimatronicPosition"
 "origin" "598 694 8"
@@ -4931,7 +4941,7 @@
 "state_id" "15"
 "angle" "0"
 }
-// entity 103
+// entity 100
 {
 "classname" "AnimatronicPosition"
 "origin" "969 737 4"
@@ -4941,7 +4951,7 @@
 "animation" "armory_reload"
 "state_id" "16"
 }
-// entity 104
+// entity 101
 {
 "classname" "AnimatronicPosition"
 "origin" "-98 12 16"
@@ -4951,7 +4961,7 @@
 "state_id" "12"
 "angle" "0"
 }
-// entity 105
+// entity 102
 {
 "classname" "AnimatronicPosition"
 "origin" "56 504 8"
@@ -4961,7 +4971,7 @@
 "state_id" "1"
 "angle" "90"
 }
-// entity 106
+// entity 103
 {
 "classname" "AnimatronicPosition"
 "origin" "344 664 8"
@@ -4971,7 +4981,7 @@
 "state_id" "3"
 "angle" "90"
 }
-// entity 107
+// entity 104
 {
 "classname" "AnimatronicPosition"
 "origin" "680 552 8"
@@ -4981,7 +4991,7 @@
 "state_id" "4"
 "angle" "90"
 }
-// entity 108
+// entity 105
 {
 "classname" "AnimatronicPosition"
 "origin" "888 568 8"
@@ -4991,7 +5001,7 @@
 "state_id" "5"
 "angle" "90"
 }
-// entity 109
+// entity 106
 {
 "classname" "AnimatronicPosition"
 "origin" "732 168 80"
@@ -5001,7 +5011,7 @@
 "state_id" "6"
 "angle" "90"
 }
-// entity 110
+// entity 107
 {
 "classname" "AnimatronicPosition"
 "origin" "248 72 8"
@@ -5011,7 +5021,7 @@
 "state_id" "7"
 "angle" "90"
 }
-// entity 111
+// entity 108
 {
 "classname" "AnimatronicPosition"
 "origin" "328 248 -56"
@@ -5021,7 +5031,7 @@
 "state_id" "8"
 "angle" "90"
 }
-// entity 112
+// entity 109
 {
 "classname" "AnimatronicPosition"
 "origin" "-72 968 8"
@@ -5031,7 +5041,7 @@
 "state_id" "9"
 "angle" "90"
 }
-// entity 113
+// entity 110
 {
 "classname" "AnimatronicPosition"
 "origin" "-120 -136 8"
@@ -5041,7 +5051,7 @@
 "state_id" "10"
 "angle" "90"
 }
-// entity 114
+// entity 111
 {
 "classname" "AnimatronicPosition"
 "origin" "40 -168 8"
@@ -5051,7 +5061,7 @@
 "state_id" "11"
 "angle" "90"
 }
-// entity 115
+// entity 112
 {
 "classname" "AnimatronicPosition"
 "origin" "104 88 8"
@@ -5061,7 +5071,7 @@
 "state_id" "13"
 "angle" "90"
 }
-// entity 116
+// entity 113
 {
 "classname" "AnimatronicPosition"
 "origin" "-276 632 24"
@@ -5071,7 +5081,7 @@
 "state_id" "14"
 "angle" "90"
 }
-// entity 117
+// entity 114
 {
 "classname" "AnimatronicPosition"
 "origin" "-118 402 -56"
@@ -5081,7 +5091,7 @@
 "state_id" "15"
 "angle" "90"
 }
-// entity 118
+// entity 115
 {
 "classname" "AnimatronicPosition"
 "origin" "-160 160 50"
@@ -5091,7 +5101,7 @@
 "state_id" "16"
 "angle" "90"
 }
-// entity 119
+// entity 116
 {
 "classname" "AnimatronicPosition"
 "origin" "-176 12 24"
@@ -5101,7 +5111,7 @@
 "state_id" "17"
 "angle" "90"
 }
-// entity 120
+// entity 117
 {
 "classname" "AnimatronicPosition"
 "origin" "40 -168 8"
@@ -5111,7 +5121,7 @@
 "state_id" "12"
 "angle" "90"
 }
-// entity 121
+// entity 118
 {
 "classname" "SnaldLight"
 "origin" "692 112 56"
@@ -5123,7 +5133,7 @@
 "power" "0"
 "radius" "7"
 }
-// entity 122
+// entity 119
 {
 "classname" "AnimatronicPosition"
 "origin" "736 144 8"
@@ -5133,7 +5143,7 @@
 "state_id" "0"
 "angle" "0"
 }
-// entity 123
+// entity 120
 {
 "classname" "AnimatronicPosition"
 "origin" "736 144 8"
@@ -5143,7 +5153,7 @@
 "state_id" "1"
 "angle" "0"
 }
-// entity 124
+// entity 121
 {
 "classname" "AnimatronicPosition"
 "origin" "736 144 8"
@@ -5153,7 +5163,7 @@
 "state_id" "2"
 "angle" "0"
 }
-// entity 125
+// entity 122
 {
 "classname" "AnimatronicPosition"
 "origin" "736 144 8"
@@ -5163,7 +5173,7 @@
 "state_id" "3"
 "angle" "0"
 }
-// entity 126
+// entity 123
 {
 "classname" "AnimatronicPosition"
 "origin" "660 112 8"
@@ -5173,7 +5183,7 @@
 "state_id" "4"
 "angle" "180"
 }
-// entity 127
+// entity 124
 {
 "classname" "AnimatronicPosition"
 "origin" "468 104 8"
@@ -5183,7 +5193,7 @@
 "state_id" "6"
 "angle" "180"
 }
-// entity 128
+// entity 125
 {
 "classname" "AnimatronicPosition"
 "origin" "576 112 8"
@@ -5193,7 +5203,7 @@
 "state_id" "5"
 "angle" "180"
 }
-// entity 129
+// entity 126
 {
 "classname" "AnimatronicPosition"
 "origin" "354 104 8"
@@ -5203,7 +5213,7 @@
 "state_id" "7"
 "angle" "180"
 }
-// entity 130
+// entity 127
 {
 "classname" "AnimatronicPosition"
 "origin" "258 104 8"
@@ -5213,7 +5223,7 @@
 "state_id" "8"
 "angle" "180"
 }
-// entity 131
+// entity 128
 {
 "classname" "AnimatronicPosition"
 "origin" "70 104 8"
@@ -5223,7 +5233,7 @@
 "state_id" "9"
 "angle" "180"
 }
-// entity 132
+// entity 129
 {
 "classname" "AnimatronicPosition"
 "origin" "0 100 8"
@@ -5233,7 +5243,7 @@
 "state_id" "10"
 "angle" "270"
 }
-// entity 133
+// entity 130
 {
 "classname" "particle"
 "origin" "40 -168 88"
@@ -5246,7 +5256,7 @@
 "one_shot" "0"
 "randomness" ".55"
 }
-// entity 134
+// entity 131
 {
 "classname" "particle"
 "origin" "584 808 88"
@@ -5259,7 +5269,7 @@
 "one_shot" "0"
 "randomness" ".55"
 }
-// entity 135
+// entity 132
 {
 "classname" "particle"
 "origin" "696 808 88"
@@ -5272,7 +5282,7 @@
 "one_shot" "0"
 "randomness" ".55"
 }
-// entity 136
+// entity 133
 {
 "classname" "particle"
 "origin" "728 112 8"
@@ -5287,7 +5297,7 @@
 "circuit" "jojo.1"
 "angle" "90"
 }
-// entity 137
+// entity 134
 {
 "classname" "AnimatronicPosition"
 "origin" "737 513 25"
@@ -5295,7 +5305,7 @@
 "room_id" "observation"
 "state_id" "0"
 }
-// entity 138
+// entity 135
 {
 "classname" "AnimatronicPosition"
 "origin" "561 270 1"
@@ -5303,7 +5313,7 @@
 "room_id" "liminal"
 "state_id" "1"
 }
-// entity 139
+// entity 136
 {
 "classname" "AnimatronicPosition"
 "origin" "158 849 1"
@@ -5311,7 +5321,7 @@
 "room_id" "foyer"
 "state_id" "4"
 }
-// entity 140
+// entity 137
 {
 "classname" "AnimatronicPosition"
 "origin" "97 353 1"
@@ -5319,7 +5329,7 @@
 "room_id" "ns_hallway"
 "state_id" "5"
 }
-// entity 141
+// entity 138
 {
 "classname" "AnimatronicPosition"
 "origin" "311 156 1"
@@ -5327,12 +5337,12 @@
 "room_id" "we_hallway"
 "state_id" "2"
 }
-// entity 142
+// entity 139
 {
 "classname" "SnaldLight"
 "origin" "292 44 88"
 }
-// entity 143
+// entity 140
 {
 "classname" "AnimatronicPosition"
 "origin" "385 750 1"
@@ -5340,7 +5350,7 @@
 "room_id" "window_hallway"
 "state_id" "3"
 }
-// entity 144
+// entity 141
 {
 "classname" "particle"
 "origin" "728 112 8"
@@ -5355,7 +5365,7 @@
 "circuit" "jojo.2"
 "angle" "90"
 }
-// entity 145
+// entity 142
 {
 "classname" "particle"
 "origin" "728 112 8"
@@ -5370,7 +5380,7 @@
 "circuit" "jojo.3"
 "angle" "90"
 }
-// entity 146
+// entity 143
 {
 "classname" "particle"
 "origin" "344 808 88"
@@ -5383,7 +5393,7 @@
 "one_shot" "0"
 "randomness" ".55"
 }
-// entity 147
+// entity 144
 {
 "classname" "particle"
 "origin" "428 808 88"
@@ -5396,7 +5406,7 @@
 "one_shot" "0"
 "randomness" ".55"
 }
-// entity 148
+// entity 145
 {
 "classname" "particle"
 "origin" "192 936 88"
@@ -5409,17 +5419,25 @@
 "one_shot" "0"
 "randomness" ".55"
 }
-// entity 149
+// entity 146
 {
 "classname" "SnaldButton"
 "circuit" "generator"
 // brush 0
 {
-( 112 -104 60 ) ( 112 -120 60 ) ( 112 -120 44 ) __TB_empty 20 0 0 1 1
-( 112 -120 60 ) ( 128 -120 60 ) ( 128 -120 44 ) __TB_empty 0 0 0 1 1
-( 128 -120 44 ) ( 128 -104 44 ) ( 112 -104 44 ) __TB_empty 0 -20 0 1 1
-( 112 -104 60 ) ( 128 -104 60 ) ( 128 -120 60 ) __TB_empty 0 -20 0 1 1
-( 128 -104 44 ) ( 128 -104 60 ) ( 112 -104 60 ) __TB_empty 0 0 0 1 1
-( 128 -120 60 ) ( 128 -104 60 ) ( 128 -104 44 ) __TB_empty 20 0 0 1 1
+( 112 -96 60 ) ( 112 -112 60 ) ( 112 -112 44 ) __TB_empty 12 0 0 1 1
+( 112 -112 60 ) ( 128 -112 60 ) ( 128 -112 44 ) __TB_empty 0 0 0 1 1
+( 128 -112 44 ) ( 128 -96 44 ) ( 112 -96 44 ) __TB_empty 0 -12 0 1 1
+( 112 -96 60 ) ( 128 -96 60 ) ( 128 -112 60 ) __TB_empty 0 -12 0 1 1
+( 128 -96 44 ) ( 128 -96 60 ) ( 112 -96 60 ) __TB_empty 0 0 0 1 1
+( 128 -112 60 ) ( 128 -96 60 ) ( 128 -96 44 ) __TB_empty 12 0 0 1 1
 }
+}
+// entity 147
+{
+"classname" "Generator"
+"origin" "148 -94 50"
+"power" ".25"
+"noise_time" "10"
+"circuit" "generator"
 }

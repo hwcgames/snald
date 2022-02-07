@@ -12,8 +12,20 @@ func _ready():
 	else:
 		assume_state(16)
 	$"/root/EventMan".connect("on", self, "on")
+	$"/root/EventMan".connect("noisy", self, "noisy")
 	$AimingTimer.connect("timeout", self, "shoot")
+	
 
+func difficulty_offset():
+	var heat_increase = 0
+	var noise_increase = 0
+	if $"/root/EventMan".temperature >= 90:
+		heat_increase = ($"/root/EventMan".temperature - 90) / 6
+	if $"/root/EventMan".circuit("noisy") == true:
+		noise_increase = 2
+	#if the music playin do the thin
+	return (heat_increase + noise_increase)
+	
 func state_machine():
 	if "lucas.vent" in $"/root/EventMan".circuit_states and $"/root/EventMan".circuit_states["lucas.vent"]:
 		return state
