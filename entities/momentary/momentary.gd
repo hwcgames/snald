@@ -9,7 +9,7 @@ func _ready():
 	yield(get_parent(), "build_complete")
 	in_circuit = properties["in_circuit"] if "in_circuit" in properties else in_circuit
 	out_circuit = properties["out_circuit"] if "out_circuit" in properties else out_circuit
-	$"/root/EventMan".connect("on", self, "on")
+	var _err = $"/root/EventMan".connect("on", self, "on")
 
 func on(name: String):
 	if name == in_circuit:

@@ -27,11 +27,11 @@ func _ready():
 	circuit = properties["circuit"] if "circuit" in properties else circuit
 	power_consumption = properties["power_consumption"] if "power_consumption" in properties else 0
 	affects_temperature = properties["affects_temperature"] if "affects_temperature" in properties else 0
-	$"/root/EventMan".connect("on", self, "on")
-	$"/root/EventMan".connect("off", self, "off")
-	$"/root/EventMan".connect("power_tick", self, "power_tick")
+	var _err = $"/root/EventMan".connect("on", self, "on")
+	_err = $"/root/EventMan".connect("off", self, "off")
+	_err = $"/root/EventMan".connect("power_tick", self, "power_tick")
 	if affects_temperature == 1:
-		$"/root/EventMan".connect("temperature_tick", self, "temperature_tick")
+		_err = $"/root/EventMan".connect("temperature_tick", self, "temperature_tick")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

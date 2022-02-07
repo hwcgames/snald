@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/briefing/dossier.tscn" type="PackedScene" id=1]
+[ext_resource path="res://font/worry.tres" type="DynamicFont" id=2]
+
+[node name="Control" instance=ExtResource( 1 )]
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" index="0"]
+margin_right = 819.0
+margin_bottom = 153.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Greetings. In a short while, you will find yourself in mortal danger. It is very important that you do exactly what I say; your very life depends on it. I don't have much time here; the following are some simple guidelines.
+* The green one will crawl into your vent. Take care not to activate the flash lamp; it will aggravate it.
+* The blue one hates the heat; don't let the temperature go too high.
+* The red one is indecisive. Open and close your door quickly to confuse it.
+* The small one is fast, but its menacing aura betrays its stealth."
+autowrap = true

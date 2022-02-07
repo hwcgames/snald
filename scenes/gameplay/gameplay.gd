@@ -21,10 +21,10 @@ func _ready():
 		$QodotMap.verify_and_build()
 	else:
 		print("Tried to load a map that doesn't exist, exiting to menu")
-		get_tree().change_scene("res://scenes/menu/menu.tscn")
+		var _err = get_tree().change_scene("res://scenes/menu/menu.tscn")
 	var loading_bar = LOADING_BAR.instance()
 	add_child(loading_bar)
-	$QodotMap.connect("build_progress", loading_bar, "progress")
+	var _err = $QodotMap.connect("build_progress", loading_bar, "progress")
 	yield($QodotMap, "build_complete")
 	loading_bar.remove_and_skip()
 	var difficulties = $"/root/EventMan".difficulties
@@ -42,4 +42,3 @@ func _ready():
 
 func completed_build():
 	return
-	print($QodotMap.get_children())

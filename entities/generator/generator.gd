@@ -17,9 +17,9 @@ func _ready():
 	power_regen = properties["power"] if "power" in properties else .25
 	circuit = properties["circuit"] if "circuit" in properties else "generator"
 	noise_time = properties["noise_time"] if "noise_time" in properties else 10
-	$"/root/EventMan".connect("on", self, "on")
-	$"/root/EventMan".connect("off", self, "off")
-	$"/root/EventMan".connect("power_tick", self, "power_tick")
+	var _err = $"/root/EventMan".connect("on", self, "on")
+	_err = $"/root/EventMan".connect("off", self, "off")
+	_err = $"/root/EventMan".connect("power_tick", self, "power_tick")
 	$noise_timer.wait_time = noise_time
 	
 func on(c):

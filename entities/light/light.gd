@@ -17,9 +17,9 @@ var goal_energy = energy
 func _ready():
 	# Set angle correctly
 	yield(get_parent(), "build_complete")
-	$"/root/EventMan".connect("on", self, "circuit_on")
-	$"/root/EventMan".connect("off", self, "circuit_off")
-	$"/root/EventMan".connect("power_tick", self, "power_tick")
+	var _err = $"/root/EventMan".connect("on", self, "circuit_on")
+	_err = $"/root/EventMan".connect("off", self, "circuit_off")
+	_err = $"/root/EventMan".connect("power_tick", self, "power_tick")
 	on_now = (properties["always_on"] == 1) if "always_on" in properties else false
 	always_on = (properties["always_on"] == 1) if "always_on" in properties else false
 	circuit = properties["circuit"] if "circuit" in properties else ""
@@ -32,7 +32,7 @@ func _ready():
 	$OmniLight.omni_range = properties["radius"] if "radius" in properties else 16
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$OmniLight.light_energy = lerp($OmniLight.light_energy, goal_energy, 0.1)
 	if flickering and on_now and not depleted:
 		var rand = randf()
