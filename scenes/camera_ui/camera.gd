@@ -11,7 +11,6 @@ export var camera_id = "set-me"
 func _ready():
 	var _err = $"/root/EventMan".connect("on", self, "on")
 	_err = $"/root/EventMan".connect("off", self, "off")
-	_err = $"/root/EventMan".connect("power_tick", self, "power_tick")
 
 func on(circuit: String):
 	if circuit == "camera." + camera_id:

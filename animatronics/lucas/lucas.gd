@@ -76,6 +76,8 @@ func state_machine():
 		have_hunted = true
 		$"/root/EventMan".connect("off", self, "wait_for_camera_entrance")
 		return 18
+	if state in [2,8] and hunt_target == "vent" and EventMan.circuit("gabe.vent"):
+		return state
 	match state:
 		9:
 			play_approach_sound()

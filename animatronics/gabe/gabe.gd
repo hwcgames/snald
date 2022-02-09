@@ -27,7 +27,7 @@ func difficulty_offset():
 	return (heat_increase + noise_increase)
 	
 func state_machine():
-	if "lucas.vent" in $"/root/EventMan".circuit_states and $"/root/EventMan".circuit_states["lucas.vent"]:
+	if $"/root/EventMan".circuit("lucas.vent") and state in [8, 5]:
 		return state
 	match state:
 		0:
