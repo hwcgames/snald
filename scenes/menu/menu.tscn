@@ -51,7 +51,7 @@ text = "Night 1"
 difficulties = {
 "gabe": 6,
 "jojo": 3,
-"lucas": 20,
+"lucas": 4,
 "redman": 5
 }
 night_index = 0

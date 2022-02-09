@@ -79,10 +79,12 @@ func state_machine():
 	match state:
 		9:
 			play_approach_sound()
+			
 			return 10
 		10:
 			# animation_player.connect("animation_finished", self, "walked_up_to_window")
 			# return 10
+			$"/root/EventMan".connect("on", self, "attack_if_window_opens_circuit_handler")
 			return 11
 		11:
 			$"/root/EventMan".disconnect("on", self, "attack_if_window_opens_circuit_handler")
