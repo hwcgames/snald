@@ -3731,7 +3731,7 @@
 {
 "classname" "SnaldDoor"
 "circuit" "office_door_toggle"
-"power_consumption" ".75"
+"power_consumption" ".5"
 // brush 0
 {
 ( 16 76 92 ) ( 16 68 92 ) ( 16 76 0 ) __TB_empty -8 0 0 1 1
@@ -5437,7 +5437,7 @@
 {
 "classname" "Generator"
 "origin" "148 -94 50"
-"power" ".25"
+"power" "1"
 "noise_time" "10"
 "circuit" "generator"
 }

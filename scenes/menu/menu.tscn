@@ -94,7 +94,7 @@ difficulties = {
 "gabe": 13,
 "jojo": 12,
 "lucas": 11,
-"redman": 10
+"redman": 12
 }
 night_index = 2
 completion_flag = "n3"
@@ -112,7 +112,14 @@ text = "Night 4"
 flag_to_check = "n3"
 
 [node name="NightConfig" parent="TabContainer/Choose a Night/Night 4" instance=ExtResource( 2 )]
+difficulties = {
+"gabe": 18,
+"jojo": 17,
+"lucas": 15,
+"redman": 16
+}
 completion_flag = "n4"
+time_to_completion = 720
 
 [node name="Night 5" type="Button" parent="TabContainer/Choose a Night"]
 margin_left = 191.0

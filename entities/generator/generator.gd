@@ -6,9 +6,10 @@ extends QodotEntity
 # var b = "text"
 var power_regen = .25
 var circuit = "generator"
-var noise_time = 10
+var noise_time = 20
 var suppress = false
 var generating = false
+var gen_time = 10
 
 
 func _ready():
@@ -21,6 +22,7 @@ func _ready():
 	_err = $"/root/EventMan".connect("off", self, "off")
 	_err = $"/root/EventMan".connect("power_tick", self, "power_tick")
 	$noise_timer.wait_time = noise_time
+	$gen_timer.wait_time = gen_time
 	
 func on(c):
 	if c == circuit and not suppress:
@@ -28,11 +30,13 @@ func on(c):
 		generating = true
 		#$AnimationPlayer.play()
 		$noise_timer.start()
+		$gen_timer.start()
 		$"/root/EventMan".circuit_on("noisy")
+		yield($gen_timer,"timeout")
+		generating = false
 		yield($noise_timer,"timeout")
 		$"/root/EventMan".circuit_off("noisy")
 		suppress = false
-		generating = false
 
 func power_tick():
 	if generating == true:

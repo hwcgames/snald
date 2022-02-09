@@ -24,3 +24,5 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.193131 )
 mesh = SubResource( 2 )
 material/0 = null
+
+[node name="gen_timer" type="Timer" parent="."]
