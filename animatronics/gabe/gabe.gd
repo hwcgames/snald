@@ -22,7 +22,7 @@ func difficulty_offset():
 	if $"/root/EventMan".temperature >= 90:
 		heat_increase = ($"/root/EventMan".temperature - 90) / 6
 	if $"/root/EventMan".circuit("noisy") == true:
-		noise_increase = 2
+		noise_increase = 5
 	#if the music playin do the thin
 	return (heat_increase + noise_increase)
 	

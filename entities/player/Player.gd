@@ -20,7 +20,7 @@ func _ready():
 	print("Setting up jumpscare handler")
 	_err = $"/root/EventMan".connect("jumpscare", self, "jumpscare")
 func temperature_tick():
-	if $"/root/EventMan".temperature <= 50:
+	if $"/root/EventMan".temperature <= 40:
 		turn_speed = 60 - (50 - $"/root/EventMan".temperature)
 	else:
 		turn_speed = float(properties["speed"])

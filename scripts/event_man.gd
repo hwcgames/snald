@@ -83,10 +83,10 @@ func power_tick():
 func temperature_tick():
 	if temperature > 120:
 		temperature = 120
-		passive_power = .2
+		passive_power = .5
 	if temperature < 20:
 		temperature = 20
-		passive_power = .2
+		passive_power = .5
 	else:
 		passive_power = 0
 	temperature -= passive_temperature
