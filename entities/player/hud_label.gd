@@ -21,7 +21,7 @@ func power_tick():
 	call_deferred("update")
 
 func jumpscare(_char, _anim):
-	if not $"../../../".DEBUG:
+	if not $"../../".DEBUG:
 		hide()
 
 func update():

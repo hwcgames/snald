@@ -26,3 +26,6 @@ func reset():
 	persistent_dict = {}
 	save_game()
 	get_tree().quit()
+
+func get_key(key):
+	return persistent_dict[key] if key in persistent_dict else null

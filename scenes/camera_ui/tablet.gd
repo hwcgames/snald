@@ -25,7 +25,7 @@ func _process(delta):
 	anchor_bottom = lerp(anchor_bottom, interp_target, 0.5)
 	var mouse_pos = get_viewport().get_mouse_position()
 	mouse_pos /= get_viewport().size
-	if mouse_pos.y > 0.9 and mouse_pos.x > 0.3 and mouse_pos.x < 0.7 and not depleted:
+	if ((mouse_pos.y > 0.9 and mouse_pos.x > 0.3 and mouse_pos.x < 0.7) or Input.is_action_pressed("ui_down")) and not depleted:
 		if not suppress:
 			suppress = true
 			if active:
