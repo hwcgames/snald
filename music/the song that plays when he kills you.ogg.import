@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/the song that plays when he kills you.ogg-eb02d5ab9118c6917a54b797d00ed92a.oggstr"
+
+[deps]
+
+source_file="res://music/the song that plays when he kills you.ogg"
+dest_files=[ "res://.import/the song that plays when he kills you.ogg-eb02d5ab9118c6917a54b797d00ed92a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

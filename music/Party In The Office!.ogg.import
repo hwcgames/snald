@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Party In The Office!.ogg-778a08b5035a7beb83ea9a09dcb287d5.oggstr"
+
+[deps]
+
+source_file="res://music/Party In The Office!.ogg"
+dest_files=[ "res://.import/Party In The Office!.ogg-778a08b5035a7beb83ea9a09dcb287d5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

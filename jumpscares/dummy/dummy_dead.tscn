@@ -11,9 +11,6 @@ margin_bottom = 315.0
 text = "Dead from dummy jumpscare.
 If this happened, something went wrong."
 
-[node name="Button" parent="." index="1"]
-visible = false
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource( 2 )
 autoplay = true

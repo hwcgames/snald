@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://jumpscares/base/base_dead.tscn" type="PackedScene" id=1]
-[ext_resource path="res://jumpscares/gabe/Congratulations_You_have_been_promoted_to_Deceased.wav" type="AudioStream" id=2]
+[ext_resource path="res://music/Congratulations! You have been promoted to Deceased.ogg" type="AudioStream" id=2]
 
 [node name="Dead" instance=ExtResource( 1 )]
 
@@ -10,9 +10,6 @@ margin_top = 284.0
 margin_bottom = 315.0
 text = "Congratulations! You are now promoted to deceased.
 (When you hear Gabe reload his gun, you don't have much time left. Use the flash lamp in the vent to make him miss.)"
-
-[node name="Button" parent="." index="1"]
-visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource( 2 )

@@ -3,9 +3,9 @@
 [ext_resource path="res://eggs/sound_test_button.gd" type="Script" id=1]
 [ext_resource path="res://music/Cylindrical_Test_Subject.ogg" type="AudioStream" id=2]
 [ext_resource path="res://music/Congratulations! You have been promoted to Deceased.ogg" type="AudioStream" id=3]
-[ext_resource path="res://music/the song that plays when he kills you.wav" type="AudioStream" id=4]
-[ext_resource path="res://music/Party In The Office!.wav" type="AudioStream" id=5]
-[ext_resource path="res://music/night_ambience.wav" type="AudioStream" id=6]
+[ext_resource path="res://music/the song that plays when he kills you.ogg" type="AudioStream" id=4]
+[ext_resource path="res://music/Party In The Office!.ogg" type="AudioStream" id=5]
+[ext_resource path="res://music/night_ambience.ogg" type="AudioStream" id=6]
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Button
