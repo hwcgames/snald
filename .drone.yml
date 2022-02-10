@@ -3,8 +3,8 @@ type: docker
 name: autobuild
 
 trigger:
-event:
-  - tag
+  event:
+    - tag
 
 steps:
 
