@@ -32,7 +32,7 @@ steps:
   image: barichello/godot-ci:3.4.1
   commands:
     - mkdir -v -p build/windows
-    - godot -v --export "Windows Desktop" build/windows/$EXPORT_NAME.exe
+    - godot -v --export "Windows Desktop" build/windows/snald.exe
     - mkdir -p build/windows/addons build/windows/maps
     - cp -r maps/*.map build/windows/maps
     - mkdir -p build/windows/addons/qodot/bin
@@ -65,7 +65,7 @@ steps:
   image: barichello/godot-ci:3.4.1
   commands:
     - mkdir -v -p build/linux
-    - godot -v --export "Linux/X11" build/linux/$EXPORT_NAME.x86_64
+    - godot -v --export "Linux/X11" build/linux/snald.x86_64
     - mkdir -p build/linux/addons build/linux/maps
     - cp -r maps/*.map build/linux/maps
     - mkdir -p build/linux/addons/qodot/bin
@@ -98,7 +98,7 @@ steps:
   image: barichello/godot-ci:3.4.1
   commands:
     - mkdir -v -p build/mac
-    - godot -v --export "Mac OSX" build/mac/$EXPORT_NAME.zip
+    - godot -v --export "Mac OSX" build/mac/snald.zip
     - mkdir -p build/mac/addons build/mac/maps
     - cp -r maps/*.map build/mac/maps
     - mkdir -p build/mac/addons/qodot/bin
