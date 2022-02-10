@@ -38,8 +38,8 @@ func _process(_delta):
 		var rand = randf()
 		if rand <= flicker_chance:
 			$OmniLight.light_energy = 0
-			$AnimationPlayer.stop()
-			$AnimationPlayer.play("buzz")
+			$AudioStreamPlayer3D.stop()
+			$AudioStreamPlayer3D.play()
 	pass
 
 func circuit_on(name):
@@ -47,6 +47,8 @@ func circuit_on(name):
 		on_now = true
 		goal_energy = energy
 		if "instant_on" in properties and properties["instant_on"] == 1:
+			$AudioStreamPlayer3D.stop()
+			$AudioStreamPlayer3D.play()
 			$"/root/EventMan".power -= power
 			$OmniLight.light_energy = goal_energy
 

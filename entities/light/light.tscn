@@ -1,32 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://entities/light/light.gd" type="Script" id=1]
-[ext_resource path="res://entities/light/stare.wav" type="AudioStream" id=2]
+[ext_resource path="res://music/stare.ogg" type="AudioStream" id=2]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("AudioStreamPlayer3D:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("AudioStreamPlayer3D:unit_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
 
 [sub_resource type="Animation" id=2]
 resource_name = "buzz"
@@ -62,11 +40,8 @@ light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 1.0
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-unit_size = 0.1
-max_db = 6.0
-pitch_scale = 3.56
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )

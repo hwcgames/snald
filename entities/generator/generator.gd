@@ -32,11 +32,13 @@ func on(c):
 		$noise_timer.start()
 		$gen_timer.start()
 		$"/root/EventMan".circuit_on("noisy")
+		$AudioStreamPlayer.play()
 		yield($gen_timer,"timeout")
 		generating = false
 		yield($noise_timer,"timeout")
 		$"/root/EventMan".circuit_off("noisy")
 		suppress = false
+		$AnimationPlayer.play("GeneratorSpinsDown")
 
 func power_tick():
 	if generating == true:

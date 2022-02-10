@@ -3725,7 +3725,7 @@
 "flicker_chance" "0.01"
 "power" ".1"
 "radius" "8"
-"buzz" "res://entities/light/stare.wav"
+"buzz" "res://music/stare.ogg"
 }
 // entity 8
 {
@@ -4738,6 +4738,7 @@
 "flicker_below" "10"
 "flicker_chance" "0.01"
 "power" "10"
+"buzz" "res://music/flash.ogg"
 }
 // entity 82
 {

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/flash.ogg-7b739263d79123910e079fbecc2b9a62.oggstr"
+
+[deps]
+
+source_file="res://music/flash.ogg"
+dest_files=[ "res://.import/flash.ogg-7b739263d79123910e079fbecc2b9a62.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
