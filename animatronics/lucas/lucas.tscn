@@ -46,5 +46,5 @@ stream = ExtResource( 6 )
 attenuation_model = 3
 max_distance = 1000.0
 
-[node name="fakereload" type="AudioStreamPlayer3D" parent="." index="7"]
+[node name="GunFumblePlayer2" type="AudioStreamPlayer" parent="." index="7"]
 stream = ExtResource( 7 )

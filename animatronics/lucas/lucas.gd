@@ -107,7 +107,7 @@ func state_machine():
 				hunt_accumulation = 0
 				return 0
 		16:
-			$fakereload.play()
+			$GunFumblePlayer2.play()
 			$"/root/EventMan".connect("on", self, "vent_flashbang")
 			return 17
 		17:
@@ -190,6 +190,6 @@ func difficulty_offset():
 	if $"/root/EventMan".temperature >= 90:
 		heat_increase = ($"/root/EventMan".temperature - 90) / 6
 	if $"/root/EventMan".circuit("noisy") == true:
-		noise_increase = 2
+		noise_increase = 8
 	#if the music playin do the thin
 	return (heat_increase + noise_increase + 3)

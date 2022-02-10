@@ -3723,7 +3723,7 @@
 "energy" ".5"
 "flicker_below" "100"
 "flicker_chance" "0.01"
-"power" "1"
+"power" ".1"
 "radius" "8"
 "buzz" "res://entities/light/stare.wav"
 }
@@ -4737,7 +4737,7 @@
 "always_on" "0"
 "flicker_below" "10"
 "flicker_chance" "0.01"
-"power" "15"
+"power" "10"
 }
 // entity 82
 {
@@ -5094,7 +5094,7 @@
 // entity 115
 {
 "classname" "AnimatronicPosition"
-"origin" "-160 160 50"
+"origin" "-160 12 50"
 "room_id" "vent"
 "animatronic_id" "lucas"
 "animation" "a"
@@ -5104,7 +5104,7 @@
 // entity 116
 {
 "classname" "AnimatronicPosition"
-"origin" "-176 12 24"
+"origin" "-160 12 24"
 "room_id" "vent"
 "animatronic_id" "lucas"
 "animation" "a"
@@ -5437,7 +5437,7 @@
 {
 "classname" "Generator"
 "origin" "148 -94 50"
-"power" ".25"
+"power" "1"
 "noise_time" "10"
 "circuit" "generator"
 }

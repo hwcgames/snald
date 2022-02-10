@@ -1,6 +1,6 @@
 extends AnimatronicBase
 export var office_door_circuit = "office_door_toggle"
-
+var wait_counter = 3
 
 func _ready():
 	assume_state(0)
@@ -14,7 +14,7 @@ func difficulty_offset():
 	if $"/root/EventMan".temperature >= 90:
 		heat_increase = ($"/root/EventMan".temperature - 90) / 6
 	if $"/root/EventMan".circuit("noisy") == true:
-		noise_increase = 2
+		noise_increase = 8
 	#if the music playin do the thin
 	print (heat_increase + noise_increase)
 	return (heat_increase + noise_increase)
@@ -22,6 +22,9 @@ func difficulty_offset():
 func state_machine():
 	match state:
 		0:
+			if wait_counter > 0:
+				wait_counter -= 1
+				return 0
 			var roll = randf()
 			if roll < .5:
 				return 1
@@ -63,6 +66,7 @@ func state_machine():
 func attempt_attack():
 	$AttackTimer.stop()
 	if not $"/root/EventMan".circuit(office_door_circuit):
+		wait_counter = 3
 		assume_state(0)
 	else:
 		$"/root/EventMan".jumpscare("redman", "door")
