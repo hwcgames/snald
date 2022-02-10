@@ -1,8 +1,10 @@
 kind: pipeline
 type: docker
 name: autobuild
-when:
-  event: tag
+
+trigger:
+event:
+  - tag
 
 steps:
 
