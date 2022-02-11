@@ -130,10 +130,10 @@ func process_buttons():
 		if Input.is_action_just_released("ui_cancel") and secondary_node == last_secondary_on:
 			$"/root/EventMan".circuit_off(secondary_node.properties["circuit"])
 			last_secondary_on = null
-	if last_primary_on != null and last_primary_on != primary_node:
+	if last_primary_on is QodotEntity and last_primary_on != primary_node:
 		last_primary_on = null
 		$"/root/EventMan".circuit_off(last_primary_on.properties["circuit"])
-	if last_secondary_on != null and last_secondary_on != secondary_node:
+	if last_secondary_on is QodotEntity and last_secondary_on != secondary_node:
 		last_secondary_on = null
 		$"/root/EventMan".circuit_off(last_secondary_on.properties["circuit"])
 
