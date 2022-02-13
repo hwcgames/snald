@@ -28,6 +28,9 @@ func _ready():
 [sub_resource type="GDScript" id=3]
 script/source = "extends CheckBox
 
+func _ready():
+	self.pressed = $\"/root/PersistMan\".persistent_dict[\"controller_mode\"]
+
 func toggled(button_pressed):
 	$\"/root/PersistMan\".persistent_dict[\"controller_mode\"] = button_pressed
 	$\"/root/PersistMan\".save_game()
