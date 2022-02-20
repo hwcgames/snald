@@ -7,7 +7,7 @@
 [ext_resource path="res://textures/hwc.svg" type="Texture" id=5]
 [ext_resource path="res://font/opensans/OpenSans/OpenSans-Italic.ttf" type="DynamicFontData" id=6]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Button
 
 
@@ -27,18 +27,18 @@ func _ready():
 #	pass
 "
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=2]
 script/source = "extends CheckBox
 
 func _ready():
-	self.pressed = $\"/root/PersistMan\".persistent_dict[\"controller_mode\"]
+	self.pressed = $\"/root/PersistMan\".persistent_dict[\"controller_mode\"] if \"controller_mode\" in PersistMan.persistent_dict else false
 
 func toggled(button_pressed):
 	$\"/root/PersistMan\".persistent_dict[\"controller_mode\"] = button_pressed
 	$\"/root/PersistMan\".save_game()
 "
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=3]
 script/source = "extends Button
 
 func _pressed():
@@ -84,7 +84,7 @@ margin_right = 249.0
 margin_bottom = 200.0
 size_flags_horizontal = 4
 text = "Night 1"
-script = SubResource( 2 )
+script = SubResource( 1 )
 
 [node name="NightConfig" parent="TabContainer/Choose a Night/Night 1" instance=ExtResource( 2 )]
 difficulties = {
@@ -228,7 +228,7 @@ margin_bottom = 264.0
 size_flags_horizontal = 4
 text = "Enable Experimental Controller GUI"
 align = 1
-script = SubResource( 3 )
+script = SubResource( 2 )
 
 [node name="Label2" type="Label" parent="TabContainer/Settings"]
 margin_top = 268.0
@@ -247,7 +247,7 @@ margin_right = 272.0
 margin_bottom = 306.0
 size_flags_horizontal = 4
 text = "Clear Save File"
-script = SubResource( 1 )
+script = SubResource( 3 )
 
 [node name="DisableUnlessFlag" parent="TabContainer/Settings/Button" instance=ExtResource( 3 )]
 flag_to_check = "n1"
