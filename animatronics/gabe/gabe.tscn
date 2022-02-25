@@ -20,3 +20,6 @@ stream = ExtResource( 4 )
 stream = ExtResource( 3 )
 
 [node name="gabe" parent="." index="5" instance=ExtResource( 5 )]
+
+[node name="MovementTimer" parent="." index="6"]
+wait_time = 4.0

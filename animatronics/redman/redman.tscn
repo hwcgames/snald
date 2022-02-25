@@ -13,6 +13,9 @@ albedo_color = Color( 1, 0.101961, 0.101961, 1 )
 [node name="BaseAnimatronic" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
+[node name="MovementTimer" parent="." index="1"]
+wait_time = 4.0
+
 [node name="MeshInstance" type="MeshInstance" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.61884, 0 )
 mesh = SubResource( 1 )

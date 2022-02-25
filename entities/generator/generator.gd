@@ -7,9 +7,9 @@ extends QodotEntity
 var power_regen = .25
 var circuit = "generator"
 var noise_time = 20
-var suppress = false
 var generating = false
 var gen_time = 10
+var power_increment_tick = 0
 
 
 func _ready():
@@ -21,25 +21,33 @@ func _ready():
 	var _err = $"/root/EventMan".connect("on", self, "on")
 	_err = $"/root/EventMan".connect("off", self, "off")
 	_err = $"/root/EventMan".connect("power_tick", self, "power_tick")
-	$noise_timer.wait_time = noise_time
-	$gen_timer.wait_time = gen_time
+	
 	
 func on(c):
-	if c == circuit and not suppress:
-		suppress = true
+	if c == circuit and not $"/root/EventMan".temperature == 20:
 		generating = true
 		#$AnimationPlayer.play()
-		$noise_timer.start()
-		$gen_timer.start()
 		$"/root/EventMan".circuit_on("noisy")
 		$AudioStreamPlayer.play()
-		yield($gen_timer,"timeout")
+	else:
+		#play too cold sfx
+		off(c)
+		
+func off(c):
+	if c == circuit:
 		generating = false
-		yield($noise_timer,"timeout")
-		$"/root/EventMan".circuit_off("noisy")
-		suppress = false
+		$"/root/EventMan".circuit_on("noisy")
+		$AudioStreamPlayer.stop()
 		$AnimationPlayer.play("GeneratorSpinsDown")
+		power_regen = properties["power"] if "power" in properties else .25
+
 
 func power_tick():
 	if generating == true:
 		$"/root/EventMan".power += power_regen
+		if power_regen <(1):
+			if power_increment_tick == 4:
+				power_increment_tick = 0
+				power_regen += .1
+			else:
+				power_increment_tick += 1
