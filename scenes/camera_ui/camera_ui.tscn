@@ -36,6 +36,7 @@ anchor_right = 0.92
 anchor_bottom = 0.908
 margin_left = 0.295998
 margin_top = -0.400002
+margin_right = 0.00012207
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,6 +44,7 @@ __meta__ = {
 [node name="TabletScreenBase" type="ColorRect" parent="TabletScreen"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 1
 color = Color( 0.145098, 0.145098, 0.145098, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -62,8 +64,8 @@ margin_right = 636.0
 margin_bottom = 330.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "No signal
 select feed"
 align = 1
@@ -72,11 +74,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CameraViewport" type="TextureRect" parent="TabletScreen/TabletScreenBase"]
+[node name="ViewportContainer" type="ViewportContainer" parent="TabletScreen/TabletScreenBase"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 1
+mouse_default_cursor_shape = 5
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="TabletScreen/TabletScreenBase/ViewportContainer"]
+size = Vector2( 1280, 720 )
+own_world = true
+transparent_bg = true
+handle_input_locally = false
+
+[node name="CameraViewport" type="TextureRect" parent="TabletScreen/TabletScreenBase/ViewportContainer/Viewport"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 0
 expand = true
-stretch_mode = 7
+stretch_mode = 1
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -89,6 +108,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -11.08
 margin_bottom = -10.8
+mouse_default_cursor_shape = 1
 stretch = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -102,11 +122,13 @@ render_target_update_mode = 3
 script = ExtResource( 2 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TabletScreen"]
+visible = false
 anchor_left = 0.7
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = 11.0
 margin_right = -11.0
+mouse_default_cursor_shape = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -122,3 +144,6 @@ margin_right = 249.0
 margin_bottom = 14.0
 text = "Cameras"
 align = 1
+
+[connection signal="mouse_entered" from="TabletScreen/TabletScreenBase/ViewportContainer/Viewport/CameraViewport" to="TabletScreen/TabletScreenBase/ViewportContainer/Viewport/CameraViewport" method="_mouse_entered"]
+[connection signal="mouse_exited" from="TabletScreen/TabletScreenBase/ViewportContainer/Viewport/CameraViewport" to="TabletScreen/TabletScreenBase/ViewportContainer/Viewport/CameraViewport" method="_mouse_exited"]

@@ -26,6 +26,7 @@ export var circuit_states = {}
 export var night_index = 0
 export var completion_flag = "n1"
 export var time_to_completion = 600
+export var between_scene: PackedScene
 export var completion_scene: PackedScene
 
 onready var power_timer = Timer.new()
@@ -68,6 +69,7 @@ func reset():
 	night_index = 0
 	completion_flag = "n1"
 	time_to_completion = 600
+	between_scene = null
 	completion_scene = null
 
 func register(animatronic_id: String, difficulty: int):
@@ -122,3 +124,8 @@ func return_to_title():
 func completed():
 	$"/root/PersistMan".persistent_dict[completion_flag] = true
 	$"/root/PersistMan".save_game()
+	get_tree().change_scene_to(between_scene)
+
+func between_completed():
+	get_tree().change_scene_to(completion_scene)
+	reset()

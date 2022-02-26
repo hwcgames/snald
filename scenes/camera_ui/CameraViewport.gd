@@ -15,3 +15,20 @@ func apply_camera(camera_node):
 	$"/root/EventMan".circuit_on("camera."+last_camera_room)
 	var viewport: Viewport = camera_node.get_node("Viewport")
 	self.texture = viewport.get_texture()
+
+var mouse_inside = false
+
+func _input(event):
+	if last_camera_id and mouse_inside:
+		if event is InputEventMouseButton:
+			var offset = get_global_rect().position
+			event.position -= offset
+			var factor = last_camera.get_node("Viewport").size / get_global_rect().size
+			event.position *= factor
+		last_camera.get_node("Viewport").unhandled_input(event)
+
+func _mouse_entered():
+	mouse_inside = true
+
+func _mouse_exited():
+	mouse_inside = false

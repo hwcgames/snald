@@ -9,6 +9,7 @@ export var passive_temperature = 0.0
 export var night_index = 0
 export var completion_flag = "n1"
 export var time_to_completion = 360
+export var between_scene = "res://scenes/between/dummy.tscn"
 export var victory_scene = "res://scenes/victory/victory.tscn"
 
 func run():
@@ -19,6 +20,7 @@ func run():
 	$"/root/EventMan".night_index = night_index
 	$"/root/EventMan".completion_flag = completion_flag
 	$"/root/EventMan".time_to_completion = time_to_completion
+	$"/root/EventMan".between_scene = load(between_scene)
 	$"/root/EventMan".completion_scene = load(victory_scene)
 	$"/root/LevelLoader".load_level(map_path)
 
@@ -30,3 +32,7 @@ func set_night(night: int):
 
 func set_difficulty(difficulty: int, character: String):
 	difficulties[character] = difficulty
+
+func set_duration(seconds: float):
+	time_to_completion = seconds
+

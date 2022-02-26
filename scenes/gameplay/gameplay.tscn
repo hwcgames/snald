@@ -8,7 +8,7 @@
 
 [sub_resource type="SpatialMaterial" id=1]
 
-[sub_resource type="Environment" id=3]
+[sub_resource type="Environment" id=2]
 background_energy = 0.0
 ambient_light_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.0
@@ -22,7 +22,7 @@ ssao_enabled = true
 ssao_radius = 0.1
 glow_bloom = 1.0
 
-[sub_resource type="QuadMesh" id=6]
+[sub_resource type="QuadMesh" id=3]
 size = Vector2( 2, 2 )
 
 [node name="gameplay" type="Spatial"]
@@ -48,12 +48,12 @@ tree_attach_batch_size = 16
 set_owner_batch_size = 16
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 3 )
+environment = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 material_override = ExtResource( 4 )
 extra_cull_margin = 16384.0
-mesh = SubResource( 6 )
+mesh = SubResource( 3 )
 material/0 = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

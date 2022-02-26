@@ -29,4 +29,4 @@ func on_input_event(event):
 func _pressed():
 	for i in get_tree().get_nodes_in_group("camera"):
 		if i.properties["camera_id"] == camera_id:
-			get_node("../../../TabletScreenBase/CameraViewport").apply_camera(i)
+			get_node("../../../TabletScreenBase/ViewportContainer/Viewport/CameraViewport").apply_camera(i)
