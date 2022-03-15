@@ -43,7 +43,7 @@ func _process(delta):
 	# Debug move
 	if Input.is_key_pressed(KEY_PAGEDOWN):
 		DEBUG = true
-	if DEBUG and (Input.is_key_pressed(KEY_W) or Input.is_action_pressed("ui_up")):
+	if DEBUG and (Input.is_key_pressed(KEY_W) or Input.is_action_pressed("ui_up")) and not $"/root/EventMan".circuit("player_camera_pad"):
 		translate(Vector3.FORWARD * delta * -5)
 	if $"/root/PersistMan".get_key("controller_mode") and not $"/root/EventMan".circuit("player_camera_pad"):
 		# Process controller buttons

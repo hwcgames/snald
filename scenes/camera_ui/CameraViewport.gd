@@ -8,12 +8,15 @@ func apply_camera(camera_node):
 	if last_camera_id:
 		$"/root/EventMan".circuit_off("camera."+last_camera_id)
 		$"/root/EventMan".circuit_off("camera."+last_camera_room)
+		last_camera.viewed = false
 	last_camera = camera_node
+	last_camera.viewed = true
 	last_camera_id = camera_node.properties["camera_id"]
 	last_camera_room = camera_node.properties["room"]
 	$"/root/EventMan".circuit_on("camera."+last_camera_id)
 	$"/root/EventMan".circuit_on("camera."+last_camera_room)
 	var viewport: Viewport = camera_node.get_node("Viewport")
+	camera_node.get_node("Viewport").size = $"../../".get_global_rect().size
 	self.texture = viewport.get_texture()
 
 var mouse_inside = false
