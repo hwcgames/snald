@@ -235,6 +235,10 @@ window/stretch/aspect="keep"
 
 enabled=PoolStringArray( "res://addons/qodot/plugin.cfg" )
 
+[gui]
+
+theme/custom="res://theme/Classic311/Classic311.tres"
+
 [input]
 
 ui_accept={
