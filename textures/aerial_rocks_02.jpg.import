@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/aerial_rocks_02.jpg-ab59807d34e8c2775c7f44dbd4f43d24.image"
+
+[deps]
+
+source_file="res://textures/aerial_rocks_02.jpg"
+dest_files=[ "res://.import/aerial_rocks_02.jpg-ab59807d34e8c2775c7f44dbd4f43d24.image" ]
+
+[params]
+

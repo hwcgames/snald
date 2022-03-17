@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/concrete_wall_001.png-c4127adbbd898a6d5822233bb558a97e.stex"
+path="res://.import/brick_wall_003.png-1568e21bfafff7f5dbe3e99048fdb7e4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/concretewall1/concrete_wall_001.png"
-dest_files=[ "res://.import/concrete_wall_001.png-c4127adbbd898a6d5822233bb558a97e.stex" ]
+source_file="res://textures/brick_wall_003.png"
+dest_files=[ "res://.import/brick_wall_003.png-1568e21bfafff7f5dbe3e99048fdb7e4.stex" ]
 
 [params]
 
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

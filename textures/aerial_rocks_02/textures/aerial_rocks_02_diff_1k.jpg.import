@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/brick_floor_003.png-00f3798b99f186df2ecbae99533679fc.s3tc.stex"
-path.etc2="res://.import/brick_floor_003.png-00f3798b99f186df2ecbae99533679fc.etc2.stex"
+path.s3tc="res://.import/aerial_rocks_02_diff_1k.jpg-62a1a52624445a8c476427f298f15eea.s3tc.stex"
+path.etc2="res://.import/aerial_rocks_02_diff_1k.jpg-62a1a52624445a8c476427f298f15eea.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/brickfloor3/brick_floor_003.png"
-dest_files=[ "res://.import/brick_floor_003.png-00f3798b99f186df2ecbae99533679fc.s3tc.stex", "res://.import/brick_floor_003.png-00f3798b99f186df2ecbae99533679fc.etc2.stex" ]
+source_file="res://textures/aerial_rocks_02/textures/aerial_rocks_02_diff_1k.jpg"
+dest_files=[ "res://.import/aerial_rocks_02_diff_1k.jpg-62a1a52624445a8c476427f298f15eea.s3tc.stex", "res://.import/aerial_rocks_02_diff_1k.jpg-62a1a52624445a8c476427f298f15eea.etc2.stex" ]
 
 [params]
 
@@ -30,7 +30,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false

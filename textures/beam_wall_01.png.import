@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/beam_wall_01.png-b30808dbd2cecdc26a44ab6d02e4fee1.s3tc.stex"
-path.etc2="res://.import/beam_wall_01.png-b30808dbd2cecdc26a44ab6d02e4fee1.etc2.stex"
+path.s3tc="res://.import/beam_wall_01.png-a6eb7c67e3941bf8535c309af29f2cec.s3tc.stex"
+path.etc2="res://.import/beam_wall_01.png-a6eb7c67e3941bf8535c309af29f2cec.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/beamwall1/beam_wall_01.png"
-dest_files=[ "res://.import/beam_wall_01.png-b30808dbd2cecdc26a44ab6d02e4fee1.s3tc.stex", "res://.import/beam_wall_01.png-b30808dbd2cecdc26a44ab6d02e4fee1.etc2.stex" ]
+source_file="res://textures/beam_wall_01.png"
+dest_files=[ "res://.import/beam_wall_01.png-a6eb7c67e3941bf8535c309af29f2cec.s3tc.stex", "res://.import/beam_wall_01.png-a6eb7c67e3941bf8535c309af29f2cec.etc2.stex" ]
 
 [params]
 
@@ -30,7 +30,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false

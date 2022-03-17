@@ -3,7 +3,7 @@
 // entity 0
 {
 "classname" "worldspawn"
-"_tb_textures" "textures/beamwall1;textures/brickfloor3;textures/factorywall"
+"_tb_textures" "textures;textures/brickwall3;textures/concrete_floor_worn_001;textures/concretewall1;textures/denim_fabric;textures/factorywall;textures/forest_leaves_03;textures/largesandstoneblocks;textures/metal_plate;textures/rusty_metal_02"
 // brush 0
 {
 ( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) __TB_empty 0 0 0 1 1
@@ -15,11 +15,84 @@
 }
 // brush 1
 {
-( -32 32 32 ) ( -32 -32 32 ) ( -32 -32 16 ) factorywall/factory_wall 0 0 0 0.1 0.1
-( -32 -32 32 ) ( 32 -32 32 ) ( 32 -32 16 ) factorywall/factory_wall 0 0 0 0.1 0.1
-( 32 -32 16 ) ( 32 32 16 ) ( -32 32 16 ) factorywall/factory_wall 0 0 0 0.1 0.1
-( -32 32 32 ) ( 32 32 32 ) ( 32 -32 32 ) factorywall/factory_wall 0 0 0 0.1 0.1
-( 32 32 16 ) ( 32 32 32 ) ( -32 32 32 ) factorywall/factory_wall 0 0 0 0.1 0.1
-( 32 -32 32 ) ( 32 32 32 ) ( 32 32 16 ) factorywall/factory_wall 0 0 0 0.1 0.1
+( -32 32 32 ) ( -32 -32 32 ) ( -32 -32 16 ) white-circle 0 0 0 0.1 0.1
+( -32 -32 32 ) ( 32 -32 32 ) ( 32 -32 16 ) white-circle 0 0 0 0.1 0.1
+( 32 -32 16 ) ( 32 32 16 ) ( -32 32 16 ) white-circle 0 0 0 0.1 0.1
+( -32 32 32 ) ( 32 32 32 ) ( 32 -32 32 ) white-circle 0 0 0 0.1 0.1
+( 32 32 16 ) ( 32 32 32 ) ( -32 32 32 ) white-circle 0 0 0 0.1 0.1
+( 32 -32 32 ) ( 32 32 32 ) ( 32 32 16 ) white-circle 0 0 0 0.1 0.1
 }
+}
+// entity 1
+{
+"classname" "Player"
+"origin" "-127 1 33"
+"angle" "0"
+"max_angle" "-45"
+"min_angle" "45"
+}
+// entity 2
+{
+"classname" "AnimatronicPosition"
+"origin" "-31 1 33"
+}
+// entity 3
+{
+"classname" "Camera"
+"origin" "1 -15 33"
+}
+// entity 4
+{
+"classname" "Generator"
+"origin" "-24 -24 40"
+}
+// entity 5
+{
+"classname" "light"
+"origin" "-72 56 8"
+}
+// entity 6
+{
+"classname" "Momentary"
+"origin" "-40 -56 24"
+}
+// entity 7
+{
+"classname" "particle"
+"origin" "-56 8 24"
+}
+// entity 8
+{
+"classname" "physics_ball"
+"origin" "24 -40 24"
+}
+// entity 9
+{
+"classname" "PlayerLeftBound"
+"origin" "-24 24 40"
+}
+// entity 10
+{
+"classname" "PlayerRightBound"
+"origin" "8 8 40"
+}
+// entity 11
+{
+"classname" "receiver"
+"origin" "-56 -40 24"
+}
+// entity 12
+{
+"classname" "signal"
+"origin" "-8 -56 24"
+}
+// entity 13
+{
+"classname" "SnaldLight"
+"origin" "-40 -8 24"
+}
+// entity 14
+{
+"classname" "Toggler"
+"origin" "-24 56 24"
 }

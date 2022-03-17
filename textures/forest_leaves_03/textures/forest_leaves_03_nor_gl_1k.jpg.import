@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/forest_leaves_03_nor_gl_1k.jpg-c689b711e68eb0fe6fc6cc6eb18294b9.s3tc.stex"
+path.etc2="res://.import/forest_leaves_03_nor_gl_1k.jpg-c689b711e68eb0fe6fc6cc6eb18294b9.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://textures/forest_leaves_03/textures/forest_leaves_03_nor_gl_1k.jpg"
+dest_files=[ "res://.import/forest_leaves_03_nor_gl_1k.jpg-c689b711e68eb0fe6fc6cc6eb18294b9.s3tc.stex", "res://.import/forest_leaves_03_nor_gl_1k.jpg-c689b711e68eb0fe6fc6cc6eb18294b9.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=1
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

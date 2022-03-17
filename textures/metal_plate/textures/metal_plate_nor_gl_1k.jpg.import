@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/metal_plate_nor_gl_1k.jpg-38b32d707447e2dd2a6d96d4f6e0383d.s3tc.stex"
+path.etc2="res://.import/metal_plate_nor_gl_1k.jpg-38b32d707447e2dd2a6d96d4f6e0383d.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://textures/metal_plate/textures/metal_plate_nor_gl_1k.jpg"
+dest_files=[ "res://.import/metal_plate_nor_gl_1k.jpg-38b32d707447e2dd2a6d96d4f6e0383d.s3tc.stex", "res://.import/metal_plate_nor_gl_1k.jpg-38b32d707447e2dd2a6d96d4f6e0383d.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=1
+flags/repeat=1
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=false
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

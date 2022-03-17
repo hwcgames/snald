@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/brick_wall_003.png-ed238cf36d7ecd97218fe2bc9084d18b.stex"
+path="res://.import/popcornceiling.jpg-908ee7b73d736e29b0f772fc6585f2fd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/brickwall3/brick_wall_003.png"
-dest_files=[ "res://.import/brick_wall_003.png-ed238cf36d7ecd97218fe2bc9084d18b.stex" ]
+source_file="res://textures/popcornceiling.jpg"
+dest_files=[ "res://.import/popcornceiling.jpg-908ee7b73d736e29b0f772fc6585f2fd.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

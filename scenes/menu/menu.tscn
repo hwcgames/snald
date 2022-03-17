@@ -96,9 +96,6 @@ func _pressed():
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -200,10 +197,26 @@ margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
 
+[node name="Test Level" type="Button" parent="LevelWindow/Choose a Night"]
+margin_left = 42.0
+margin_right = 77.0
+margin_bottom = 22.0
+size_flags_horizontal = 4
+text = "Test"
+script = SubResource( 3 )
+
+[node name="NightConfig" parent="LevelWindow/Choose a Night/Test Level" instance=ExtResource( 2 )]
+difficulties = {
+}
+map_path = "res://maps/test1.map"
+night_index = 0
+victory_scene = "res://scenes/victory/victory_n1.tscn"
+
 [node name="Night 1" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
+margin_top = 26.0
 margin_right = 87.0
-margin_bottom = 22.0
+margin_bottom = 48.0
 size_flags_horizontal = 4
 text = "Night 1"
 script = SubResource( 3 )
@@ -220,9 +233,9 @@ victory_scene = "res://scenes/victory/victory_n1.tscn"
 
 [node name="Night 2" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
-margin_top = 26.0
+margin_top = 52.0
 margin_right = 87.0
-margin_bottom = 48.0
+margin_bottom = 74.0
 size_flags_horizontal = 4
 text = "Night 2"
 
@@ -241,9 +254,9 @@ completion_flag = "n2"
 
 [node name="Night 3" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
-margin_top = 52.0
+margin_top = 78.0
 margin_right = 87.0
-margin_bottom = 74.0
+margin_bottom = 100.0
 size_flags_horizontal = 4
 text = "Night 3"
 
@@ -263,9 +276,9 @@ time_to_completion = 720
 
 [node name="Night 4" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
-margin_top = 78.0
+margin_top = 104.0
 margin_right = 87.0
-margin_bottom = 100.0
+margin_bottom = 126.0
 size_flags_horizontal = 4
 text = "Night 4"
 
@@ -284,9 +297,9 @@ time_to_completion = 720
 
 [node name="Night 5" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
-margin_top = 104.0
+margin_top = 130.0
 margin_right = 87.0
-margin_bottom = 126.0
+margin_bottom = 152.0
 size_flags_horizontal = 4
 text = "Night 5"
 
@@ -299,9 +312,9 @@ completion_flag = "n5"
 
 [node name="Night \?\?\?" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 34.0
-margin_top = 130.0
+margin_top = 156.0
 margin_right = 86.0
-margin_bottom = 152.0
+margin_bottom = 178.0
 size_flags_horizontal = 4
 text = "Night ?"
 
@@ -492,6 +505,7 @@ margin_bottom = -173.838
 [connection signal="pressed" from="ThingsBar/HBoxContainer/CalendarButton" to="LevelWindow" method="show"]
 [connection signal="pressed" from="ThingsBar/HBoxContainer/SettingsButton" to="SettingsWindow" method="show"]
 [connection signal="pressed" from="ThingsBar/HBoxContainer/AboutButton" to="LogoWindow" method="show"]
+[connection signal="pressed" from="LevelWindow/Choose a Night/Test Level" to="LevelWindow/Choose a Night/Test Level/NightConfig" method="run"]
 [connection signal="pressed" from="LevelWindow/Choose a Night/Night 1" to="LevelWindow/Choose a Night/Night 1/NightConfig" method="run"]
 [connection signal="pressed" from="LevelWindow/Choose a Night/Night 2" to="LevelWindow/Choose a Night/Night 2/NightConfig" method="run"]
 [connection signal="pressed" from="LevelWindow/Choose a Night/Night 3" to="LevelWindow/Choose a Night/Night 3/NightConfig" method="run"]

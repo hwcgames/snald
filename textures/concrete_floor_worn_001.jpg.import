@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/factory_wall.png-fefb1c66e5a9bd4b5963c31f7ff72a5d.stex"
+path="res://.import/concrete_floor_worn_001.jpg-6d56dac9b83c49a2ff7cfb84c348662e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/factorywall/factory_wall.png"
-dest_files=[ "res://.import/factory_wall.png-fefb1c66e5a9bd4b5963c31f7ff72a5d.stex" ]
+source_file="res://textures/concrete_floor_worn_001.jpg"
+dest_files=[ "res://.import/concrete_floor_worn_001.jpg-6d56dac9b83c49a2ff7cfb84c348662e.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
