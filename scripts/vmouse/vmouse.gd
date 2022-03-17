@@ -12,8 +12,8 @@ var mouse_pos_dirty = true
 func _ready():
 	add_child(POINTER.instance())
 	$Pointer.hide()
-	get_viewport().connect("size_changed", self, "reset_mouse")
-	$"/root/EventMan".connect("off", self, "off")
+	var _drop = get_viewport().connect("size_changed", self, "reset_mouse")
+	_drop = $"/root/EventMan".connect("off", self, "off")
 	off("player_camera_pad")
 	pass # Replace with function body.
 
@@ -21,11 +21,11 @@ func reset_mouse():
 	$Pointer.transform.origin = get_viewport().size / 2
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if $"/root/EventMan".circuit("player_camera_pad") and $"/root/PersistMan".get_key("controller_mode"):
 		var movement = Vector2.ZERO
-		movement.x += Input.get_axis("vmouse_left", "vmouse_right")
-		movement.y += Input.get_axis("vmouse_up", "vmouse_down")
+		movement.x += Input.get_action_strength("vmouse_right")-Input.get_action_strength("vmouse_left")
+		movement.y += Input.get_action_strength("vmouse_up")-Input.get_action_strength("vmouse_down")
 		movement *= 5
 		if movement != Vector2.ZERO:
 			mouse_pos_dirty = true

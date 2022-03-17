@@ -30,8 +30,8 @@ func _ready():
 func set_color(white = false):
 	for index in range(len(polygon2ds)):
 		var polygon2d = polygon2ds[index]
-		var type = room_types[index]
-		match type:
+		var room_type = room_types[index]
+		match room_type:
 			"room":
 				polygon2d.color = Color(1,1,1,.6) if white else Color(1,1,1,.75)
 			"vent":

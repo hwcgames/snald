@@ -21,14 +21,14 @@ func _ready():
 	camera = $Camera
 	remove_child(camera)
 	$Viewport.add_child(camera)
+	camera = $"Viewport/Camera"
 	rotation_degrees.x = properties["elevation"] if "elevation" in properties else -20
 	angle = 180 + properties["angle"] if "angle" in properties else 0
 	angle = fmod(angle + 360,360.0)
 	rotation_degrees.y = angle
-	min_angle = angle + properties["min_angle"] if "min_angle" in properties else 0
-	min_angle = fmod(min_angle + 360, 360.0)
-	max_angle = angle + properties["max_angle"] if "max_angle" in properties else 0
-	max_angle = fmod(max_angle + 360, 360.0)
+	if "min_angle" in properties and "max_angle" in properties:
+		min_angle = angle + properties["min_angle"]
+		max_angle = angle + properties["max_angle"]
 	manual = (properties["rotates_manually"] == 1) if "rotates_manually" in properties else false
 	camera.global_transform = global_transform
 	pass # Replace with function body.
@@ -37,13 +37,14 @@ var movement_dir = 1.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var camera = $"Viewport/Camera"
 	if not viewed:
 		return
 	# Get mouse X
 	var mouse_x = get_viewport().get_mouse_position().x / get_viewport().size.x
 	# Check whether the camera is bounded
-	var rot = fmod(360 + camera.rotation_degrees.y, 360.0)
+	var rot = camera.rotation_degrees.y
+	if rot < 0:
+		rot += 360.0
 	var left_bounded = rot < min_angle and not DEBUG
 	var right_bounded = rot > max_angle and not DEBUG
 	# Determine which direction to move
@@ -54,7 +55,7 @@ func _process(delta):
 			movement += 1
 		if (mouse_x > 0.9 or Input.is_action_pressed("ui_right")) and not left_bounded:
 			movement -= 1
-	else:
+	elif min_angle && max_angle:
 		if left_bounded or right_bounded:
 			movement_dir *= -1
 		movement = movement_dir

@@ -124,8 +124,8 @@ func return_to_title():
 func completed():
 	$"/root/PersistMan".persistent_dict[completion_flag] = true
 	$"/root/PersistMan".save_game()
-	get_tree().change_scene_to(between_scene)
+	var _drop = get_tree().change_scene_to(between_scene)
 
 func between_completed():
-	get_tree().change_scene_to(completion_scene)
+	var _drop = get_tree().change_scene_to(completion_scene)
 	reset()

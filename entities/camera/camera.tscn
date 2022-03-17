@@ -40,3 +40,11 @@ material/0 = null
 [node name="MeshInstance2" type="MeshInstance" parent="."]
 mesh = SubResource( 4 )
 material/0 = null
+
+[node name="ButtonLabelsParent" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

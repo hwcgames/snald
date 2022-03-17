@@ -4628,8 +4628,8 @@
 "camera_id" "trains_cam"
 "fov" "110"
 "elevation" "-15"
-"max_angle" "195"
-"min_angle" "165"
+"max_angle" "45"
+"min_angle" "-45"
 }
 // entity 62
 {
@@ -4641,8 +4641,8 @@
 "room" "foyer"
 "name" "Entrance"
 "elevation" "-15"
-"min_angle" "125"
-"max_angle" "145"
+"max_angle" "20"
+"min_angle" "-20"
 }
 // entity 63
 {
@@ -4665,8 +4665,8 @@
 "name" "Observatory"
 "room" "observation"
 "elevation" "-15"
-"max_angle" "60"
-"min_angle" "30"
+"max_angle" "15"
+"min_angle" "-15"
 }
 // entity 65
 {
@@ -4678,8 +4678,8 @@
 "name" "???"
 "room" "liminal"
 "elevation" "-15"
-"max_angle" "325"
-"min_angle" "305"
+"max_angle" "10"
+"min_angle" "-10"
 }
 // entity 66
 {
@@ -4691,8 +4691,8 @@
 "camera_id" "armory_cam"
 "name" "Armory"
 "room" "armory"
-"max_angle" "325"
-"min_angle" "305"
+"max_angle" "10"
+"min_angle" "-10"
 }
 // entity 67
 {
@@ -4704,8 +4704,8 @@
 "camera_id" "mine_cam"
 "name" "Mine"
 "room" "mine"
-"max_angle" "75"
-"min_angle" "25"
+"max_angle" "25"
+"min_angle" "-25"
 }
 // entity 68
 {

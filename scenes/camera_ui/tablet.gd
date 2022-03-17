@@ -20,7 +20,7 @@ func _ready():
 	anchor_right = 0
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	anchor_top = lerp(anchor_top, interp_target, 0.5)
 	anchor_bottom = lerp(anchor_bottom, interp_target, 0.5)
 	var mouse_pos = get_viewport().get_mouse_position()
