@@ -5,15 +5,19 @@ extends AnimatronicBase
 # var a = 2
 # var b = "text"
 
+onready var monitor_world = $display_on_monitor
+
+signal update_state;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+#	animation_player = $
+	add_to_group("display_on_monitor")
+	pass
 #connect to the circuits which track if  the player is looking at the monitor
 
 func state_machine(): 
-	#if monitor circuit thingy = true and camera = false:
-		#return state
-	else:
-		return state + 1
+	pass
+
 #func _process(delta):
 #	pass
