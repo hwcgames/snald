@@ -5757,7 +5757,7 @@
 // entity 44
 {
 "classname" "AnimatronicPosition"
-"origin" "683 301 8"
+"origin" "635 349 8"
 "room_id" "liminal"
 "animatronic_id" "gabe"
 "animation" "walking"
@@ -6762,7 +6762,7 @@
 // entity 135
 {
 "classname" "AnimatronicPosition"
-"origin" "561 270 1"
+"origin" "673 257 29"
 "animatronic_id" "redman"
 "room_id" "liminal"
 "state_id" "1"
@@ -6935,4 +6935,14 @@
 "animatronic_id" "willow"
 "state_id" "3"
 "animation" "leaving_computer"
+}
+// entity 153
+{
+"classname" "AnimatronicPosition"
+"origin" "732 318 73"
+"room_id" "liminal"
+"animatronic_id" "lucas"
+"animation" "liminal_hide"
+"state_id" "6"
+"angle" "90"
 }
