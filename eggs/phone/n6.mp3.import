@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/n6.mp3-391619dc96d9c70506c6d5ebe04a186d.mp3str"
+
+[deps]
+
+source_file="res://eggs/phone/n6.mp3"
+dest_files=[ "res://.import/n6.mp3-391619dc96d9c70506c6d5ebe04a186d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

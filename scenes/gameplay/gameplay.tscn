@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=1]
 [ext_resource path="res://fgd.tres" type="Resource" id=2]
 [ext_resource path="res://scenes/gameplay/gameplay.gd" type="Script" id=3]
 [ext_resource path="res://textures/ps1-post.tres" type="Material" id=4]
 [ext_resource path="res://music/night_ambience.ogg" type="AudioStream" id=5]
+[ext_resource path="res://eggs/egg-phone.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -66,6 +67,8 @@ autostart = true
 
 [node name="CompletionTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Node" parent="." instance=ExtResource( 6 )]
 
 [connection signal="build_complete" from="QodotMap" to="." method="completed_build"]
 [connection signal="timeout" from="MusicStarter" to="AudioStreamPlayer" method="play"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ring.mp3-001176956c50c15ce87280ebe39aa56a.mp3str"
+
+[deps]
+
+source_file="res://eggs/phone/ring.mp3"
+dest_files=[ "res://.import/ring.mp3-001176956c50c15ce87280ebe39aa56a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
