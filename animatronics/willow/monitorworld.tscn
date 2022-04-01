@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://animatronics/willow/wolo.glb" type="PackedScene" id=1]
+[ext_resource path="res://animatronics/willow/monitorworld.gd" type="Script" id=2]
 
 [node name="monitorworld" type="Spatial"]
+script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 
@@ -10,3 +12,7 @@
 
 [node name="wolo" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.517, -3.139, -5.495 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+spot_range = 7.40341
+spot_angle = 25.6909

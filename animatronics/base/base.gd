@@ -9,6 +9,8 @@ export var difficulty = 10
 onready var animation_player: AnimationPlayer = $AnimationPlayer
 var last_state = 0
 
+signal change_state(new_state)
+
 func difficulty_offset():
 	return 0
 
@@ -40,6 +42,7 @@ func assume_state(new_state: int):
 		$"/root/EventMan".circuit_on(id + "." + target.get_room())
 	self.state = new_state
 	room = target.get_room()
+	emit_signal("change_state", new_state)
 
 func get_node_for_state(state: int):
 	var all = get_nodes_for_state(state)

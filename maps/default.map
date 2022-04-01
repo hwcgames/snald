@@ -6930,7 +6930,7 @@
 // entity 152
 {
 "classname" "AnimatronicPosition"
-"origin" "82 -43.5214 56"
+"origin" "18 -43.5214 56"
 "room_id" ""
 "animatronic_id" "willow"
 "state_id" "3"
@@ -6945,4 +6945,12 @@
 "animation" "liminal_hide"
 "state_id" "6"
 "angle" "90"
+}
+// entity 154
+{
+"classname" "OfficeMonitor"
+"origin" "82 -41.5214 57"
+"angle" "-90"
+"height" ".9"
+"width" "1.5"
 }

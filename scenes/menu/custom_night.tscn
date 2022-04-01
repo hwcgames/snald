@@ -3,10 +3,9 @@
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=3]
 
 [node name="Control" type="WindowDialog"]
-visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 330, 320 )
+rect_min_size = Vector2( 330, 350 )
 window_title = "Dog Mode"
 resizable = true
 __meta__ = {
@@ -203,6 +202,52 @@ max_value = 20.0
 align = 1
 prefix = "Level"
 
+[node name="Tanner" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 377.0
+margin_right = 1024.0
+margin_bottom = 401.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Tanner"]
+margin_left = 434.0
+margin_top = 5.0
+margin_right = 486.0
+margin_bottom = 19.0
+text = "Tanner"
+align = 1
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/Tanner"]
+margin_left = 490.0
+margin_right = 590.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+max_value = 20.0
+align = 1
+prefix = "Level"
+
+[node name="Willow" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 377.0
+margin_right = 1024.0
+margin_bottom = 401.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Willow"]
+margin_left = 434.0
+margin_top = 5.0
+margin_right = 486.0
+margin_bottom = 19.0
+text = "Willow"
+align = 1
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/Willow"]
+margin_left = 490.0
+margin_right = 590.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+max_value = 20.0
+align = 1
+prefix = "Level"
+
 [node name="Button" type="Button" parent="VBoxContainer"]
 margin_left = 491.0
 margin_top = 405.0
@@ -218,4 +263,6 @@ text = "Start!"
 [connection signal="value_changed" from="VBoxContainer/Gabe/SpinBox" to="NightConfig" method="set_difficulty" binds= [ "gabe" ]]
 [connection signal="value_changed" from="VBoxContainer/Jojo/SpinBox" to="NightConfig" method="set_difficulty" binds= [ "jojo" ]]
 [connection signal="value_changed" from="VBoxContainer/Redman/SpinBox" to="NightConfig" method="set_difficulty" binds= [ "redman" ]]
+[connection signal="value_changed" from="VBoxContainer/Tanner/SpinBox" to="NightConfig" method="set_difficulty" binds= [ "tanner" ]]
+[connection signal="value_changed" from="VBoxContainer/Willow/SpinBox" to="NightConfig" method="set_difficulty" binds= [ "willow" ]]
 [connection signal="pressed" from="VBoxContainer/Button" to="NightConfig" method="run"]
