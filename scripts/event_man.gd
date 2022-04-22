@@ -28,6 +28,7 @@ export var completion_flag = "n1"
 export var time_to_completion = 600
 export var between_scene: PackedScene
 export var completion_scene: PackedScene
+export var pause = false
 
 onready var power_timer = Timer.new()
 onready var temperature_timer = Timer.new()
@@ -46,11 +47,6 @@ func _ready():
 	animatronic_timer.wait_time = 5.0
 	animatronic_timer.start()
 	animatronic_timer.connect("timeout", self, "animatronic_tick")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func reset():
 	difficulties = {}
@@ -71,11 +67,14 @@ func reset():
 	time_to_completion = 600
 	between_scene = null
 	completion_scene = null
+	LevelLoader.map = null
 
 func register(animatronic_id: String, difficulty: int):
 	difficulties[animatronic_id] = difficulty
 
 func power_tick():
+	if pause:
+		return
 	if power >= 100:
 		power = 100
 	power -= passive_power
@@ -83,6 +82,8 @@ func power_tick():
 	power_timer.start()
 
 func temperature_tick():
+	if pause:
+		return
 	if temperature > 120:
 		temperature = 120
 		passive_power = .5
@@ -96,6 +97,8 @@ func temperature_tick():
 	temperature_timer.start()
 
 func animatronic_tick():
+	if pause:
+		return
 	emit_signal("animatronic_tick")
 	animatronic_timer.start()
 

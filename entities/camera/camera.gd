@@ -62,13 +62,20 @@ func _process(delta):
 	# Move
 	camera.rotation_degrees.y += movement * delta * turn_speed
 	# Debug move
-	if Input.is_key_pressed(KEY_PAGEDOWN):
-		DEBUG = true
 	if DEBUG and (Input.is_key_pressed(KEY_W) or Input.is_action_pressed("ui_up")) and $"/root/EventMan".circuit("player_camera_pad"):
+		camera.translate(Vector3.FORWARD * delta * 5)
+	if DEBUG and (Input.is_key_pressed(KEY_S) or Input.is_action_pressed("ui_down")) and $"/root/EventMan".circuit("player_camera_pad"):
 		camera.translate(Vector3.FORWARD * delta * -5)
+	if DEBUG and (Input.is_key_pressed(KEY_PAGEDOWN) and $"/root/EventMan".circuit("player_camera_pad")):
+		camera.translate(Vector3.UP * delta * -5)
+	if DEBUG and (Input.is_key_pressed(KEY_PAGEUP) and $"/root/EventMan".circuit("player_camera_pad")):
+		camera.translate(Vector3.UP * delta * 5)
 	if $"/root/PersistMan".get_key("controller_mode") and $"/root/EventMan".circuit("player_camera_pad"):
 		# Process controller buttons
 		process_buttons()
+
+func enable_debug():
+	DEBUG = true
 
 var last_primary_on
 var last_secondary_on

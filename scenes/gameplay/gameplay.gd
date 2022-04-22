@@ -6,17 +6,6 @@ func _ready():
 	randomize()
 	var map = $"/root/LevelLoader".map
 	if File.new().file_exists(map):
-		if "res://" in map:
-			var split = map.split("/")
-			var input = File.new()
-			input.open(map, File.READ)
-			var output = File.new()
-			map = "user://" + split[len(split)-1]
-			print(map)
-			output.open(map, File.WRITE)
-			output.store_string(input.get_as_text())
-			output.flush()
-			map = output.get_path_absolute()
 		$QodotMap.set_map_file(map)
 		$QodotMap.verify_and_build()
 	else:
@@ -37,8 +26,11 @@ func _ready():
 			instance.id = animatronic
 			instance.difficulty = difficulties[animatronic]
 			add_child(instance)
+			instance.add_to_group("animatronics")
 		else:
 			print("Tried to load an animatronic ", animatronic, " which does not exist.")
+	if OS.is_debug_build():
+		EventMan.circuit_on("cheater")
 
 func completed_build():
 	return

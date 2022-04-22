@@ -3,7 +3,7 @@ extends Node
 export var difficulties: Dictionary = {
 	"randy": 10
 }
-export var map_path: String = "res://maps/default.map"
+export var map_path: String = "maps/default.map"
 export var passive_power = 0.0
 export var passive_temperature = 0.0
 export var night_index = 0

@@ -10,6 +10,7 @@ var secondary_label = "X/B"
 export var DEBUG = false
 
 func _ready():
+	add_to_group("player")
 	yield(get_parent(), "build_complete")
 	print("Set player angle to default")
 	rotation_degrees.y = properties["angle"]
@@ -40,20 +41,27 @@ func _process(delta):
 		movement -= 1
 	# Move
 	rotation_degrees.y += movement * delta * turn_speed
-	# Debug move
-	if Input.is_key_pressed(KEY_PAGEDOWN):
-		DEBUG = true
-		$SpotLight.light_energy = 1.0
-		$SpotLight.spot_range = 1000
-	# Debug reload map
-	if DEBUG and Input.is_key_pressed(KEY_R):
-		get_tree().reload_current_scene()
-		LevelLoader.load_level(LevelLoader.map)
+	# 
+#	# Debug move
+#	if Input.is_key_pressed(KEY_PAGEDOWN):
+#	# Debug reload map
+#	if DEBUG and Input.is_key_pressed(KEY_R):
 	if DEBUG and (Input.is_key_pressed(KEY_W) or Input.is_action_pressed("ui_up")) and not $"/root/EventMan".circuit("player_camera_pad"):
 		translate(Vector3.FORWARD * delta * -5)
+	if DEBUG and (Input.is_key_pressed(KEY_S) or Input.is_action_pressed("ui_down")) and not $"/root/EventMan".circuit("player_camera_pad"):
+		translate(Vector3.FORWARD * delta * 5)
+	if DEBUG and (Input.is_key_pressed(KEY_PAGEDOWN) and not $"/root/EventMan".circuit("player_camera_pad")):
+		translate(Vector3.UP * delta * -5)
+	if DEBUG and (Input.is_key_pressed(KEY_PAGEUP) and not $"/root/EventMan".circuit("player_camera_pad")):
+		translate(Vector3.UP * delta * 5)
 	if $"/root/PersistMan".get_key("controller_mode") and not $"/root/EventMan".circuit("player_camera_pad"):
 		# Process controller buttons
 		process_buttons()
+
+func enable_debug():
+	DEBUG = true
+	$SpotLight.light_energy = 1.0
+	$SpotLight.spot_range = 1000
 
 func jumpscare(character: String, scene: String):
 	if DEBUG:

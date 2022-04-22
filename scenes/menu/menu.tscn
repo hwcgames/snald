@@ -208,7 +208,7 @@ script = SubResource( 3 )
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Test Level" instance=ExtResource( 2 )]
 difficulties = {
 }
-map_path = "res://maps/test1.map"
+map_path = "maps/test1.map"
 night_index = 0
 victory_scene = "res://scenes/victory/victory_n1.tscn"
 

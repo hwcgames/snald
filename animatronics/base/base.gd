@@ -18,6 +18,8 @@ func state_machine():
 	return 0
 
 func animatronic_tick():
+	if EventMan.pause:
+		return
 	var random = floor(rand_range(1,26))
 	if difficulty + difficulty_offset() >= random:
 		assume_state(state_machine())
