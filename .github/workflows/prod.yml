@@ -103,7 +103,7 @@ jobs:
       matrix:
         channel:
           - windows
-          - macos
+          - mac
           - linux
     steps:
       - uses: actions/download-artifact@v2.0.8
