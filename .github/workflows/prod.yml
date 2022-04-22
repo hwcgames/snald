@@ -117,3 +117,4 @@ jobs:
           itchUsername: handlewithcaregames
           itchGameId: snald
           buildChannel: ${{ matrix.channel }}-tagged
+          buildNumber: ${{ github.ref_name }}
