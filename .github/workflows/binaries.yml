@@ -6,10 +6,7 @@ jobs:
   build:
     name: Build all versions
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - uses: hwcgames/snald/.github/workflows/build.yml@main
+    uses: hwcgames/snald/.github/workflows/build@main
 
   itch-rolling:
     name: Upload to itch.io
