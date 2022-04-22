@@ -6,7 +6,7 @@ jobs:
   build:
     name: Build all versions
     runs-on: ubuntu-latest
-    uses: .github/workflows/build.yml
+    uses: ./.github/workflows/build.yml
 
   itch-rolling:
     name: Upload to itch.io
