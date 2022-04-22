@@ -2,6 +2,7 @@ name: "godot-ci export"
 on:
   push:
     tags:
+      - "*"
 
 env:
   GODOT_VERSION: 3.4.1
@@ -105,6 +106,10 @@ jobs:
           - macos
           - linux
     steps:
+      - uses: actions/download-artifact@v2.0.8
+        with:
+          name: ${{ matrix.channel }}
+          path: build/${{ matrix.channel }}
       - uses: KikimoraGames/itch-publish@v0.0.3
         with:
           butlerApiKey: ${{secrets.ITCHIO_DEPLOY}}
