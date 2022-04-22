@@ -1,91 +1,30 @@
 name: "godot-ci export"
-on: push
-
-env:
-  GODOT_VERSION: 3.4.1
-  EXPORT_NAME: snald
+on:
+  push:
 
 jobs:
-  export-windows:
-    name: Windows Export
+  build:
+    name: Build all versions
     runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:3.4.1
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          lfs: true
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
-      - name: Windows Build
-        run: |
-          mkdir -v -p build/windows
-          godot -v --export "Windows Desktop" build/windows/$EXPORT_NAME.exe
-          mkdir -p build/windows/addons build/windows/maps
-          cp -r maps/*.map build/windows/maps
-          mkdir -p build/windows/addons/qodot/bin
-          cp -r addons/qodot/bin/* build/windows/addons/qodot/bin
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: windows
-          path: build/windows
+      - uses: ./.github/workflows/build.yml
 
-  export-linux:
-    name: Linux Export
+  itch-rolling:
+    name: Upload to itch.io
     runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:3.4.1
+    needs: [build]
+    strategy:
+      fail-fast: true
+      matrix:
+        channel:
+          - windows
+          - macos
+          - linux
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: KikimoraGames/itch-publish@v0.0.3
         with:
-          lfs: true
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
-      - name: Linux Build
-        run: |
-          mkdir -v -p build/linux
-          godot -v --export "Linux/X11" build/linux/$EXPORT_NAME.x86_64
-          mkdir -p build/linux/addons build/linux/maps
-          cp -r maps/*.map build/linux/maps
-          mkdir -p build/linux/addons/qodot/bin
-          cp -r addons/qodot/bin/* build/linux/addons/qodot/bin
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: linux
-          path: build/linux
-
-  export-mac:
-    name: Mac Export
-    runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:3.4.1
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          lfs: true
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
-      - name: Mac Build
-        run: |
-          mkdir -v -p build/mac
-          godot -v --export "Mac OSX" build/mac/$EXPORT_NAME.zip
-          mkdir -p build/mac/addons build/mac/maps
-          cp -r maps/*.map build/mac/maps
-          mkdir -p build/mac/addons/qodot/bin
-          cp -r addons/qodot/bin/* build/mac/addons/qodot/bin
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: mac
-          path: build/mac
+          butlerApiKey: ${{secrets.ITCHIO_DEPLOY}}
+          gameData: ./build/${{ matrix.channel }}
+          itchUsername: hwcgames
+          itchGameId: snald
+          buildChannel: ${{ matrix.channel }}-rolling
