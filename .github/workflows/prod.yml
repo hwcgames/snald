@@ -1,6 +1,8 @@
 name: "godot-ci export"
 on:
   push:
+		tag:
+			- "*"
 
 env:
   GODOT_VERSION: 3.4.1
@@ -110,4 +112,4 @@ jobs:
           gameData: ./build/${{ matrix.channel }}
           itchUsername: handlewithcare.games
           itchGameId: snald
-          buildChannel: ${{ matrix.channel }}-rolling
+          buildChannel: ${{ matrix.channel }}-tagged
