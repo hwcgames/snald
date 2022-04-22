@@ -110,6 +110,6 @@ jobs:
         with:
           butlerApiKey: ${{secrets.ITCHIO_DEPLOY}}
           gameData: ./build/${{ matrix.channel }}
-          itchUsername: handlewithcare.games
+          itchUsername: handlewithcaregames
           itchGameId: snald
           buildChannel: ${{ matrix.channel }}-tagged
