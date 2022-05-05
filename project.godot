@@ -230,7 +230,6 @@ DebugCommands="*res://scripts/debug_commands.gd"
 
 window/size/width=960
 window/size/height=720
-window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

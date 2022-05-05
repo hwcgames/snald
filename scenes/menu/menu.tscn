@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://eggs/chicken.gd" type="Script" id=1]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/disable_unless_flag.tscn" type="PackedScene" id=3]
+[ext_resource path="res://textures/frying_pan.jpg" type="Texture" id=4]
 [ext_resource path="res://textures/hwc.svg" type="Texture" id=5]
 [ext_resource path="res://font/opensans/OpenSans/OpenSans-Italic.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://theme/Classic311/Classic311.tres" type="Theme" id=7]
@@ -25,6 +26,13 @@
 size = 20
 font_data = ExtResource( 10 )
 
+[sub_resource type="GDScript" id=9]
+script/source = "extends Button
+
+func _pressed():
+	get_tree().quit()
+"
+
 [sub_resource type="AnimatedTexture" id=2]
 flags = 4
 frames = 9
@@ -44,6 +52,13 @@ frame_7/texture = ExtResource( 17 )
 frame_7/delay_sec = 0.0
 frame_8/texture = ExtResource( 15 )
 frame_8/delay_sec = 0.0
+
+[sub_resource type="GDScript" id=8]
+script/source = "extends Button
+
+func _pressed():
+	OS.window_fullscreen = !OS.window_fullscreen
+"
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends Button
@@ -141,9 +156,21 @@ size_flags_vertical = 0
 custom_fonts/font = SubResource( 1 )
 text = " GO "
 
-[node name="CalendarButton" type="Button" parent="ThingsBar/HBoxContainer"]
+[node name="Go2" type="Button" parent="ThingsBar/HBoxContainer"]
 margin_left = 54.0
-margin_right = 86.0
+margin_right = 134.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 0, 29 )
+hint_tooltip = "Open the Go Menu to start an application?"
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = " DON'T"
+script = SubResource( 9 )
+
+[node name="CalendarButton" type="Button" parent="ThingsBar/HBoxContainer"]
+margin_left = 138.0
+margin_right = 170.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "Doors Calendar
@@ -154,8 +181,8 @@ icon = ExtResource( 12 )
 expand_icon = true
 
 [node name="SettingsButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 90.0
-margin_right = 122.0
+margin_left = 174.0
+margin_right = 206.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "Configure Doors
@@ -166,8 +193,8 @@ icon = SubResource( 2 )
 expand_icon = true
 
 [node name="AboutButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 126.0
-margin_right = 158.0
+margin_left = 210.0
+margin_right = 242.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "About Doors OS"
@@ -175,6 +202,18 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 icon = ExtResource( 8 )
 expand_icon = true
+
+[node name="FullscreenButton" type="Button" parent="ThingsBar/HBoxContainer"]
+margin_left = 246.0
+margin_right = 278.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 32, 29 )
+hint_tooltip = "About Doors OS"
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource( 4 )
+expand_icon = true
+script = SubResource( 8 )
 
 [node name="LevelWindow" type="WindowDialog" parent="."]
 visible = true
