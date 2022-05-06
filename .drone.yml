@@ -33,10 +33,9 @@ steps:
   commands:
     - mkdir -v -p build/windows
     - godot -v --export "Windows Desktop" build/windows/snald.exe
-    - mkdir -p build/windows/addons build/windows/maps
+    - mkdir -p build/windows/maps
     - cp -r maps/*.map build/windows/maps
-    - mkdir -p build/windows/addons/qodot/bin
-    - cp -r addons/qodot/bin/* build/windows/addons/qodot/bin
+    - cp -r addons/qodot/bin/win64/* build/windows/
   when:
     event: tag
   depends_on:
@@ -66,10 +65,9 @@ steps:
   commands:
     - mkdir -v -p build/linux
     - godot -v --export "Linux/X11" build/linux/snald.x86_64
-    - mkdir -p build/linux/addons build/linux/maps
+    - mkdir -p build/linux/maps
     - cp -r maps/*.map build/linux/maps
-    - mkdir -p build/linux/addons/qodot/bin
-    - cp -r addons/qodot/bin/* build/linux/addons/qodot/bin
+    - cp -r addons/qodot/bin/x11/* build/linux/
   when:
     event: tag
   depends_on:
@@ -99,10 +97,9 @@ steps:
   commands:
     - mkdir -v -p build/mac
     - godot -v --export "Mac OSX" build/mac/snald.zip
-    - mkdir -p build/mac/addons build/mac/maps
+    - mkdir -p build/mac/maps
     - cp -r maps/*.map build/mac/maps
-    - mkdir -p build/mac/addons/qodot/bin
-    - cp -r addons/qodot/bin/* build/mac/addons/qodot/bin
+    - cp -r addons/qodot/bin/osx/* build/mac/
   when:
     event: tag
   depends_on:

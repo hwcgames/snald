@@ -25,10 +25,9 @@ jobs:
         run: |
           mkdir -v -p build/windows
           godot -v --export "Windows Desktop" build/windows/$EXPORT_NAME.exe
-          mkdir -p build/windows/addons build/windows/maps
+          mkdir -p build/windows/maps
           cp -r maps/*.map build/windows/maps
-          mkdir -p build/windows/addons/qodot/bin
-          cp -r addons/qodot/bin/* build/windows/addons/qodot/bin
+          cp -r addons/qodot/bin/win64/* build
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
@@ -53,10 +52,9 @@ jobs:
         run: |
           mkdir -v -p build/linux
           godot -v --export "Linux/X11" build/linux/$EXPORT_NAME.x86_64
-          mkdir -p build/linux/addons build/linux/maps
+          mkdir -p build/linux/maps
           cp -r maps/*.map build/linux/maps
-          mkdir -p build/linux/addons/qodot/bin
-          cp -r addons/qodot/bin/* build/linux/addons/qodot/bin
+          cp -r addons/qodot/bin/x11/* build
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
@@ -81,10 +79,9 @@ jobs:
         run: |
           mkdir -v -p build/mac
           godot -v --export "Mac OSX" build/mac/$EXPORT_NAME.zip
-          mkdir -p build/mac/addons build/mac/maps
+          mkdir -p build/mac/maps
           cp -r maps/*.map build/mac/maps
-          mkdir -p build/mac/addons/qodot/bin
-          cp -r addons/qodot/bin/* build/mac/addons/qodot/bin
+          cp -r addons/qodot/bin/osx/* build/
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
