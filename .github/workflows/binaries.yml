@@ -1,6 +1,8 @@
 name: "godot-ci export"
 on:
   push:
+    tags:
+      - "main"
 
 env:
   GODOT_VERSION: 3.4.1
