@@ -1,0 +1,51 @@
+This file declares the owners and licenses of all files in the game for which we have licensing information.
+
+Willow and Tanner Carlson-Huber, Lucas Kisner, GNU AGPL 3.0 or later:
+	All files except those under `addons` and those otherwise specified.
+
+Lucas Kisner, all rights reserved:
+	`eggs/phone/*`
+
+Uncertain:
+	`addons/Console`
+	`animatronics/game/m1garand.wav`
+	`animatronics/game/reload.wav`
+	`particles/jojo_menacing/menacing.png`
+
+Various folks on polyhaven:
+	`textures/*`
+
+Violin Iliev, MIT license:
+	`theme/Classic311/*`
+
+Josh "Shifty" Palmer, MIT license:
+	`addons/qodot`
+
+teebarjunk, MIT license:
+	`addons/teeb*`
+
+Apache License:
+	`font/OpenSans`
+
+Eeve Somepx, http://www.palmentieri.it/somepx/license.txt:
+	`fonts/restricted/*Gold.ttf`
+	(See `fonts/restricted/README.md`)
+
+Rodrigo BSL, https://bsl.itch.io:
+	`fonts/restricted/Inkbit*.ttf`
+	`fonts/restricted/NewHiScore.ttf`
+	(See `fonts/restricted/README.md`)
+
+Toby Fox, he hasn't sued anyone over it yet:
+	`music/Undertale Sound Effect - Gaster Fade-JFDrett2fNs.opus`
+
+Tanner Carlson-Huber, all rights reserved:
+	All files under `music`, except those otherwise credited.
+	All audio files under `animatronics/lucas`.
+
+Willow and Tanner Carlson-Huber, Lucas Kisner, all rights reserved:
+	All files under `mdlsrc`
+	`animatronics/gabe/gabe.{blend,glb}` and related graphical assets
+
+Rico Cilliers, Creative Commons Zero:
+	`animatronics/jojo/horse_statue_01*`

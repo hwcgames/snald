@@ -43,7 +43,7 @@ steps:
 - name: package-win
   image: ubuntu
   commands:
-    - tar -czvf win.tar.gz build/windows/*
+    - tar -czvf win.tar.gz LICENSE ATTRIBUTION build/windows/*
   when:
     event: tag
   depends_on:
@@ -75,7 +75,7 @@ steps:
 - name: package-linux
   image: ubuntu
   commands:
-    - tar -czvf linux.tar.gz build/linux/*
+    - tar -czvf linux.tar.gz LICENSE ATTRIBUTION build/linux/*
   when:
     event: tag
   depends_on:
@@ -107,7 +107,7 @@ steps:
 - name: package-mac
   image: ubuntu
   commands:
-    - tar -czvf mac.tar.gz build/mac/*
+    - tar -czvf mac.tar.gz LICENSE ATTRIBUTION build/mac/*
   when:
     event: tag
   depends_on:
