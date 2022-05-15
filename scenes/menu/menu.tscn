@@ -34,6 +34,7 @@ func _pressed():
 "
 
 [sub_resource type="AnimatedTexture" id=2]
+flags = 4
 frames = 9
 frame_0/texture = ExtResource( 16 )
 frame_1/texture = ExtResource( 18 )
