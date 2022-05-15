@@ -12,7 +12,7 @@ echo $FILES
 
 echo "Checking out goal commit..."
 git checkout $TO
-echo "Packing all differing files into a .pck..."
+echo "Packing all differing files into a zip..."
 mkdir -p "build/diff"
 touch build/diff/.gdignore
 for i in $FILES; do

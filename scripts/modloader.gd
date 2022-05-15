@@ -22,15 +22,15 @@ func reload():
 		var f = d.get_next()
 		if f == "":
 			break
-		if f.ends_with("pck"):
+		if f.ends_with(".zip"):
 			Console.print("Found a new mod " + f)
-			new_mods.append(f)
+			new_mods.append("./mods/" + f)
 	d.list_dir_end()
 	new_mods.sort()
 	for new_mod in new_mods:
 		Console.print("Loading " + new_mod)
 		if not ProjectSettings.load_resource_pack(new_mod):
-			Console.print("Loading " + new_mod + " failed...")
+			Console.print("Failed!!!")
 		else:
 			if new_mod in mods:
 				mods.remove(mods.find(new_mod))
