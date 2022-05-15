@@ -138,3 +138,8 @@ func maps_cmd():
 	else:
 		Console.print("heck")
 		Console.print(result)
+
+const mods_help = "Shows all mods that are currently loaded."
+func mods_cmd():
+	for mod in Modloader.mods:
+		Console.print(mod)
