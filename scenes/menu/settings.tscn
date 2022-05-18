@@ -1,0 +1,199 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://eggs/chicken.gd" type="Script" id=1]
+[ext_resource path="res://scenes/menu/save_flag_button.gd" type="Script" id=2]
+[ext_resource path="res://scenes/disable_unless_flag.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/menu/ControlsMenu.gd" type="Script" id=5]
+
+[sub_resource type="GDScript" id=8]
+script/source = "extends Button
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	grab_focus()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="GDScript" id=9]
+script/source = "extends Button
+
+func _pressed():
+	KeyPersistence.keymaps = Dictionary()
+	KeyPersistence.save_keymap()
+	KeyPersistence.load_keymap()
+	get_tree().reload_current_scene()
+"
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends Button
+
+func _pressed():
+	$\"/root/PersistMan\".reset()
+"
+
+[node name="TabContainer" type="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Graphics + Sound" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Graphics + Sound"]
+margin_right = 219.0
+margin_bottom = 48.0
+alignment = 1
+
+[node name="post_process" type="CheckBox" parent="Graphics + Sound/VBoxContainer"]
+margin_right = 219.0
+margin_bottom = 24.0
+text = "Enable fancy post-processing?"
+script = ExtResource( 2 )
+flag = "post-process"
+default = true
+
+[node name="Test Level" type="Button" parent="Graphics + Sound/VBoxContainer"]
+margin_left = 23.0
+margin_top = 28.0
+margin_right = 196.0
+margin_bottom = 48.0
+size_flags_horizontal = 4
+text = "Enter Material Test Room"
+align = 0
+script = SubResource( 8 )
+
+[node name="NightConfig" parent="Graphics + Sound/VBoxContainer/Test Level" instance=ExtResource( 4 )]
+difficulties = {
+}
+map_path = "maps/texture-test.map"
+night_index = 0
+time_to_completion = 3600
+victory_scene = "res://scenes/victory/victory_n1.tscn"
+
+[node name="Controls" type="ScrollContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Controls"]
+margin_right = 632.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+script = ExtResource( 5 )
+
+[node name="Reset" type="Button" parent="Controls/VBoxContainer"]
+margin_right = 952.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+text = "Reset controls to default"
+script = SubResource( 9 )
+
+[node name="Misc" type="ScrollContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="VBoxContainer" parent="Misc"]
+margin_right = 632.0
+margin_bottom = 147.0
+size_flags_horizontal = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Misc/Settings"]
+margin_right = 952.0
+margin_bottom = 31.0
+text = "
+Settings"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Misc/Settings"]
+margin_top = 35.0
+margin_right = 952.0
+margin_bottom = 59.0
+alignment = 1
+
+[node name="TextEdit" type="LineEdit" parent="Misc/Settings/HBoxContainer"]
+margin_left = 412.0
+margin_right = 540.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 128, 0 )
+align = 1
+placeholder_text = "How fun!"
+
+[node name="EasterEggChicken" type="Node" parent="Misc/Settings/HBoxContainer"]
+script = ExtResource( 1 )
+
+[node name="CheckBox" type="CheckBox" parent="Misc/Settings"]
+margin_left = 349.0
+margin_top = 63.0
+margin_right = 603.0
+margin_bottom = 87.0
+size_flags_horizontal = 4
+text = "Enable Experimental Controller GUI"
+align = 1
+script = ExtResource( 2 )
+
+[node name="Label3" type="Label" parent="Misc/Settings"]
+margin_top = 91.0
+margin_right = 952.0
+margin_bottom = 105.0
+text = "(controllers only work in-game, sorry)"
+align = 1
+
+[node name="Label2" type="Label" parent="Misc/Settings"]
+margin_top = 109.0
+margin_right = 952.0
+margin_bottom = 123.0
+text = "(I lied earlier, there is *one* setting...)"
+align = 1
+
+[node name="DisableUnlessFlag" parent="Misc/Settings/Label2" instance=ExtResource( 3 )]
+flag_to_check = "n1"
+
+[node name="Button" type="Button" parent="Misc/Settings"]
+margin_left = 424.0
+margin_top = 127.0
+margin_right = 528.0
+margin_bottom = 147.0
+size_flags_horizontal = 4
+text = "Clear Save File"
+script = SubResource( 7 )
+
+[node name="DisableUnlessFlag" parent="Misc/Settings/Button" instance=ExtResource( 3 )]
+flag_to_check = "n1"
+
+[connection signal="pressed" from="Graphics + Sound/VBoxContainer/Test Level" to="Graphics + Sound/VBoxContainer/Test Level/NightConfig" method="run"]
+[connection signal="text_changed" from="Misc/Settings/HBoxContainer/TextEdit" to="Misc/Settings/HBoxContainer/EasterEggChicken" method="new_text"]
+[connection signal="toggled" from="Misc/Settings/CheckBox" to="Misc/Settings/CheckBox" method="toggled"]

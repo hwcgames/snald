@@ -6,8 +6,9 @@
 [node name="Dead" instance=ExtResource( 1 )]
 
 [node name="Label" parent="." index="0"]
-margin_top = 284.0
-margin_bottom = 315.0
+margin_top = 224.0
+margin_right = 640.0
+margin_bottom = 255.0
 text = "Dead from dummy jumpscare.
 If this happened, something went wrong."
 

@@ -6,10 +6,12 @@
 [node name="Dead" instance=ExtResource( 1 )]
 
 [node name="Label" parent="." index="0"]
-margin_top = 284.0
-margin_bottom = 315.0
+margin_top = 216.0
+margin_right = 640.0
+margin_bottom = 264.0
 text = "Congratulations! You are now promoted to deceased.
-(When you hear Gabe reload his gun, you don't have much time left. Use the flash lamp in the vent to make him miss.)"
+(When you hear Gabe reload his gun, you don't have much time left.
+Use the flash lamp in the vent to make him miss.)"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource( 2 )

@@ -16,7 +16,7 @@ func _ready():
 	rotation_degrees.y = properties["angle"]
 	min_angle = properties["min_angle"]
 	max_angle = properties["max_angle"]
-	turn_speed = float(properties["speed"])
+	turn_speed = float(properties["speed"] if "speed" in properties else turn_speed)
 	var _err = $"/root/EventMan".connect("temperature_tick", self, "temperature_tick")
 	print("Bringing camera UI into tree")
 	add_child(camera)
@@ -26,7 +26,7 @@ func temperature_tick():
 	if $"/root/EventMan".temperature <= 40:
 		turn_speed = 60 - (50 - $"/root/EventMan".temperature)
 	else:
-		turn_speed = float(properties["speed"])
+		turn_speed = float(properties["speed"] if "speed" in properties else turn_speed)
 func _process(delta):
 	# Get mouse X
 	var mouse_x = get_viewport().get_mouse_position().x / get_viewport().size.x

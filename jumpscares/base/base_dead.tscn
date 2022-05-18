@@ -11,18 +11,13 @@ func _pressed():
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="."]
-margin_top = 267.0
-margin_right = 1024.0
-margin_bottom = 332.0
+margin_top = 224.0
+margin_right = 640.0
+margin_bottom = 255.0
 text = "Dead from base class jumpscare.
-This *probably* shouldn't happen?
-Let's just... Pretend it was a secret.
-Yeah. Just forget you saw this."
+If this happened, something went extra-wrong."
 align = 1
 
 [node name="Button" type="Button" parent="."]

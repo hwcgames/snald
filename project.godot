@@ -214,6 +214,7 @@ _global_script_class_icons={
 
 config/name="Several Nights at Lucas's Domicile"
 run/main_scene="res://scenes/menu/menu.tscn"
+boot_splash/image="res://textures/doors-bg.png"
 config/icon="res://icon.png"
 
 [autoload]
@@ -226,11 +227,12 @@ VMouse="*res://scripts/vmouse/vmouse.gd"
 Console="*res://addons/Console/Console.gd"
 DebugCommands="*res://scripts/debug_commands.gd"
 Modloader="*res://scripts/modloader.gd"
+KeyPersistence="*res://scripts/KeyPersistence.gd"
 
 [display]
 
-window/size/width=960
-window/size/height=720
+window/size/width=640
+window/size/height=480
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
@@ -328,5 +330,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-2d/snapping/use_gpu_pixel_snap=true
 environment/default_environment="res://default_env.tres"

@@ -1,6 +1,6 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=29 format=2]
 
-[ext_resource path="res://eggs/chicken.gd" type="Script" id=1]
+[ext_resource path="res://scenes/menu/settings.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/disable_unless_flag.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/frying_pan.jpg" type="Texture" id=4]
@@ -88,24 +88,6 @@ font_data = ExtResource( 11 )
 size = 14
 use_mipmaps = true
 font_data = ExtResource( 6 )
-
-[sub_resource type="GDScript" id=6]
-script/source = "extends CheckBox
-
-func _ready():
-	self.pressed = $\"/root/PersistMan\".persistent_dict[\"controller_mode\"] if \"controller_mode\" in PersistMan.persistent_dict else false
-
-func toggled(button_pressed):
-	$\"/root/PersistMan\".persistent_dict[\"controller_mode\"] = button_pressed
-	$\"/root/PersistMan\".save_game()
-"
-
-[sub_resource type="GDScript" id=7]
-script/source = "extends Button
-
-func _pressed():
-	$\"/root/PersistMan\".reset()
-"
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -236,26 +218,10 @@ margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
 
-[node name="Test Level" type="Button" parent="LevelWindow/Choose a Night"]
-margin_left = 42.0
-margin_right = 77.0
-margin_bottom = 22.0
-size_flags_horizontal = 4
-text = "Test"
-script = SubResource( 3 )
-
-[node name="NightConfig" parent="LevelWindow/Choose a Night/Test Level" instance=ExtResource( 2 )]
-difficulties = {
-}
-map_path = "maps/test1.map"
-night_index = 0
-victory_scene = "res://scenes/victory/victory_n1.tscn"
-
 [node name="Night 1" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
-margin_top = 26.0
 margin_right = 87.0
-margin_bottom = 48.0
+margin_bottom = 22.0
 size_flags_horizontal = 4
 text = "Night 1"
 script = SubResource( 3 )
@@ -272,9 +238,9 @@ victory_scene = "res://scenes/victory/victory_n1.tscn"
 
 [node name="Night 2" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
-margin_top = 52.0
+margin_top = 26.0
 margin_right = 87.0
-margin_bottom = 74.0
+margin_bottom = 48.0
 size_flags_horizontal = 4
 text = "Night 2"
 
@@ -293,9 +259,9 @@ completion_flag = "n2"
 
 [node name="Night 3" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
-margin_top = 78.0
+margin_top = 52.0
 margin_right = 87.0
-margin_bottom = 100.0
+margin_bottom = 74.0
 size_flags_horizontal = 4
 text = "Night 3"
 
@@ -315,9 +281,9 @@ time_to_completion = 720
 
 [node name="Night 4" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
-margin_top = 104.0
+margin_top = 78.0
 margin_right = 87.0
-margin_bottom = 126.0
+margin_bottom = 100.0
 size_flags_horizontal = 4
 text = "Night 4"
 
@@ -336,9 +302,9 @@ time_to_completion = 720
 
 [node name="Night 5" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
-margin_top = 130.0
+margin_top = 104.0
 margin_right = 87.0
-margin_bottom = 152.0
+margin_bottom = 126.0
 size_flags_horizontal = 4
 text = "Night 5"
 
@@ -351,9 +317,9 @@ completion_flag = "n5"
 
 [node name="Night \?\?\?" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 34.0
-margin_top = 156.0
+margin_top = 130.0
 margin_right = 86.0
-margin_bottom = 178.0
+margin_bottom = 152.0
 size_flags_horizontal = 4
 text = "Night ?"
 
@@ -436,85 +402,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScrollContainer" type="ScrollContainer" parent="SettingsWindow"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-scroll_horizontal_enabled = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Settings" type="VBoxContainer" parent="SettingsWindow/ScrollContainer"]
-margin_right = 300.0
-margin_bottom = 139.0
-size_flags_horizontal = 3
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="SettingsWindow/ScrollContainer/Settings"]
-margin_right = 300.0
-margin_bottom = 31.0
-text = "
-Settings"
-align = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsWindow/ScrollContainer/Settings"]
-margin_top = 35.0
-margin_right = 300.0
-margin_bottom = 59.0
-alignment = 1
-
-[node name="TextEdit" type="LineEdit" parent="SettingsWindow/ScrollContainer/Settings/HBoxContainer"]
-margin_left = 86.0
-margin_right = 214.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 128, 0 )
-align = 1
-placeholder_text = "How fun!"
-
-[node name="EasterEggChicken" type="Node" parent="SettingsWindow/ScrollContainer/Settings/HBoxContainer"]
-script = ExtResource( 1 )
-
-[node name="CheckBox" type="CheckBox" parent="SettingsWindow/ScrollContainer/Settings"]
-margin_left = 28.0
-margin_top = 63.0
-margin_right = 271.0
-margin_bottom = 77.0
-size_flags_horizontal = 4
-text = "Enable Experimental Controller GUI"
-align = 1
-script = SubResource( 6 )
-
-[node name="Label3" type="Label" parent="SettingsWindow/ScrollContainer/Settings"]
-margin_top = 81.0
-margin_right = 300.0
-margin_bottom = 95.0
-text = "(controllers only work in-game, sorry)"
-align = 1
-
-[node name="Label2" type="Label" parent="SettingsWindow/ScrollContainer/Settings"]
-margin_top = 99.0
-margin_right = 300.0
-margin_bottom = 113.0
-text = "(I lied earlier, there is *one* setting...)"
-align = 1
-
-[node name="DisableUnlessFlag" parent="SettingsWindow/ScrollContainer/Settings/Label2" instance=ExtResource( 3 )]
-flag_to_check = "n1"
-
-[node name="Button" type="Button" parent="SettingsWindow/ScrollContainer/Settings"]
-margin_left = 100.0
-margin_top = 117.0
-margin_right = 200.0
-margin_bottom = 139.0
-size_flags_horizontal = 4
-text = "Clear Save File"
-script = SubResource( 7 )
-
-[node name="DisableUnlessFlag" parent="SettingsWindow/ScrollContainer/Settings/Button" instance=ExtResource( 3 )]
-flag_to_check = "n1"
+[node name="ScrollContainer" parent="SettingsWindow" instance=ExtResource( 1 )]
 
 [node name="Error" type="WindowDialog" parent="."]
 visible = true
@@ -544,12 +432,9 @@ margin_bottom = -173.838
 [connection signal="pressed" from="ThingsBar/HBoxContainer/CalendarButton" to="LevelWindow" method="show"]
 [connection signal="pressed" from="ThingsBar/HBoxContainer/SettingsButton" to="SettingsWindow" method="show"]
 [connection signal="pressed" from="ThingsBar/HBoxContainer/AboutButton" to="LogoWindow" method="show"]
-[connection signal="pressed" from="LevelWindow/Choose a Night/Test Level" to="LevelWindow/Choose a Night/Test Level/NightConfig" method="run"]
 [connection signal="pressed" from="LevelWindow/Choose a Night/Night 1" to="LevelWindow/Choose a Night/Night 1/NightConfig" method="run"]
 [connection signal="pressed" from="LevelWindow/Choose a Night/Night 2" to="LevelWindow/Choose a Night/Night 2/NightConfig" method="run"]
 [connection signal="pressed" from="LevelWindow/Choose a Night/Night 3" to="LevelWindow/Choose a Night/Night 3/NightConfig" method="run"]
 [connection signal="pressed" from="LevelWindow/Choose a Night/Night 4" to="LevelWindow/Choose a Night/Night 4/NightConfig" method="run"]
 [connection signal="pressed" from="LevelWindow/Choose a Night/Night 5" to="LevelWindow/Choose a Night/Night 5/NightConfig" method="run"]
 [connection signal="pressed" from="LevelWindow/Choose a Night/Night ???" to="CustomNight" method="show"]
-[connection signal="text_changed" from="SettingsWindow/ScrollContainer/Settings/HBoxContainer/TextEdit" to="SettingsWindow/ScrollContainer/Settings/HBoxContainer/EasterEggChicken" method="new_text"]
-[connection signal="toggled" from="SettingsWindow/ScrollContainer/Settings/CheckBox" to="SettingsWindow/ScrollContainer/Settings/CheckBox" method="toggled"]
