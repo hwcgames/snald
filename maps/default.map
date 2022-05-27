@@ -6519,7 +6519,7 @@
 "origin" "-120 -136 8"
 "room_id" "outside"
 "animatronic_id" "lucas"
-"animation" "walking_to_window"
+"animation" "walking_to_window_loop"
 "state_id" "10"
 "angle" "w"
 }
@@ -6529,7 +6529,7 @@
 "origin" "40 -168 8"
 "room_id" "outside"
 "animatronic_id" "lucas"
-"animation" "window_stare"
+"animation" "window_stare_loop"
 "state_id" "11"
 "angle" "90"
 }
@@ -6589,7 +6589,7 @@
 "origin" "40 -168 8"
 "room_id" "outside"
 "animatronic_id" "lucas"
-"animation" "walking_from_window"
+"animation" "walking_from_window_loop"
 "state_id" "12"
 "angle" "90"
 }
