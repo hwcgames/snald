@@ -35,6 +35,7 @@ func assume_state(new_state: int):
 	var target = get_node_for_state(new_state)
 	global_transform.origin = target.global_transform.origin
 	rotation_degrees.y = target.get_angle()
+	animation_player.play("tpose")
 	animation_player.play(target.get_animation())
 	if new_state != state:
 		$"/root/EventMan".circuit_off(id + "." + str(state))
