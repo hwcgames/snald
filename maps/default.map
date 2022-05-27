@@ -5865,7 +5865,7 @@
 // entity 53
 {
 "classname" "AnimatronicPosition"
-"origin" "-70 424 8"
+"origin" "-70 424 0"
 "room_id" "trains"
 "animatronic_id" "lucas"
 "animation" "trains_idle"
@@ -5885,7 +5885,7 @@
 // entity 55
 {
 "classname" "AnimatronicPosition"
-"origin" "-54 704 8"
+"origin" "-54 704 0"
 "room_id" "foyer"
 "animatronic_id" "lucas"
 "animation" "foyer_coatrack"
@@ -5895,7 +5895,7 @@
 // entity 56
 {
 "classname" "AnimatronicPosition"
-"origin" "240 804 8"
+"origin" "240 804 0"
 "room_id" "foyer"
 "animatronic_id" "lucas"
 "animation" "foyer_frontdesk"
@@ -6321,7 +6321,7 @@
 "origin" "80 528 88"
 "always_on" "1"
 "circuit" ""
-"energy" ".25"
+"energy" ".30"
 "flicker_below" "10"
 "flicker_chance" ".001"
 "power" "0"
@@ -6436,7 +6436,7 @@
 // entity 102
 {
 "classname" "AnimatronicPosition"
-"origin" "56 504 8"
+"origin" "48 496 0"
 "room_id" "ns_hallway"
 "animatronic_id" "lucas"
 "animation" "lucas_ns_hall"
@@ -6446,7 +6446,7 @@
 // entity 103
 {
 "classname" "AnimatronicPosition"
-"origin" "344 676 8"
+"origin" "344 676 0"
 "room_id" "window_hallway"
 "animatronic_id" "lucas"
 "animation" "windowhall"
@@ -6456,7 +6456,7 @@
 // entity 104
 {
 "classname" "AnimatronicPosition"
-"origin" "664 548 28"
+"origin" "664 548 24"
 "room_id" "observation"
 "animatronic_id" "lucas"
 "animation" "observation_hide"
@@ -6486,7 +6486,7 @@
 // entity 107
 {
 "classname" "AnimatronicPosition"
-"origin" "240 80 8"
+"origin" "240 80 0"
 "room_id" "we_hallway"
 "animatronic_id" "lucas"
 "animation" "wehall"
@@ -6536,7 +6536,7 @@
 // entity 112
 {
 "classname" "AnimatronicPosition"
-"origin" "104 88 8"
+"origin" "104 88 0"
 "room_id" "nearby"
 "animatronic_id" "lucas"
 "animation" "nearby_stare"
