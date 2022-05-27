@@ -2232,40 +2232,40 @@
 }
 // brush 242
 {
-( 353 277 -64 ) ( 361 291 -64 ) ( 357 283 -60 ) concrete_floor_worn_001 17 0 0 1 1
-( 355 271 -64 ) ( 353 277 -64 ) ( 355 277 -60 ) concrete_floor_worn_001 17 0 0 1 1
-( 353 277 -64 ) ( 357 283 -60 ) ( 355 277 -60 ) concrete_floor_worn_001 17 0 0 1 1
-( 355 277 -60 ) ( 357 273 -60 ) ( 355 271 -64 ) concrete_floor_worn_001 18 -31.5 0 1 1
-( 357 269 -64 ) ( 355 271 -64 ) ( 357 273 -60 ) concrete_floor_worn_001 -4 -17.5 0 1 1
-( 357 283 -60 ) ( 361 291 -64 ) ( 361 287 -60 ) concrete_floor_worn_001 -22.99997 -3 0 1 1
-( 359 271 -60 ) ( 363 269 -60 ) ( 357 269 -64 ) concrete_floor_worn_001 -22.99997 -31.733337 0 1 1
-( 357 269 -64 ) ( 363 269 -60 ) ( 363 267 -64 ) concrete_floor_worn_001 -23 0 0 1 1
-( 361 291 -64 ) ( 367 289 -60 ) ( 361 287 -60 ) concrete_floor_worn_001 -23 -30.743591 0 1 1
-( 363 269 -60 ) ( 367 269 -60 ) ( 367 267 -64 ) concrete_floor_worn_001 -23 0 0 1 1
-( 373 271 -64 ) ( 377 277 -64 ) ( 371 287 -64 ) concrete_floor_worn_001 -23 -17 0 1 1
-( 371 285 -60 ) ( 373 277 -60 ) ( 371 273 -60 ) concrete_floor_worn_001 -22.99997 -17 0 1 1
-( 361 291 -64 ) ( 367 291 -64 ) ( 367 289 -60 ) concrete_floor_worn_001 -23 0 0 1 1
-( 367 269 -60 ) ( 373 271 -64 ) ( 367 267 -64 ) concrete_floor_worn_001 -23 0 0 1 1
-( 371 273 -60 ) ( 373 271 -64 ) ( 367 269 -60 ) concrete_floor_worn_001 -23 -19.857147 0 1 1
-( 373 277 -60 ) ( 377 277 -64 ) ( 371 273 -60 ) concrete_floor_worn_001 -20.199982 -13.399994 0 1 1
-( 371 285 -60 ) ( 367 289 -60 ) ( 367 291 -64 ) concrete_floor_worn_001 14.399994 0 0 1 1
-( 371 273 -60 ) ( 377 277 -64 ) ( 373 271 -64 ) concrete_floor_worn_001 17 0 0 1 1
-( 371 285 -60 ) ( 377 277 -64 ) ( 373 277 -60 ) concrete_floor_worn_001 -12.263123 -8.473663 0 1 1
-( 371 287 -64 ) ( 377 277 -64 ) ( 371 285 -60 ) concrete_floor_worn_001 17 0 0 1 1
+( 301 293 -64 ) ( 309 307 -64 ) ( 305 299 -60 ) concrete_floor_worn_001 1 0 0 1 1
+( 303 287 -64 ) ( 301 293 -64 ) ( 303 293 -60 ) concrete_floor_worn_001 1 0 0 1 1
+( 301 293 -64 ) ( 305 299 -60 ) ( 303 293 -60 ) concrete_floor_worn_001 1 0 0 1 1
+( 303 293 -60 ) ( 305 289 -60 ) ( 303 287 -64 ) concrete_floor_worn_001 2 -31.5 0 1 1
+( 305 285 -64 ) ( 303 287 -64 ) ( 305 289 -60 ) concrete_floor_worn_001 48 -1.5 0 1 1
+( 305 299 -60 ) ( 309 307 -64 ) ( 309 303 -60 ) concrete_floor_worn_001 29.00003 13 0 1 1
+( 307 287 -60 ) ( 311 285 -60 ) ( 305 285 -64 ) concrete_floor_worn_001 29.00003 -31.733337 0 1 1
+( 305 285 -64 ) ( 311 285 -60 ) ( 311 283 -64 ) concrete_floor_worn_001 29 0 0 1 1
+( 309 307 -64 ) ( 315 305 -60 ) ( 309 303 -60 ) concrete_floor_worn_001 29 -14.743591 0 1 1
+( 311 285 -60 ) ( 315 285 -60 ) ( 315 283 -64 ) concrete_floor_worn_001 29 0 0 1 1
+( 321 287 -64 ) ( 325 293 -64 ) ( 319 303 -64 ) concrete_floor_worn_001 29 -1 0 1 1
+( 319 301 -60 ) ( 321 293 -60 ) ( 319 289 -60 ) concrete_floor_worn_001 29.00003 -1 0 1 1
+( 309 307 -64 ) ( 315 307 -64 ) ( 315 305 -60 ) concrete_floor_worn_001 29 0 0 1 1
+( 315 285 -60 ) ( 321 287 -64 ) ( 315 283 -64 ) concrete_floor_worn_001 29 0 0 1 1
+( 319 289 -60 ) ( 321 287 -64 ) ( 315 285 -60 ) concrete_floor_worn_001 29 -3.8571472 0 1 1
+( 321 293 -60 ) ( 325 293 -64 ) ( 319 289 -60 ) concrete_floor_worn_001 31.800018 2.600006 0 1 1
+( 319 301 -60 ) ( 315 305 -60 ) ( 315 307 -64 ) concrete_floor_worn_001 -1.6000061 0 0 1 1
+( 319 289 -60 ) ( 325 293 -64 ) ( 321 287 -64 ) concrete_floor_worn_001 1 0 0 1 1
+( 319 301 -60 ) ( 325 293 -64 ) ( 321 293 -60 ) concrete_floor_worn_001 39.736877 7.5263367 0 1 1
+( 319 303 -64 ) ( 325 293 -64 ) ( 319 301 -60 ) concrete_floor_worn_001 1 0 0 1 1
 }
 // brush 243
 {
-( 359 283 -60 ) ( 361 281 -58 ) ( 361 277 -58 ) concrete_floor_worn_001 -31.549011 -14.411743 0 1 1
-( 361 277 -58 ) ( 363 275 -58 ) ( 361 273 -60 ) concrete_floor_worn_001 -4 -17.5 0 1 1
-( 359 283 -60 ) ( 365 287 -60 ) ( 361 281 -58 ) concrete_floor_worn_001 -22.99997 -7.8717957 0 1 1
-( 361 281 -58 ) ( 365 287 -60 ) ( 365 283 -58 ) concrete_floor_worn_001 -22.99997 -7.428589 0 1 1
-( 369 275 -60 ) ( 369 281 -60 ) ( 365 287 -60 ) concrete_floor_worn_001 -22.99997 -17 0 1 1
-( 365 283 -58 ) ( 367 279 -58 ) ( 367 277 -58 ) concrete_floor_worn_001 -23 -17 0 1 1
-( 363 275 -58 ) ( 369 275 -60 ) ( 361 273 -60 ) concrete_floor_worn_001 -23 0 0 1 1
-( 367 277 -58 ) ( 369 275 -60 ) ( 363 275 -58 ) concrete_floor_worn_001 -23 -19 0 1 1
-( 365 283 -58 ) ( 369 281 -60 ) ( 367 279 -58 ) concrete_floor_worn_001 -1.2857056 -8.428589 0 1 1
-( 365 287 -60 ) ( 369 281 -60 ) ( 365 283 -58 ) concrete_floor_worn_001 -1.2857361 -8.428589 0 1 1
-( 367 279 -58 ) ( 369 281 -60 ) ( 369 275 -60 ) concrete_floor_worn_001 -11.399994 -16.199982 0 1 1
+( 307 299 -60 ) ( 309 297 -58 ) ( 309 293 -58 ) concrete_floor_worn_001 20.450989 1.5882568 0 1 1
+( 309 293 -58 ) ( 311 291 -58 ) ( 309 289 -60 ) concrete_floor_worn_001 48 -1.5 0 1 1
+( 307 299 -60 ) ( 313 303 -60 ) ( 309 297 -58 ) concrete_floor_worn_001 29.00003 8.128204 0 1 1
+( 309 297 -58 ) ( 313 303 -60 ) ( 313 299 -58 ) concrete_floor_worn_001 29.00003 8.571411 0 1 1
+( 317 291 -60 ) ( 317 297 -60 ) ( 313 303 -60 ) concrete_floor_worn_001 29.00003 -1 0 1 1
+( 313 299 -58 ) ( 315 295 -58 ) ( 315 293 -58 ) concrete_floor_worn_001 29 -1 0 1 1
+( 311 291 -58 ) ( 317 291 -60 ) ( 309 289 -60 ) concrete_floor_worn_001 29 0 0 1 1
+( 315 293 -58 ) ( 317 291 -60 ) ( 311 291 -58 ) concrete_floor_worn_001 29 -3 0 1 1
+( 313 299 -58 ) ( 317 297 -60 ) ( 315 295 -58 ) concrete_floor_worn_001 50.714294 7.571411 0 1 1
+( 313 303 -60 ) ( 317 297 -60 ) ( 313 299 -58 ) concrete_floor_worn_001 50.714264 7.571411 0 1 1
+( 315 295 -58 ) ( 317 297 -60 ) ( 317 291 -60 ) concrete_floor_worn_001 40.600006 -0.19998169 0 1 1
 }
 // brush 244
 {
@@ -5870,7 +5870,7 @@
 "animatronic_id" "lucas"
 "animation" "trains_idle"
 "state_id" "0"
-"angle" "0"
+"angle" "180"
 }
 // entity 54
 {
@@ -5885,12 +5885,12 @@
 // entity 55
 {
 "classname" "AnimatronicPosition"
-"origin" "-22 680 8"
+"origin" "-54 704 8"
 "room_id" "foyer"
 "animatronic_id" "lucas"
 "animation" "foyer_coatrack"
 "state_id" "2"
-"angle" "90"
+"angle" "0"
 }
 // entity 56
 {
@@ -5900,7 +5900,7 @@
 "animatronic_id" "lucas"
 "animation" "foyer_frontdesk"
 "state_id" "2"
-"angle" "90"
+"angle" "-90"
 }
 // entity 57
 {
@@ -6441,32 +6441,32 @@
 "animatronic_id" "lucas"
 "animation" "lucas_ns_hall"
 "state_id" "1"
-"angle" "90"
+"angle" "0"
 }
 // entity 103
 {
 "classname" "AnimatronicPosition"
-"origin" "344 664 8"
+"origin" "344 676 8"
 "room_id" "window_hallway"
 "animatronic_id" "lucas"
 "animation" "windowhall"
 "state_id" "3"
-"angle" "90"
+"angle" "180"
 }
 // entity 104
 {
 "classname" "AnimatronicPosition"
-"origin" "680 552 8"
+"origin" "664 548 28"
 "room_id" "observation"
 "animatronic_id" "lucas"
 "animation" "observation_hide"
 "state_id" "4"
-"angle" "90"
+"angle" "180"
 }
 // entity 105
 {
 "classname" "AnimatronicPosition"
-"origin" "888 568 8"
+"origin" "888 580 8"
 "room_id" "armory"
 "animatronic_id" "lucas"
 "animation" "armory_peek"
@@ -6479,14 +6479,14 @@
 "origin" "732 168 80"
 "room_id" "liminal"
 "animatronic_id" "lucas"
-"animation" "liminal_hide"
+"animation" "liminal_hide_2"
 "state_id" "6"
-"angle" "90"
+"angle" "180"
 }
 // entity 107
 {
 "classname" "AnimatronicPosition"
-"origin" "248 72 8"
+"origin" "240 80 8"
 "room_id" "we_hallway"
 "animatronic_id" "lucas"
 "animation" "wehall"
@@ -6496,12 +6496,12 @@
 // entity 108
 {
 "classname" "AnimatronicPosition"
-"origin" "328 248 -56"
+"origin" "332 272 -56"
 "room_id" "mine"
 "animatronic_id" "lucas"
 "animation" "mine"
 "state_id" "8"
-"angle" "90"
+"angle" "180"
 }
 // entity 109
 {
@@ -6519,9 +6519,9 @@
 "origin" "-120 -136 8"
 "room_id" "outside"
 "animatronic_id" "lucas"
-"animation" "walking to window"
+"animation" "walking_to_window"
 "state_id" "10"
-"angle" "90"
+"angle" "w"
 }
 // entity 111
 {
@@ -6541,7 +6541,7 @@
 "animatronic_id" "lucas"
 "animation" "nearby_stare"
 "state_id" "13"
-"angle" "90"
+"angle" "180"
 }
 // entity 113
 {
@@ -6589,7 +6589,7 @@
 "origin" "40 -168 8"
 "room_id" "outside"
 "animatronic_id" "lucas"
-"animation" "walking from window"
+"animation" "walking_from_window"
 "state_id" "12"
 "angle" "90"
 }
@@ -6960,9 +6960,9 @@
 "origin" "732 318 73"
 "room_id" "liminal"
 "animatronic_id" "lucas"
-"animation" "liminal_hide"
+"animation" "liminal_hide_1"
 "state_id" "6"
-"angle" "90"
+"angle" "180"
 }
 // entity 154
 {
