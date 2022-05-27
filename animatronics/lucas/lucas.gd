@@ -70,8 +70,13 @@ var HUNT_PATHS = {
 	}
 }
 
+func _ready():
+	call_deferred("assume_state", 0)
+	animation_player = get_node("lucas/AnimationPlayer")
+
 	
 func state_machine():
+	animation_player = $lucas/AnimationPlayer
 	if hunt_target == "window" and night == 0 and not have_hunted and state in [1,2,3]:
 		have_hunted = true
 		$"/root/EventMan".connect("off", self, "wait_for_camera_entrance")
