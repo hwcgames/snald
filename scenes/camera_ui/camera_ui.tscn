@@ -16,9 +16,6 @@ font_data = ExtResource( 6 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TabletTexture" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -58,14 +55,14 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="TabletScreen/TabletScreenBase/CenterContainer"]
-margin_left = 205.0
-margin_top = 200.0
-margin_right = 608.0
-margin_bottom = 379.0
+margin_left = 70.0
+margin_top = 103.0
+margin_right = 473.0
+margin_bottom = 282.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "No signal
 select feed"
 align = 1
@@ -86,7 +83,7 @@ __meta__ = {
 }
 
 [node name="Viewport" type="Viewport" parent="TabletScreen/TabletScreenBase/ViewportContainer"]
-size = Vector2( 271, 193 )
+size = Vector2( 543, 386 )
 own_world = true
 transparent_bg = true
 handle_input_locally = false
@@ -117,7 +114,7 @@ __meta__ = {
 }
 
 [node name="Viewport" type="Viewport" parent="TabletScreen/MapTexture"]
-size = Vector2( 233, 278 )
+size = Vector2( 151, 182 )
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
@@ -136,7 +133,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabletScreen/ScrollContainer"]
-margin_right = 233.423
+margin_right = 151.919
 margin_bottom = 14.0
 size_flags_horizontal = 3
 script = ExtResource( 4 )
