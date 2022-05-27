@@ -1,16 +1,37 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://textures/pinetab.png" type="Texture" id=1]
 [ext_resource path="res://scenes/camera_ui/build_map.gd" type="Script" id=2]
 [ext_resource path="res://scenes/camera_ui/tablet.gd" type="Script" id=3]
 [ext_resource path="res://scenes/camera_ui/build_camera_list.gd" type="Script" id=4]
 [ext_resource path="res://scenes/camera_ui/CameraViewport.gd" type="Script" id=5]
-[ext_resource path="res://font/opensans/OpenSans/OpenSans-ExtraBold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://scenes/camera_ui/crt.tres" type="Material" id=6]
+[ext_resource path="res://font/opensans/OpenSans/OpenSans-ExtraBold.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://music/switch.mp3" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
 extra_spacing_char = 1
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends ColorRect
+
+func put_aberration(val: float):
+	material.set_shader_param(\"aberration\", val)
+
+func put_warp(val: float):
+	material.set_shader_param(\"warp_amount\", val)
+
+func put_roll_size(val: float):
+	material.set_shader_param(\"roll_size\", val)
+
+func put_distort(val: float):
+	material.set_shader_param(\"distort_intensity\", val)
+
+func put_noise_op(val: float):
+	material.set_shader_param(\"static_noise_intensity\", val)
+"
 
 [node name="Tablet" type="Control"]
 anchor_right = 1.0
@@ -43,16 +64,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 color = Color( 0.145098, 0.145098, 0.145098, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CenterContainer" type="CenterContainer" parent="TabletScreen/TabletScreenBase"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_right = 6.10352e-05
+margin_bottom = 3.05176e-05
 
 [node name="Label" type="Label" parent="TabletScreen/TabletScreenBase/CenterContainer"]
 margin_left = 70.0
@@ -78,12 +95,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 5
 stretch = true
 stretch_shrink = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Viewport" type="Viewport" parent="TabletScreen/TabletScreenBase/ViewportContainer"]
-size = Vector2( 543, 386 )
+size = Vector2( 181, 128 )
 own_world = true
 transparent_bg = true
 handle_input_locally = false
@@ -99,6 +113,20 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+tweeny_boye_path = NodePath("../../Tween")
+filter_path = NodePath("../../../ColorRect")
+sfx_path = NodePath("../../../ColorRect/AudioStreamPlayer")
+
+[node name="Tween" type="Tween" parent="TabletScreen/TabletScreenBase/ViewportContainer"]
+
+[node name="ColorRect" type="ColorRect" parent="TabletScreen/TabletScreenBase"]
+material = ExtResource( 6 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TabletScreen/TabletScreenBase/ColorRect"]
+stream = ExtResource( 8 )
 
 [node name="MapTexture" type="ViewportContainer" parent="TabletScreen"]
 anchor_left = 0.7
@@ -119,6 +147,10 @@ transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
 script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="TabletScreen/MapTexture/Viewport"]
+margin_right = 40.0
+margin_bottom = 40.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TabletScreen"]
 visible = false

@@ -11,7 +11,7 @@ script/source = "extends Button
 export var target: String
 
 func _ready():
-	connect(\"pressed\", self, \"_pressed\")
+	var _drop = connect(\"pressed\", self, \"_pressed\")
 
 func _pressed():
 	var _err = get_tree().change_scene(target)

@@ -35,6 +35,6 @@ func reload():
 			if new_mod in mods:
 				mods.remove(mods.find(new_mod))
 			mods.append(new_mod)
-	get_tree().reload_current_scene()
+	var _drop = get_tree().reload_current_scene()
 	Console.print("Done loading mods!")
 	

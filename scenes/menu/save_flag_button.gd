@@ -9,3 +9,4 @@ func _ready():
 func _toggled(button_pressed):
 	$"/root/PersistMan".persistent_dict[flag] = button_pressed
 	$"/root/PersistMan".save_game()
+

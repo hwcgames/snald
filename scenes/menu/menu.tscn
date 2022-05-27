@@ -434,10 +434,11 @@ align = 1
 valign = 1
 
 [node name="CustomNight" parent="." instance=ExtResource( 21 )]
-margin_left = 613.306
-margin_top = 226.162
-margin_right = -16.6936
-margin_bottom = -173.838
+visible = true
+margin_left = 211.0
+margin_top = 70.0
+margin_right = -99.0
+margin_bottom = -60.0
 
 [connection signal="pressed" from="ThingsBar/HBoxContainer/Go" to="Error" method="show"]
 [connection signal="pressed" from="ThingsBar/HBoxContainer/CalendarButton" to="LevelWindow" method="show"]

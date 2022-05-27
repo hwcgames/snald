@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=4]
 code = "shader_type spatial;
 render_mode unshaded, shadows_disabled, depth_test_disable, depth_draw_never;
 
@@ -46,7 +46,7 @@ void fragment() {
 }"
 
 [resource]
-shader = SubResource( 1 )
+shader = SubResource( 4 )
 shader_param/color_depth = 5
 shader_param/dithering = true
 shader_param/resolution_scale = 1

@@ -33,7 +33,7 @@ func _pressed():
 	KeyPersistence.keymaps = Dictionary()
 	KeyPersistence.save_keymap()
 	KeyPersistence.load_keymap()
-	get_tree().reload_current_scene()
+	var _drop = get_tree().reload_current_scene()
 "
 
 [sub_resource type="GDScript" id=7]

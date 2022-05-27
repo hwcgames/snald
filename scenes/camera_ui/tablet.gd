@@ -44,6 +44,9 @@ func down():
 	interp_target = 1
 	active = false
 	$"/root/EventMan".circuit_off("player_camera_pad")
+	var focused = $TabletScreen/MapTexture/Viewport/Control.get_focus_owner()
+	if focused != null:
+		focused.release_focus()
 
 func resize():
 	margin_right = get_viewport_rect().size.x

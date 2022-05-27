@@ -114,7 +114,7 @@ func reload_cmd():
 	if not EventMan.circuit("cheater"):
 		Console.print("Only cheaters can perform filthy acts at a reasonable price.")
 		return
-	get_tree().reload_current_scene()
+	var _drop = get_tree().reload_current_scene()
 	LevelLoader.load_level(LevelLoader.map)
 
 const pause_help = "The ultimate stand. (Pauses and unpauses power, temperature, and character movements.)"

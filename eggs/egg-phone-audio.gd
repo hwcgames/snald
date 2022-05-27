@@ -23,7 +23,7 @@ func _ready():
 	active = day == 1 and month == 4
 	if not active:
 		player.remove_and_skip()
-		remove_and_skip()
+		call_deferred("remove_and_skip")
 		return
 	yield(level, "build_complete")
 	player.stream = ringer

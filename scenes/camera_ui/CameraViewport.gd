@@ -1,10 +1,32 @@
 extends TextureRect
 
+export var tweeny_boye_path: NodePath
+onready var tween: Tween = get_node(tweeny_boye_path)
+export var filter_path: NodePath
+onready var filter: Control = get_node(filter_path)
+export var sfx_path: NodePath
+onready var sfx: AudioStreamPlayer = get_node(sfx_path)
+
 var last_camera_id: String
 var last_camera_room: String
 var last_camera: Spatial
 
+func _ready():
+	var p = get_parent()
+	p.size = p.get_parent().rect_size
+
 func apply_camera(camera_node):
+	var _drop = tween.remove_all()
+	var easing = 1
+	var transition = 2
+	_drop = tween.interpolate_method(filter, "put_aberration", 0.3, 0.0001, 1.0, transition, easing)
+	_drop = tween.interpolate_method(filter, "put_warp", 1, 0.5, 1.0, transition, easing)
+	_drop = tween.interpolate_method(filter, "put_roll_size", 1, 16, 1.0, transition, easing)
+	_drop = tween.interpolate_method(filter, "put_distort", 2, 0.01, 1.0, transition, easing)
+	_drop = tween.interpolate_method(filter, "put_noise_op", 1, 0.02, 1.0, transition, easing)
+	_drop = tween.start()
+	sfx.play()
+	_ready()
 	if last_camera_id:
 		$"/root/EventMan".circuit_off("camera."+last_camera_id)
 		$"/root/EventMan".circuit_off("camera."+last_camera_room)
@@ -18,6 +40,7 @@ func apply_camera(camera_node):
 	var viewport: Viewport = camera_node.get_node("Viewport")
 	camera_node.get_node("Viewport").size = $"../../".get_global_rect().size
 	self.texture = viewport.get_texture()
+	self.texture.viewport_path = viewport.get_path()
 
 var mouse_inside = false
 

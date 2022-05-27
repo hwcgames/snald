@@ -12,7 +12,7 @@ func _ready():
 	else:
 		assume_state(16)
 	$"/root/EventMan".connect("on", self, "on")
-	$"/root/EventMan".connect("noisy", self, "noisy")
+#	$"/root/EventMan".connect("noisy", self, "noisy")
 	$AimingTimer.connect("timeout", self, "shoot")
 	
 

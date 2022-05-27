@@ -14,7 +14,7 @@ func _ready():
 		var button = Button.new()
 		button.text = camera.properties["name"]
 		add_child(button)
-		button.connect("button_down", $"../../TabletScreenBase/CameraViewport", "apply_camera", [camera])
+#		button.connect("button_down", $"../../TabletScreenBase/CameraViewport", "apply_camera", [camera])
 	pass # Replace with function body.
 
 func compare_camera(a,b):

@@ -20,6 +20,7 @@ material/0 = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+cull_mask = 1048571
 current = true
 fov = 50.0
 
