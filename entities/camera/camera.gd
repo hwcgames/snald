@@ -8,6 +8,7 @@ extends QodotEntity
 var camera: Camera
 var DEBUG = false
 var angle = 0
+var start_angle = 0
 var min_angle = 0
 var max_angle = 0
 var turn_speed = 10
@@ -24,11 +25,11 @@ func _ready():
 	camera = $"Viewport/Camera"
 	rotation_degrees.x = properties["elevation"] if "elevation" in properties else -20
 	angle = 180 + properties["angle"] if "angle" in properties else 0
-	angle = fmod(angle + 360,360.0)
 	rotation_degrees.y = angle
+	start_angle = rotation_degrees.y
 	if "min_angle" in properties and "max_angle" in properties:
-		min_angle = angle + properties["min_angle"]
-		max_angle = angle + properties["max_angle"]
+		min_angle = properties["min_angle"]
+		max_angle = properties["max_angle"]
 	manual = (properties["rotates_manually"] == 1) if "rotates_manually" in properties else false
 	camera.global_transform = global_transform
 	pass # Replace with function body.
@@ -42,9 +43,9 @@ func _process(delta):
 	# Get mouse X
 	var mouse_x = get_viewport().get_mouse_position().x / get_viewport().size.x
 	# Check whether the camera is bounded
-	var rot = camera.rotation_degrees.y
-	if rot < 0:
-		rot += 360.0
+	var rot = camera.rotation_degrees.y - start_angle
+	if rot < -180:
+		rot += 360
 	var left_bounded = rot < min_angle and not DEBUG
 	var right_bounded = rot > max_angle and not DEBUG
 	# Determine which direction to move
@@ -56,8 +57,10 @@ func _process(delta):
 		if (mouse_x > 0.9 or Input.is_action_pressed("ui_right")) and not left_bounded:
 			movement -= 1
 	elif min_angle && max_angle:
-		if left_bounded or right_bounded:
-			movement_dir *= -1
+		if left_bounded:
+			movement_dir = 1
+		elif right_bounded:
+			movement_dir = -1
 		movement = movement_dir
 	# Move
 	camera.rotation_degrees.y += movement * delta * turn_speed

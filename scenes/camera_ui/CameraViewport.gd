@@ -20,7 +20,7 @@ func apply_camera(camera_node):
 	var easing = 1
 	var transition = 2
 	_drop = tween.interpolate_method(filter, "put_aberration", 0.3, 0.0001, 1.0, transition, easing)
-	_drop = tween.interpolate_method(filter, "put_warp", 1, 0.5, 1.0, transition, easing)
+	_drop = tween.interpolate_method(filter, "put_warp", 1, 0, 1.0, transition, easing)
 	_drop = tween.interpolate_method(filter, "put_roll_size", 1, 16, 1.0, transition, easing)
 	_drop = tween.interpolate_method(filter, "put_distort", 2, 0.01, 1.0, transition, easing)
 	_drop = tween.interpolate_method(filter, "put_noise_op", 1, 0.02, 1.0, transition, easing)
