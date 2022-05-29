@@ -6343,13 +6343,13 @@
 // entity 91
 {
 "classname" "SnaldLight"
-"origin" "104 128 40"
+"origin" "120 112 40"
 "always_on" "1"
 "circuit" ""
 "flicker_below" "10"
 "flicker_chance" ".001"
 "power" "0"
-"radius" "10"
+"radius" "9"
 "energy" ".2"
 }
 // entity 92
