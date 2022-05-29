@@ -2344,7 +2344,7 @@ bones/8/name = "Head"
 bones/8/parent = 7
 bones/8/rest = Transform( 0.966059, 0.0135497, 0.257965, -0.0887687, 0.955222, 0.282259, -0.242589, -0.295578, 0.924004, -5.96046e-08, 0.91393, 0 )
 bones/8/enabled = true
-bones/8/bound_children = [ NodePath("BoneAttachment"), NodePath("BoneAttachment2") ]
+bones/8/bound_children = [  ]
 bones/9/name = "Rthigh"
 bones/9/parent = -1
 bones/9/rest = Transform( 0.999051, 0, -0.0435619, 0, -1, 0, -0.0435619, 0, -0.999051, -0.491834, -1.15912, 0.458706 )
@@ -2369,12 +2369,12 @@ bones/13/name = "Bone"
 bones/13/parent = -1
 bones/13/rest = Transform( 0.953773, 0.0527397, -0.295864, 0.00657647, 0.980583, 0.195996, 0.300456, -0.188882, 0.934907, 1.50658, -15.5807, 0.0135019 )
 bones/13/enabled = true
-bones/13/bound_children = [ NodePath("BoneAttachment3") ]
+bones/13/bound_children = [  ]
 bones/14/name = "Bone.001"
 bones/14/parent = -1
 bones/14/rest = Transform( 0.154332, 0.0896909, -0.656008, 0.53466, 0.38044, 0.177798, 0.390549, -0.556264, 0.0158265, 4.28344, -14.1416, 2.59116 )
 bones/14/enabled = true
-bones/14/bound_children = [ NodePath("BoneAttachment4") ]
+bones/14/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="lucas/Armature/Skeleton" index="0"]
 transform = Transform( 0.892762, -0.0537226, -0.056954, 0.0507119, 0.893471, -0.0478629, 0.0596505, 0.0444572, 0.893095, -0.0931301, 3.22201, 0.646613 )
