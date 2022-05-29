@@ -34,7 +34,7 @@ func state_machine():
 			var roll = randf()
 			if roll <.66:
 				$AttackTimer.connect("timeout", self, "attempt_attack")
-				$AttackTimer.wait_time = 31 - difficulty - difficulty_offset()
+				$AttackTimer.wait_time = 31 - (difficulty / 2) - difficulty_offset()
 				$AttackTimer.start()
 				return 6
 			else:

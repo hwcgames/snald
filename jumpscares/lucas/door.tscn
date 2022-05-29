@@ -2291,7 +2291,7 @@ tracks/13/enabled = true
 tracks/13/keys = PoolRealArray( 0, 1, -1.38932, 8.54468, 2.07606, 0.0978315, 0.151577, 0.0117342, 0.983522, 1, 1, 1, 0.0416667, 1, -1.38932, 8.54468, 2.07606, 0.0978315, 0.151577, 0.0117342, 0.983522, 1, 1, 1 )
 
 [node name="BaseJumpscare" instance=ExtResource( 1 )]
-transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 0, -2.6378, 0.417767 )
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 0, -2.6378, 0.940896 )
 script = ExtResource( 17 )
 
 [node name="lucas" type="Spatial" parent="." index="0"]
