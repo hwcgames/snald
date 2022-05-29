@@ -46,7 +46,7 @@ func power_tick():
 	if generating == true and $"/root/EventMan".power > 0:
 		$"/root/EventMan".power += power_regen
 		if power_regen <(1):
-			if power_increment_tick == 4:
+			if power_increment_tick == 2:
 				power_increment_tick = 0
 				power_regen += .1
 			else:
