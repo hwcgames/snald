@@ -84,7 +84,10 @@ func circuits_cmd():
 	if LevelLoader.map != null and not EventMan.circuit("cheater"):
 		Console.print("Only cheaters can use electrokinesis")
 		return
-	Console.print(str(EventMan.circuit_states))
+	for circuit in EventMan.circuit_states:
+		if circuit.ends_with("_not"):
+			continue
+		Console.print(circuit + ": " + str(EventMan.circuit_states[circuit]))
 
 const set_saved_bool_help = "Sets a save file flag."
 func set_saved_bool_cmd(name: String, value: bool):

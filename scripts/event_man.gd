@@ -105,14 +105,20 @@ func animatronic_tick():
 func circuit_on(name):
 	print(name, " activates")
 	circuit_states[name] = true
+	circuit_states[name+"_not"] = false
 	emit_signal("on", name)
+	emit_signal("off", name+"_not")
 
 func circuit_off(name):
 	print(name, " deactivates")
 	circuit_states[name] = false
+	circuit_states[name+"_not"] = true
 	emit_signal("off", name)
+	emit_signal("on", name+"_not")
 
 func circuit(name):
+	if name.ends_with("_not"):
+		name = name.replace("_not", "")
 	if not name in circuit_states:
 		circuit_states[name] = false
 	return circuit_states[name]

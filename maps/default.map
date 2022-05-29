@@ -7388,4 +7388,13 @@
 "radius" "6"
 "flicker_chance" ".2"
 "energy" ".1"
+// entity 153
+{
+"classname" "SnaldLight"
+"origin" "32 41 42"
+"always_on" "0"
+"flicker_below" "0"
+"circuit" "office_door_toggle_not"
+"radius" "0.5"
+"energy" "100"
 }
