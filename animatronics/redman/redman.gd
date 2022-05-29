@@ -69,7 +69,7 @@ func attempt_attack():
 		wait_counter = 3
 		assume_state(0)
 	else:
-		$"/root/EventMan".jumpscare("redman", "door")
+		$"/root/EventMan".jumpscare("redman", "redman")
 		assume_state(0)
 		
 func off(circuit):
