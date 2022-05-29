@@ -6,8 +6,11 @@
 [node name="Dead" instance=ExtResource( 1 )]
 
 [node name="Label" parent="." index="0"]
+margin_top = 216.0
+margin_bottom = 264.0
 text = "Dead from dummy jumpscare.
-If this happened, something went wrong."
+If this happened, something went wrong,
+or we just haven't made this one yet."
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource( 2 )
