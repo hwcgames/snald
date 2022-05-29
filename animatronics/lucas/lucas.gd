@@ -35,12 +35,12 @@ var HUNT_PATHS = {
 	"window": {
 		0: 1,
 		1: 2,
-		2: 9,
-		3: 2,
-		4: 3,
+		2: 3,
+		3: 4,
+		4: 9,
 		5: 4,
 		6: 4,
-		7: 1,
+		7: 6,
 		8: 7,
 		9: 10,
 	},
@@ -77,7 +77,7 @@ func _ready():
 	
 func state_machine():
 	animation_player = $lucas/AnimationPlayer
-	if hunt_target == "window" and night == 0 and not have_hunted and state in [1,2,3]:
+	if hunt_target == "window" and night == 0 and not have_hunted and state in [3,4,5,6]:
 		have_hunted = true
 		$"/root/EventMan".connect("off", self, "wait_for_camera_entrance")
 		return 18
