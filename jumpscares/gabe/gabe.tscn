@@ -20,6 +20,5 @@ script = ExtResource( 2 )
 wait_time = 3.0
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
 mesh = SubResource( 2 )
 material/0 = null
