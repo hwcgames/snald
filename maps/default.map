@@ -5939,8 +5939,6 @@
 "camera_id" "officedoor_cam"
 "elevation" "-65"
 "room" "Nearby"
-"max_angle" "-30"
-"min_angle" "-30"
 "rotates_manually" "0"
 }
 // entity 58

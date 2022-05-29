@@ -4,16 +4,18 @@
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -2.63636, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=2]
+width = 4096
 curve = SubResource( 1 )
 
 [resource]
 lifetime_randomness = 0.08
 spread = 42.58
 flatness = 1.0
-gravity = Vector3( 0, 1, 0 )
+gravity = Vector3( 0, 0.5, 0 )
 initial_velocity = 2.0
 initial_velocity_random = 0.45
 radial_accel = 0.05
 tangential_accel = 0.1
 tangential_accel_random = 1.0
+scale = 10.0
 scale_curve = SubResource( 2 )

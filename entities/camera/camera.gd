@@ -61,6 +61,9 @@ func _process(delta):
 			movement_dir = 1
 		elif right_bounded:
 			movement_dir = -1
+		if left_bounded and right_bounded:
+			# Panic!
+			camera.rotation_degrees.y = start_angle
 		movement = movement_dir
 	# Move
 	camera.rotation_degrees.y += movement * delta * turn_speed

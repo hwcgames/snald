@@ -11,7 +11,7 @@ var last_camera_id: String
 var last_camera_room: String
 var last_camera: Spatial
 
-func _ready():
+func _process(_delta):
 	var p = get_parent()
 	p.size = p.get_parent().rect_size
 
