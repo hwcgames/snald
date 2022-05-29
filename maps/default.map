@@ -6223,7 +6223,7 @@
 "always_on" "0"
 "flicker_below" "10"
 "flicker_chance" "0.01"
-"power" "10"
+"power" "8"
 "buzz" "res://music/flash.ogg"
 }
 // entity 81
