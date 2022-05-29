@@ -102,7 +102,7 @@ func state_machine():
 			# return 12
 			hunt_target = null
 			hunt_accumulation = 0.0
-			return 0
+			return go_back()
 		13:
 			if (office_door_circuit in $"/root/EventMan".circuit_states) and ($"/root/EventMan".circuit_states[office_door_circuit]):
 				$"/root/EventMan".jumpscare("lucas", "door")
@@ -110,7 +110,7 @@ func state_machine():
 			else:
 				hunt_target = null
 				hunt_accumulation = 0
-				return 0
+				return go_back()
 		16:
 			$GunFumblePlayer2.play()
 			$"/root/EventMan".connect("on", self, "vent_flashbang")
@@ -119,7 +119,7 @@ func state_machine():
 			$"/root/EventMan".disconnect("on", self, "vent_flashbang")
 			hunt_target = null
 			hunt_accumulation = 0.0
-			return 0
+			return go_back()
 		18:
 			return 18
 	check_hunting()
@@ -127,7 +127,14 @@ func state_machine():
 		return roll_wander()
 	else:
 		return hunt_path()
-
+	
+	
+func go_back():
+	if randf() <.4:
+		return 0
+	else:
+		return int(round(rand_range(1,8)))
+	
 func check_hunting():
 	if hunt_target == null:
 		if randf() < hunt_accumulation:
