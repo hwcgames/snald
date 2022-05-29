@@ -75,7 +75,7 @@ func jumpscare(character: String, scene: String):
 	else:
 		jumpscare_packed = load("res://jumpscares/dummy/dummy.tscn")
 	var jumpscare = jumpscare_packed.instance()
-	$JumpscareRoot.add_child(jumpscare)
+	$ViewportContainer/Viewport/JumpscareRoot.add_child(jumpscare)
 	yield(jumpscare, "finished")
 	var kill_player = jumpscare.kill_player
 	path = "res://jumpscares/"+character+"/"+scene+"_dead.tscn"

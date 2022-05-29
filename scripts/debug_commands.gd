@@ -143,3 +143,7 @@ const mods_help = "Shows all mods that are currently loaded."
 func mods_cmd():
 	for mod in Modloader.mods:
 		Console.print(mod)
+
+const jumpscare_help = "Triggers a jumpscare!"
+func jumpscare_cmd(character, animation):
+	EventMan.jumpscare(character, animation)
