@@ -233,13 +233,16 @@ KeyPersistence="*res://scripts/KeyPersistence.gd"
 
 window/size/width=640
 window/size/height=480
-window/vsync/use_vsync=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/qodot/plugin.cfg" )
+
+[global]
+
+sync=false
 
 [input]
 
