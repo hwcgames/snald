@@ -7388,6 +7388,7 @@
 "radius" "6"
 "flicker_chance" ".2"
 "energy" ".1"
+}
 // entity 153
 {
 "classname" "SnaldLight"
