@@ -18,3 +18,4 @@ render_target_update_mode = 3
 [node name="monitorworld" parent="display_on_monitor" index="0" instance=ExtResource( 3 )]
 
 [node name="wolo" parent="." index="3" instance=ExtResource( 4 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )

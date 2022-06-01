@@ -20,6 +20,7 @@ func new_state(state: int):
 		hide()
 	else:
 		show()
+		$wolo.global_transform = $States.get_node(str(root.state)).global_transform
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

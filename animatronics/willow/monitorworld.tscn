@@ -1,18 +1,35 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://animatronics/willow/wolo.glb" type="PackedScene" id=1]
 [ext_resource path="res://animatronics/willow/monitorworld.gd" type="Script" id=2]
+
+[sub_resource type="Environment" id=1]
+ambient_light_color = Color( 0.270588, 0.341176, 0.501961, 1 )
 
 [node name="monitorworld" type="Spatial"]
 script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
+fov = 25.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="wolo" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.517, -3.139, -5.495 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.517, 1.49612, -61.7678 )
 
-[node name="SpotLight" type="SpotLight" parent="."]
-spot_range = 7.40341
-spot_angle = 25.6909
+[node name="States" type="Node" parent="."]
+
+[node name="1" type="Spatial" parent="States"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.139, -29.198 )
+
+[node name="2" type="Spatial" parent="States"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.139, -15 )
+
+[node name="3" type="Spatial" parent="States"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.139, -9.31159 )
+
+[node name="0" type="Spatial" parent="States"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49612, -61.7678 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )

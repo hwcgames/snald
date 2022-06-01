@@ -7442,6 +7442,7 @@
 "room_id" ""
 "animatronic_id" "willow"
 "state_id" "0"
+"animation" "idle_loop"
 }
 // entity 146
 {
@@ -7450,6 +7451,7 @@
 "room_id" ""
 "animatronic_id" "willow"
 "state_id" "1"
+"animation" "idle_loop"
 }
 // entity 147
 {
@@ -7458,25 +7460,18 @@
 "room_id" ""
 "animatronic_id" "willow"
 "state_id" "2"
+"animation" "idle_loop"
 }
 // entity 148
-{
-"classname" "AnimatronicPosition"
-"origin" "202 34 1"
-"room_id" ""
-"animatronic_id" "willow"
-"state_id" "3"
-}
-// entity 149
 {
 "classname" "AnimatronicPosition"
 "origin" "18 -43.5214 56"
 "room_id" ""
 "animatronic_id" "willow"
 "state_id" "3"
-"animation" "leaving_computer"
+"animation" "leaving_computer_loop"
 }
-// entity 150
+// entity 149
 {
 "classname" "AnimatronicPosition"
 "origin" "732 318 73"
@@ -7486,7 +7481,7 @@
 "state_id" "6"
 "angle" "180"
 }
-// entity 151
+// entity 150
 {
 "classname" "OfficeMonitor"
 "origin" "82 -41.5214 57"
@@ -7494,7 +7489,7 @@
 "height" ".9"
 "width" "1.5"
 }
-// entity 152
+// entity 151
 {
 "classname" "SnaldLight"
 "origin" "-4 705 50"
@@ -7505,7 +7500,7 @@
 "flicker_chance" ".2"
 "energy" ".1"
 }
-// entity 153
+// entity 152
 {
 "classname" "SnaldLight"
 "origin" "32 41 42"
@@ -7514,4 +7509,14 @@
 "circuit" "office_door_toggle_not"
 "radius" "0.5"
 "energy" "100"
+}
+// entity 153
+{
+"classname" "AnimatronicPosition"
+"origin" "82 -37.0214 41"
+"angle" "270"
+"animatronic_id" "willow"
+"room_id" "office"
+"animation" "leaving_computer_loop"
+"state_id" "4"
 }

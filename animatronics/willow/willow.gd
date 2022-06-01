@@ -6,13 +6,14 @@ extends AnimatronicBase
 # var b = "text"
 
 onready var monitor_world = $display_on_monitor
-var visible_states = []
+var visible_states = [4]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	animation_player = $AnimationPlayer
+	animation_player = $wolo/AnimationPlayer
 	add_to_group("display_on_monitor")
 	connect("change_state", self, "new_state")
+	assume_state(0)
 	pass
 #connect to the circuits which track if  the player is looking at the monitor
 
