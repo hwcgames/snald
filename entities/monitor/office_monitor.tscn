@@ -3,7 +3,7 @@
 [ext_resource path="res://entities/monitor/office_monitor.gd" type="Script" id=1]
 [ext_resource path="res://entities/monitor/text_updater.gd" type="Script" id=2]
 [ext_resource path="res://textures/ps1-model.tres" type="Shader" id=3]
-[ext_resource path="res://font/militant.tres" type="DynamicFont" id=5]
+[ext_resource path="res://entities/monitor/monitor_font.tres" type="DynamicFont" id=4]
 
 [sub_resource type="ViewportTexture" id=4]
 viewport_path = NodePath("Viewport")
@@ -31,7 +31,7 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Viewport" type="Viewport" parent="."]
-size = Vector2( 98, 64 )
+size = Vector2( 196, 128 )
 own_world = true
 transparent_bg = true
 render_target_v_flip = true
@@ -46,6 +46,8 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="Viewport/Control"]
 anchor_top = 1.0
 anchor_bottom = 1.0
+margin_left = 4.0
+margin_bottom = -4.0
 grow_vertical = 0
 script = ExtResource( 2 )
 __meta__ = {
@@ -53,45 +55,45 @@ __meta__ = {
 }
 
 [node name="Power" type="HBoxContainer" parent="Viewport/Control/VBoxContainer"]
-margin_right = 63.0
-margin_bottom = 24.0
+margin_right = 97.0
+margin_bottom = 34.0
 
 [node name="Prefix" type="Label" parent="Viewport/Control/VBoxContainer/Power"]
-margin_right = 37.0
-margin_bottom = 24.0
+margin_right = 62.0
+margin_bottom = 34.0
 grow_vertical = 0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 text = "Pow:"
 valign = 2
 
 [node name="Number" type="Label" parent="Viewport/Control/VBoxContainer/Power"]
-margin_left = 41.0
-margin_right = 51.0
-margin_bottom = 24.0
+margin_left = 66.0
+margin_right = 80.0
+margin_bottom = 34.0
 grow_vertical = 0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 text = "1"
 valign = 2
 
 [node name="Temperature" type="HBoxContainer" parent="Viewport/Control/VBoxContainer"]
-margin_top = 28.0
-margin_right = 63.0
-margin_bottom = 52.0
+margin_top = 38.0
+margin_right = 97.0
+margin_bottom = 72.0
 
 [node name="Prefix" type="Label" parent="Viewport/Control/VBoxContainer/Temperature"]
-margin_right = 49.0
-margin_bottom = 24.0
+margin_right = 79.0
+margin_bottom = 34.0
 grow_vertical = 0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 text = "Temp:"
 valign = 2
 
 [node name="Number" type="Label" parent="Viewport/Control/VBoxContainer/Temperature"]
-margin_left = 53.0
-margin_right = 63.0
-margin_bottom = 24.0
+margin_left = 83.0
+margin_right = 97.0
+margin_bottom = 34.0
 grow_vertical = 0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 text = "1"
 valign = 2
 
