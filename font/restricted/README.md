@@ -1,0 +1,1 @@
+This directory contained several **commercially licensed fonts**.

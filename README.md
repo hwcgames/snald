@@ -2,6 +2,10 @@
 
 spooky door-controllin' vent-patrollin' game in Godot
 
+## BUILDING OLD REFS
+
+Older versions of the repository included proprietary fonts. These fonts have been retroactively removed from all previous versions of the repository, so attempting to build old refs may fail. To correctly build old refs, you should copy another font into the place of the old fonts, according to the remnants in the reconstructed restricted fonts directory. In the future, the proprietary fonts may be added back into the official builds more gracefully, and without violating their licenses.
+
 ## Spoilers
 
 There are secrets in the game, so if you decide to peruse this source code you should treat anything you find as a potential spoiler.
@@ -21,6 +25,7 @@ As controls are currently remappable, however, you can use the following keys/bu
 * Right stick to move virtual pointer on the map
 * Right trigger to click with the virtual pointer
 * A and B on the controller or Z and X on the keyboard to perform the primary and secondary actions as marked on the screen* A and B on the controller or Z and X on the keyboard to perform the primary and secondary actions as marked on the screen
+
 
 ## Polaris' log:
 
