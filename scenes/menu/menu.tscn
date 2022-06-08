@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scenes/menu/settings.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=2]
@@ -9,8 +9,7 @@
 [ext_resource path="res://theme/Classic311/Classic311.tres" type="Theme" id=7]
 [ext_resource path="res://textures/qmark.png" type="Texture" id=8]
 [ext_resource path="res://theme/Classic311/Styles/Panel/Panel.tres" type="StyleBox" id=9]
-[ext_resource path="res://font/restricted/InkbitThree.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://font/restricted/NewHiScore.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://font/militant.tres" type="DynamicFont" id=10]
 [ext_resource path="res://textures/calendar.png" type="Texture" id=12]
 [ext_resource path="res://textures/doors-bg.png" type="Texture" id=13]
 [ext_resource path="res://textures/gear/0014.png" type="Texture" id=14]
@@ -23,10 +22,6 @@
 [ext_resource path="res://scenes/menu/custom_night.tscn" type="PackedScene" id=21]
 [ext_resource path="res://textures/traincarta.png" type="Texture" id=22]
 [ext_resource path="res://scenes/menu/scene_button.tscn" type="PackedScene" id=23]
-
-[sub_resource type="DynamicFont" id=1]
-size = 20
-font_data = ExtResource( 10 )
 
 [sub_resource type="GDScript" id=9]
 script/source = "extends Button
@@ -82,10 +77,6 @@ func _ready():
 #	pass
 "
 
-[sub_resource type="DynamicFont" id=4]
-size = 21
-font_data = ExtResource( 11 )
-
 [sub_resource type="DynamicFont" id=5]
 size = 14
 use_mipmaps = true
@@ -95,9 +86,6 @@ font_data = ExtResource( 6 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -140,30 +128,30 @@ __meta__ = {
 }
 
 [node name="Go" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_right = 50.0
+margin_right = 41.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 0, 29 )
 hint_tooltip = "Open the Go Menu to start an application?"
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 10 )
 text = " GO "
 
 [node name="DontGo" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 54.0
-margin_right = 134.0
+margin_left = 45.0
+margin_right = 107.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 0, 29 )
 hint_tooltip = "Have you considered don't"
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 10 )
 text = " DON'T"
 script = SubResource( 9 )
 
 [node name="CalendarButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 138.0
-margin_right = 170.0
+margin_left = 111.0
+margin_right = 143.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "Doors Calendar
@@ -174,8 +162,8 @@ icon = ExtResource( 12 )
 expand_icon = true
 
 [node name="SettingsButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 174.0
-margin_right = 206.0
+margin_left = 147.0
+margin_right = 179.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "Configure Doors
@@ -186,8 +174,8 @@ icon = SubResource( 2 )
 expand_icon = true
 
 [node name="AboutButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 210.0
-margin_right = 242.0
+margin_left = 183.0
+margin_right = 215.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "About Doors OS"
@@ -197,8 +185,8 @@ icon = ExtResource( 8 )
 expand_icon = true
 
 [node name="FullscreenButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 246.0
-margin_right = 278.0
+margin_left = 219.0
+margin_right = 251.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "magnifying glass? nah, that's a frying pan"
@@ -347,7 +335,7 @@ margin_right = -48.667
 margin_bottom = -123.811
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 150, 150 )
+rect_min_size = Vector2( 150, 200 )
 window_title = "About Doors"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -356,15 +344,13 @@ __meta__ = {
 [node name="CenterContainer" type="CenterContainer" parent="LogoWindow"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_top = -6.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LogoWindow/CenterContainer"]
 margin_left = 27.0
-margin_top = 5.0
+margin_top = 8.0
 margin_right = 123.0
-margin_bottom = 194.0
+margin_bottom = 198.0
 grow_horizontal = 2
 grow_vertical = 2
 __meta__ = {
@@ -373,15 +359,15 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="LogoWindow/CenterContainer/VBoxContainer"]
 margin_right = 96.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 10 )
 text = "Doors OS"
 align = 1
 
 [node name="TextureRect" type="TextureRect" parent="LogoWindow/CenterContainer/VBoxContainer"]
-margin_top = 23.0
+margin_top = 24.0
 margin_right = 96.0
-margin_bottom = 119.0
+margin_bottom = 120.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_min_size = Vector2( 96, 96 )
@@ -392,9 +378,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="LogoWindow/CenterContainer/VBoxContainer"]
-margin_top = 123.0
+margin_top = 124.0
 margin_right = 96.0
-margin_bottom = 189.0
+margin_bottom = 190.0
 custom_fonts/font = SubResource( 5 )
 text = "Handle with Care Games
 2022"

@@ -57,7 +57,7 @@ func _init():
 	c.add_child(label);
 	
 	# Set custom font.
-	var font = preload("res://font/restricted/RulerGold.tres");
+	var font = preload("res://font/normal.tres");
 	label.set("custom_fonts/normal_font", font)
 	line.add_font_override("font", font)
 	
