@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pn4.mp3-7019a62fa941e5e5bca735da8064948c.mp3str"
+
+[deps]
+
+source_file="res://music/phone/pn4.mp3"
+dest_files=[ "res://.import/pn4.mp3-7019a62fa941e5e5bca735da8064948c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

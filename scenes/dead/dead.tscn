@@ -9,9 +9,9 @@ __meta__ = {
 }
 
 [node name="Text" type="Label" parent="."]
-margin_top = 293.0
-margin_right = 1024.0
-margin_bottom = 307.0
+margin_top = 233.0
+margin_right = 640.0
+margin_bottom = 247.0
 align = 1
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]

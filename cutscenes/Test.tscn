@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+func _ready():
+	var texts = [
+		\"wario,\",
+		\"waluigi,\",
+		\"and the sorcerer's stone\"
+	]
+	var position = Vector2(0.1, 0.1)
+	for i in texts:
+		CutsceneMan.put_text(i, position, 0.1, false, i)
+		position += Vector2(0.02, 0.04)
+		yield(CutsceneMan.wait(0.5), \"completed\")
+	yield(CutsceneMan, \"advance_cutscene\")
+	var old_texts = texts
+	texts = [
+		\"went on a quest\",
+		\"to defeat the placeholder boss\",
+		\"but their hopes were dashed\",
+		\"by a placeholder cutscene\"
+	]
+	position.x = 0.03
+	for i in texts:
+		var old = old_texts.pop_at(0)
+		if old:
+			CutsceneMan.remove_text(old)
+		CutsceneMan.put_text(i, position, 0.1, false, i)
+		position += Vector2(0.02, 0.04)
+		yield(CutsceneMan.wait(0.5), \"completed\")
+	yield(CutsceneMan, \"advance_cutscene\")
+	while len(texts) > 1:
+		CutsceneMan.remove_text(texts.pop_at(0))
+		yield(CutsceneMan.wait(0.5), \"completed\")
+	yield(CutsceneMan.remove_text(texts.pop_at(0)), \"completed\")
+	CutsceneMan.stop_cutscene()
+	
+"
+
+[node name="Node" type="Node"]
+script = SubResource( 1 )

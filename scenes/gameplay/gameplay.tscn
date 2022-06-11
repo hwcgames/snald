@@ -129,12 +129,10 @@ stream = ExtResource( 5 )
 [node name="MusicStarter" type="Timer" parent="."]
 wait_time = 20.0
 one_shot = true
-autostart = true
 
 [node name="CompletionTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Node" parent="." instance=ExtResource( 6 )]
+[node name="FunnyPhone" parent="." instance=ExtResource( 6 )]
 
 [connection signal="build_complete" from="QodotMap" to="." method="completed_build"]
-[connection signal="timeout" from="MusicStarter" to="AudioStreamPlayer" method="play"]

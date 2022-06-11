@@ -32,8 +32,8 @@ func _ready():
 	$OmniLight.omni_range = properties["radius"] if "radius" in properties else 16
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	$OmniLight.light_energy = lerp($OmniLight.light_energy, goal_energy, 0.1)
+func _process(delta):
+	$OmniLight.light_energy = lerp($OmniLight.light_energy, goal_energy, delta * 10)
 	if flickering and on_now and not depleted:
 		var rand = randf()
 		if rand <= flicker_chance:

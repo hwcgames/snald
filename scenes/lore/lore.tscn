@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://theme/Classic311/Classic311.tres" type="Theme" id=1]
 [ext_resource path="res://font/normal.tres" type="DynamicFont" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://font/opensans/OpenSans/OpenSans-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://scenes/lore/lore_button.gd" type="Script" id=5]
 [ext_resource path="res://eggs/lore/context.tscn" type="PackedScene" id=6]
+[ext_resource path="res://eggs/lore/tutorial.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
@@ -32,7 +33,7 @@ scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel2/ScrollContainer"]
 margin_right = 274.0
-margin_bottom = 84.0
+margin_bottom = 112.0
 
 [node name="Label" type="Label" parent="Panel2/ScrollContainer/VBoxContainer"]
 margin_right = 274.0
@@ -61,6 +62,21 @@ margin_left = 4.0
 text = "Context"
 script = ExtResource( 5 )
 lore_scene = ExtResource( 6 )
+lore_parent_path = NodePath("../../../../../Panel3/ScrollContainer")
+
+[node name="Control2" type="Control" parent="Panel2/ScrollContainer/VBoxContainer"]
+margin_top = 88.0
+margin_right = 274.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 0, 24 )
+
+[node name="LoreButton" type="Button" parent="Panel2/ScrollContainer/VBoxContainer/Control2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+text = "Tutorial"
+script = ExtResource( 5 )
+lore_scene = ExtResource( 7 )
 lore_parent_path = NodePath("../../../../../Panel3/ScrollContainer")
 
 [node name="Panel3" type="Panel" parent="."]

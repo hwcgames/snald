@@ -125,7 +125,7 @@ __meta__ = {
 
 [node name="Settings" type="VBoxContainer" parent="Misc"]
 margin_right = 632.0
-margin_bottom = 147.0
+margin_bottom = 129.0
 size_flags_horizontal = 3
 alignment = 1
 __meta__ = {
@@ -173,16 +173,6 @@ margin_bottom = 105.0
 text = "(controllers only work in-game, sorry)"
 align = 1
 
-[node name="Label2" type="Label" parent="Misc/Settings"]
-margin_top = 109.0
-margin_right = 952.0
-margin_bottom = 123.0
-text = "(I lied earlier, there is *one* setting...)"
-align = 1
-
-[node name="DisableUnlessFlag" parent="Misc/Settings/Label2" instance=ExtResource( 3 )]
-flag_to_check = "n1"
-
 [node name="Button" type="Button" parent="Misc/Settings"]
 margin_left = 424.0
 margin_top = 127.0
@@ -197,4 +187,3 @@ flag_to_check = "n1"
 
 [connection signal="pressed" from="Graphics + Sound/VBoxContainer/Test Level" to="Graphics + Sound/VBoxContainer/Test Level/NightConfig" method="run"]
 [connection signal="text_changed" from="Misc/Settings/HBoxContainer/TextEdit" to="Misc/Settings/HBoxContainer/EasterEggChicken" method="new_text"]
-[connection signal="toggled" from="Misc/Settings/CheckBox" to="Misc/Settings/CheckBox" method="toggled"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scenes/menu/settings.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://textures/qmark.png" type="Texture" id=8]
 [ext_resource path="res://theme/Classic311/Styles/Panel/Panel.tres" type="StyleBox" id=9]
 [ext_resource path="res://font/militant.tres" type="DynamicFont" id=10]
+[ext_resource path="res://music/phone/pn5.mp3" type="AudioStream" id=11]
 [ext_resource path="res://textures/calendar.png" type="Texture" id=12]
 [ext_resource path="res://textures/doors-bg.png" type="Texture" id=13]
 [ext_resource path="res://textures/gear/0014.png" type="Texture" id=14]
@@ -22,6 +23,12 @@
 [ext_resource path="res://scenes/menu/custom_night.tscn" type="PackedScene" id=21]
 [ext_resource path="res://textures/traincarta.png" type="Texture" id=22]
 [ext_resource path="res://scenes/menu/scene_button.tscn" type="PackedScene" id=23]
+[ext_resource path="res://music/phone/pn4.mp3" type="AudioStream" id=24]
+[ext_resource path="res://music/phone/pn3.mp3" type="AudioStream" id=25]
+[ext_resource path="res://music/phone/pn1.mp3" type="AudioStream" id=26]
+[ext_resource path="res://music/phone/pn2.mp3" type="AudioStream" id=27]
+[ext_resource path="res://cutscenes/Test.tscn" type="PackedScene" id=28]
+[ext_resource path="res://scenes/menu/cutscene_button.tscn" type="PackedScene" id=29]
 
 [sub_resource type="GDScript" id=9]
 script/source = "extends Button
@@ -234,6 +241,7 @@ difficulties = {
 }
 night_index = 0
 victory_scene = "res://scenes/victory/victory_n1.tscn"
+phone_audio = ExtResource( 26 )
 
 [node name="Night 2" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
@@ -256,6 +264,7 @@ difficulties = {
 }
 night_index = 1
 completion_flag = "n2"
+phone_audio = ExtResource( 27 )
 
 [node name="Night 3" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
@@ -278,6 +287,7 @@ difficulties = {
 night_index = 2
 completion_flag = "n3"
 time_to_completion = 720
+phone_audio = ExtResource( 25 )
 
 [node name="Night 4" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
@@ -299,6 +309,7 @@ difficulties = {
 }
 completion_flag = "n4"
 time_to_completion = 720
+phone_audio = ExtResource( 24 )
 
 [node name="Night 5" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
@@ -314,6 +325,7 @@ flag_to_check = "n4"
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 5" instance=ExtResource( 2 )]
 night_index = 4
 completion_flag = "n5"
+phone_audio = ExtResource( 11 )
 
 [node name="Night \?\?\?" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 34.0
@@ -407,21 +419,31 @@ margin_bottom = -3.0
 
 [node name="Error" type="WindowDialog" parent="."]
 visible = true
-margin_left = 401.627
-margin_top = 368.267
-margin_right = 485.627
-margin_bottom = 408.267
+margin_left = 70.0
+margin_top = 311.0
+margin_right = 154.0
+margin_bottom = 351.0
 window_title = "Shit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Error"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Error"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Error/VBoxContainer"]
+margin_right = 67.0
+margin_bottom = 14.0
 text = "Shit"
 align = 1
 valign = 1
+
+[node name="Button" parent="Error/VBoxContainer" instance=ExtResource( 29 )]
+margin_top = 18.0
+margin_right = 67.0
+margin_bottom = 40.0
+scene = ExtResource( 28 )
 
 [node name="CustomNight" parent="." instance=ExtResource( 21 )]
 visible = true

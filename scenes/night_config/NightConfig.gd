@@ -11,18 +11,24 @@ export var completion_flag = "n1"
 export var time_to_completion = 360
 export var between_scene = "res://scenes/between/dummy.tscn"
 export var victory_scene = "res://scenes/victory/victory.tscn"
+export var song = preload("res://music/night_ambience.ogg")
+export var time_before_start_music = 20.0
+export var phone_audio = preload("res://music/switch.mp3")
 
 func run():
-	$"/root/EventMan".reset()
-	$"/root/EventMan".difficulties = difficulties
-	$"/root/EventMan".passive_power = passive_power
-	$"/root/EventMan".passive_temperature = passive_temperature
-	$"/root/EventMan".night_index = night_index
-	$"/root/EventMan".completion_flag = completion_flag
-	$"/root/EventMan".time_to_completion = time_to_completion
-	$"/root/EventMan".between_scene = load(between_scene)
-	$"/root/EventMan".completion_scene = load(victory_scene)
-	$"/root/LevelLoader".load_level(map_path)
+	EventMan.reset()
+	EventMan.difficulties = difficulties
+	EventMan.passive_power = passive_power
+	EventMan.passive_temperature = passive_temperature
+	EventMan.night_index = night_index
+	EventMan.completion_flag = completion_flag
+	EventMan.time_to_completion = time_to_completion
+	EventMan.between_scene = load(between_scene)
+	EventMan.completion_scene = load(victory_scene)
+	EventMan.song = song
+	EventMan.time_before_start_music = time_before_start_music
+	EventMan.phone_audio = phone_audio
+	LevelLoader.load_level(map_path)
 
 func set_map(map):
 	map_path = map

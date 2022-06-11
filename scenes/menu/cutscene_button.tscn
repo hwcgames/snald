@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Button
+
+export var scene: PackedScene
+
+func _pressed():
+	CutsceneMan.start_cutscene(scene)
+"
+
+[node name="Button" type="Button"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Cutscene"
+script = SubResource( 1 )

@@ -1,0 +1,277 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+func _ready():
+	$NightConfig.run()
+	CutsceneMan.player_cutscene_mode = true
+	CutsceneMan.player_cutscene_goal = 90
+	CutsceneMan.put_text(\"Please wait for a moment while the game loads...\", Vector2(0.5, 0.25))
+	yield(EventMan, \"power_tick\")
+	EventMan.pause = true
+	CutsceneMan.remove_text()
+	CutsceneMan.put_text(\"\"\"
+	Welcome to the SNALD tutorial!
+	I'll show you the ropes using a guided gameplay session.
+	First, click to advance the tutorial.
+	\"\"\", Vector2(0.5, 0.25))
+	yield(CutsceneMan, \"advance_cutscene\")
+	CutsceneMan.remove_text()
+	CutsceneMan.put_text(\"\"\"
+	Great!
+	Let's walk through some basic gameplay.
+	First, let's look at the door.
+	\"\"\", Vector2(0.5, 0.25))
+	yield(CutsceneMan, \"advance_cutscene\")
+	CutsceneMan.player_cutscene_goal = 120
+	yield(CutsceneMan.wait(1), \"completed\")
+	CutsceneMan.remove_text()
+	CutsceneMan.put_text(\"\"\"
+	This is your door.
+	You can use the top button to turn on the light,
+	or the bottom button to close the door.
+	Try closing the door!
+	\"\"\", Vector2(0.5, 0.25))
+	CutsceneMan.player_cutscene_mode = false
+	while true:
+		var c = yield(EventMan, \"on\")
+		if \"office_door\" in c:
+			CutsceneMan.remove_text()
+			CutsceneMan.put_text(\"\"\"
+			Great job!
+			Now, press the button again to open the door.
+			\"\"\", Vector2(0.5, 0.25))
+			break
+		else:
+			CutsceneMan.remove_text()
+			CutsceneMan.put_text(\"\"\"
+			Whoops!
+			That wasn't the right action.
+			Make sure you use the top button to close the door.
+			\"\"\", Vector2(0.5, 0.25))
+	yield(CutsceneMan.wait(1), \"completed\")
+	while true:
+		var c = yield(EventMan, \"off\")
+		if \"office_door\" in c:
+			CutsceneMan.remove_text()
+			CutsceneMan.put_text(\"\"\"
+			Great job!
+			Now let's try the light.
+			\"\"\", Vector2(0.5, 0.25))
+			break
+		else:
+			CutsceneMan.remove_text()
+			CutsceneMan.put_text(\"\"\"
+			Whoops!
+			That wasn't the right action.
+			Make sure you use the bottom button to open the door.
+			\"\"\", Vector2(0.5, 0.25))
+	yield(CutsceneMan.wait(1), \"completed\")
+	while true:
+		var c = yield(EventMan, \"on\")
+		if c == \"outdoor_light\":
+			CutsceneMan.remove_text()
+			CutsceneMan.put_text(\"\"\"
+			Great job!
+			Notice how the light turned off automatically when you let go of the button.
+			Next, let's look at the vent.
+			\"\"\", Vector2(0.5, 0.25))
+			yield(CutsceneMan, \"advance_cutscene\")
+			break
+		else:
+			CutsceneMan.remove_text()
+			CutsceneMan.put_text(\"\"\"
+			Whoops!
+			That wasn't the right action.
+			Make sure you use the top button to turn on the light.
+			\"\"\", Vector2(0.5, 0.25))
+	CutsceneMan.player_cutscene_mode = true
+	CutsceneMan.player_cutscene_goal = 150
+	yield(CutsceneMan.wait(1), \"completed\")
+	CutsceneMan.player_cutscene_mode = false
+	CutsceneMan.remove_text()
+	CutsceneMan.put_text(\"\"\"
+	This is the vent.
+	Its light works differently.
+	When you click its button, it FLASHES really bright,
+	instead of being turned on continuously.
+	Try using the vent lamp.
+	\"\"\", Vector2(0.5, 0.25))
+	while true:
+		var c = yield(EventMan, \"on\")
+		if \"office_vent_flash\" in c:
+			CutsceneMan.player_cutscene_mode = true
+			CutsceneMan.player_cutscene_goal = 90
+			CutsceneMan.remove_text()
+			EventMan.emit_signal(\"power_tick\")
+			CutsceneMan.put_text(\"\"\"
+			Whoa! Look at your power!
+			The vent's flash lamp takes a lot of power all at once,
+			so you should use it sparingly.
+			Let's use the generator to get some back.
+			\"\"\", Vector2(0.5, 0.25))
+			yield(CutsceneMan, \"advance_cutscene\")
+			break
+		else:
+			CutsceneMan.remove_text()
+			CutsceneMan.put_text(\"\"\"
+			Whoops!
+			That wasn't the right action.
+			Make sure you use the top button to turn on the light.
+			\"\"\", Vector2(0.5, 0.25))
+	CutsceneMan.player_cutscene_goal = 0
+	yield(CutsceneMan.wait(1), \"completed\")
+	CutsceneMan.player_cutscene_mode = false
+	CutsceneMan.remove_text()
+	CutsceneMan.put_text(\"\"\"
+	This is the generator.
+	You can hold down your mouse button on it to generate power.
+	Don't use it for too long, though - time still passes while you're
+	looking at it.
+	Try using the generator.
+	\"\"\", Vector2(0.5, 0.25))
+	while true:
+		var c = yield(EventMan, \"on\")
+		if c == \"generator\" or c == \"noisy\":
+			CutsceneMan.remove_text()
+			CutsceneMan.put_text(\"\"\"
+			Great job! Let's run the generator until we have full power.
+			I'll show you your power for now, but remember that you won't
+			be able to see your power here during normal play.
+			\"\"\", Vector2(0.5, 0.25))
+			yield(CutsceneMan.wait(5), \"completed\")
+			break
+		else:
+			CutsceneMan.remove_text()
+			CutsceneMan.put_text(\"\"\"
+			Whoops!
+			That wasn't the right action.
+			Make sure you click on the generator in front of you.
+			\"\"\", Vector2(0.5, 0.25))
+	while EventMan.power < 100:
+		CutsceneMan.remove_text()
+		EventMan.emit_signal(\"power_tick\")
+		CutsceneMan.put_text(\"%s percent - Keep it up!\" % EventMan.power, Vector2(0.5, 0.25), 0)
+		yield(CutsceneMan.wait(0.5), \"completed\")
+	EventMan.circuit_off(\"generator\")
+	EventMan.circuit_off(\"noisy\")
+	EventMan.temperature = 20
+	EventMan.emit_signal(\"power_tick\")
+	EventMan.emit_signal(\"temperature_tick\")
+	CutsceneMan.player_cutscene_mode = true	
+	CutsceneMan.remove_text()
+	CutsceneMan.put_text(\"\"\"
+	Excellent! We're back to full power.
+	Let's make sure nothing untoward happened while we were gone...
+	\"\"\", Vector2(0.5, 0.25))
+	yield(CutsceneMan, \"advance_cutscene\")
+	CutsceneMan.player_cutscene_goal = 90
+	CutsceneMan.remove_text()
+	CutsceneMan.put_text(\"\"\"
+	Oh no! The window was open, and now it's freezing!!!
+	Quick, let's close it - when it's cold, you move slower,
+	and your power drains faster.
+	(You won't move slower in this tutorial because I'm moving
+	the camera for you, but it will become a serious problem
+	once you're playing for real.)
+	\"\"\", Vector2(0.5, 0.25))
+	yield(CutsceneMan, \"advance_cutscene\")
+	CutsceneMan.player_cutscene_goal = 230
+	CutsceneMan.remove_text()
+	CutsceneMan.put_text(\"\"\"
+	There's a button next to the window.
+	Close the window, I'm freezing..!
+	\"\"\", Vector2(0.5, 0.25))
+	yield(CutsceneMan.wait(1), \"completed\")
+	CutsceneMan.player_cutscene_mode = false
+	while true:
+		var c = yield(EventMan, \"on\")
+		if \"window\" in c:
+			CutsceneMan.remove_text()
+			CutsceneMan.put_text(\"\"\"
+			Phew!
+			It'll take a minute to warm back up when you're playing for real,
+			but I'll just use a bit of magic to do it immediately.
+			\"\"\", Vector2(0.5, 0.25))
+			break
+		else:
+			CutsceneMan.remove_text()
+			CutsceneMan.put_text(\"\"\"
+			Whoops!
+			That wasn't the right action.
+			\"\"\", Vector2(0.5, 0.25))
+	yield(CutsceneMan, \"advance_cutscene\")
+	CutsceneMan.player_cutscene_mode = true
+	EventMan.temperature = 75
+	EventMan.emit_signal(\"temperature_tick\")
+	CutsceneMan.player_cutscene_goal = 90
+	yield(CutsceneMan.wait(1), \"completed\")
+	CutsceneMan.remove_text()
+	CutsceneMan.put_text(\"\"\"
+	Ah, warmth...
+	\"\"\", Vector2(0.5, 0.25))
+	yield(CutsceneMan.wait(1), \"completed\")
+	CutsceneMan.remove_text()
+	CutsceneMan.put_text(\"\"\"
+	Now that we're comfy, it's time to check out the
+	security system. Move your mouse to the bottom of
+	the screen to bring up your tablet.
+	\"\"\", Vector2(0.5, 0.25))
+	CutsceneMan.player_cutscene_mode = false
+	while true:
+		var c = yield(EventMan, \"on\")
+		if c == \"player_camera_pad\":
+			CutsceneMan.remove_text()
+			CutsceneMan.put_text(\"\"\"
+			Great job!
+			When the tablet is up, you can look around the building using its security cameras.
+			\"\"\", Vector2(0.5, 0.25))
+			break
+		else:
+			CutsceneMan.remove_text()
+			CutsceneMan.put_text(\"\"\"
+			Whoops!
+			That wasn't the right action.
+			Move the mouse to the bottom of the screen.
+			\"\"\", Vector2(0.5, 0.25))
+	CutsceneMan.player_cutscene_mode = true
+	yield(CutsceneMan.wait(2), \"completed\")	
+	CutsceneMan.remove_text()
+	CutsceneMan.put_text(\"\"\"
+	Let's take a look around...
+	\"\"\", Vector2(0.5, 0.25))
+	for c in get_tree().get_nodes_in_group(\"camera\"):
+		yield(CutsceneMan.wait(2), \"completed\")
+		EventMan.push_camera_selection(c.properties[\"camera_id\"])
+	yield(CutsceneMan.wait(2), \"completed\")
+	EventMan.push_camera_pad(false)
+	CutsceneMan.remove_text()
+	CutsceneMan.put_text(\"\"\"
+	Looks like everything is A-OK! 
+	\"\"\", Vector2(0.5, 0.25))
+	yield(CutsceneMan, \"advance_cutscene\")
+	CutsceneMan.remove_text()
+	CutsceneMan.put_text(\"\"\"
+	This concludes the tutorial on basic mechanics.
+	If you need more help playing the game, I'll be
+	adding more tutorials for each character soon.
+	Have fun!
+	\"\"\", Vector2(0.5, 0.25))
+	yield(CutsceneMan, \"advance_cutscene\")
+	$\"/root/EventMan\".completed()
+	CutsceneMan.stop_cutscene()
+"
+
+[node name="Tutorial" type="Node"]
+script = SubResource( 1 )
+
+[node name="NightConfig" parent="." instance=ExtResource( 1 )]
+difficulties = {
+}
+night_index = 1
+completion_flag = "tutorial"
+time_to_completion = 36000
+time_before_start_music = 36000.0

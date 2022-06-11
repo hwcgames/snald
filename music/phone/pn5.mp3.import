@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pn5.mp3-2df35c1492ca6308b55cbf58245f02d0.mp3str"
+
+[deps]
+
+source_file="res://music/phone/pn5.mp3"
+dest_files=[ "res://.import/pn5.mp3-2df35c1492ca6308b55cbf58245f02d0.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

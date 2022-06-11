@@ -228,12 +228,12 @@ Console="*res://addons/Console/Console.gd"
 DebugCommands="*res://scripts/debug_commands.gd"
 Modloader="*res://scripts/modloader.gd"
 KeyPersistence="*res://scripts/KeyPersistence.gd"
+CutsceneMan="*res://scripts/CutsceneMan.gd"
 
 [display]
 
 window/size/width=640
 window/size/height=480
-window/vsync/use_vsync=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

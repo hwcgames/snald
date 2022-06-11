@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pn2.mp3-54e39c65d48bd8fb1a35436f7f039ea6.mp3str"
+
+[deps]
+
+source_file="res://music/phone/pn2.mp3"
+dest_files=[ "res://.import/pn2.mp3-54e39c65d48bd8fb1a35436f7f039ea6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

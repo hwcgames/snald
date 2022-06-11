@@ -12,10 +12,11 @@ signal off(circuit_id)
 signal jumpscare(character, scene)
 
 signal animatronic_tick
-
 signal power_tick
-
 signal temperature_tick
+
+signal push_camera_pad(state)
+signal push_camera_selection(id)
 
 export var difficulties: Dictionary = {}
 export var power: float = 100.0
@@ -29,6 +30,9 @@ export var time_to_completion = 600
 export var between_scene: PackedScene
 export var completion_scene: PackedScene
 export var pause = false
+export var song: AudioStream = preload("res://music/night_ambience.ogg")
+export var time_before_start_music = 20.0
+export var phone_audio: AudioStream = preload("res://music/switch.mp3")
 
 onready var power_timer = Timer.new()
 onready var temperature_timer = Timer.new()
@@ -68,6 +72,9 @@ func reset():
 	between_scene = null
 	completion_scene = null
 	LevelLoader.map = null
+	song = load("res://music/night_ambience.ogg")
+	time_before_start_music = 20.0
+	phone_audio = load("res://music/switch.mp3")
 
 func register(animatronic_id: String, difficulty: int):
 	difficulties[animatronic_id] = difficulty
@@ -138,3 +145,14 @@ func completed():
 func between_completed():
 	var _drop = get_tree().change_scene_to(completion_scene)
 	reset()
+
+func push_state(id: String, state: int):
+	for character in get_tree().get_nodes_in_group("animatronics"):
+		if character.id == name:
+			character.assume_state(state)
+
+func push_camera_pad(up: bool):
+	emit_signal("push_camera_pad", up)
+
+func push_camera_selection(id: String):
+	emit_signal("push_camera_selection", id)

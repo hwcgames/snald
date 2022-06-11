@@ -27,6 +27,7 @@ func temperature_tick():
 		turn_speed = 60 - (50 - $"/root/EventMan".temperature)
 	else:
 		turn_speed = float(properties["speed"] if "speed" in properties else turn_speed)
+
 func _process(delta):
 	# Get mouse X
 	var mouse_x = get_viewport().get_mouse_position().x / get_viewport().size.x
@@ -35,13 +36,15 @@ func _process(delta):
 	var right_bounded = rotation_degrees.y > max_angle and not DEBUG
 	# Determine which direction to move
 	var movement = 0.0
-	if (mouse_x < 0.1 or Input.is_action_pressed("ui_left")) and not right_bounded and not $"/root/EventMan".circuit("player_camera_pad"):
+	if (mouse_x < 0.1 or Input.is_action_pressed("ui_left")) and not right_bounded and not $"/root/EventMan".circuit("player_camera_pad") and not CutsceneMan.player_cutscene_mode:
 		movement += 1
-	if (mouse_x > 0.9 or Input.is_action_pressed("ui_right")) and not left_bounded and not $"/root/EventMan".circuit("player_camera_pad"):
+	if (mouse_x > 0.9 or Input.is_action_pressed("ui_right")) and not left_bounded and not $"/root/EventMan".circuit("player_camera_pad") and not CutsceneMan.player_cutscene_mode:
 		movement -= 1
-	# Move
-	rotation_degrees.y += movement * delta * turn_speed
-	# 
+	# Apply cutscene movement override
+	if CutsceneMan.player_cutscene_mode:
+		rotation_degrees.y = lerp(rotation_degrees.y, CutsceneMan.player_cutscene_goal, delta * 10)
+	else:
+		rotation_degrees.y += movement * delta * turn_speed
 #	# Debug move
 #	if Input.is_key_pressed(KEY_PAGEDOWN):
 #	# Debug reload map
@@ -54,7 +57,7 @@ func _process(delta):
 		translate(Vector3.UP * delta * -5)
 	if DEBUG and (Input.is_key_pressed(KEY_PAGEUP) and not $"/root/EventMan".circuit("player_camera_pad")):
 		translate(Vector3.UP * delta * 5)
-	if $"/root/PersistMan".get_key("controller_mode") and not $"/root/EventMan".circuit("player_camera_pad"):
+	if $"/root/PersistMan".get_key("controller_mode") and not $"/root/EventMan".circuit("player_camera_pad") and not CutsceneMan.player_cutscene_mode:
 		# Process controller buttons
 		process_buttons()
 
@@ -150,4 +153,3 @@ func process_buttons():
 	if last_secondary_on is QodotEntity and last_secondary_on != secondary_node:
 		$"/root/EventMan".circuit_off(last_secondary_on.properties["circuit"])
 		last_secondary_on = null
-
