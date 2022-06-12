@@ -31,6 +31,7 @@ func cutscene_is_running():
 	len(get_children()) > 0
 
 func put_text(text: String, position=Vector2(0.5, 0.5), speed=0.01, centered=true, id="default_text_id", font=preload("res://font/normal.tres")):
+	remove_text(id)
 	var text_s = cutscene_text.instance()
 	text_s.id = id
 	text_s.text = text

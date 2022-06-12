@@ -1,16 +1,11 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=1]
+[gd_scene load_steps=2 format=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
 
 func _ready():
-	$NightConfig.run()
 	CutsceneMan.player_cutscene_mode = true
-	CutsceneMan.player_cutscene_goal = 90
-	CutsceneMan.put_text(\"Please wait for a moment while the game loads...\", Vector2(0.5, 0.25))
-	yield(EventMan, \"power_tick\")
+	CutsceneMan.player_cutscene_goal = 90.0
 	EventMan.pause = true
 	CutsceneMan.remove_text()
 	CutsceneMan.put_text(\"\"\"

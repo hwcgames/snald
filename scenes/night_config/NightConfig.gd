@@ -13,7 +13,7 @@ export var between_scene = "res://scenes/between/dummy.tscn"
 export var victory_scene = "res://scenes/victory/victory.tscn"
 export var song = preload("res://music/night_ambience.ogg")
 export var time_before_start_music = 20.0
-export var phone_audio = preload("res://music/switch.mp3")
+export var start_cutscene: PackedScene
 
 func run():
 	EventMan.reset()
@@ -27,7 +27,7 @@ func run():
 	EventMan.completion_scene = load(victory_scene)
 	EventMan.song = song
 	EventMan.time_before_start_music = time_before_start_music
-	EventMan.phone_audio = phone_audio
+	EventMan.start_cutscene = start_cutscene
 	LevelLoader.load_level(map_path)
 
 func set_map(map):

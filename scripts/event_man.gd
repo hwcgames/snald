@@ -32,7 +32,7 @@ export var completion_scene: PackedScene
 export var pause = false
 export var song: AudioStream = preload("res://music/night_ambience.ogg")
 export var time_before_start_music = 20.0
-export var phone_audio: AudioStream = preload("res://music/switch.mp3")
+export var start_cutscene: PackedScene
 
 onready var power_timer = Timer.new()
 onready var temperature_timer = Timer.new()
@@ -74,7 +74,7 @@ func reset():
 	LevelLoader.map = null
 	song = load("res://music/night_ambience.ogg")
 	time_before_start_music = 20.0
-	phone_audio = load("res://music/switch.mp3")
+	start_cutscene = null
 
 func register(animatronic_id: String, difficulty: int):
 	difficulties[animatronic_id] = difficulty

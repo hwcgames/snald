@@ -40,10 +40,9 @@ func _ready():
 	# Enable cheats when running in the editor
 	if OS.is_debug_build():
 		EventMan.circuit_on("cheater")
-	# Set up phone guy
-	if $FunnyPhone == null: # Ensure we don't step on the easter egg phone audio
-		$AudioStreamPlayer.stream = EventMan.phone_audio
-		$AudioStreamPlayer.play()
+	# Start the cutscene if it exists
+	if EventMan.start_cutscene:
+		CutsceneMan.start_cutscene(EventMan.start_cutscene)
 	# Set up music start timer
 	$MusicStarter.wait_time = EventMan.time_before_start_music
 	$MusicStarter.start()
