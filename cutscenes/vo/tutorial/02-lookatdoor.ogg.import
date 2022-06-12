@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/02-lookatdoor.ogg-ee48507fb99329fbad782bb3bfd6fc0d.oggstr"
+
+[deps]
+
+source_file="res://cutscenes/vo/tutorial/02-lookatdoor.ogg"
+dest_files=[ "res://.import/02-lookatdoor.ogg-ee48507fb99329fbad782bb3bfd6fc0d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

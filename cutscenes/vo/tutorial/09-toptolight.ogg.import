@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/09-toptolight.ogg-e6f2ad25b802f006707b97c4fec2cee8.oggstr"
+
+[deps]
+
+source_file="res://cutscenes/vo/tutorial/09-toptolight.ogg"
+dest_files=[ "res://.import/09-toptolight.ogg-e6f2ad25b802f006707b97c4fec2cee8.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

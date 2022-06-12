@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/18-closethewindow.ogg-f9f2d8d5ce8ed4808fabc89c952d9931.oggstr"
+
+[deps]
+
+source_file="res://cutscenes/vo/tutorial/18-closethewindow.ogg"
+dest_files=[ "res://.import/18-closethewindow.ogg-f9f2d8d5ce8ed4808fabc89c952d9931.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

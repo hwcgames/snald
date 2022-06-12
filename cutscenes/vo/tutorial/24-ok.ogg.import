@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/24-ok.ogg-dcc1281c829cc2d0e79935ce41b340a0.oggstr"
+
+[deps]
+
+source_file="res://cutscenes/vo/tutorial/24-ok.ogg"
+dest_files=[ "res://.import/24-ok.ogg-dcc1281c829cc2d0e79935ce41b340a0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/12-venttoflash.ogg-785e62b3092ac1e8778120575e187e7c.oggstr"
+
+[deps]
+
+source_file="res://cutscenes/vo/tutorial/12-venttoflash.ogg"
+dest_files=[ "res://.import/12-venttoflash.ogg-785e62b3092ac1e8778120575e187e7c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
