@@ -18,6 +18,7 @@ func remove(node: Node):
 func stop_cutscene():
 	for i in get_children():
 		remove(i)
+	player_cutscene_mode = false
 
 func start_cutscene(cutscene: PackedScene):
 	stop_cutscene()

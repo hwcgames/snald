@@ -31,13 +31,15 @@ material/0 = SubResource( 3 )
 [node name="approach1" type="AudioStreamPlayer3D" parent="." index="3"]
 stream = ExtResource( 4 )
 attenuation_model = 3
-unit_db = -5.0
+unit_db = 5.0
+max_db = 5.0
 max_distance = 1000.0
 
 [node name="approach2" type="AudioStreamPlayer3D" parent="." index="4"]
 stream = ExtResource( 3 )
 attenuation_model = 3
-unit_db = -5.0
+unit_db = 5.0
+max_db = 5.0
 max_distance = 1000.0
 
 [node name="depart1" type="AudioStreamPlayer3D" parent="." index="5"]

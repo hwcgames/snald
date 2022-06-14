@@ -92,6 +92,8 @@ func state_machine():
 			# animation_player.connect("animation_finished", self, "walked_up_to_window")
 			# return 10
 			$"/root/EventMan".connect("on", self, "attack_if_window_opens_circuit_handler")
+			if EventMan.circuit(window_circuit):
+				$"/root/EventMan".jumpscare("lucas", "window")
 			return 11
 		11:
 			$"/root/EventMan".disconnect("on", self, "attack_if_window_opens_circuit_handler")
