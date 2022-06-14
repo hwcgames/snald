@@ -20,7 +20,7 @@ func _ready():
 	anchor_bottom = interp_target
 	anchor_right = 0
 	pass # Replace with function body.
-
+# Add the thing so the camera cannot be activated unless the player looks at the monitor
 func _process(_delta):
 	anchor_top = lerp(anchor_top, interp_target, 0.5)
 	anchor_bottom = lerp(anchor_bottom, interp_target, 0.5)

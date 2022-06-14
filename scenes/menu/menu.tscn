@@ -229,10 +229,10 @@ script = SubResource( 3 )
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 1" instance=ExtResource( 2 )]
 difficulties = {
-"gabe": 6,
-"jojo": 4,
-"lucas": 4,
-"redman": 5
+"gabe": 5,
+"jojo": 3,
+"lucas": 3,
+"redman": 4
 }
 night_index = 0
 victory_scene = "res://scenes/victory/victory_n1.tscn"
@@ -250,11 +250,11 @@ flag_to_check = "n1"
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 2" instance=ExtResource( 2 )]
 difficulties = {
-"gabe": 9,
-"jojo": 8,
-"lucas": 7,
-"redman": 8,
-"willow": 2
+"gabe": 8,
+"jojo": 7,
+"lucas": 6,
+"redman": 6,
+"willow": 5
 }
 night_index = 1
 completion_flag = "n2"
@@ -272,10 +272,11 @@ flag_to_check = "n2"
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 3" instance=ExtResource( 2 )]
 difficulties = {
-"gabe": 13,
-"jojo": 12,
-"lucas": 11,
-"redman": 12
+"gabe": 11,
+"jojo": 10,
+"lucas": 10,
+"redman": 11,
+"willow": 9
 }
 night_index = 2
 completion_flag = "n3"
@@ -297,7 +298,8 @@ difficulties = {
 "gabe": 17,
 "jojo": 16,
 "lucas": 17,
-"redman": 16
+"redman": 16,
+"willow": 16
 }
 completion_flag = "n4"
 time_to_completion = 720
