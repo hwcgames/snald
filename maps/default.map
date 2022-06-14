@@ -7520,3 +7520,10 @@
 "animation" "leaving_computer_loop"
 "state_id" "4"
 }
+// entity 154
+{
+"classname" "LookDetector"
+"origin" "82 -42.5214 65"
+"circuit" "looking_at_monitor"
+"threshold" "0.4"
+}

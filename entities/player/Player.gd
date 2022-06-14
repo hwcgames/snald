@@ -1,5 +1,7 @@
 extends QodotEntity
 
+class_name Player
+
 var CAMERA = preload("res://scenes/camera_ui/camera_ui.tscn")
 onready var camera: Control = CAMERA.instance()
 var min_angle = 0
