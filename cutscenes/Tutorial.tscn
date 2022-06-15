@@ -40,6 +40,8 @@ func _ready():
 			Now, press the button again to open the door.
 			\"\"\", Vector2(0.5, 0.25))
 			break
+		elif c == \"looking_at_monitor\":
+			pass
 		else:
 			play(\"05-bottomtoclose\")
 			CutsceneMan.put_text(\"\"\"
@@ -57,6 +59,8 @@ func _ready():
 			Now let's try the light.
 			\"\"\", Vector2(0.5, 0.25))
 			break
+		elif c == \"looking_at_monitor\":
+			pass
 		else:
 			play(\"07-bottomtoopen\")
 			CutsceneMan.put_text(\"\"\"
@@ -76,6 +80,8 @@ func _ready():
 			\"\"\", Vector2(0.5, 0.25))
 			yield(CutsceneMan, \"advance_cutscene\")
 			break
+		elif c == \"looking_at_monitor\":
+			pass
 		else:
 			play(\"09-toptolight\")
 			CutsceneMan.put_text(\"\"\"
@@ -110,6 +116,8 @@ func _ready():
 			\"\"\", Vector2(0.5, 0.25))
 			yield(CutsceneMan, \"advance_cutscene\")
 			break
+		elif c == \"looking_at_monitor\":
+			pass
 		else:
 			play(\"12-venttoflash\")
 			CutsceneMan.put_text(\"\"\"
@@ -139,6 +147,8 @@ func _ready():
 			\"\"\", Vector2(0.5, 0.25))
 			yield(CutsceneMan.wait(5), \"completed\")
 			break
+		elif c == \"looking_at_monitor\":
+			pass
 		else:
 			play(\"15-clickongenerator\")
 			CutsceneMan.put_text(\"\"\"
@@ -192,6 +202,8 @@ func _ready():
 			but I'll just use a bit of magic to do it immediately.
 			\"\"\", Vector2(0.5, 0.25))
 			break
+		elif c == \"looking_at_monitor\":
+			pass
 		else:
 			play(\"20-wrongaction\")
 			CutsceneMan.put_text(\"\"\"
@@ -224,6 +236,8 @@ func _ready():
 			When the tablet is up, you can look around the building using its security cameras.
 			\"\"\", Vector2(0.5, 0.25))
 			break
+		elif c == \"looking_at_monitor\":
+			pass
 		else:
 			play(\"20-wrongaction\")
 			CutsceneMan.put_text(\"\"\"
