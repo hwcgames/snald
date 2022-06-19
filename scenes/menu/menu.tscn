@@ -295,11 +295,11 @@ flag_to_check = "n3"
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 4" instance=ExtResource( 2 )]
 difficulties = {
-"gabe": 17,
-"jojo": 16,
-"lucas": 17,
-"redman": 16,
-"willow": 16
+"gabe": 16,
+"jojo": 15,
+"lucas": 16,
+"redman": 15,
+"willow": 14
 }
 completion_flag = "n4"
 time_to_completion = 720
