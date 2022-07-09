@@ -7509,3 +7509,13 @@
 "angle" "270"
 "piano_circuit_prefix" "piano_"
 }
+// entity 156
+{
+"classname" "AnimatronicPosition"
+"origin" "81 14 97"
+"animation" "tpose"
+"animatronic_id" "tanner"
+"room_id" "office"
+"angle" "270"
+"state_id" "0"
+}

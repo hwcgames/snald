@@ -21,22 +21,28 @@ func _ready():
 	var _err = $"/root/EventMan".connect("on", self, "on")
 	_err = $"/root/EventMan".connect("off", self, "off")
 	_err = $"/root/EventMan".connect("power_tick", self, "power_tick")
-	
-	
+
+var noisy_was_on: bool = false
+
 func on(c):
 	if c == circuit and not $"/root/EventMan".temperature == 20:
 		generating = true
 		#$AnimationPlayer.play()
-		$"/root/EventMan".circuit_on("noisy")
+		if EventMan.circuit("noisy"):
+			noisy_was_on = true
+		else:
+			noisy_was_on = false
+			$"/root/EventMan".circuit_on("noisy")
 		$AudioStreamPlayer.play()
 	else:
 		#play too cold sfx
 		off(c)
-		
+
 func off(c):
 	if c == circuit:
 		generating = false
-		$"/root/EventMan".circuit_on("noisy")
+		if not noisy_was_on:
+			$"/root/EventMan".circuit_off("noisy")
 		$AudioStreamPlayer.stop()
 		$AnimationPlayer.play("GeneratorSpinsDown")
 		power_regen = properties["power"] if "power" in properties else .25

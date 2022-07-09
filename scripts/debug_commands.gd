@@ -51,6 +51,8 @@ func push_state_cmd(name: String, state: int):
 	if not EventMan.circuit("cheater"):
 		Console.print("Only cheaters can use mind control")
 		return
+	if name == "tanner":
+		Console.print("This character doesn't use the state system in the typical way, so it isn't likely to work correctly.")
 	for character in get_tree().get_nodes_in_group("animatronics"):
 		if character.id == name:
 			character.assume_state(state)
