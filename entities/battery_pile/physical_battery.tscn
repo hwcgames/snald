@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/battery_pile/battery.glb" type="PackedScene" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.472407
+height = 3.17513
+
+[node name="battery" type="RigidBody"]
+
+[node name="battery" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.107684, 0, 0, 0, 0.107684, 0, 0, 0, 0.107684, 0, 0.0244546, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.107684, 0, 0, 0, 0.107684, 0, 0, 0, 0.107684, 0, 0.030357, 0 )
+shape = SubResource( 1 )
