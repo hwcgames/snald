@@ -152,3 +152,4 @@ func mods_cmd():
 const jumpscare_help = "Triggers a jumpscare!"
 func jumpscare_cmd(character, animation):
 	EventMan.jumpscare(character, animation)
+	Console.hide()

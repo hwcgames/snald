@@ -84,11 +84,17 @@ func jumpscare(character: String, scene: String):
 	yield(jumpscare, "finished")
 	var kill_player = jumpscare.kill_player
 	path = "res://jumpscares/"+character+"/"+scene+"_dead.tscn"
+	remove_visitor(jumpscare)
 	if kill_player:
 		if file.file_exists(path):
 			var _err = get_tree().change_scene(path)
 		else:
 			var _err = get_tree().change_scene("res://jumpscares/dummy/dummy_dead.tscn")
+
+func remove_visitor(n: Node):
+	for i in n.get_children():
+		remove_visitor(i)
+	n.remove_and_skip()
 
 var last_primary_on = null
 var last_secondary_on = null
