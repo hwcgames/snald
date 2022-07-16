@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/uglycarpet.png-180caa542a552978fb8df4c82bd745d1.s3tc.stex"
-path.etc2="res://.import/uglycarpet.png-180caa542a552978fb8df4c82bd745d1.etc2.stex"
+path="res://.import/uglycarpet.png-180caa542a552978fb8df4c82bd745d1.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/uglycarpet.png"
-dest_files=[ "res://.import/uglycarpet.png-180caa542a552978fb8df4c82bd745d1.s3tc.stex", "res://.import/uglycarpet.png-180caa542a552978fb8df4c82bd745d1.etc2.stex" ]
+dest_files=[ "res://.import/uglycarpet.png-180caa542a552978fb8df4c82bd745d1.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.3
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

@@ -14,8 +14,8 @@ dest_files=[ "res://.import/clip.png-05e05f715d5e6c565583267ebef20922.stex" ]
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.3
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

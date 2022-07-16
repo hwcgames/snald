@@ -201,6 +201,7 @@
 "radius" "1024"
 "power" "0"
 "energy" "1"
+"always_on" "1"
 }
 // entity 2
 {

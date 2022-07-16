@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/concrete_floor_worn_001_nor_gl_1k.jpg-d7fa1e2ef5b39c4e92a36c1ca7db6946.s3tc.stex"
-path.etc2="res://.import/concrete_floor_worn_001_nor_gl_1k.jpg-d7fa1e2ef5b39c4e92a36c1ca7db6946.etc2.stex"
+path="res://.import/concrete_floor_worn_001_nor_gl_1k.jpg-d7fa1e2ef5b39c4e92a36c1ca7db6946.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/concrete_floor_worn_001/textures/concrete_floor_worn_001_nor_gl_1k.jpg"
-dest_files=[ "res://.import/concrete_floor_worn_001_nor_gl_1k.jpg-d7fa1e2ef5b39c4e92a36c1ca7db6946.s3tc.stex", "res://.import/concrete_floor_worn_001_nor_gl_1k.jpg-d7fa1e2ef5b39c4e92a36c1ca7db6946.etc2.stex" ]
+dest_files=[ "res://.import/concrete_floor_worn_001_nor_gl_1k.jpg-d7fa1e2ef5b39c4e92a36c1ca7db6946.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.5
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=1

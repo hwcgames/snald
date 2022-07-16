@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/rusty_metal_02_nor_gl_1k.jpg-9c347b4fa5b51534b7e4657262bdeb3f.s3tc.stex"
-path.etc2="res://.import/rusty_metal_02_nor_gl_1k.jpg-9c347b4fa5b51534b7e4657262bdeb3f.etc2.stex"
+path="res://.import/rusty_metal_02_nor_gl_1k.jpg-9c347b4fa5b51534b7e4657262bdeb3f.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/rusty_metal_02/textures/rusty_metal_02_nor_gl_1k.jpg"
-dest_files=[ "res://.import/rusty_metal_02_nor_gl_1k.jpg-9c347b4fa5b51534b7e4657262bdeb3f.s3tc.stex", "res://.import/rusty_metal_02_nor_gl_1k.jpg-9c347b4fa5b51534b7e4657262bdeb3f.etc2.stex" ]
+dest_files=[ "res://.import/rusty_metal_02_nor_gl_1k.jpg-9c347b4fa5b51534b7e4657262bdeb3f.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.5
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=1

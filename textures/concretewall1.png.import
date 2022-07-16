@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/concretewall1.png-206845671f5fb70a10c818a7212c0f77.s3tc.stex"
-path.etc2="res://.import/concretewall1.png-206845671f5fb70a10c818a7212c0f77.etc2.stex"
+path="res://.import/concretewall1.png-206845671f5fb70a10c818a7212c0f77.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/concretewall1.png"
-dest_files=[ "res://.import/concretewall1.png-206845671f5fb70a10c818a7212c0f77.s3tc.stex", "res://.import/concretewall1.png-206845671f5fb70a10c818a7212c0f77.etc2.stex" ]
+dest_files=[ "res://.import/concretewall1.png-206845671f5fb70a10c818a7212c0f77.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.3
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

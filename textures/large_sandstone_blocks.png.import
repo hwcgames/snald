@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/large_sandstone_blocks.png-ab827a64c6fa733ad8c3ac50bdca1db6.s3tc.stex"
-path.etc2="res://.import/large_sandstone_blocks.png-ab827a64c6fa733ad8c3ac50bdca1db6.etc2.stex"
+path="res://.import/large_sandstone_blocks.png-ab827a64c6fa733ad8c3ac50bdca1db6.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/large_sandstone_blocks.png"
-dest_files=[ "res://.import/large_sandstone_blocks.png-ab827a64c6fa733ad8c3ac50bdca1db6.s3tc.stex", "res://.import/large_sandstone_blocks.png-ab827a64c6fa733ad8c3ac50bdca1db6.etc2.stex" ]
+dest_files=[ "res://.import/large_sandstone_blocks.png-ab827a64c6fa733ad8c3ac50bdca1db6.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.3
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

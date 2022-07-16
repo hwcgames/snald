@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/calendar.png-57b761fa375bd9396beab82a123cc759.s3tc.stex"
-path.etc2="res://.import/calendar.png-57b761fa375bd9396beab82a123cc759.etc2.stex"
+path="res://.import/calendar.png-57b761fa375bd9396beab82a123cc759.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/calendar.png"
-dest_files=[ "res://.import/calendar.png-57b761fa375bd9396beab82a123cc759.s3tc.stex", "res://.import/calendar.png-57b761fa375bd9396beab82a123cc759.etc2.stex" ]
+dest_files=[ "res://.import/calendar.png-57b761fa375bd9396beab82a123cc759.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.3
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

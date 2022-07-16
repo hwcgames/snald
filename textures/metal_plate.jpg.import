@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/metal_plate.jpg-34a6dae57de84f45ccec2328a003b69d.s3tc.stex"
-path.etc2="res://.import/metal_plate.jpg-34a6dae57de84f45ccec2328a003b69d.etc2.stex"
+path="res://.import/metal_plate.jpg-34a6dae57de84f45ccec2328a003b69d.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/metal_plate.jpg"
-dest_files=[ "res://.import/metal_plate.jpg-34a6dae57de84f45ccec2328a003b69d.s3tc.stex", "res://.import/metal_plate.jpg-34a6dae57de84f45ccec2328a003b69d.etc2.stex" ]
+dest_files=[ "res://.import/metal_plate.jpg-34a6dae57de84f45ccec2328a003b69d.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

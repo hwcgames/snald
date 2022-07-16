@@ -14,8 +14,8 @@ dest_files=[ "res://.import/forest_leaves_03.jpg-f95760aa59eed7420dc2fb06410d549
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

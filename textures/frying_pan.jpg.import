@@ -14,8 +14,8 @@ dest_files=[ "res://.import/frying_pan.jpg-bdb0f4365415b5ed8c6892e8ac4b6f4d.stex
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

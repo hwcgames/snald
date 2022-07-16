@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/forest_leaves_03_nor_gl_1k.jpg-c689b711e68eb0fe6fc6cc6eb18294b9.s3tc.stex"
-path.etc2="res://.import/forest_leaves_03_nor_gl_1k.jpg-c689b711e68eb0fe6fc6cc6eb18294b9.etc2.stex"
+path="res://.import/forest_leaves_03_nor_gl_1k.jpg-c689b711e68eb0fe6fc6cc6eb18294b9.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/forest_leaves_03/textures/forest_leaves_03_nor_gl_1k.jpg"
-dest_files=[ "res://.import/forest_leaves_03_nor_gl_1k.jpg-c689b711e68eb0fe6fc6cc6eb18294b9.s3tc.stex", "res://.import/forest_leaves_03_nor_gl_1k.jpg-c689b711e68eb0fe6fc6cc6eb18294b9.etc2.stex" ]
+dest_files=[ "res://.import/forest_leaves_03_nor_gl_1k.jpg-c689b711e68eb0fe6fc6cc6eb18294b9.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.5
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=1

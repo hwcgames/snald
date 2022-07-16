@@ -14,8 +14,8 @@ dest_files=[ "res://.import/factory_wall.png-1d919389d5f05d45475e592593be0feb.st
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.3
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

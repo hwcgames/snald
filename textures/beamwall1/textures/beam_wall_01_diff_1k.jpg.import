@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/beam_wall_01_diff_1k.jpg-bd3791015d4e3e7de49890169221758d.s3tc.stex"
-path.etc2="res://.import/beam_wall_01_diff_1k.jpg-bd3791015d4e3e7de49890169221758d.etc2.stex"
+path="res://.import/beam_wall_01_diff_1k.jpg-bd3791015d4e3e7de49890169221758d.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/beamwall1/textures/beam_wall_01_diff_1k.jpg"
-dest_files=[ "res://.import/beam_wall_01_diff_1k.jpg-bd3791015d4e3e7de49890169221758d.s3tc.stex", "res://.import/beam_wall_01_diff_1k.jpg-bd3791015d4e3e7de49890169221758d.etc2.stex" ]
+dest_files=[ "res://.import/beam_wall_01_diff_1k.jpg-bd3791015d4e3e7de49890169221758d.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.5
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

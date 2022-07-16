@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/factory_wall_diff_1k.jpg-8b7c815e7a9e44631a2514cd9b9d73ff.s3tc.stex"
-path.etc2="res://.import/factory_wall_diff_1k.jpg-8b7c815e7a9e44631a2514cd9b9d73ff.etc2.stex"
+path="res://.import/factory_wall_diff_1k.jpg-8b7c815e7a9e44631a2514cd9b9d73ff.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/factorywall/textures/factory_wall_diff_1k.jpg"
-dest_files=[ "res://.import/factory_wall_diff_1k.jpg-8b7c815e7a9e44631a2514cd9b9d73ff.s3tc.stex", "res://.import/factory_wall_diff_1k.jpg-8b7c815e7a9e44631a2514cd9b9d73ff.etc2.stex" ]
+dest_files=[ "res://.import/factory_wall_diff_1k.jpg-8b7c815e7a9e44631a2514cd9b9d73ff.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.5
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

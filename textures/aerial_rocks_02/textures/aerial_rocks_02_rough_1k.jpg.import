@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/aerial_rocks_02_rough_1k.jpg-145766256823cc576c0bf05763dd926b.s3tc.stex"
-path.etc2="res://.import/aerial_rocks_02_rough_1k.jpg-145766256823cc576c0bf05763dd926b.etc2.stex"
+path="res://.import/aerial_rocks_02_rough_1k.jpg-145766256823cc576c0bf05763dd926b.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/aerial_rocks_02/textures/aerial_rocks_02_rough_1k.jpg"
-dest_files=[ "res://.import/aerial_rocks_02_rough_1k.jpg-145766256823cc576c0bf05763dd926b.s3tc.stex", "res://.import/aerial_rocks_02_rough_1k.jpg-145766256823cc576c0bf05763dd926b.etc2.stex" ]
+dest_files=[ "res://.import/aerial_rocks_02_rough_1k.jpg-145766256823cc576c0bf05763dd926b.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.5
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

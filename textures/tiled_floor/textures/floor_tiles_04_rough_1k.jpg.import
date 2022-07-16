@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/floor_tiles_04_rough_1k.jpg-da5b4d8f9103a4b0110fe6186103d0fa.s3tc.stex"
-path.etc2="res://.import/floor_tiles_04_rough_1k.jpg-da5b4d8f9103a4b0110fe6186103d0fa.etc2.stex"
+path="res://.import/floor_tiles_04_rough_1k.jpg-da5b4d8f9103a4b0110fe6186103d0fa.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/tiled_floor/textures/floor_tiles_04_rough_1k.jpg"
-dest_files=[ "res://.import/floor_tiles_04_rough_1k.jpg-da5b4d8f9103a4b0110fe6186103d0fa.s3tc.stex", "res://.import/floor_tiles_04_rough_1k.jpg-da5b4d8f9103a4b0110fe6186103d0fa.etc2.stex" ]
+dest_files=[ "res://.import/floor_tiles_04_rough_1k.jpg-da5b4d8f9103a4b0110fe6186103d0fa.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.5
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
