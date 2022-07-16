@@ -11,6 +11,7 @@ description = ""
 qodot_internal = false
 base_classes = [  ]
 class_properties = {
+"angle": 0.0
 }
 class_property_descriptions = {
 }

@@ -16,7 +16,11 @@ var difficulty = 10
 var goal_song: PoolIntArray = PoolIntArray([])
 var player_song: PoolIntArray = PoolIntArray([])
 var song_is_correct: bool = false
+var killscreen: bool = false
 var boomboxing: bool = false
+var length: int = 0
+var note_wait: float = 0.5
+var punishment_wait: float = 20.0
 
 var song_choices: Array = [
 	PoolIntArray([1,2,3,4,5,6,7,8])
@@ -28,6 +32,7 @@ export var punishment_songs: PoolStringArray = []
 signal song_finished
 
 func _ready():
+	length = self.difficulty
 	assume_state(0)
 	EventMan.connect("on", self, "on")
 	timer.connect("timeout", self, "finish_boombox")
@@ -39,17 +44,25 @@ func _ready():
 		yield(timer, "timeout")
 		ap.play("enter")
 		yield(ap, "animation_finished")
-		choose_song()
+		if difficulty == 20:
+			note_wait = 0.1
+			length = 100
+			killscreen = true
+			punishment_wait = 3600
+		gen_song()
 		yield(self, "song_finished")
+		CutsceneMan.remove_text("tanner_song_text")
+		CutsceneMan.stop_cutscene()
 		if song_is_correct:
 			ap.play("success")
 			yield(ap, "animation_finished")
 			EventMan.circuit_on("give_battery")
 			EventMan.circuit_off("give_battery")
+			length += 1
 		else:
 			ap.play("failure")
 			yield(ap, "animation_finished")
-			timer.wait_time = 20
+			timer.wait_time = punishment_wait
 			timer.start()
 			EventMan.circuit_on("noisy")
 			tween.interpolate_property($"/root/gameplay/AudioStreamPlayer", "volume_db", 0, -10, 1)
@@ -86,6 +99,11 @@ func on(circuit: String):
 		check_song()
 
 func check_song():
+	if killscreen:
+		goal_song = PoolIntArray([])
+		player_song = goal_song
+		song_is_correct = false
+		emit_signal("song_finished")
 	if len(goal_song) == 0:
 		player_song = PoolIntArray([])
 		return
@@ -119,11 +137,27 @@ func finish_boombox():
 
 func play_song():
 	var song = goal_song
+	var string = ""
+	CutsceneMan.add_child(CutsceneMan.cutscene_blocker.instance())
 	for note in song:
 		play_note(note)
-		$NoteTimer.wait_time = 0.5
+		$NoteTimer.wait_time = note_wait
 		$NoteTimer.start()
+		string += str(note) + ", "
+		CutsceneMan.remove_text("tanner_song_text", 0)
+		CutsceneMan.put_text(string, Vector2(0.5, 0.6), 0, true, "tanner_song_text")
 		yield($NoteTimer, "timeout")
+
+func gen_song():
+	var roll_for_deterministic_song = round(rand_range(0,20)) < 2
+	if roll_for_deterministic_song:
+		choose_song()
+		return
+	player_song = PoolIntArray([])
+	goal_song = PoolIntArray([])
+	for _n in range(length/2):
+		goal_song.append(round(rand_range(1,8)))
+	play_song()
 
 # Copied functionality from AnimatronicBase
 func assume_state(new_state: int):

@@ -7,6 +7,8 @@ var batteries = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	EventMan.connect("on", self, "on")
+	yield(get_parent(), "build_complete")
+	rotation_degrees.y = float(properties["angle"])
 	pass # Replace with function body.
 
 func on(circuit: String):
