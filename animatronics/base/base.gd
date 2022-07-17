@@ -22,7 +22,9 @@ func animatronic_tick():
 		return
 	var random = floor(rand_range(1,26))
 	if difficulty + difficulty_offset() >= random:
-		assume_state(state_machine())
+		var s = state_machine()
+		if not s == -1:
+			assume_state(s)
 	$MovementTimer.start()
 
 func _ready():
@@ -46,6 +48,29 @@ func assume_state(new_state: int):
 	self.state = new_state
 	room = target.get_room()
 	emit_signal("change_state", new_state)
+
+func glide_to_state(goal=0, duration=1.0, trans_type=0, ease_type=2, delay=0.0):
+	var current_position = global_transform.origin
+	var goal_position = get_node_for_state(goal)
+	var angle = Vector2(current_position.x, current_position.y)
+	.angle_to(Vector2(goal_position.x, goal_position.y))
+	rotation_degrees.y = angle
+	var t = Tween.new()
+	add_child(t)
+	t.interpolate_property(
+		global_transform,
+		"origin",
+		current_position,
+		goal_position,
+		duration,
+		trans_type,
+		ease_type,
+		delay
+	)
+	t.start()
+	yield(t, "tween_completed")
+	t.remove_and_skip()
+	assume_state(goal)
 
 func get_node_for_state(state: int):
 	var all = get_nodes_for_state(state)
