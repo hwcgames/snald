@@ -27,7 +27,7 @@ func on(circuit: String):
 		if not b:
 			return
 		remove_visitor(b)
-		EventMan.power += 20.0
+		EventMan.power += CVars.get_float("battery_charge")
 
 func remove_visitor(n: Node):
 	for c in n.get_children():

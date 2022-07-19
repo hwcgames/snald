@@ -21,7 +21,13 @@ func _ready():
 		hide()
 	pass # Replace with function body.
 
+func _input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton:
+		PersistMan.persistent_dict[collection_flag] = true
+	remove_visitor(self)
+	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func remove_visitor(n: Node):
+	for i in n.get_children():
+		remove_visitor(i)
+	n.remove_and_skip()

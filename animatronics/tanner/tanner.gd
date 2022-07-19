@@ -20,7 +20,6 @@ var killscreen: bool = false
 var boomboxing: bool = false
 var length: int = 0
 var note_wait: float = 0.5
-var punishment_wait: float = 20.0
 
 var song_choices: Array = [
 	PoolIntArray([1,2,3,4,5,6,7,8])
@@ -44,11 +43,11 @@ func _ready():
 		yield(timer, "timeout")
 		ap.play("enter")
 		yield(ap, "animation_finished")
-		if difficulty == 20:
+		if difficulty >= 20:
 			note_wait = 0.1
 			length = 100
 			killscreen = true
-			punishment_wait = 3600
+			CVars.set_float("punishment_song_length", 3600.0)
 		gen_song()
 		yield(self, "song_finished")
 		CutsceneMan.remove_text("tanner_song_text")
@@ -58,11 +57,11 @@ func _ready():
 			yield(ap, "animation_finished")
 			EventMan.circuit_on("give_battery")
 			EventMan.circuit_off("give_battery")
-			length += 1
+			length += CVars.get_float("song_length_increase_rate")
 		else:
 			ap.play("failure")
 			yield(ap, "animation_finished")
-			timer.wait_time = punishment_wait
+			timer.wait_time = CVars.get_float("punishment_song_length")
 			timer.start()
 			EventMan.circuit_on("noisy")
 			tween.interpolate_property($"/root/gameplay/AudioStreamPlayer", "volume_db", 0, -10, 1)
@@ -149,13 +148,13 @@ func play_song():
 		yield($NoteTimer, "timeout")
 
 func gen_song():
-	var roll_for_deterministic_song = round(rand_range(0,20)) < 2
+	var roll_for_deterministic_song = rand_range(0,20) < CVars.get_float("deterministic_song_chance")
 	if roll_for_deterministic_song:
 		choose_song()
 		return
 	player_song = PoolIntArray([])
 	goal_song = PoolIntArray([])
-	for _n in range(length/2):
+	for _n in range(round(length)/2):
 		goal_song.append(round(rand_range(1,8)))
 	play_song()
 

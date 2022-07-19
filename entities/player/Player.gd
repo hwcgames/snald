@@ -25,7 +25,7 @@ func _ready():
 	print("Setting up jumpscare handler")
 	_err = $"/root/EventMan".connect("jumpscare", self, "jumpscare")
 func temperature_tick():
-	if $"/root/EventMan".temperature <= 40:
+	if $"/root/EventMan".temperature <= CVars.get_float("player_slow_threshold"):
 		turn_speed = 60 - (50 - $"/root/EventMan".temperature)
 	else:
 		turn_speed = float(properties["speed"] if "speed" in properties else turn_speed)

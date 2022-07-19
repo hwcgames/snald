@@ -75,6 +75,7 @@ func reset():
 	song = load("res://music/night_ambience.ogg")
 	time_before_start_music = 20.0
 	start_cutscene = null
+	CVars._ready()
 
 func register(animatronic_id: String, difficulty: int):
 	difficulties[animatronic_id] = difficulty

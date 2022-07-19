@@ -36,5 +36,6 @@ func reload():
 				mods.remove(mods.find(new_mod))
 			mods.append(new_mod)
 	var _drop = get_tree().reload_current_scene()
+	EventMan.reset()
 	Console.print("Done loading mods!")
 	

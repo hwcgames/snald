@@ -152,7 +152,7 @@ func check_hunting():
 					accumulator += HUNT_TARGETS[key]
 			print("Lucas begins hunting for ", hunt_target)
 		else:
-			hunt_accumulation += 0.01 * difficulty
+			hunt_accumulation += CVars.get_float("lucas_hunt_accumulation_rate") * difficulty
 func play_approach_sound():
 	if 0 == floor(rand_range(0,1)):
 		$approach1.play()
@@ -201,9 +201,9 @@ func wait_for_camera_entrance(circuit: String):
 func difficulty_offset():
 	var heat_increase = 0
 	var noise_increase = 0
-	if $"/root/EventMan".temperature >= 90:
-		heat_increase = ($"/root/EventMan".temperature - 90) / 6
+	if $"/root/EventMan".temperature >= CVars.get_float("hot_threshold"):
+		heat_increase = ($"/root/EventMan".temperature - CVars.get_float("hot_threshold")) / 6
 	if $"/root/EventMan".circuit("noisy") == true:
-		noise_increase = 8
+		noise_increase = CVars.get_float("noisy_diff_boost")
 	#if the music playin do the thin
 	return (heat_increase + noise_increase + 3)

@@ -11,10 +11,10 @@ func _ready():
 func difficulty_offset():
 	var heat_increase = 0
 	var noise_increase = 0
-	if $"/root/EventMan".temperature >= 90:
-		heat_increase = ($"/root/EventMan".temperature - 90) / 6
+	if $"/root/EventMan".temperature >= CVars.get_float("hot_threshold"):
+		heat_increase = ($"/root/EventMan".temperature - CVars.get_float("hot_threshold")) / 6
 	if $"/root/EventMan".circuit("noisy") == true:
-		noise_increase = 8
+		noise_increase = CVars.get_float("noisy_diff_boost")
 	#if the music playin do the thin
 	print (heat_increase + noise_increase)
 	return (heat_increase + noise_increase)

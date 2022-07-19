@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scripts/stored_cvars.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+ints = {
+}
+floats = {
+"battery_charge": 30.0,
+"deterministic_song_chance": 2.0,
+"gabe_base_shoot_time": 50.0,
+"generator_fail_threshold": 20.0,
+"hot_threshold": 90.0,
+"lucas_hunt_accumulation_rate": 0.01,
+"noisy_diff_boost": 8.0,
+"player_slow_threshold": 50.0,
+"punishment_song_length": 20.0,
+"song_length_increase_rate": 1.0
+}
+bools = {
+}

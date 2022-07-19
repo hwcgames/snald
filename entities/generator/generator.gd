@@ -25,7 +25,7 @@ func _ready():
 var noisy_was_on: bool = false
 
 func on(c):
-	if c == circuit and not $"/root/EventMan".temperature == 20:
+	if c == circuit and not $"/root/EventMan".temperature == CVars.get_float("generator_fail_threshold"):
 		generating = true
 		#$AnimationPlayer.play()
 		if EventMan.circuit("noisy"):
