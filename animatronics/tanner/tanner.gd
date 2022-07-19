@@ -37,7 +37,7 @@ func _ready():
 	timer.connect("timeout", self, "finish_boombox")
 	while true:
 		# TBD how timer should work
-		timer.wait_time = 5
+		timer.wait_time = 181
 		timer.start()
 		song_is_correct = false
 		yield(timer, "timeout")
