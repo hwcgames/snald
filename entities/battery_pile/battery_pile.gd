@@ -27,7 +27,7 @@ func on(circuit: String):
 		if not b:
 			return
 		remove_visitor(b)
-		EventMan.power += 20.0
+		EventMan.power += 30.0
 
 func remove_visitor(n: Node):
 	for c in n.get_children():

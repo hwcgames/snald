@@ -254,6 +254,7 @@ difficulties = {
 "jojo": 7,
 "lucas": 6,
 "redman": 6,
+"tanner": 4,
 "willow": 5
 }
 night_index = 1
@@ -299,6 +300,7 @@ difficulties = {
 "jojo": 15,
 "lucas": 16,
 "redman": 15,
+"tanner": 14,
 "willow": 14
 }
 completion_flag = "n4"

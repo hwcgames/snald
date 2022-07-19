@@ -38,7 +38,7 @@ func _ready():
 	timer.connect("timeout", self, "finish_boombox")
 	while true:
 		# TBD how timer should work
-		timer.wait_time = 5
+		timer.wait_time = 181
 		timer.start()
 		song_is_correct = false
 		yield(timer, "timeout")
@@ -58,7 +58,7 @@ func _ready():
 			yield(ap, "animation_finished")
 			EventMan.circuit_on("give_battery")
 			EventMan.circuit_off("give_battery")
-			length += 1
+			length += 2
 		else:
 			ap.play("failure")
 			yield(ap, "animation_finished")
