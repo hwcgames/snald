@@ -5,26 +5,25 @@
 [sub_resource type="GDScript" id=2]
 script/source = "extends Spatial
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
 signal finished
 
-const kill_player = false
+const kill_player = true
+const relative = false
+var player: Player
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	call_deferred(\"write_player_pos\")
 	$FancierAnimationPlayer.play(\"go\")
+	CutsceneMan.player_cutscene_mode = true
+	CutsceneMan.player_cutscene_goal = 230
 	yield($AnimationPlayer, \"animation_finished\")
+	CutsceneMan.player_cutscene_mode = false
 	emit_signal(\"finished\")
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func write_player_pos():
+	$RemoteTransform.global_transform = player.get_node(\"Camera\").global_transform
+	$RemoteTransform.remote_path = player.get_node(\"Camera\").get_path()
 "
 
 [sub_resource type="SpatialMaterial" id=5]
@@ -73,7 +72,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 0.246417, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 7.40119, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
 tracks/1/type = "bezier"
@@ -83,7 +82,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( -2.74831, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( -1.9842, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
 tracks/2/type = "bezier"
@@ -93,7 +92,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"points": PoolRealArray( 14.4691, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( -8.34576, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
 tracks/3/type = "value"
@@ -108,57 +107,116 @@ tracks/3/keys = {
 "update": 1,
 "values": [ SubResource( 5 ) ]
 }
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("RemoteTransform:translation:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("RemoteTransform:translation:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("RemoteTransform:translation:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "go"
 length = 2.5
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("Armature:translation:x")
+tracks/0/type = "animation"
+tracks/0/path = NodePath("AnimationPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 0.246417, -0.25, 0, 0.25, 0, 0.246417, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 1.4, 2.2 )
+"clips": PoolStringArray( "lucas_windowscare" ),
+"times": PoolRealArray( 0 )
 }
 tracks/1/type = "bezier"
-tracks/1/path = NodePath("Armature:translation:y")
+tracks/1/path = NodePath("RemoteTransform:translation:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( -2.74831, -0.25, 0, 0.25, 0, -2.74831, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 1.4, 2.2 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 5.85895, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.4, 2.1 )
 }
 tracks/2/type = "bezier"
-tracks/2/path = NodePath("Armature:translation:z")
+tracks/2/path = NodePath("RemoteTransform:translation:y")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"points": PoolRealArray( 14.4691, -0.25, 0, 0.25, 0, 4.55432, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 1.4, 2.2 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.4, 2.1 )
 }
-tracks/3/type = "animation"
-tracks/3/path = NodePath("AnimationPlayer")
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("RemoteTransform:translation:z")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"clips": PoolStringArray( "lucas_windowscare" ),
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -6.33198, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.4, 2.1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Armature:translation:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 7.40119, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Armature:translation:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( -1.9842, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Armature:translation:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( -8.34576, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
 
 [node name="lucas" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.40756, 0 )
 script = SubResource( 2 )
 
 [node name="Armature" parent="." index="0"]
-transform = Transform( -0.831518, 0, -0.555498, 0, 1, 0, 0.555498, 0, -0.831518, 0.246417, -2.74831, 14.4691 )
+transform = Transform( 0.596206, 0, -0.0673702, 0, 0.6, 0, 0.0673702, 0, 0.596206, 7.40119, -1.9842, -8.34576 )
 
 [node name="Skeleton" parent="Armature" index="0"]
 bones/8/bound_children = [ NodePath("BoneAttachment"), NodePath("BoneAttachment2") ]
@@ -166,19 +224,19 @@ bones/13/bound_children = [ NodePath("BoneAttachment3") ]
 bones/14/bound_children = [ NodePath("BoneAttachment4") ]
 
 [node name="BoneAttachment" parent="Armature/Skeleton" index="0"]
-transform = Transform( 0.79523, 0.123991, -0.593495, -0.124917, 0.991372, 0.0397369, 0.5933, 0.0425373, 0.803856, -0.0173688, 4.02885, 0.448665 )
+transform = Transform( 1, 0, 0, 0, 1, -9.31323e-09, 0, 9.31323e-09, 1, 0, 4.03492, 0.346897 )
 
 [node name="BoneAttachment2" parent="Armature/Skeleton" index="1"]
-transform = Transform( 0.79523, 0.123991, -0.593495, -0.124917, 0.991372, 0.0397369, 0.5933, 0.0425373, 0.803856, -0.0173688, 4.02885, 0.448665 )
+transform = Transform( 1, 0, 0, 0, 1, -9.31323e-09, 0, 9.31323e-09, 1, 0, 4.03492, 0.346897 )
 
 [node name="BoneAttachment3" parent="Armature/Skeleton" index="2"]
-transform = Transform( 0.909576, 0.0755711, -0.408608, 0.00657647, 0.980583, 0.195996, 0.415485, -0.180961, 0.891418, 2.36339, -10.3586, 1.55961 )
+transform = Transform( 1, 2.22042e-16, -2.20951e-16, -2.22042e-16, 0.00492466, -0.999988, -2.20951e-16, 0.999988, 0.00492466, -0.869997, -11.3497, -4.71758 )
 
 [node name="Cube" parent="Armature/Skeleton/BoneAttachment3" index="0"]
 transform = Transform( -4.47889e-08, -9.31323e-09, 0.375716, -5.82077e-09, 0.375716, 9.31323e-09, -0.375716, -5.82077e-09, -4.47889e-08, -0.5488, 0.418785, 0.00830418 )
 
 [node name="BoneAttachment4" parent="Armature/Skeleton" index="3"]
-transform = Transform( 0.105124, 0.157429, -0.652973, 0.53466, 0.38044, 0.177798, 0.406566, -0.541008, -0.0649804, 4.80213, -8.91945, 4.45925 )
+transform = Transform( 0.105124, 0.157429, -0.652973, 0.53466, 0.38044, 0.177798, 0.406566, -0.541008, -0.0649804, 3.36335, -7.57242, 3.63777 )
 
 [node name="Plane" parent="Armature/Skeleton" index="4"]
 material/3 = SubResource( 5 )
@@ -189,3 +247,7 @@ anims/RESET = SubResource( 1 )
 [node name="FancierAnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 anims/RESET = SubResource( 3 )
 anims/go = SubResource( 4 )
+
+[node name="RemoteTransform" type="RemoteTransform" parent="." index="3"]
+update_rotation = false
+update_scale = false

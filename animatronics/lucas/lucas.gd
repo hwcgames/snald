@@ -86,7 +86,9 @@ func state_machine():
 	match state:
 		9:
 			play_approach_sound()
-			
+			assume_state(10)
+			animation_player.play("walking_to_window_loop")
+			glide_to_state(11, 7.0)
 			return 10
 		10:
 			# animation_player.connect("animation_finished", self, "walked_up_to_window")
@@ -94,12 +96,14 @@ func state_machine():
 			$"/root/EventMan".connect("on", self, "attack_if_window_opens_circuit_handler")
 			if EventMan.circuit(window_circuit):
 				$"/root/EventMan".jumpscare("lucas", "window")
-			return 11
+			return -1
 		11:
 			$"/root/EventMan".disconnect("on", self, "attack_if_window_opens_circuit_handler")
 			animation_player.connect("animation_finished", self, "walked_away_from_window")
 			play_depart_sound()
-			return 12
+			animation_player.play("walking_to_window_loop")
+			glide_to_state(12, 7.0)
+			return -1
 		12:
 			# return 12
 			hunt_target = null
@@ -175,6 +179,7 @@ func hunt_path():
 func attack_if_window_opens_circuit_handler(circuit: String):
 	if circuit == window_circuit:
 		$"/root/EventMan".jumpscare("lucas", "window")
+		hide()
 
 func walked_up_to_window():
 	#animation_player.disconnect("animation_finished", self, "walked_up_to_window")

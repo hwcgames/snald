@@ -79,8 +79,14 @@ func jumpscare(character: String, scene: String):
 		jumpscare_packed = load(path)
 	else:
 		jumpscare_packed = load("res://jumpscares/dummy/dummy.tscn")
-	var jumpscare = jumpscare_packed.instance()
-	$ViewportContainer/Viewport/JumpscareRoot.add_child(jumpscare)
+	var jumpscare: Spatial = jumpscare_packed.instance()
+	jumpscare.player = self
+	if jumpscare.relative:
+		$ViewportContainer/Viewport/JumpscareRoot.add_child(jumpscare)
+	else:
+		get_parent().add_child(jumpscare)
+		jumpscare.global_transform.origin = global_transform.origin
+		jumpscare.rotation_degrees.y = properties["angle"]
 	yield(jumpscare, "finished")
 	var kill_player = jumpscare.kill_player
 	path = "res://jumpscares/"+character+"/"+scene+"_dead.tscn"
