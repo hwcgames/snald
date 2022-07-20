@@ -50,7 +50,7 @@ func _input(event):
 			var offset = get_global_rect().position
 			event.position -= offset
 			var factor = last_camera.get_node("Viewport").size / get_global_rect().size
-			event.position *= factor
+			event.position *= factor * 3 # I have no clue why this works now
 		last_camera.get_node("Viewport").unhandled_input(event)
 
 func _mouse_entered():
