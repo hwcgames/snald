@@ -36,8 +36,10 @@ const hints = [
 	"My thoughts will follow you into your dreams",
 	"Trans rights are human rights",
 	"Voting is the easiest way to stop the world from getting worse",
-	"Did you know this game used to have lore? It was dumb but pretty funny, So I will put it here. You see the story was a tragic and gripping one about dealing with grief, with a supernatural twist, very interesting! It all started a long time ago when",
-	"Corrupt government buildings are gender-neutral bathrooms"
+	"Did you know this game used to have lore? It was dumb but pretty funny. You see the story was a tragic one about dealing with grief, with a supernatural twist, very interesting! It all started a long time ago when",
+	"Corrupt government buildings are gender-neutral bathrooms",
+	"Kel from OMORI is the pinnacle of character design",
+	"Polaris' favorite weapons are the ones that break the geneva convention!"
 ]
 
 const spooky_hints = [
