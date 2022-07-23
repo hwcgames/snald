@@ -42,13 +42,12 @@ const hints = [
 	"Polaris' favorite weapons are the ones that break the geneva convention!"
 ]
 
-const spooky_hints = [
+var spooky_hints = [
 	"We're not sure how this will reach you but you've been in a coma for three weeks, please wake up - Mom",
 	"The outside isn't",
 	"The lights keep us safe",
 	"What makes reality real",
-	"HELP",
-	"I know what you did.",
+	OS.get_environment("USERNAME") + ", I can't breathe",
 	"I can't breathe"
 ]
 
