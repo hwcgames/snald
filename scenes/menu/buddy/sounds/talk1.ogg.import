@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/talk1.ogg-8cc342810b392bd3333f34dae73aeace.oggstr"
+
+[deps]
+
+source_file="res://scenes/menu/buddy/sounds/talk1.ogg"
+dest_files=[ "res://.import/talk1.ogg-8cc342810b392bd3333f34dae73aeace.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

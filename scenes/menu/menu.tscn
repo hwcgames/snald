@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scenes/menu/settings.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://textures/qmark.png" type="Texture" id=8]
 [ext_resource path="res://theme/Classic311/Styles/Panel/Panel.tres" type="StyleBox" id=9]
 [ext_resource path="res://font/militant.tres" type="DynamicFont" id=10]
+[ext_resource path="res://scenes/menu/buddy/buddy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://textures/calendar.png" type="Texture" id=12]
 [ext_resource path="res://textures/doors-bg.png" type="Texture" id=13]
 [ext_resource path="res://textures/gear/0014.png" type="Texture" id=14]
@@ -33,6 +34,7 @@ func _pressed():
 "
 
 [sub_resource type="AnimatedTexture" id=2]
+flags = 4
 frames = 9
 frame_0/texture = ExtResource( 16 )
 frame_1/texture = ExtResource( 18 )
@@ -105,6 +107,16 @@ margin_bottom = 493.0
 rect_scale = Vector2( 0.5, 0.5 )
 icon = ExtResource( 22 )
 target = "res://scenes/lore/lore.tscn"
+
+[node name="Control2" parent="." instance=ExtResource( 11 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -173.0
+margin_top = -190.0
+margin_right = -12.0
+margin_bottom = -47.0
 
 [node name="ThingsBar" type="Panel" parent="."]
 anchor_top = 1.0
@@ -329,7 +341,6 @@ size_flags_horizontal = 4
 text = "Night ?"
 
 [node name="LogoWindow" type="WindowDialog" parent="."]
-visible = true
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -393,7 +404,6 @@ align = 1
 autowrap = true
 
 [node name="SettingsWindow" type="WindowDialog" parent="."]
-visible = true
 margin_left = 63.0
 margin_top = 97.0
 margin_right = 363.0
@@ -411,7 +421,6 @@ margin_right = -3.0
 margin_bottom = -3.0
 
 [node name="Error" type="WindowDialog" parent="."]
-visible = true
 margin_left = 70.0
 margin_top = 311.0
 margin_right = 154.0
@@ -439,7 +448,6 @@ margin_bottom = 40.0
 scene = ExtResource( 28 )
 
 [node name="CustomNight" parent="." instance=ExtResource( 21 )]
-visible = true
 margin_left = 211.0
 margin_top = 70.0
 margin_right = -99.0
