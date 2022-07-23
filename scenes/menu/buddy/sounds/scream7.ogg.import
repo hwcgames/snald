@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/scream7.ogg-d87db6a5713a46d3ae232f236c04781e.oggstr"
+
+[deps]
+
+source_file="res://scenes/menu/buddy/sounds/scream7.ogg"
+dest_files=[ "res://.import/scream7.ogg-d87db6a5713a46d3ae232f236c04781e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
