@@ -27,6 +27,5 @@ autowrap = true
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -20.311
 
 [connection signal="gui_input" from="." to="." method="_gui_input"]
