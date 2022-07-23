@@ -20,7 +20,7 @@ const hints = [
 	"After Lilac kills you, she installs an esoteric Linux distro on your computer",
 	"A shadow demon stole the HVAC control board; can't have shit in detroit",
 	"Every copy of SNALD is personalized, yours has a fat italian man that chases you down a hallway",
-	"L isn't real 42069",
+	"L isn't real 5664",
 	"I thlammed my penith in the car door",
 	"I'm making mac and cheese, and nobody can stop me!",
 	"The restroom is still out of order, because Seargant put a pipe bomb in the toilet.",
@@ -36,6 +36,7 @@ const hints = [
 	"My thoughts will follow you into your dreams",
 	"Trans rights are human rights",
 	"Voting is the easiest way to stop the world from getting worse",
+	"Did you know this game used to have lore? It was dumb but pretty funny, So I will put it here. You see the story was a tragic and gripping one about dealing with grief, with a supernatural twist, very interesting! It all started a long time ago when",
 	"Corrupt government buildings are gender-neutral bathrooms"
 ]
 
