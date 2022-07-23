@@ -73,7 +73,7 @@ func _ready():
 	while next != "":
 		next = dir2.get_next()
 		print(next)
-		if not next.ends_with("ogg"):
+		if not (next.ends_with("ogg") and "talk" in next):
 			continue
 		talk_sounds.append("res://scenes/menu/buddy/sounds/"+next)
 	texture.atlas = load("res://scenes/menu/buddy/poses/idle.png")
@@ -96,7 +96,7 @@ func talk():
 	texture.atlas = load(talk_frames[randi() % len(talk_frames)])
 	$AudioStreamPlayer.stop()
 	if talk_string in spooky_hints:
-		$AudioStreamPlayer.stream = load("res://scenes/menu/buddy/sounds/talk3.ogg")
+		$AudioStreamPlayer.stream = load("res://scenes/menu/buddy/sounds/scream3.ogg")
 	else:
 		$AudioStreamPlayer.stream = load(talk_sounds[randi() % len(talk_sounds)])
 	$AudioStreamPlayer.play()
