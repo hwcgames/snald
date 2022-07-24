@@ -23,6 +23,8 @@ func animatronic_tick():
 	var random = floor(rand_range(1,26))
 	if difficulty + difficulty_offset() >= random:
 		var s = state_machine()
+		if s is GDScriptFunctionState:
+			s = yield(s, "completed")
 		if not s == -1:
 			assume_state(s)
 	$MovementTimer.start()

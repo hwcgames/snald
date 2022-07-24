@@ -80,6 +80,9 @@ func state_machine():
 	if hunt_target == "window" and night == 0 and not have_hunted and state in [3,4,5,6]:
 		have_hunted = true
 		$"/root/EventMan".connect("off", self, "wait_for_camera_entrance")
+		$N1WaitTimer.wait_time = CVars.get_float("lucas_n1_wait_time")
+		$N1WaitTimer.connect("timeout", self, "wait_for_camera_entrance", [camera_entrance])
+		$N1WaitTimer.start()
 		return 18
 	if state in [2,8] and hunt_target == "vent" and EventMan.circuit("gabe.vent"):
 		return state
@@ -88,14 +91,15 @@ func state_machine():
 			play_approach_sound()
 			assume_state(10)
 			animation_player.play("walking_to_window_loop")
-			glide_to_state(11, 7.0)
-			return 10
-		10:
 			# animation_player.connect("animation_finished", self, "walked_up_to_window")
 			# return 10
+			yield(glide_to_state(11, 7.0), "completed")
 			$"/root/EventMan".connect("on", self, "attack_if_window_opens_circuit_handler")
 			if EventMan.circuit(window_circuit):
+				hide()
 				$"/root/EventMan".jumpscare("lucas", "window")
+			return -1
+		10:
 			return -1
 		11:
 			$"/root/EventMan".disconnect("on", self, "attack_if_window_opens_circuit_handler")
@@ -201,6 +205,7 @@ func vent_flashbang(circuit: String):
 func wait_for_camera_entrance(circuit: String):
 	if circuit == camera_entrance:
 		$"/root/EventMan".disconnect("off", self, "wait_for_camera_entrance")
+		$N1WaitTimer.disconnect("timeout", self, "wait_for_camera_entrance")
 		assume_state(9)
 
 func difficulty_offset():

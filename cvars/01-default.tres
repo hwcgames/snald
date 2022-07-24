@@ -13,6 +13,7 @@ floats = {
 "generator_fail_threshold": 20.0,
 "hot_threshold": 90.0,
 "lucas_hunt_accumulation_rate": 0.01,
+"lucas_n1_wait_time": 5.0,
 "noisy_diff_boost": 8.0,
 "player_slow_threshold": 50.0,
 "punishment_song_length": 20.0,
