@@ -49,3 +49,14 @@ func get_float(key: String) -> float:
 
 func set_float(key: String, value: float):
 	floats[key] = value
+
+
+
+func get_bool(key: String) -> bool:
+	if not bools.has(key):
+		print("WARN: Attempted to get missing bool")
+	var value: bool = bools[key] as bool;
+	return value
+
+func set_bool(key: String, value: bool):
+	bools[key] = value

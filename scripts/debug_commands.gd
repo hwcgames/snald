@@ -53,6 +53,7 @@ func push_state_cmd(name: String, state: int):
 		return
 	if name == "tanner":
 		Console.print("This character doesn't use the state system in the typical way, so it isn't likely to work correctly.")
+		
 	for character in get_tree().get_nodes_in_group("animatronics"):
 		if character.id == name:
 			character.assume_state(state)
@@ -153,3 +154,19 @@ const jumpscare_help = "Triggers a jumpscare!"
 func jumpscare_cmd(character, animation):
 	EventMan.jumpscare(character, animation)
 	Console.hide()
+
+const cvar_help = "Manipulates a cvar. Pass \"get\" as the value to read."
+func cvar_cmd(cvar: String, type: String, value):
+	var getting = str(value) == "get"
+	if (not EventMan.circuit("cheater")) and not getting:
+		Console.print("Configuring the game is a cheat")
+		return
+	if getting:
+		var val = CVars.call(("get" if getting else "set") + "_" + type, cvar)
+		Console.print(val)
+	else:
+		var expr = Expression.new()
+		var _e = expr.parse(type + "(v)", ["v"])
+		var correct_type = expr.execute([value])
+		print(correct_type)
+		CVars.call(("get" if getting else "set") + "_" + type, cvar, correct_type)

@@ -37,7 +37,7 @@ func _ready():
 	timer.connect("timeout", self, "finish_boombox")
 	while true:
 		# TBD how timer should work
-		timer.wait_time = 181
+		timer.wait_time = get_node("../CompletionTimer").wait_time / 3.9
 		timer.start()
 		song_is_correct = false
 		yield(timer, "timeout")
@@ -144,7 +144,8 @@ func play_song():
 		$NoteTimer.start()
 		string += str(note) + ", "
 		CutsceneMan.remove_text("tanner_song_text", 0)
-		CutsceneMan.put_text(string, Vector2(0.5, 0.6), 0, true, "tanner_song_text")
+		if CVars.get_bool("show_song_notes"):
+			CutsceneMan.put_text(string, Vector2(0.5, 0.6), 0, true, "tanner_song_text")
 		yield($NoteTimer, "timeout")
 
 func gen_song():
