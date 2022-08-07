@@ -63,15 +63,20 @@ func _ready():
 
 var talk_clock = 0.0
 
+var counter = 0
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	talk_clock += delta
 	if talk_clock > talk_interval and talking:
 		talk_clock = 0
 		talk()
-	if Engine.editor_hint and (OS.get_ticks_msec() % 10000 == 0):
-		talk_frames = []
-		talk_sounds = []
+	if Engine.editor_hint:
+		counter += 1
+	if Engine.editor_hint and ((counter % 600) == 0):
+		counter = 0
+		talk_frames = PoolStringArray([])
+		talk_sounds = PoolStringArray([])
 		var dir = Directory.new()
 		dir.open("res://scenes/menu/buddy/poses")
 		dir.list_dir_begin(true, true)
@@ -81,7 +86,6 @@ func _process(delta):
 			if not ("talk" in next and next.ends_with("png")):
 				continue
 			talk_frames.append("res://scenes/menu/buddy/poses/"+next)
-			print(next)
 		dir.list_dir_end()
 		var dir2 = Directory.new()
 		dir2.open("res://scenes/menu/buddy/sounds")
@@ -91,7 +95,6 @@ func _process(delta):
 			next = dir2.get_next()
 			if not (next.ends_with("ogg") and "talk" in next):
 				continue
-			print(next)
 			talk_sounds.append("res://scenes/menu/buddy/sounds/"+next)
 		dir2.list_dir_end()
 
