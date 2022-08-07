@@ -108,7 +108,7 @@ rect_scale = Vector2( 0.5, 0.5 )
 icon = ExtResource( 22 )
 target = "res://scenes/lore/lore.tscn"
 
-[node name="Control2" parent="." instance=ExtResource( 11 )]
+[node name="buddy" parent="." instance=ExtResource( 11 )]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -117,6 +117,8 @@ margin_left = -173.0
 margin_top = -190.0
 margin_right = -12.0
 margin_bottom = -47.0
+talk_frames = PoolStringArray( "res://scenes/menu/buddy/poses/talk14.png", "res://scenes/menu/buddy/poses/talk8.png", "res://scenes/menu/buddy/poses/talk2.png", "res://scenes/menu/buddy/poses/talk1.png", "res://scenes/menu/buddy/poses/talk10.png", "res://scenes/menu/buddy/poses/talk3.png", "res://scenes/menu/buddy/poses/talk6.png", "res://scenes/menu/buddy/poses/talk12.png", "res://scenes/menu/buddy/poses/talk5.png", "res://scenes/menu/buddy/poses/talk7.png", "res://scenes/menu/buddy/poses/talk11.png", "res://scenes/menu/buddy/poses/talk4.png", "res://scenes/menu/buddy/poses/talk9.png", "res://scenes/menu/buddy/poses/talk13.png" )
+talk_sounds = PoolStringArray( "res://scenes/menu/buddy/sounds/talk1.ogg", "res://scenes/menu/buddy/sounds/talk4.ogg", "res://scenes/menu/buddy/sounds/talk2.ogg", "res://scenes/menu/buddy/sounds/talk6.ogg", "res://scenes/menu/buddy/sounds/talk5.ogg" )
 
 [node name="ThingsBar" type="Panel" parent="."]
 anchor_top = 1.0

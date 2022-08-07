@@ -19,7 +19,7 @@ else
 	export EXTENSION="run"
 fi
 # Run godot build
-$godot --export "$GODOT_PROFILE" $BUILD_DIR/snald.$EXTENSION
+$godot --no-window --export "$GODOT_PROFILE" $BUILD_DIR/snald.$EXTENSION
 # Create the maps directory and copy the maps
 mkdir -p $BUILD_DIR/maps
 cp maps/*.map $BUILD_DIR/maps

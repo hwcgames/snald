@@ -1,11 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/menu/buddy/poses/idle.png" type="Texture" id=1]
 [ext_resource path="res://eggs/bonzi_talk.gd" type="Script" id=2]
+[ext_resource path="res://scenes/menu/buddy/sounds/scream3.ogg" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
-atlas = ExtResource( 1 )
 region = Rect2( 20, 12, 161, 143 )
 
 [node name="TextureRect" type="TextureRect"]
@@ -13,6 +12,8 @@ margin_right = 161.0
 margin_bottom = 143.0
 texture = SubResource( 1 )
 script = ExtResource( 2 )
+idle_tex = ExtResource( 1 )
+spooky_sound = ExtResource( 3 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PoolVector2Array( 65, 56, 49, 29, 52, 21, 47, -52, -65, -59, -74, -55, -76, 26, -82, 70, -69, 76, 44, 75, 45, 40 )

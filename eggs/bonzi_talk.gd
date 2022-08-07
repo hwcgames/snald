@@ -1,11 +1,14 @@
+tool
 extends TextureRect
 
 var talking = false
 var talk_interval = 0.1
-var talk_frames = []
-var talk_sounds = []
+export var talk_frames = PoolStringArray([])
+export var talk_sounds = PoolStringArray([])
 var talk_string = ""
 var talk_position = 0
+export var idle_tex: Texture
+export var spooky_sound: AudioStream
 
 const hints = [
 	"If you don't lose the game for six minutes, you win instead",
@@ -54,30 +57,8 @@ var spooky_hints = [
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Polygon2D.hide()
-	var dir = Directory.new()
-	dir.open("res://scenes/menu/buddy/poses")
-	dir.list_dir_begin(true, true)
-	var next = "a"
-	while next != "":
-		next = dir.get_next()
-		if not ("talk" in next and next.ends_with("png")):
-			continue
-		talk_frames.append("res://scenes/menu/buddy/poses/"+next)
-		print(next)
-	dir.list_dir_end()
-	var dir2 = Directory.new()
-	dir2.open("res://scenes/menu/buddy/sounds")
-	dir2.list_dir_begin(true, true)
-	next = "a"
-	while next != "":
-		next = dir2.get_next()
-		print(next)
-		if not (next.ends_with("ogg") and "talk" in next):
-			continue
-		talk_sounds.append("res://scenes/menu/buddy/sounds/"+next)
-	texture.atlas = load("res://scenes/menu/buddy/poses/idle.png")
+	texture.atlas = idle_tex
 	pass # Replace with function body.
-	dir2.list_dir_end()
 	hints.shuffle()
 
 var talk_clock = 0.0
@@ -88,6 +69,31 @@ func _process(delta):
 	if talk_clock > talk_interval and talking:
 		talk_clock = 0
 		talk()
+	if Engine.editor_hint and (OS.get_ticks_msec() % 10000 == 0):
+		talk_frames = []
+		talk_sounds = []
+		var dir = Directory.new()
+		dir.open("res://scenes/menu/buddy/poses")
+		dir.list_dir_begin(true, true)
+		var next = "a"
+		while next != "":
+			next = dir.get_next()
+			if not ("talk" in next and next.ends_with("png")):
+				continue
+			talk_frames.append("res://scenes/menu/buddy/poses/"+next)
+			print(next)
+		dir.list_dir_end()
+		var dir2 = Directory.new()
+		dir2.open("res://scenes/menu/buddy/sounds")
+		dir2.list_dir_begin(true, true)
+		next = "a"
+		while next != "":
+			next = dir2.get_next()
+			if not (next.ends_with("ogg") and "talk" in next):
+				continue
+			print(next)
+			talk_sounds.append("res://scenes/menu/buddy/sounds/"+next)
+		dir2.list_dir_end()
 
 func talk():
 	$Polygon2D.show()
@@ -95,7 +101,7 @@ func talk():
 	texture.atlas = load(talk_frames[randi() % len(talk_frames)])
 	$AudioStreamPlayer.stop()
 	if talk_string in spooky_hints:
-		$AudioStreamPlayer.stream = load("res://scenes/menu/buddy/sounds/scream3.ogg")
+		$AudioStreamPlayer.stream = spooky_sound
 	else:
 		$AudioStreamPlayer.stream = load(talk_sounds[randi() % len(talk_sounds)])
 	$AudioStreamPlayer.play()
