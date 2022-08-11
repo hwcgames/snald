@@ -42,6 +42,8 @@ func _ready():
 		timer.start()
 		song_is_correct = false
 		yield(timer, "timeout")
+		# Play explosion noise
+		EventMan.circuit_on("tanner_broken_ceiling")
 		ap.play("enter")
 		yield(ap, "animation_finished")
 		if difficulty >= 20:

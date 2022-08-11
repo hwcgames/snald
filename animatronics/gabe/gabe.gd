@@ -6,9 +6,9 @@ var original_difficulty = 0;
 export var flashbang_circuit = "office_vent_flash_momentary"
 
 func _ready():
-	
 	animation_player = get_node("gabe/AnimationPlayer")
 	if night_index == 0:
+		EventMan.circuit_off("save.gabe_glass_broken")
 		assume_state(0)
 	else:
 		assume_state(16)
@@ -33,6 +33,8 @@ func state_machine():
 	match state:
 		0:
 			$GlassBreakingPlayer.play()
+			PersistMan.persistent_dict["gabe_glass_broken"] = true
+			EventMan.circuit_on("save.gabe_glass_broken")
 			return 1
 		2:
 			var rng = randf()

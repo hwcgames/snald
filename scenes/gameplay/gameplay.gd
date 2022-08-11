@@ -43,6 +43,14 @@ func _ready():
 	# Start the cutscene if it exists
 	if EventMan.start_cutscene:
 		CutsceneMan.start_cutscene(EventMan.start_cutscene)
+	# Write all save flags as circuits
+	for key in PersistMan.persistent_dict.keys():
+		var val = PersistMan.persistent_dict[key]
+		var circuit = "save."+key
+		if val:
+			EventMan.circuit_on(circuit)
+		else:
+			EventMan.circuit_off(circuit)
 	# Set up music start timer
 	$MusicStarter.wait_time = EventMan.time_before_start_music
 	$MusicStarter.start()

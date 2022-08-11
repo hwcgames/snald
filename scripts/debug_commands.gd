@@ -3,6 +3,13 @@ extends Node
 func _ready():
 	Console.connect_node(self)
 
+const win_help = "wins the game"
+func win_cmd():
+	if not EventMan.circuit("cheater"):
+		Console.print("bruh")
+		return
+	EventMan.completed()
+
 const cheater_cheater_pumpkin_eater_help = "With great power comes great responsibility... (Enables cheats.)"
 func cheater_cheater_pumpkin_eater_cmd():
 	PersistMan.persistent_dict["cheater"] = true
