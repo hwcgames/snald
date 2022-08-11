@@ -12,9 +12,9 @@ func _ready():
 		assume_state(0)
 	else:
 		assume_state(16)
-	$"/root/EventMan".connect("on", self, "on")
+	var _drop = $"/root/EventMan".connect("on", self, "on")
 #	$"/root/EventMan".connect("noisy", self, "noisy")
-	$AimingTimer.connect("timeout", self, "shoot")
+	_drop = $AimingTimer.connect("timeout", self, "shoot")
 	
 
 func difficulty_offset():

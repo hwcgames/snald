@@ -80,9 +80,9 @@ func state_machine():
 	animation_player = $lucas/AnimationPlayer
 	if hunt_target == "window" and night == 0 and not have_hunted and state in [3,4,5,6]:
 		have_hunted = true
-		$"/root/EventMan".connect("off", self, "wait_for_camera_entrance")
+		var _drop = $"/root/EventMan".connect("off", self, "wait_for_camera_entrance")
 		$N1WaitTimer.wait_time = CVars.get_float("lucas_n1_wait_time")
-		$N1WaitTimer.connect("timeout", self, "wait_for_camera_entrance", [camera_entrance])
+		_drop = $N1WaitTimer.connect("timeout", self, "wait_for_camera_entrance", [camera_entrance])
 		$N1WaitTimer.start()
 		return 18
 	if state in [2,8] and hunt_target == "vent" and EventMan.circuit("gabe.vent"):
@@ -95,7 +95,7 @@ func state_machine():
 			# animation_player.connect("animation_finished", self, "walked_up_to_window")
 			# return 10
 			yield(glide_to_state(11, 7.0), "completed")
-			$"/root/EventMan".connect("on", self, "attack_if_window_opens_circuit_handler")
+			var _drop = $"/root/EventMan".connect("on", self, "attack_if_window_opens_circuit_handler")
 			if EventMan.circuit(window_circuit):
 				hide()
 				$"/root/EventMan".jumpscare("lucas", "window")
@@ -104,7 +104,7 @@ func state_machine():
 			return -1
 		11:
 			$"/root/EventMan".disconnect("on", self, "attack_if_window_opens_circuit_handler")
-			animation_player.connect("animation_finished", self, "walked_away_from_window")
+			var _drop = animation_player.connect("animation_finished", self, "walked_away_from_window")
 			play_depart_sound()
 			animation_player.play("walking_to_window_loop")
 			glide_to_state(12, 7.0)
@@ -124,7 +124,7 @@ func state_machine():
 				return go_back()
 		16:
 			$GunFumblePlayer2.play()
-			$"/root/EventMan".connect("on", self, "vent_flashbang")
+			var _drop = $"/root/EventMan".connect("on", self, "vent_flashbang")
 			return 17
 		17:
 			$"/root/EventMan".disconnect("on", self, "vent_flashbang")
@@ -189,7 +189,7 @@ func attack_if_window_opens_circuit_handler(circuit: String):
 func walked_up_to_window():
 	#animation_player.disconnect("animation_finished", self, "walked_up_to_window")
 	play_approach_sound()
-	$"/root/EventMan".connect("on", self, "attack_if_window_opens_circuit_handler")
+	var _drop = $"/root/EventMan".connect("on", self, "attack_if_window_opens_circuit_handler")
 	assume_state(11)
 
 func walked_away_from_window():

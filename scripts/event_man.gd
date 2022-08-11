@@ -149,7 +149,7 @@ func between_completed():
 
 func push_state(id: String, state: int):
 	for character in get_tree().get_nodes_in_group("animatronics"):
-		if character.id == name:
+		if character.id == id:
 			character.assume_state(state)
 
 func push_camera_pad(up: bool):

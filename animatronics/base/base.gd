@@ -30,7 +30,7 @@ func animatronic_tick():
 
 func _ready():
 	assume_state(0)
-	$MovementTimer.connect("timeout", self, "animatronic_tick")
+	var _drop = $MovementTimer.connect("timeout", self, "animatronic_tick")
 	$MovementTimer.start()
 
 func assume_state(new_state: int):
@@ -38,7 +38,8 @@ func assume_state(new_state: int):
 	var target = get_node_for_state(new_state)
 	global_transform.origin = target.global_transform.origin
 	rotation_degrees.y = target.get_angle()
-	animation_player.play("tpose")
+	if "tpose" in animation_player.get_animation_list():
+		animation_player.play("tpose")
 	animation_player.play(target.get_animation())
 	if new_state != state:
 		$"/root/EventMan".circuit_off(id + "." + str(state))
@@ -72,16 +73,16 @@ func glide_to_state(goal=0, duration=1.0, trans_type=0, ease_type=2, delay=0.0):
 	t.remove_and_skip()
 	assume_state(goal)
 
-func get_node_for_state(state: int):
-	var all = get_nodes_for_state(state)
+func get_node_for_state(tgt_state: int):
+	var all = get_nodes_for_state(tgt_state)
 	var index = floor(rand_range(0, len(all)))
 	return all[index]
 
-func get_nodes_for_state(state: int):
+func get_nodes_for_state(tgt_state: int):
 	var all = get_nodes_for_me()
 	var relevant = []
 	for i in all:
-		if i.get_state() == state:
+		if i.get_state() == tgt_state:
 			relevant.push_front(i)
 	return relevant
 

@@ -1,12 +1,12 @@
 extends AnimatronicBase
+class_name Red
 export var office_door_circuit = "office_door_toggle"
 var wait_counter = 3
 
 func _ready():
 	assume_state(0)
-	$MovementTimer.connect("timeout", self, "animatronic_tick")
 	$MovementTimer.start()
-	$"/root/EventMan".connect("off", self, "off")
+	var _drop = $"/root/EventMan".connect("off", self, "off")
 	
 func difficulty_offset():
 	var heat_increase = 0
@@ -33,7 +33,7 @@ func state_machine():
 		2:
 			var roll = randf()
 			if roll <.66:
-				$AttackTimer.connect("timeout", self, "attempt_attack")
+				var _drop = $AttackTimer.connect("timeout", self, "attempt_attack")
 				$AttackTimer.wait_time = 31 - difficulty - difficulty_offset()
 				$AttackTimer.start()
 				return 6
@@ -48,7 +48,7 @@ func state_machine():
 		5:
 			var roll = randf()
 			if roll <.66:
-				$AttackTimer.connect("timeout", self, "attempt_attack")
+				var _drop = $AttackTimer.connect("timeout", self, "attempt_attack")
 				$AttackTimer.wait_time = 31 - difficulty - difficulty_offset()
 				$AttackTimer.start()
 				return 6

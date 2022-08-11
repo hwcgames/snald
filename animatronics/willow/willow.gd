@@ -1,4 +1,5 @@
 extends AnimatronicBase
+class_name Willow
 
 
 # Declare member variables here. Examples:

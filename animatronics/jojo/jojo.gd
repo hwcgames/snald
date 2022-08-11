@@ -1,4 +1,5 @@
 extends AnimatronicBase
+class_name Jojo
 onready var night = $"/root/EventMan".night_index
 export var office_door_circuit = "office_door_toggle"
 func difficulty_offset():
@@ -20,7 +21,6 @@ func animatronic_tick():
 func _ready():
 	animation_player = get_node("AnimationPlayer")
 	$MovementTimer.wait_time = rand_range(130 - (6 * (difficulty + heat_increase + noise_increase)), 180 - (8 * difficulty + heat_increase + noise_increase))
-	$MovementTimer.connect("timeout", self, "animatronic_tick")
 	$MovementTimer.start()
 	assume_state(0)
 	
