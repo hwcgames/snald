@@ -1,4 +1,5 @@
 extends AnimatronicBase
+class_name Lucas
 
 export var window_circuit = "window_toggle"
 export var office_door_circuit = "office_door_toggle"

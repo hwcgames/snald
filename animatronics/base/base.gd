@@ -1,5 +1,4 @@
 extends Spatial
-
 class_name AnimatronicBase
 
 export var id = "base"

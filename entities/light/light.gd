@@ -1,4 +1,5 @@
 extends QodotEntity
+class_name SnaldLight
 
 # config
 var always_on = false

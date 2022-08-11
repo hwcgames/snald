@@ -1,4 +1,5 @@
 extends Spatial
+class_name Tanner
 
 const note_prefix: String = "piano_"
 const piano_index: int = 6

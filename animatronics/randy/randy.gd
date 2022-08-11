@@ -1,4 +1,5 @@
 extends AnimatronicBase
+class_name Randy
 
 func state_machine():
 	var states = []

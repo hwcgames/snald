@@ -1,4 +1,5 @@
 extends AnimatronicBase
+class_name Gabe
 onready var night_index = EventMan.night_index
 
 var original_difficulty = 0;

@@ -8,6 +8,7 @@
 
 [node name="BaseAnimatronic" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+flashbang_circuit = "office_vent_flash_momentary"
 
 [node name="GlassBreakingPlayer" type="AudioStreamPlayer" parent="." index="1"]
 
