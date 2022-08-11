@@ -7539,19 +7539,3 @@
 ( 102.03819564484002 -61.17397688865276 50 ) ( 102.03819564485634 -61.17397688864234 40 ) ( 101.52055755464932 -63.10582854122768 40 ) clip 90.63928 0 0 0.04829629 0.05
 }
 }
-// entity 159
-{
-"classname" "Camera"
-"origin" "30 -119 75"
-"angle" "90"
-"camera_id" "office_test_cam"
-"circuit" ""
-"elevation" "0"
-"fov" "70"
-"max_angle" "0"
-"min_angle" "0"
-"name" "Office Test Camera"
-"requires_circuit" "0"
-"room" "office"
-"rotates_manually" "1"
-}
