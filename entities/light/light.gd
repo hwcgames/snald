@@ -31,10 +31,16 @@ func _ready():
 	power = properties["power"] if "power" in properties else 0.1
 	$AudioStreamPlayer3D.stream = load(properties["buzz"]) if "buzz" in properties else null
 	$OmniLight.omni_range = properties["radius"] if "radius" in properties else 16
+	set_process(true)
+	call_deferred("set_process", true)
+
+var lit = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$OmniLight.light_energy = lerp($OmniLight.light_energy, goal_energy, delta * 10)
+	if abs($OmniLight.light_energy - goal_energy) < 0.01 and not flickering:
+		call_deferred("set_process", false)
 	if flickering and on_now and not depleted:
 		var rand = randf()
 		if rand <= flicker_chance:
@@ -45,6 +51,7 @@ func _process(delta):
 
 func circuit_on(name):
 	if circuit != "" and name == circuit and not depleted:
+		set_process(true)
 		on_now = true
 		goal_energy = energy
 		if "instant_on" in properties and properties["instant_on"] == 1:
@@ -55,6 +62,7 @@ func circuit_on(name):
 
 func circuit_off(name):
 	if circuit != "" and name == circuit:
+		set_process(true)
 		on_now = false
 		goal_energy = 0
 
@@ -67,4 +75,5 @@ func power_tick():
 		$OmniLight.light_energy /= 2
 		on_now = false
 	if $"/root/EventMan".power < flicker_below:
+		set_process(true)
 		flickering = true
