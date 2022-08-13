@@ -26,7 +26,7 @@ fi
 # Run godot build
 $godot --no-window --export "$GODOT_PROFILE" $BUILD_DIR/$NAME.$EXTENSION
 # Copy licensing
-CP LICENSE ATTRIBUTION $BUILD_DIR
+cp LICENSE ATTRIBUTION $BUILD_DIR
 if [[ ! $SNALD_TARGET == "Web" ]]; then
 	# Create the maps directory and copy the maps
 	mkdir -p $BUILD_DIR/maps
