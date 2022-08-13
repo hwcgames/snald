@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/menu/hide_on_web.gd" type="Script" id=1]
+
+[node name="hide_on_web" type="Node"]
+script = ExtResource( 1 )

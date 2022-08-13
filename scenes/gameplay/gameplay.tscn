@@ -106,7 +106,6 @@ layers = 2
 material_override = ExtResource( 4 )
 extra_cull_margin = 16384.0
 mesh = SubResource( 3 )
-material/0 = null
 
 [node name="DisableUnlessFlag" parent="MeshInstance" instance=ExtResource( 7 )]
 flag_to_check = "post-process"
@@ -117,7 +116,6 @@ layers = 4
 material_override = SubResource( 5 )
 extra_cull_margin = 16384.0
 mesh = SubResource( 3 )
-material/0 = null
 
 [node name="DisableUnlessFlag" parent="MeshInstance2" instance=ExtResource( 7 )]
 flag_to_check = "post-process"
