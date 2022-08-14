@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://font/normal.tres" type="DynamicFont" id=1]
+[ext_resource path="res://font/militant.tres" type="DynamicFont" id=2]
+
+[node name="Control" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="Label" type="RichTextLabel" parent="."]
+margin_right = 620.0
+margin_bottom = 152.0
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[color=#000000][b]Location:[/b] In the corner of the gun case.
+[b]Conditions:[/b] After Gabe takes the gun.
+
+Behold! One of Snald Emporium’s most valuable possessions! This model of the M1 Garand rifle is one of a kind, due to a manufacturing error which caused it to be built at around 2 times its normal size. It packs a heavier punch than its normal sized counterpart, too! However, due to its one of a kind nature, the standard magazines are not compatible, and must be reloaded after every shot… Definitely not effective on the battlefield, but it sure brings in the customers!"
+text = "Location: In the corner of the gun case.
+Conditions: After Gabe takes the gun.
+
+Behold! One of Snald Emporium’s most valuable possessions! This model of the M1 Garand rifle is one of a kind, due to a manufacturing error which caused it to be built at around 2 times its normal size. It packs a heavier punch than its normal sized counterpart, too! However, due to its one of a kind nature, the standard magazines are not compatible, and must be reloaded after every shot… Definitely not effective on the battlefield, but it sure brings in the customers!"
+fit_content_height = true

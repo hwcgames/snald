@@ -166,6 +166,8 @@ custom_fonts/font = ExtResource( 10 )
 text = " DON'T"
 script = SubResource( 9 )
 
+[node name="hide_on_web" parent="ThingsBar/HBoxContainer/DontGo" instance=ExtResource( 24 )]
+
 [node name="CalendarButton" type="Button" parent="ThingsBar/HBoxContainer"]
 margin_left = 111.0
 margin_right = 143.0

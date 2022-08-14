@@ -55,8 +55,9 @@ func remove_text(id="default_text_id", time=0.5, transition=Tween.TRANS_LINEAR, 
 			tween.interpolate_property(i, "modulate", i.modulate, Color(1, 1, 1, 0), time, transition, easing)
 	if len(any_found) > 0:
 		tween.start()
-	yield(tween, "tween_all_completed")
+		yield(tween, "tween_all_completed")
 	tween.remove_and_skip()
+	yield(get_tree(), "idle_frame")
 	for i in any_found:
 		remove(i)
 

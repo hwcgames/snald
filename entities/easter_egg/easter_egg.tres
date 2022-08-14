@@ -1,0 +1,31 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" type="Script" id=1]
+[ext_resource path="res://entities/easter_egg/easter_egg.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 1 )
+class_options = "----------------------------------------------------------------"
+classname = "EasterEgg"
+description = "A decoration that appears under certain conditions. When clicked, it sets a save file flag."
+qodot_internal = false
+base_classes = [  ]
+class_properties = {
+"angle": 0.0,
+"name": "base",
+"save_flag": "base_egg"
+}
+class_property_descriptions = {
+"name": "The name of the easter egg scene to use.",
+"save_flag": "The save flag to set when the easter egg is clicked."
+}
+meta_properties = {
+"color": Color( 0.113725, 1, 0.0117647, 1 ),
+"size": AABB( -4, -4, -4, 4, 4, 4 )
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false
+scene = "----------------------------------------------------------------"
+scripting = "----------------------------------------------------------------"
+script_class = ExtResource( 2 )

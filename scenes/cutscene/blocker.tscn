@@ -11,4 +11,5 @@ z_index = 2
 [node name="Control" type="Control" parent="Node2D"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 1
 mouse_default_cursor_shape = 1

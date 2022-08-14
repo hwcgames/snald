@@ -33,7 +33,7 @@ func state_machine():
 	match state:
 		0:
 			$GlassBreakingPlayer.play()
-			PersistMan.persistent_dict["gabe_glass_broken"] = true
+			PersistMan.set_flag("gabe_glass_broken", true)
 			EventMan.circuit_on("save.gabe_glass_broken")
 			return 1
 		2:

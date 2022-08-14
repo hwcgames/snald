@@ -139,7 +139,7 @@ func return_to_title():
 	var _err = get_tree().change_scene("res://scenes/menu/menu.tscn")
 
 func completed():
-	$"/root/PersistMan".persistent_dict[completion_flag] = true
+	$"/root/PersistMan".set_flag(completion_flag, true)
 	$"/root/PersistMan".save_game()
 	var _drop = get_tree().change_scene_to(between_scene)
 

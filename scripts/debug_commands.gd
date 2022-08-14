@@ -12,7 +12,7 @@ func win_cmd():
 
 const cheater_cheater_pumpkin_eater_help = "With great power comes great responsibility... (Enables cheats.)"
 func cheater_cheater_pumpkin_eater_cmd():
-	PersistMan.persistent_dict["cheater"] = true
+	PersistMan.set_flag("cheater", true)
 	EventMan.circuit_on("cheater")
 
 const set_power_help = "Sets the power."
@@ -106,7 +106,7 @@ func set_saved_bool_cmd(name: String, value: bool):
 		return
 	if name == "cheater":
 		Console.print(";)")
-	PersistMan.persistent_dict[name] = value
+	PersistMan.set_flag(name, value)
 
 const saved_help = "Gets the save file."
 func saved_cmd():

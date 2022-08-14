@@ -7,6 +7,9 @@ extends Node
 
 export var persistent_dict: Dictionary = {}
 
+signal got_flag(flag)
+signal lost_flag(flag)
+
 func _ready():
 	load_game();
 
@@ -29,3 +32,11 @@ func reset():
 
 func get_key(key):
 	return persistent_dict[key] if key in persistent_dict else null
+
+func set_flag(key: String, val=true):
+	if persistent_dict.get(key, false) != val:
+		emit_signal(
+			"got_flag" if val else "lost_flag",
+			val
+		)
+	persistent_dict[key] = val

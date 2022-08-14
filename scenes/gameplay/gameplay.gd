@@ -8,7 +8,7 @@ func _ready():
 		return
 	randomize()
 	if not LevelLoader.prebuilt:
-		yield(build(LevelLoader.map), "complete")
+		build(LevelLoader.map)
 		# Loading screen
 		EventMan.pause = true
 		var loading_bar = LOADING_BAR.instance()

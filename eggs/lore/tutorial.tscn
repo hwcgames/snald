@@ -13,9 +13,12 @@ margin_bottom = 14.0
 text = "Press the button below to start the tutorial."
 
 [node name="Button" type="Button" parent="."]
+margin_left = 245.0
 margin_top = 18.0
-margin_right = 640.0
+margin_right = 395.0
 margin_bottom = 38.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 4
 text = "Start"
 
 [node name="NightConfig" parent="." instance=ExtResource( 2 )]

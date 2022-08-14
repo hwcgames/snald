@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://eggs/chicken.gd" type="Script" id=1]
 [ext_resource path="res://scenes/menu/save_flag_button.gd" type="Script" id=2]
-[ext_resource path="res://scenes/disable_unless_flag.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/menu/ControlsMenu.gd" type="Script" id=5]
 
@@ -181,9 +180,6 @@ margin_bottom = 147.0
 size_flags_horizontal = 4
 text = "Clear Save File"
 script = SubResource( 7 )
-
-[node name="DisableUnlessFlag" parent="Misc/Settings/Button" instance=ExtResource( 3 )]
-flag_to_check = "n1"
 
 [connection signal="pressed" from="Graphics + Sound/VBoxContainer/Test Level" to="Graphics + Sound/VBoxContainer/Test Level/NightConfig" method="run"]
 [connection signal="text_changed" from="Misc/Settings/HBoxContainer/TextEdit" to="Misc/Settings/HBoxContainer/EasterEggChicken" method="new_text"]
