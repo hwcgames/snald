@@ -11,6 +11,8 @@ var generating = false
 var gen_time = 10
 var power_increment_tick = 0
 
+onready var model = $Generator
+
 
 func _ready():
 	yield(get_parent(), "build_complete")
@@ -37,6 +39,7 @@ func on(c):
 	else:
 		#play too cold sfx
 		off(c)
+	model.on()
 
 func off(c):
 	if c == circuit:
@@ -46,6 +49,7 @@ func off(c):
 		$AudioStreamPlayer.stop()
 		$AnimationPlayer.play("GeneratorSpinsDown")
 		power_regen = properties["power"] if "power" in properties else .25
+	model.off()
 
 
 func power_tick():
@@ -57,3 +61,4 @@ func power_tick():
 				power_regen += .1
 			else:
 				power_increment_tick += 1
+		model.energy = min(power_regen, 1)
