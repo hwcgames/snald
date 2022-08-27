@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/horse_statue_01_1k.gltf-5dc4e70a46221ddc63c492147732464c.scn"
+path="res://.import/dog.glb-874e8a8eac13d9c4689a545eacd800fa.scn"
 
 [deps]
 
-source_file="res://animatronics/jojo/horse_statue_01_1k.gltf"
-dest_files=[ "res://.import/horse_statue_01_1k.gltf-5dc4e70a46221ddc63c492147732464c.scn" ]
+source_file="res://animatronics/jojo/dog.glb"
+dest_files=[ "res://.import/dog.glb-874e8a8eac13d9c4689a545eacd800fa.scn" ]
 
 [params]
 

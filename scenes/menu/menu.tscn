@@ -145,7 +145,7 @@ __meta__ = {
 }
 
 [node name="Go" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_right = 41.0
+margin_right = 37.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 0, 29 )
 hint_tooltip = "Open the Go Menu to start an application?"
@@ -155,8 +155,8 @@ custom_fonts/font = ExtResource( 10 )
 text = " GO "
 
 [node name="DontGo" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 45.0
-margin_right = 107.0
+margin_left = 41.0
+margin_right = 97.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 0, 29 )
 hint_tooltip = "Have you considered don't"
@@ -169,8 +169,8 @@ script = SubResource( 9 )
 [node name="hide_on_web" parent="ThingsBar/HBoxContainer/DontGo" instance=ExtResource( 24 )]
 
 [node name="CalendarButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 111.0
-margin_right = 143.0
+margin_left = 101.0
+margin_right = 133.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "Doors Calendar
@@ -181,8 +181,8 @@ icon = ExtResource( 12 )
 expand_icon = true
 
 [node name="SettingsButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 147.0
-margin_right = 179.0
+margin_left = 137.0
+margin_right = 169.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "Configure Doors
@@ -193,8 +193,8 @@ icon = SubResource( 2 )
 expand_icon = true
 
 [node name="AboutButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 183.0
-margin_right = 215.0
+margin_left = 173.0
+margin_right = 205.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "About Doors OS"
@@ -204,8 +204,8 @@ icon = ExtResource( 8 )
 expand_icon = true
 
 [node name="FullscreenButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 219.0
-margin_right = 251.0
+margin_left = 209.0
+margin_right = 241.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "magnifying glass? nah, that's a frying pan"
@@ -370,9 +370,9 @@ margin_top = -6.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LogoWindow/CenterContainer"]
 margin_left = 27.0
-margin_top = 8.0
+margin_top = 9.0
 margin_right = 123.0
-margin_bottom = 198.0
+margin_bottom = 196.0
 grow_horizontal = 2
 grow_vertical = 2
 __meta__ = {
@@ -460,6 +460,7 @@ margin_right = -99.0
 margin_bottom = -60.0
 
 [node name="WebWarning" type="Label" parent="."]
+visible = false
 anchor_right = 0.275
 anchor_bottom = 0.131
 margin_left = 10.0

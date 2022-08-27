@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://animatronics/base/base.tscn" type="PackedScene" id=1]
-[ext_resource path="res://animatronics/jojo/horse_statue_01.material" type="Material" id=2]
-[ext_resource path="res://animatronics/jojo/jojo_mesh.tres" type="ArrayMesh" id=4]
+[ext_resource path="res://animatronics/jojo/dog.glb" type="PackedScene" id=3]
 [ext_resource path="res://animatronics/jojo/jojo.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=4]
@@ -17,7 +16,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ) ]
+"values": [ Vector3( 0, 90, 0 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -27,6 +26,18 @@ loop = true
 [sub_resource type="Animation" id=6]
 resource_name = "menacing"
 loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 90, 0 ), Vector3( 0, 450, 0 ) ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "run"
@@ -41,11 +52,12 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 7200, 0 ) ]
+"values": [ Vector3( 0, 90, 0 ), Vector3( 0, 3690, 0 ) ]
 }
 
 [node name="BaseAnimatronic" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
+office_door_circuit = "office_door_toggle"
 
 [node name="AnimationPlayer" parent="." index="0"]
 anims/RESET = SubResource( 4 )
@@ -53,9 +65,5 @@ anims/idle = SubResource( 5 )
 anims/menacing = SubResource( 6 )
 anims/run = SubResource( 7 )
 
-[node name="MeshInstance" type="MeshInstance" parent="." index="1"]
-transform = Transform( 15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0 )
-mesh = ExtResource( 4 )
-blend_shapes/hooves = 0.0
-material/0 = ExtResource( 2 )
-material/1 = ExtResource( 2 )
+[node name="MeshInstance" parent="." index="2" instance=ExtResource( 3 )]
+transform = Transform( -3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 0, 0, 0 )

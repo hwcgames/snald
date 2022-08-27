@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://jumpscares/dummy/dummy_dead.tscn" type="PackedScene" id=1]
+[ext_resource path="res://music/joj.ogg" type="AudioStream" id=2]
 
 [node name="Dead" instance=ExtResource( 1 )]
 
@@ -8,3 +9,6 @@
 text = "You were killed by Jojo!
 (Watch the doghouse in the Playground. The particles will get more dense as
 Jojo becomes closer to attacking.)"
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource( 2 )
