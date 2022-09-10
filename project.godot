@@ -303,6 +303,10 @@ KeyPersistence="*res://scripts/KeyPersistence.gd"
 CutsceneMan="*res://scripts/CutsceneMan.gd"
 CVars="*res://scripts/CVars.gd"
 
+[debug]
+
+settings/crash_handler/message="Please file an issue with this log at https://github.com/hwcgames/snald/issues"
+
 [display]
 
 window/size/width=640
@@ -410,6 +414,16 @@ file_logging/enable_file_logging=true
 
 common/enable_pause_aware_picking=true
 
+[qodot]
+
+textures/normal_pattern="%s/normal.%s"
+textures/metallic_pattern="%s/metallic.%s"
+textures/roughness_pattern="%s/roughness.%s"
+textures/emission_pattern="%s/emission.%s"
+textures/ao_pattern="%s/ao.%s"
+textures/depth_pattern="%s/depth.%s"
+
 [rendering]
 
+gles3/shaders/shader_compilation_mode=2
 environment/default_environment="res://default_env.tres"
