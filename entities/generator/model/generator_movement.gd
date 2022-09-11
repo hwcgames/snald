@@ -33,13 +33,13 @@ onready var t: Tween = $Tween
 func on():
 	active = true
 	t.stop_all()
-	t.interpolate_property($Lever, "rotation_degrees/z", $Lever.rotation_degrees.z, -90, 1.0)
+	t.interpolate_property($Lever, "rotation_degrees:z", $Lever.rotation_degrees.z, 0, 1.0)
 	t.start()
 	pass
 
 func off():
 	active = false
 	t.stop_all()
-	t.interpolate_property($Lever, "rotation_degrees/z", $Lever.rotation_degrees.z, 0, 1.0)
+	t.interpolate_property($Lever, "rotation_degrees:z", $Lever.rotation_degrees.z, -90, 1.0)
 	t.start()
 	pass
