@@ -18,6 +18,10 @@ albedo_color = Color( 0.101961, 0.180392, 0.698039, 1 )
 
 [node name="BaseAnimatronic" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+window_circuit = "window_toggle"
+office_door_circuit = "office_door_toggle"
+office_vent_flash = "office_vent_flash_momentary"
+camera_entrance = "camera.foyer"
 
 [node name="MovementTimer" parent="." index="1"]
 wait_time = 8.0
@@ -60,3 +64,5 @@ transform = Transform( 0.360579, 0, 0, 0, 0.360579, 0, 0, 0, 0.360579, 0, 0, 0 )
 
 [node name="N1WaitTimer" type="Timer" parent="." index="9"]
 wait_time = 60.0
+
+[connection signal="change_state" from="." to="." method="check_attachments"]

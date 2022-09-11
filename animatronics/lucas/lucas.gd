@@ -218,3 +218,19 @@ func difficulty_offset():
 		noise_increase = CVars.get_float("noisy_diff_boost")
 	#if the music playin do the thin
 	return (heat_increase + noise_increase + 3)
+
+onready var gun = $"lucas/Armature/Skeleton/BoneAttachment4/Plane001"
+const gun_anims = [
+	"armory_peek"
+]
+onready var train = $"lucas/Armature/Skeleton/BoneAttachment3/Cube"
+const train_anims = [
+	"lucas_ns_hall"
+]
+
+func check_attachments(_state):
+	var anim = animation_player.current_animation;
+	if !anim:
+		return
+	gun.visible = anim in gun_anims
+	train.visible = anim in train_anims
