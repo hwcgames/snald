@@ -27,15 +27,7 @@ func _ready():
 	for animatronic in difficulties.keys():
 		if difficulties[animatronic] == 0:
 			continue
-		var scene = "res://animatronics/" + animatronic + "/" + animatronic + ".tscn"
-		if File.new().file_exists(scene):
-			var instance = load(scene).instance()
-			instance.id = animatronic
-			instance.difficulty = difficulties[animatronic]
-			add_child(instance)
-			instance.add_to_group("animatronics")
-		else:
-			print("Tried to load an animatronic ", animatronic, " which does not exist.")
+		spawn_animatronic(animatronic)
 	EventMan.pause = false
 	# Enable cheats when running in the editor
 	if OS.is_debug_build():
@@ -58,6 +50,17 @@ func _ready():
 	$AudioStreamPlayer.stop()
 	$AudioStreamPlayer.stream = EventMan.song
 	$AudioStreamPlayer.play()
+
+func spawn_animatronic(animatronic):
+	var scene = "res://animatronics/" + animatronic + "/" + animatronic + ".tscn"
+	if File.new().file_exists(scene):
+		var instance = load(scene).instance()
+		instance.id = animatronic
+		instance.difficulty = $"/root/EventMan".difficulties[animatronic]
+		add_child(instance)
+		instance.add_to_group("animatronics")
+	else:
+		print("Tried to load an animatronic ", animatronic, " which does not exist.")
 
 func completed_build():
 	return

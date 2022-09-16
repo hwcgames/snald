@@ -74,6 +74,22 @@ var HUNT_PATHS = {
 func _ready():
 	call_deferred("assume_state", 0)
 	animation_player = get_node("lucas/AnimationPlayer")
+	# Add listener for powertick so we can run special behavior when it runs out
+	var _drop = EventMan.connect("power_tick", self, "power_tick")
+
+var jumpscaring = false
+
+func power_tick():
+	if EventMan.power > 0 or jumpscaring:
+		return
+	var wait_time = (randi() % 30) + 10;
+	var t = Timer.new()
+	add_child(t)
+	t.start(wait_time)
+	print("Waiting " + str(wait_time) + " seconds to jumpscare")
+	jumpscaring = true
+	yield(t, "timeout")
+	EventMan.jumpscare("lucas", "powerout")
 
 	
 func state_machine():

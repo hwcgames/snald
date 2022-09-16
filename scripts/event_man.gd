@@ -85,6 +85,9 @@ func power_tick():
 		return
 	if power >= 100:
 		power = 100
+	if power < 0 and (difficulties["lucas"] if "lucas" in difficulties else 0) <= 0:
+		difficulties["lucas"] = 1
+		$"/root/gameplay".spawn_animatronic("lucas")
 	power -= passive_power
 	emit_signal("power_tick")
 	power_timer.start()

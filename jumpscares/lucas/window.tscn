@@ -218,11 +218,6 @@ script = SubResource( 2 )
 [node name="Armature" parent="." index="0"]
 transform = Transform( 0.596206, 0, -0.0673702, 0, 0.6, 0, 0.0673702, 0, 0.596206, 7.40119, -1.9842, -8.34576 )
 
-[node name="Skeleton" parent="Armature" index="0"]
-bones/8/bound_children = [ NodePath("BoneAttachment"), NodePath("BoneAttachment2") ]
-bones/13/bound_children = [ NodePath("BoneAttachment3") ]
-bones/14/bound_children = [ NodePath("BoneAttachment4") ]
-
 [node name="BoneAttachment" parent="Armature/Skeleton" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, -9.31323e-09, 0, 9.31323e-09, 1, 0, 4.03492, 0.346897 )
 
@@ -230,13 +225,13 @@ transform = Transform( 1, 0, 0, 0, 1, -9.31323e-09, 0, 9.31323e-09, 1, 0, 4.0349
 transform = Transform( 1, 0, 0, 0, 1, -9.31323e-09, 0, 9.31323e-09, 1, 0, 4.03492, 0.346897 )
 
 [node name="BoneAttachment3" parent="Armature/Skeleton" index="2"]
-transform = Transform( 1, 2.22042e-16, -2.20951e-16, -2.22042e-16, 0.00492466, -0.999988, -2.20951e-16, 0.999988, 0.00492466, -0.869997, -11.3497, -4.71758 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0178924, -6.80417, -0.0769389 )
 
 [node name="Cube" parent="Armature/Skeleton/BoneAttachment3" index="0"]
 transform = Transform( -4.47889e-08, -9.31323e-09, 0.375716, -5.82077e-09, 0.375716, 9.31323e-09, -0.375716, -5.82077e-09, -4.47889e-08, -0.5488, 0.418785, 0.00830418 )
 
 [node name="BoneAttachment4" parent="Armature/Skeleton" index="3"]
-transform = Transform( 0.105124, 0.157429, -0.652973, 0.53466, 0.38044, 0.177798, 0.406566, -0.541008, -0.0649804, 3.36335, -7.57242, 3.63777 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24967, -8.3523, 1.08733 )
 
 [node name="Plane" parent="Armature/Skeleton" index="4"]
 material/3 = SubResource( 5 )
