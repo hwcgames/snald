@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/talk11.png-97f13e8819dd65ed4b54d6e47048b4f3.stex"
+path="res://.import/spooky.png-f38d3e9dce28f940976c26ed43df2d90.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/menu/buddy/poses/talk11.png"
-dest_files=[ "res://.import/talk11.png-97f13e8819dd65ed4b54d6e47048b4f3.stex" ]
+source_file="res://scenes/menu/buddy/poses/spooky.png"
+dest_files=[ "res://.import/spooky.png-f38d3e9dce28f940976c26ed43df2d90.stex" ]
 
 [params]
 

@@ -5,17 +5,24 @@
 [ext_resource path="res://scenes/menu/buddy/sounds/scream3.ogg" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
-region = Rect2( 20, 12, 161, 143 )
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 136, 237.449, 649, 639.551 )
 
 [node name="TextureRect" type="TextureRect"]
 margin_right = 161.0
 margin_bottom = 143.0
 texture = SubResource( 1 )
+expand = true
+stretch_mode = 6
 script = ExtResource( 2 )
+talk_frames = PoolStringArray( "res://scenes/menu/buddy/poses/talk3.png", "res://scenes/menu/buddy/poses/talk6.png", "res://scenes/menu/buddy/poses/talk4.png", "res://scenes/menu/buddy/poses/talk1.png", "res://scenes/menu/buddy/poses/talk5.png", "res://scenes/menu/buddy/poses/talk2.png" )
+talk_sounds = PoolStringArray( "res://scenes/menu/buddy/sounds/talk1.ogg", "res://scenes/menu/buddy/sounds/talk5.ogg", "res://scenes/menu/buddy/sounds/talk2.ogg", "res://scenes/menu/buddy/sounds/talk6.ogg", "res://scenes/menu/buddy/sounds/talk4.ogg" )
 idle_tex = ExtResource( 1 )
 spooky_sound = ExtResource( 3 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( -19, -23 )
 polygon = PoolVector2Array( 65, 56, 49, 29, 52, 21, 47, -52, -65, -59, -74, -55, -76, 26, -82, 70, -69, 76, 44, 75, 45, 40 )
 
 [node name="Label" type="Label" parent="Polygon2D"]

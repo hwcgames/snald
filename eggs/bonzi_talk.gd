@@ -11,6 +11,7 @@ export var idle_tex: Texture
 export var spooky_sound: AudioStream
 
 const hints = [
+	"My name's Arty Arry, you can click on me for \"hints\"!",
 	"If you don't lose the game for six minutes, you win instead",
 	"If you're having trouble on a level, try practicing",
 	"Never give up, giving up is for losers",
@@ -101,11 +102,12 @@ func _process(delta):
 func talk():
 	$Polygon2D.show()
 	$Timer.stop()
-	texture.atlas = load(talk_frames[randi() % len(talk_frames)])
 	$AudioStreamPlayer.stop()
 	if talk_string in spooky_hints:
 		$AudioStreamPlayer.stream = spooky_sound
+		texture.atlas = load("res://scenes/menu/buddy/poses/spooky.png")
 	else:
+		texture.atlas = load(talk_frames[randi() % len(talk_frames)])
 		$AudioStreamPlayer.stream = load(talk_sounds[randi() % len(talk_sounds)])
 	$AudioStreamPlayer.play()
 	talk_position += 2
