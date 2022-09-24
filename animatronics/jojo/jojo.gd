@@ -36,7 +36,7 @@ func state_machine():
 			$MovementTimer.wait_time = 1
 			return 4
 		10:
-			if (office_door_circuit in $"/root/EventMan".circuit_states) and ($"/root/EventMan".circuit_states[office_door_circuit]):
+			if EventMan.circuit(office_door_circuit):
 				$"/root/EventMan".jumpscare("jojo", "jojo")
 				return 0
 			else:
