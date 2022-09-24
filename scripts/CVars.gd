@@ -35,6 +35,7 @@ func apply_cvars(path: String):
 func get_int(key: String) -> int:
 	if not ints.has(key):
 		print("WARN: Attempted to get missing int")
+		return 0
 	var value: int = ints[key] as int;
 	return value
 
@@ -44,6 +45,7 @@ func set_int(key: String, value: int):
 func get_float(key: String) -> float:
 	if not floats.has(key):
 		print("WARN: Attempted to get missing float")
+		return 0.0
 	var value: float = floats[key] as float;
 	return value
 
@@ -55,6 +57,7 @@ func set_float(key: String, value: float):
 func get_bool(key: String) -> bool:
 	if not bools.has(key):
 		print("WARN: Attempted to get missing bool")
+		return false
 	var value: bool = bools[key] as bool;
 	return value
 

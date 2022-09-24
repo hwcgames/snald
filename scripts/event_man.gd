@@ -130,6 +130,9 @@ func circuit(name):
 	if name.ends_with("_not"):
 		use_not = true
 		name = name.replace("_not", "");
+	if name.ends_with("_cvar"):
+		name = name.replace("_cvar", "")
+		return CVars.get_bool(name)
 	if not name in circuit_states:
 		circuit_states[name] = false
 	var result = circuit_states[name]
@@ -147,6 +150,7 @@ func return_to_title():
 func completed():
 	$"/root/PersistMan".set_flag(completion_flag, true)
 	$"/root/PersistMan".save_game()
+	CVars._ready()
 	var _drop = get_tree().change_scene_to(between_scene)
 
 func between_completed():

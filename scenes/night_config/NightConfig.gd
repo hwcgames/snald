@@ -14,6 +14,9 @@ export var victory_scene = "res://scenes/victory/victory.tscn"
 export var song = preload("res://music/night_ambience.ogg")
 export var time_before_start_music = 20.0
 export var start_cutscene: PackedScene
+export var cvar_ints: Dictionary = Dictionary()
+export var cvar_floats: Dictionary = Dictionary()
+export var cvar_bools: Dictionary = Dictionary()
 
 func run():
 	EventMan.reset()
@@ -28,6 +31,15 @@ func run():
 	EventMan.song = song
 	EventMan.time_before_start_music = time_before_start_music
 	EventMan.start_cutscene = start_cutscene
+	
+	# Write cvars
+	for key in cvar_ints.keys():
+		CVars.set_int(key, cvar_ints[key])
+	for key in cvar_floats.keys():
+		CVars.set_float(key, cvar_floats[key])
+	for key in cvar_bools.keys():
+		CVars.set_bool(key, cvar_bools[key])
+	
 	LevelLoader.load_level(map_path)
 
 func set_map(map):

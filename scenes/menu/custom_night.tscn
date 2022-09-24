@@ -4,7 +4,6 @@
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=3]
 
 [node name="Control" type="WindowDialog"]
-visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 330, 350 )
@@ -19,6 +18,9 @@ difficulties = {
 }
 completion_flag = "n7"
 victory_scene = "res://scenes/victory/victory_n1.tscn"
+cvar_bools = {
+"custom_night": true
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
