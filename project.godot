@@ -301,7 +301,6 @@ LevelLoader="*res://scripts/level_loader.gd"
 EventMan="*res://scripts/event_man.gd"
 SpeedrunTimer="*res://eggs/speedrun_timer.gd"
 PersistMan="*res://scripts/persist_man.gd"
-VMouse="*res://scripts/vmouse/vmouse.gd"
 Console="*res://addons/Console/Console.gd"
 DebugCommands="*res://scripts/debug_commands.gd"
 Modloader="*res://scripts/modloader.gd"
@@ -405,6 +404,7 @@ vmouse_down={
 vmouse_click={
 "deadzone": 0.5,
 "events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":7,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
 console={

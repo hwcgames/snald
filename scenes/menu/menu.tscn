@@ -173,6 +173,7 @@ margin_bottom = 29.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "Doors Calendar
 "
+focus_neighbour_top = NodePath("../../../LevelWindow/Choose a Night/Night 1")
 size_flags_horizontal = 0
 size_flags_vertical = 0
 icon = ExtResource( 12 )
@@ -220,11 +221,9 @@ margin_top = 97.0
 margin_right = 617.0
 margin_bottom = 317.0
 rect_min_size = Vector2( 140, 220 )
+focus_mode = 2
 window_title = "Level Select"
 resizable = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Choose a Night" type="VBoxContainer" parent="LevelWindow"]
 anchor_right = 1.0
@@ -233,6 +232,7 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
+focus_mode = 2
 
 [node name="Night 1" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0

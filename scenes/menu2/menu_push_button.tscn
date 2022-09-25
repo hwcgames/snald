@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/menu2/menu_push_button.gd" type="Script" id=1]
+
+[node name="Control" type="Button"]
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Push Menu Frame"
+script = ExtResource( 1 )

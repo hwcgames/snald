@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/menu2/menu_level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/disable_unless_flag.tscn" type="PackedScene" id=2]
+[ext_resource path="res://eggs/lore/context.tscn" type="PackedScene" id=3]
+[ext_resource path="res://eggs/lore/tutorial.tscn" type="PackedScene" id=4]
+[ext_resource path="res://eggs/lore/garand_lore.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/lore/lore_button.gd" type="Script" id=6]
+
+[node name="MenuLevel" instance=ExtResource( 1 )]
+
+[node name="VBoxContainer" parent="." index="0"]
+margin_right = 8.0
+margin_bottom = 683.0
+
+[node name="Label" type="Label" parent="VBoxContainer" index="0"]
+margin_right = 1.0
+margin_bottom = 592.0
+text = "Welcome to Michaelsoft Traincarta"
+autowrap = true
+
+[node name="Context" type="Control" parent="VBoxContainer" index="1"]
+margin_top = 596.0
+margin_right = 1.0
+margin_bottom = 620.0
+rect_min_size = Vector2( 0, 24 )
+
+[node name="LoreButton" type="Button" parent="VBoxContainer/Context" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+text = "Context"
+script = ExtResource( 6 )
+lore_scene = ExtResource( 3 )
+lore_parent_path = NodePath("../../../../../Panel3/ScrollContainer")
+
+[node name="Tutorial" type="Control" parent="VBoxContainer" index="2"]
+margin_top = 624.0
+margin_right = 1.0
+margin_bottom = 648.0
+rect_min_size = Vector2( 0, 24 )
+
+[node name="LoreButton" type="Button" parent="VBoxContainer/Tutorial" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+text = "Tutorial"
+script = ExtResource( 6 )
+lore_scene = ExtResource( 4 )
+lore_parent_path = NodePath("../../../../../Panel3/ScrollContainer")
+
+[node name="GarandLore" type="Control" parent="VBoxContainer" index="3"]
+margin_top = 652.0
+margin_right = 1.0
+margin_bottom = 676.0
+rect_min_size = Vector2( 0, 24 )
+
+[node name="DisableUnlessFlag" parent="VBoxContainer/GarandLore" index="0" instance=ExtResource( 2 )]
+flag_to_check = "garand_lore"
+
+[node name="LoreButton" type="Button" parent="VBoxContainer/GarandLore" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+text = "Armory: The Prized Possession"
+script = ExtResource( 6 )
+lore_scene = ExtResource( 5 )
+lore_parent_path = NodePath("../../../../../Panel3/ScrollContainer")
