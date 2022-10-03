@@ -3,6 +3,10 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Button
 
+func _process(_delta):
+	focus_mode = FOCUS_ALL
+	grab_focus()
+
 func _pressed():
 	$\"/root/EventMan\".return_to_title()
 "
@@ -26,10 +30,8 @@ margin_bottom = 240.0
 
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
 visible = false
-margin_left = -291.0
-margin_top = -260.0
-margin_right = -180.0
-margin_bottom = -240.0
+margin_right = 92.0
+margin_bottom = 20.0
 size_flags_horizontal = 4
 text = "Exit to Menu"
 script = SubResource( 1 )

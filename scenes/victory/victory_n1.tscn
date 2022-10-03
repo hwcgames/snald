@@ -5,10 +5,10 @@
 [node name="Node2D" instance=ExtResource( 1 )]
 
 [node name="VBoxContainer" parent="CenterContainer" index="0"]
-margin_left = 235.0
-margin_top = 284.0
-margin_right = 789.0
-margin_bottom = 315.0
+margin_left = 43.0
+margin_top = 224.0
+margin_right = 597.0
+margin_bottom = 255.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer" index="0"]
 margin_right = 554.0

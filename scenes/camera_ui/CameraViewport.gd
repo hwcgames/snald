@@ -11,6 +11,8 @@ var last_camera_id: String
 var last_camera_room: String
 var last_camera: Spatial
 
+signal camera_change(id)
+
 func _process(_delta):
 	var p = get_parent()
 	p.size = p.get_parent().rect_size
@@ -34,6 +36,7 @@ func apply_camera(camera_node):
 	last_camera = camera_node
 	last_camera.viewed = true
 	last_camera_id = camera_node.properties["camera_id"]
+	emit_signal("camera_change", last_camera_id)
 	last_camera_room = camera_node.properties["room"]
 	$"/root/EventMan".circuit_on("camera."+last_camera_id)
 	$"/root/EventMan".circuit_on("camera."+last_camera_room)

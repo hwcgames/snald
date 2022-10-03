@@ -13,7 +13,7 @@ export var spooky_sound: AudioStream
 const hints = [
 	"My name's Arty Arry, you can click on me for \"hints\"!",
 	"If you don't lose the game for six minutes, you win instead",
-	"If you're having trouble on a level, try practicing",
+	"If you're having trouble on a level, try being good at the game",
 	"Never give up, giving up is for losers",
 	"Have you tried turning it off and on again?",
 	"Make sure your computer is turned on before attempting night 4",
