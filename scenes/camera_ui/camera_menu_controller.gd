@@ -1,7 +1,7 @@
 extends Panel
 
-onready var camera_viewport = get_parent().get_node("%CameraViewport")
-onready var camera_list_parent = $"%CameraListParent"
+onready var camera_viewport = get_parent().get_node("TabletScreenBase/ViewportContainer/Viewport/CameraViewport")
+onready var camera_list_parent = $"VBoxContainer/ScrollContainer2/CameraListParent"
 
 
 # Called when the node enters the scene tree for the first time.
