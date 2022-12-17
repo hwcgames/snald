@@ -72,6 +72,7 @@ func reset():
 	between_scene = null
 	completion_scene = null
 	LevelLoader.map = null
+	CutsceneMan.player_cutscene_mode = false
 	song = load("res://music/night_ambience.ogg")
 	time_before_start_music = 20.0
 	start_cutscene = null
