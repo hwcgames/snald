@@ -68,11 +68,13 @@ func state_machine():
 func on(circuit: String):
 	if circuit == flashbang_circuit and state == 11:
 		$GunShotPlayer.play()
+		$PingTimer.start()
 		assume_state(12)
 
 func shoot():
 	if state == 11:
 		$GunShotPlayer.play()
+		$PingTimer.start()
 		$"/root/EventMan".jumpscare("gabe", "gabe")
 		$AimingTimer.stop()
 		assume_state(12)

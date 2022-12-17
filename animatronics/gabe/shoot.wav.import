@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/m1garand.wav-84f7c569bcc534ccae6f32d892c5e150.sample"
+path="res://.import/shoot.wav-229b829fbd469a846897f4a0215cb389.sample"
 
 [deps]
 
-source_file="res://animatronics/gabe/m1garand.wav"
-dest_files=[ "res://.import/m1garand.wav-84f7c569bcc534ccae6f32d892c5e150.sample" ]
+source_file="res://animatronics/gabe/shoot.wav"
+dest_files=[ "res://.import/shoot.wav-229b829fbd469a846897f4a0215cb389.sample" ]
 
 [params]
 

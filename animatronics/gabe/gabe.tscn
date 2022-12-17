@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://animatronics/base/base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://animatronics/gabe/gabe.gd" type="Script" id=2]
 [ext_resource path="res://animatronics/gabe/m1garand.wav" type="AudioStream" id=3]
 [ext_resource path="res://animatronics/gabe/reload.wav" type="AudioStream" id=4]
 [ext_resource path="res://animatronics/gabe/gabe.glb" type="PackedScene" id=5]
+[ext_resource path="res://animatronics/gabe/shoot.wav" type="AudioStream" id=6]
 
 [node name="BaseAnimatronic" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -18,9 +19,18 @@ stream = ExtResource( 4 )
 [node name="AimingTimer" type="Timer" parent="." index="3"]
 
 [node name="GunShotPlayer" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource( 6 )
+
+[node name="ReloadPlayer" type="AudioStreamPlayer" parent="." index="5"]
 stream = ExtResource( 3 )
 
-[node name="gabe" parent="." index="5" instance=ExtResource( 5 )]
+[node name="gabe" parent="." index="6" instance=ExtResource( 5 )]
 
-[node name="MovementTimer" parent="." index="6"]
+[node name="MovementTimer" parent="." index="7"]
 wait_time = 4.0
+
+[node name="PingTimer" type="Timer" parent="." index="8"]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="PingTimer" to="ReloadPlayer" method="play"]
