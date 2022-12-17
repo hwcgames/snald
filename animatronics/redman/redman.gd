@@ -4,6 +4,7 @@ export var office_door_circuit = "office_door_toggle"
 var wait_counter = 3
 
 func _ready():
+	animation_player = $Kenzie/AnimationPlayer
 	assume_state(0)
 	$MovementTimer.start()
 	var _drop = $"/root/EventMan".connect("off", self, "off")
