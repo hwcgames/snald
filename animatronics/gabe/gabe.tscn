@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://animatronics/base/base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://animatronics/gabe/gabe.gd" type="Script" id=2]
@@ -7,6 +7,13 @@
 [ext_resource path="res://animatronics/gabe/gabe.glb" type="PackedScene" id=5]
 [ext_resource path="res://animatronics/gabe/shoot.wav" type="AudioStream" id=6]
 [ext_resource path="res://animatronics/gabe/glass.ogg" type="AudioStream" id=7]
+
+[sub_resource type="CapsuleMesh" id=1]
+radius = 0.7
+mid_height = 3.703
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0, 1, 0, 1 )
 
 [node name="BaseAnimatronic" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -36,5 +43,11 @@ wait_time = 4.0
 [node name="PingTimer" type="Timer" parent="." index="8"]
 wait_time = 0.1
 one_shot = true
+
+[node name="MeshInstance" type="MeshInstance" parent="." index="9"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.52939, 0 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
 
 [connection signal="timeout" from="PingTimer" to="ReloadPlayer" method="play"]

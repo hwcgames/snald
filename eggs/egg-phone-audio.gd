@@ -16,12 +16,7 @@ onready var night = load(night_paths[EventMan.night_index])
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Determine whether it is April 1st
-	var today = OS.get_datetime()
-	var day = today["day"]
-	var month = today["month"]
-	active = day == 1 and month == 4
-	if not active:
+	if !EventMan.funny_mode():
 		player.remove_and_skip()
 		call_deferred("remove_and_skip")
 		return

@@ -6,6 +6,8 @@ export var state = -1
 export var room = ""
 export var difficulty = 10
 onready var animation_player: AnimationPlayer = $AnimationPlayer
+onready var model = get_node(id)
+onready var bean = get_node("MeshInstance")
 var last_state = 0
 
 signal change_state(new_state)
@@ -50,6 +52,9 @@ func assume_state(new_state: int):
 	self.state = new_state
 	room = target.get_room()
 	emit_signal("change_state", new_state)
+	if EventMan.funny_mode():
+		model.hide()
+		bean.show()
 
 func glide_to_state(goal=0, duration=1.0, trans_type=0, ease_type=2, delay=0.0):
 	var current_position = global_transform.origin

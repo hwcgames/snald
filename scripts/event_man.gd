@@ -168,3 +168,9 @@ func push_camera_pad(up: bool):
 
 func push_camera_selection(id: String):
 	emit_signal("push_camera_selection", id)
+
+func funny_mode() -> bool:
+	var today = OS.get_datetime()
+	var day = today["day"]
+	var month = today["month"]
+	return CVars.get_bool("funny_mode") or day == 1 and month == 4 and night_index != 0
