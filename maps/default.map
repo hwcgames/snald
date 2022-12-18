@@ -6027,6 +6027,7 @@
 "classname" "SnaldDoor"
 "circuit" "office_door_toggle"
 "power_consumption" ".4"
+"sound" "true"
 // brush 0
 {
 ( 16 60 92 ) ( 16 52 92 ) ( 16 60 0 ) metal_plate 312 0 0 0.05 0.05

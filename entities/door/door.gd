@@ -10,6 +10,10 @@ var circuit = "default"
 var depleted = false
 var power_consumption = 1
 var affects_temperature = 0
+var closing = preload("res://music/motor.ogg")
+var closed = preload("res://music/door-sound.ogg")
+var opened = preload("res://music/door-sound-opened.ogg")
+onready var player = AudioStreamPlayer.new()
 
 func _ready():
 	yield(get_parent(), "build_complete")
@@ -32,6 +36,7 @@ func _ready():
 	_err = $"/root/EventMan".connect("power_tick", self, "power_tick")
 	if affects_temperature == 1:
 		_err = $"/root/EventMan".connect("temperature_tick", self, "temperature_tick")
+	add_child(player)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,15 +47,27 @@ func _process(delta):
 		var offset = Vector3.UP * height * (1 if open else -1) * power
 		global_transform.origin = starting_position + from + offset
 		since_updated += delta
+		if since_updated >= open_time && (properties["sound"] if "sound" in properties else "false") == "true":
+			player.stop()
+			player.stream = opened if open else closed
+			player.play()
 	
 func on(name: String):
 	if name == circuit and not depleted:
 		open = true
 		since_updated = 0
+		if (properties["sound"] if "sound" in properties else "false") == "true":
+			player.stop()
+			player.stream = closing
+			player.play()
 func off(name: String):
 	if name == circuit and not depleted:
 		open = false
 		since_updated = 0
+		if (properties["sound"] if "sound" in properties else "false") == "true":
+			player.stop()
+			player.stream = closing
+			player.play()
 
 func power_tick():
 	if $"/root/EventMan".power <= 0 and not depleted:

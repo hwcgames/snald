@@ -16,7 +16,7 @@ class_properties = {
 "easing": -2.0,
 "open_time": 1.0,
 "power_consumption": 0.0,
-"sound": "res://sounds/door.ogg"
+"sound": "false"
 }
 class_property_descriptions = {
 }
