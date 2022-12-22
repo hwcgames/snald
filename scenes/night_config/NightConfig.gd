@@ -17,6 +17,7 @@ export var start_cutscene: PackedScene
 export var cvar_ints: Dictionary = Dictionary()
 export var cvar_floats: Dictionary = Dictionary()
 export var cvar_bools: Dictionary = Dictionary()
+export var test_mode = false
 
 func run():
 	EventMan.reset()
@@ -40,7 +41,7 @@ func run():
 	for key in cvar_bools.keys():
 		CVars.set_bool(key, cvar_bools[key])
 	
-	LevelLoader.load_level(map_path)
+	LevelLoader.load_level(map_path, test_mode)
 
 func set_map(map):
 	map_path = map
@@ -54,3 +55,7 @@ func set_difficulty(difficulty: int, character: String):
 func set_duration(seconds: float):
 	time_to_completion = seconds
 
+
+
+func set_test_mode(to: bool):
+	test_mode = to

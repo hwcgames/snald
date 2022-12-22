@@ -14,6 +14,10 @@ export var DEBUG = false
 func _ready():
 	add_to_group("player")
 	yield(get_parent(), "build_complete")
+	if EventMan.circuit("test_mode"):
+		set_process(false)
+		$Camera.current = false
+		return
 	print("Set player angle to default")
 	rotation_degrees.y = properties["angle"]
 	min_angle = properties["min_angle"]

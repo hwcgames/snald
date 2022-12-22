@@ -25,7 +25,7 @@ glow_bloom = 1.0
 [sub_resource type="QuadMesh" id=3]
 size = Vector2( 2, 2 )
 
-[sub_resource type="Shader" id=4]
+[sub_resource type="Shader" id=6]
 code = "shader_type spatial;
 render_mode unshaded, shadows_disabled, depth_test_disable, depth_draw_never;
 
@@ -71,7 +71,7 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+shader = SubResource( 6 )
 shader_param/color_depth = 6
 shader_param/dithering = true
 shader_param/resolution_scale = 1

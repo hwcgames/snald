@@ -1,0 +1,269 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/test/camera.gd" type="Script" id=1]
+[ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=2]
+[ext_resource path="res://fgd.tres" type="Resource" id=3]
+[ext_resource path="res://scenes/test/test.gd" type="Script" id=4]
+[ext_resource path="res://scenes/disable_unless_flag.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/test/CircuitList.gd" type="Script" id=6]
+[ext_resource path="res://scenes/test/button.gd" type="Script" id=7]
+[ext_resource path="res://scenes/test/character_control.gd" type="Script" id=8]
+
+[sub_resource type="SpatialMaterial" id=10]
+
+[sub_resource type="Shader" id=4]
+code = "shader_type spatial;
+render_mode unshaded, shadows_disabled, depth_test_disable, depth_draw_never;
+
+uniform int color_depth : hint_range(1, 8) = 5;
+uniform bool dithering = true;
+uniform int resolution_scale = 4;
+
+int dithering_pattern(ivec2 fragcoord) {
+	const int pattern[] = {
+		-4, +0, -3, +1, 
+		+2, -2, +3, -1, 
+		-3, +1, -4, +0, 
+		+3, -1, +2, -2
+	};
+	
+	int x = fragcoord.x % 4;
+	int y = fragcoord.y % 4;
+	
+	return pattern[y * 4 + x];
+}
+
+void vertex() {
+	POSITION = vec4(VERTEX, 1.0);
+}
+
+void fragment() {
+	ivec2 uv = ivec2(FRAGCOORD.xy / float(resolution_scale));
+	vec3 color = texelFetch(SCREEN_TEXTURE, uv * resolution_scale, 0).rgb;
+	
+	// Convert from [0.0, 1.0] range to [0, 255] range
+	ivec3 c = ivec3(round(color * 255.0));
+	
+	// Apply the dithering pattern
+	if (dithering) {
+		c += ivec3(dithering_pattern(uv));
+	}
+	
+	// Truncate from 8 bits to color_depth bits
+	c >>= (8 - color_depth);
+
+	// Convert back to [0.0, 1.0] range
+	ALBEDO = vec3(c) / float(1 << color_depth);
+}"
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = SubResource( 4 )
+shader_param/color_depth = 8
+shader_param/dithering = false
+shader_param/resolution_scale = 1
+
+[sub_resource type="QuadMesh" id=5]
+size = Vector2( 2, 2 )
+
+[sub_resource type="Shader" id=8]
+code = "shader_type spatial;
+render_mode unshaded, shadows_disabled, depth_test_disable, depth_draw_never;
+
+uniform int color_depth : hint_range(1, 8) = 5;
+uniform bool dithering = true;
+uniform int resolution_scale = 4;
+
+int dithering_pattern(ivec2 fragcoord) {
+	const int pattern[] = {
+		-4, +0, -3, +1, 
+		+2, -2, +3, -1, 
+		-3, +1, -4, +0, 
+		+3, -1, +2, -2
+	};
+	
+	int x = fragcoord.x % 4;
+	int y = fragcoord.y % 4;
+	
+	return pattern[y * 4 + x];
+}
+
+void vertex() {
+	POSITION = vec4(VERTEX, 1.0);
+}
+
+void fragment() {
+	ivec2 uv = ivec2(FRAGCOORD.xy / float(resolution_scale));
+	vec3 color = texelFetch(SCREEN_TEXTURE, uv * resolution_scale, 0).rgb;
+	
+	// Convert from [0.0, 1.0] range to [0, 255] range
+	ivec3 c = ivec3(round(color * 255.0));
+	
+	// Apply the dithering pattern
+	if (dithering) {
+		c += ivec3(dithering_pattern(uv));
+	}
+	
+	// Truncate from 8 bits to color_depth bits
+	c >>= (8 - color_depth);
+
+	// Convert back to [0.0, 1.0] range
+	ALBEDO = vec3(c) / float(1 << color_depth);
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
+shader_param/color_depth = 8
+shader_param/dithering = false
+shader_param/resolution_scale = 1
+
+[node name="test" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="Camera" type="Camera" parent="."]
+script = ExtResource( 1 )
+
+[node name="QodotMap" type="Spatial" parent="."]
+script = ExtResource( 2 )
+map_file = ""
+inverse_scale_factor = 16.0
+entity_fgd = ExtResource( 3 )
+base_texture_dir = "res://textures"
+texture_file_extensions = PoolStringArray( "png" )
+worldspawn_layers = [  ]
+brush_clip_texture = "special/clip"
+face_skip_texture = "special/skip"
+texture_wads = [  ]
+material_file_extension = "material"
+default_material = SubResource( 10 )
+uv_unwrap_texel_size = 1.0
+print_profiling_data = false
+use_trenchbroom_group_hierarchy = false
+tree_attach_batch_size = 16
+set_owner_batch_size = 16
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+layers = 2
+material_override = SubResource( 7 )
+extra_cull_margin = 16384.0
+mesh = SubResource( 5 )
+
+[node name="DisableUnlessFlag" parent="MeshInstance" instance=ExtResource( 5 )]
+flag_to_check = "post-process"
+default = true
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+layers = 4
+material_override = SubResource( 9 )
+extra_cull_margin = 16384.0
+mesh = SubResource( 5 )
+
+[node name="DisableUnlessFlag" parent="MeshInstance2" instance=ExtResource( 5 )]
+flag_to_check = "post-process"
+default = true
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_right = 103.0
+margin_bottom = 40.0
+
+[node name="CircuitControl" type="Button" parent="Control/VBoxContainer"]
+margin_right = 122.0
+margin_bottom = 20.0
+text = "Circuit Control"
+
+[node name="CharacterControl" type="Button" parent="Control/VBoxContainer"]
+margin_top = 24.0
+margin_right = 122.0
+margin_bottom = 44.0
+text = "Character Control"
+
+[node name="Circuits" type="WindowDialog" parent="Control"]
+anchor_top = 0.4
+anchor_right = 0.3
+anchor_bottom = 1.0
+resizable = true
+
+[node name="Panel" type="Panel" parent="Control/Circuits"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CircuitList" type="VBoxContainer" parent="Control/Circuits/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -23.0
+script = ExtResource( 6 )
+
+[node name="LineEdit" type="LineEdit" parent="Control/Circuits/Panel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -32.0
+grow_vertical = 0
+placeholder_text = "Circuit ID"
+
+[node name="Button" type="Button" parent="Control/Circuits/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -22.0
+text = "Go"
+script = ExtResource( 7 )
+
+[node name="CharacterControl" type="WindowDialog" parent="Control"]
+visible = true
+margin_left = 11.0
+margin_top = 100.0
+margin_right = 232.0
+margin_bottom = 242.0
+resizable = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CharacterControl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+
+[node name="LineEdit" type="LineEdit" parent="Control/CharacterControl/VBoxContainer"]
+margin_right = 221.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+align = 1
+placeholder_text = "Character ID"
+
+[node name="SpinBox" type="SpinBox" parent="Control/CharacterControl/VBoxContainer"]
+margin_top = 28.0
+margin_right = 221.0
+margin_bottom = 52.0
+prefix = "State"
+
+[node name="ApplyState" type="Button" parent="Control/CharacterControl/VBoxContainer"]
+margin_top = 56.0
+margin_right = 221.0
+margin_bottom = 76.0
+text = "Apply State"
+
+[node name="ForceTick" type="Button" parent="Control/CharacterControl/VBoxContainer"]
+margin_top = 80.0
+margin_right = 221.0
+margin_bottom = 100.0
+text = "Force Tick"
+
+[node name="Goto" type="Button" parent="Control/CharacterControl/VBoxContainer"]
+margin_top = 104.0
+margin_right = 221.0
+margin_bottom = 124.0
+text = "Goto"
+
+[node name="CompletionTimer" type="Timer" parent="."]
+wait_time = 60.0
+
+[connection signal="pressed" from="Control/VBoxContainer/CircuitControl" to="Control/Circuits" method="show"]
+[connection signal="pressed" from="Control/VBoxContainer/CharacterControl" to="Control/CharacterControl" method="show"]
+[connection signal="pressed" from="Control/Circuits/Panel/Button" to="Control/Circuits/Panel/Button" method="_pressed"]

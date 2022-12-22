@@ -2,7 +2,7 @@
 
 [ext_resource path="res://animatronics/base/base.gd" type="Script" id=1]
 
-[node name="BaseAnimatronic" type="Spatial"]
+[node name="BaseAnimatronic" type="Spatial" groups=["animatronic"]]
 script = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

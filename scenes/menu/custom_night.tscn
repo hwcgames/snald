@@ -9,9 +9,6 @@ anchor_bottom = 1.0
 rect_min_size = Vector2( 330, 350 )
 window_title = "Dog Mode"
 resizable = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NightConfig" parent="." instance=ExtResource( 3 )]
 difficulties = {
@@ -31,16 +28,16 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 86.0
+margin_top = 72.0
 margin_right = 640.0
-margin_bottom = 100.0
+margin_bottom = 86.0
 text = "-- LEVEL --"
 align = 1
 
 [node name="EffectiveNight" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 104.0
+margin_top = 90.0
 margin_right = 640.0
-margin_bottom = 128.0
+margin_bottom = 114.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/EffectiveNight"]
@@ -63,9 +60,9 @@ align = 1
 prefix = "Night"
 
 [node name="map" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 132.0
+margin_top = 118.0
 margin_right = 640.0
-margin_bottom = 156.0
+margin_bottom = 142.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/map"]
@@ -88,9 +85,9 @@ caret_blink_speed = 0.5
 [node name="hide_on_web" parent="VBoxContainer/map" instance=ExtResource( 1 )]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 160.0
+margin_top = 146.0
 margin_right = 640.0
-margin_bottom = 184.0
+margin_bottom = 170.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
@@ -110,16 +107,16 @@ align = 1
 suffix = "s"
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
-margin_top = 188.0
+margin_top = 174.0
 margin_right = 640.0
-margin_bottom = 202.0
+margin_bottom = 188.0
 text = "-- DIFFICULTY  --"
 align = 1
 
 [node name="Lucas" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 206.0
+margin_top = 192.0
 margin_right = 640.0
-margin_bottom = 230.0
+margin_bottom = 216.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/Lucas"]
@@ -140,9 +137,9 @@ align = 1
 prefix = "Level"
 
 [node name="Gabe" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 234.0
+margin_top = 220.0
 margin_right = 640.0
-margin_bottom = 258.0
+margin_bottom = 244.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/Gabe"]
@@ -163,9 +160,9 @@ align = 1
 prefix = "Level"
 
 [node name="Jojo" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 262.0
+margin_top = 248.0
 margin_right = 640.0
-margin_bottom = 286.0
+margin_bottom = 272.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/Jojo"]
@@ -186,9 +183,9 @@ align = 1
 prefix = "Level"
 
 [node name="Redman" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 290.0
+margin_top = 276.0
 margin_right = 640.0
-margin_bottom = 314.0
+margin_bottom = 300.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/Redman"]
@@ -209,9 +206,9 @@ align = 1
 prefix = "Level"
 
 [node name="Tanner" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 318.0
+margin_top = 304.0
 margin_right = 640.0
-margin_bottom = 342.0
+margin_bottom = 328.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/Tanner"]
@@ -232,9 +229,9 @@ align = 1
 prefix = "Level"
 
 [node name="Willow" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 346.0
+margin_top = 332.0
 margin_right = 640.0
-margin_bottom = 370.0
+margin_bottom = 356.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/Willow"]
@@ -254,11 +251,19 @@ max_value = 20.0
 align = 1
 prefix = "Level"
 
+[node name="TestMode" type="CheckBox" parent="VBoxContainer"]
+margin_left = 272.0
+margin_top = 360.0
+margin_right = 367.0
+margin_bottom = 384.0
+size_flags_horizontal = 4
+text = "Test Mode"
+
 [node name="Button" type="Button" parent="VBoxContainer"]
 margin_left = 297.0
-margin_top = 374.0
+margin_top = 388.0
 margin_right = 342.0
-margin_bottom = 394.0
+margin_bottom = 408.0
 size_flags_horizontal = 4
 text = "Start!"
 
@@ -271,4 +276,5 @@ text = "Start!"
 [connection signal="value_changed" from="VBoxContainer/Redman/SpinBox" to="NightConfig" method="set_difficulty" binds= [ "redman" ]]
 [connection signal="value_changed" from="VBoxContainer/Tanner/SpinBox" to="NightConfig" method="set_difficulty" binds= [ "tanner" ]]
 [connection signal="value_changed" from="VBoxContainer/Willow/SpinBox" to="NightConfig" method="set_difficulty" binds= [ "willow" ]]
+[connection signal="toggled" from="VBoxContainer/TestMode" to="NightConfig" method="set_test_mode"]
 [connection signal="pressed" from="VBoxContainer/Button" to="NightConfig" method="run"]
