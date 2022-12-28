@@ -1,12 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://jumpscares/dummy/dummy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://animatronics/redman/Kenzie.glb" type="PackedScene" id=2]
+[ext_resource path="res://jumpscares/redman/redman.gd" type="Script" id=3]
 
 [node name="BaseJumpscare" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="Label" parent="." index="0"]
+visible = false
 margin_left = -116.0
 margin_top = 4.00002
 margin_right = 3.0
 margin_bottom = 18.0
 text = "redman killed you!"
+
+[node name="Kenzie" parent="." index="2" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
