@@ -1,0 +1,131 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://font/opensans/OpenSans/OpenSans-Light.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://textures/rickroll.png" type="Texture" id=2]
+[ext_resource path="res://textures/hwc.svg" type="Texture" id=3]
+[ext_resource path="res://jumpscares/willow/willow_dead.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 14
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/Label3:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "10% complete." ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "go"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/Label3:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.8, 4.1, 4.6, 7.9, 9.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "10% complete.", "20% complete.", "45% complete.", "0% complete.", "69% complete.", "100% complete." ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 64.0
+margin_right = -64.0
+margin_bottom = -64.0
+script = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 0.8
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 409.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 1 )
+text = ":("
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_top = 92.0
+margin_right = 409.0
+margin_bottom = 135.0
+custom_fonts/font = SubResource( 2 )
+text = "Your PC ran into a problem and has to restart. We're just collecting some error info, and then we'll restart for you."
+autowrap = true
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+margin_top = 139.0
+margin_right = 409.0
+margin_bottom = 159.0
+custom_fonts/font = SubResource( 2 )
+text = "10% complete."
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 163.0
+margin_right = 409.0
+margin_bottom = 259.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_right = 96.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 96, 96 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_left = 100.0
+margin_top = 7.0
+margin_right = 409.0
+margin_bottom = 89.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+text = "For more information about this issue and possible fixes, visit https://github.com/hwcgames/snald
+
+if you call a support person, give them this info:
+Stop code: CRITICAL_PLAYER_DIED"
+autowrap = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.470588, 0.843137, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchor_left = 0.75
+anchor_right = 0.95
+anchor_bottom = 1.0
+margin_left = 0.359985
+margin_top = 0.399994
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/go = SubResource( 5 )

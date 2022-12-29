@@ -218,6 +218,11 @@ script = SubResource( 2 )
 [node name="Armature" parent="." index="0"]
 transform = Transform( 0.596206, 0, -0.0673702, 0, 0.6, 0, 0.0673702, 0, 0.596206, 7.40119, -1.9842, -8.34576 )
 
+[node name="Skeleton" parent="Armature" index="0"]
+bones/8/bound_children = [ NodePath("BoneAttachment"), NodePath("BoneAttachment2") ]
+bones/13/bound_children = [ NodePath("BoneAttachment3") ]
+bones/14/bound_children = [ NodePath("BoneAttachment4") ]
+
 [node name="BoneAttachment" parent="Armature/Skeleton" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, -9.31323e-09, 0, 9.31323e-09, 1, 0, 4.03492, 0.346897 )
 
