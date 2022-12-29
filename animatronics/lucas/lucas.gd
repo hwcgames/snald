@@ -15,9 +15,9 @@ onready var night = $"/root/EventMan".night_index
 onready var HUNT_TARGETS = [
 	{"window": 1},
 	{"window": 0.7, "door": 0.2, "vent": 0.1},
-	{"window": 0.5, "door": 0.35, "vent": 0.15},
-	{"window": 0.4, "door": 0.35, "vent": 0.25},
-	{"window": 0.4, "door": 0.35, "vent": 0.25}
+	{"window": 0.5, "door": 0.25, "vent": 0.25},
+	{"window": 0.5, "door": 0.25, "vent": 0.25},
+	{"window": 0.5, "door": 0.25, "vent": 0.25}
 ][night]
 
 var ROOM_CANDIDATES = {
