@@ -7401,7 +7401,7 @@
 // entity 116
 {
 "classname" "AnimatronicPosition"
-"origin" "736 144 8"
+"origin" "724 156 8"
 "room_id" "liminal"
 "animatronic_id" "jojo"
 "animation" "sleep"
@@ -7411,7 +7411,7 @@
 // entity 117
 {
 "classname" "AnimatronicPosition"
-"origin" "736 144 8"
+"origin" "728 156 8"
 "room_id" "liminal"
 "animatronic_id" "jojo"
 "animation" "sleep"
@@ -7421,7 +7421,7 @@
 // entity 118
 {
 "classname" "AnimatronicPosition"
-"origin" "736 144 8"
+"origin" "732 156 8"
 "room_id" "liminal"
 "animatronic_id" "jojo"
 "animation" "sleep"
@@ -7431,12 +7431,12 @@
 // entity 119
 {
 "classname" "AnimatronicPosition"
-"origin" "736 144 8"
+"origin" "736 112 8"
 "room_id" "liminal"
 "animatronic_id" "jojo"
 "animation" "sleep"
 "state_id" "3"
-"angle" "0"
+"angle" "180"
 }
 // entity 120
 {
@@ -7444,7 +7444,7 @@
 "origin" "660 112 8"
 "room_id" "liminal"
 "animatronic_id" "jojo"
-"animation" "run"
+"animation" "Run_loop"
 "state_id" "4"
 "angle" "180"
 }
@@ -7454,7 +7454,7 @@
 "origin" "468 104 8"
 "room_id" "liminal"
 "animatronic_id" "jojo"
-"animation" "run"
+"animation" "Run_loop"
 "state_id" "6"
 "angle" "180"
 }
@@ -7464,7 +7464,7 @@
 "origin" "576 112 8"
 "room_id" "liminal"
 "animatronic_id" "jojo"
-"animation" "run"
+"animation" "Run_loop"
 "state_id" "5"
 "angle" "180"
 }
@@ -7474,7 +7474,7 @@
 "origin" "354 104 8"
 "room_id" "liminal"
 "animatronic_id" "jojo"
-"animation" "run"
+"animation" "Run_loop"
 "state_id" "7"
 "angle" "180"
 }
@@ -7484,7 +7484,7 @@
 "origin" "258 104 8"
 "room_id" "liminal"
 "animatronic_id" "jojo"
-"animation" "run"
+"animation" "Run_loop"
 "state_id" "8"
 "angle" "180"
 }
@@ -7494,7 +7494,7 @@
 "origin" "70 104 8"
 "room_id" "liminal"
 "animatronic_id" "jojo"
-"animation" "run"
+"animation" "Run_loop"
 "state_id" "9"
 "angle" "180"
 }
@@ -7504,7 +7504,7 @@
 "origin" "0 100 8"
 "room_id" "liminal"
 "animatronic_id" "jojo"
-"animation" "run"
+"animation" "Run_loop"
 "state_id" "10"
 "angle" "270"
 }

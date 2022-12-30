@@ -58,9 +58,10 @@ func assume_state(new_state: int):
 
 func glide_to_state(goal=0, duration=1.0, trans_type=0, ease_type=2, delay=0.0):
 	var current_position = global_transform.origin
-	var goal_position = get_node_for_state(goal).global_transform.origin
+	var goal_node = get_node_for_state(goal)
+	var goal_position = goal_node.global_transform.origin
 	var angle = Vector2(current_position.x, current_position.y).angle_to(Vector2(goal_position.x, goal_position.y))
-	rotation_degrees.y = angle
+	rotation_degrees.y = goal_node.get_angle()
 	var t = Tween.new()
 	add_child(t)
 	t.interpolate_property(

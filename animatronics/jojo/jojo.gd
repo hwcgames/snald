@@ -19,7 +19,7 @@ func animatronic_tick():
 	$MovementTimer.start()
 
 func _ready():
-	animation_player = get_node("AnimationPlayer")
+	animation_player = get_node("jojo/AnimationPlayer")
 	$MovementTimer.wait_time = rand_range(130 - (6 * (difficulty + heat_increase + noise_increase)), 180 - (8 * difficulty + heat_increase + noise_increase))
 	$MovementTimer.start()
 	assume_state(0)
@@ -29,12 +29,14 @@ func state_machine():
 		$MovementTimer.wait_time = rand_range((130 - (6 * difficulty + heat_increase + noise_increase)), (180 - (8 * difficulty + heat_increase + noise_increase)))
 		return state + 1 
 	if state in [4,5,6,7,8,9]:
-		$MovementTimer.wait_time = 1
-		return state + 1
+		$MovementTimer.wait_time = 0.3 if state == 9 else 1
+		glide_to_state(state+1, 0.29 if state == 9 else 0.98)
+		return state
 	match state:
 		3:
 			$MovementTimer.wait_time = 1
-			return 4
+			glide_to_state(4, 0.98)
+			return state
 		10:
 			if EventMan.circuit(office_door_circuit):
 				$"/root/EventMan".jumpscare("jojo", "jojo")
