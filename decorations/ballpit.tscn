@@ -1,0 +1,635 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://decorations/ballpit/ballpit.glb" type="PackedScene" id=1]
+[ext_resource path="res://decorations/ballpit.gd" type="Script" id=2]
+[ext_resource path="res://decorations/ballpit/balls.tres" type="Material" id=3]
+
+[node name="ballpit" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Plane" parent="." index="1"]
+visible = false
+
+[node name="Sphere" parent="." index="2"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere001" parent="." index="3"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere002" parent="." index="4"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere003" parent="." index="5"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere004" parent="." index="6"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere005" parent="." index="7"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere006" parent="." index="8"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere007" parent="." index="9"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere008" parent="." index="10"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere009" parent="." index="11"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere010" parent="." index="12"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere011" parent="." index="13"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere012" parent="." index="14"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere013" parent="." index="15"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere014" parent="." index="16"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere015" parent="." index="17"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere016" parent="." index="18"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere017" parent="." index="19"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere018" parent="." index="20"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere019" parent="." index="21"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere020" parent="." index="22"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere021" parent="." index="23"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere022" parent="." index="24"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere023" parent="." index="25"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere024" parent="." index="26"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere025" parent="." index="27"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere026" parent="." index="28"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere027" parent="." index="29"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere028" parent="." index="30"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere029" parent="." index="31"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere030" parent="." index="32"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere031" parent="." index="33"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere032" parent="." index="34"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere033" parent="." index="35"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere034" parent="." index="36"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere035" parent="." index="37"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere036" parent="." index="38"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere037" parent="." index="39"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere038" parent="." index="40"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere039" parent="." index="41"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere040" parent="." index="42"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere041" parent="." index="43"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere042" parent="." index="44"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere043" parent="." index="45"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere044" parent="." index="46"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere045" parent="." index="47"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere046" parent="." index="48"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere047" parent="." index="49"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere048" parent="." index="50"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere049" parent="." index="51"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere050" parent="." index="52"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere051" parent="." index="53"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere052" parent="." index="54"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere053" parent="." index="55"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere054" parent="." index="56"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere055" parent="." index="57"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere056" parent="." index="58"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere057" parent="." index="59"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere058" parent="." index="60"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere059" parent="." index="61"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere060" parent="." index="62"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere061" parent="." index="63"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere062" parent="." index="64"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere063" parent="." index="65"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere064" parent="." index="66"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere065" parent="." index="67"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere066" parent="." index="68"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere067" parent="." index="69"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere068" parent="." index="70"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere069" parent="." index="71"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere070" parent="." index="72"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere071" parent="." index="73"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere072" parent="." index="74"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere073" parent="." index="75"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere074" parent="." index="76"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere075" parent="." index="77"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere076" parent="." index="78"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere077" parent="." index="79"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere078" parent="." index="80"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere079" parent="." index="81"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere080" parent="." index="82"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere081" parent="." index="83"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere082" parent="." index="84"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere083" parent="." index="85"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere084" parent="." index="86"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere085" parent="." index="87"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere086" parent="." index="88"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere087" parent="." index="89"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere088" parent="." index="90"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere089" parent="." index="91"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere090" parent="." index="92"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere091" parent="." index="93"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere092" parent="." index="94"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere093" parent="." index="95"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere094" parent="." index="96"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere095" parent="." index="97"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere096" parent="." index="98"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere097" parent="." index="99"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere098" parent="." index="100"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere099" parent="." index="101"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere100" parent="." index="102"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere101" parent="." index="103"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere102" parent="." index="104"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere103" parent="." index="105"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere104" parent="." index="106"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere105" parent="." index="107"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere106" parent="." index="108"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere107" parent="." index="109"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere108" parent="." index="110"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere109" parent="." index="111"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere110" parent="." index="112"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere111" parent="." index="113"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere112" parent="." index="114"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere113" parent="." index="115"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere114" parent="." index="116"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere115" parent="." index="117"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere116" parent="." index="118"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere117" parent="." index="119"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere118" parent="." index="120"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere119" parent="." index="121"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere120" parent="." index="122"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere121" parent="." index="123"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere122" parent="." index="124"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere123" parent="." index="125"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere124" parent="." index="126"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere125" parent="." index="127"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere126" parent="." index="128"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere127" parent="." index="129"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere128" parent="." index="130"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere129" parent="." index="131"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere130" parent="." index="132"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere131" parent="." index="133"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere132" parent="." index="134"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere133" parent="." index="135"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere134" parent="." index="136"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere135" parent="." index="137"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere136" parent="." index="138"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere137" parent="." index="139"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere138" parent="." index="140"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere139" parent="." index="141"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere140" parent="." index="142"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere141" parent="." index="143"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere142" parent="." index="144"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere143" parent="." index="145"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere144" parent="." index="146"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere145" parent="." index="147"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere146" parent="." index="148"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere147" parent="." index="149"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere148" parent="." index="150"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere149" parent="." index="151"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere150" parent="." index="152"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere151" parent="." index="153"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere152" parent="." index="154"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere153" parent="." index="155"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere154" parent="." index="156"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere155" parent="." index="157"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere156" parent="." index="158"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere157" parent="." index="159"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere158" parent="." index="160"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere159" parent="." index="161"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere160" parent="." index="162"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere161" parent="." index="163"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere162" parent="." index="164"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere163" parent="." index="165"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere164" parent="." index="166"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere165" parent="." index="167"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere166" parent="." index="168"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere167" parent="." index="169"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere168" parent="." index="170"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere169" parent="." index="171"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere170" parent="." index="172"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere171" parent="." index="173"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere172" parent="." index="174"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere173" parent="." index="175"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere174" parent="." index="176"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere175" parent="." index="177"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere176" parent="." index="178"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere177" parent="." index="179"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere178" parent="." index="180"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere179" parent="." index="181"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere180" parent="." index="182"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere181" parent="." index="183"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere182" parent="." index="184"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere183" parent="." index="185"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere184" parent="." index="186"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere185" parent="." index="187"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere186" parent="." index="188"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere187" parent="." index="189"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere188" parent="." index="190"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere189" parent="." index="191"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere190" parent="." index="192"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere191" parent="." index="193"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere192" parent="." index="194"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere193" parent="." index="195"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere194" parent="." index="196"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere195" parent="." index="197"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere196" parent="." index="198"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere197" parent="." index="199"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere198" parent="." index="200"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere199" parent="." index="201"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere200" parent="." index="202"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere201" parent="." index="203"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere202" parent="." index="204"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere203" parent="." index="205"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere204" parent="." index="206"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere205" parent="." index="207"]
+material/0 = ExtResource( 3 )
+
+[node name="Sphere206" parent="." index="208"]
+material/0 = ExtResource( 3 )
+
+[node name="Cube001" parent="." index="209"]
+visible = false

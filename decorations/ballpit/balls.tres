@@ -1,0 +1,53 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+
+uniform sampler2D red;
+uniform sampler2D blue;
+uniform sampler2D green;
+
+const float fac = 1.8;
+const float exponent = 10.0;
+
+void vertex() {
+	vec2 pos = WORLD_MATRIX[3].xy;
+	COLOR = vec4(
+		pow(texture(red, pos).r * fac, exponent),
+		pow(texture(green, pos).r * fac, exponent),
+		pow(texture(blue, pos).r * fac, exponent),
+		1.0
+	);
+}
+
+void fragment() {
+	ALBEDO = COLOR.xyz;
+}"
+
+[sub_resource type="OpenSimplexNoise" id=5]
+seed = 1
+period = 11.5
+persistence = 0.496
+
+[sub_resource type="NoiseTexture" id=2]
+noise = SubResource( 5 )
+
+[sub_resource type="OpenSimplexNoise" id=6]
+seed = 1
+period = 5.4
+
+[sub_resource type="NoiseTexture" id=3]
+noise = SubResource( 6 )
+
+[sub_resource type="OpenSimplexNoise" id=7]
+octaves = 5
+period = 10.5
+
+[sub_resource type="NoiseTexture" id=4]
+noise = SubResource( 7 )
+
+[resource]
+shader = SubResource( 1 )
+shader_param/red = SubResource( 4 )
+shader_param/blue = SubResource( 2 )
+shader_param/green = SubResource( 3 )
