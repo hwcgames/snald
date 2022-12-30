@@ -29,7 +29,6 @@ follow_focus = true
 scroll_horizontal_enabled = false
 
 [node name="CameraListParent" type="VBoxContainer" parent="VBoxContainer/ScrollContainer2"]
-unique_name_in_owner = true
 
 [node name="DisableUnlessFlag" parent="." instance=ExtResource( 2 )]
 flag_to_check = "controller_mode"
