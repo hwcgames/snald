@@ -1,9 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://font/opensans/OpenSans/OpenSans-Light.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://textures/rickroll.png" type="Texture" id=2]
 [ext_resource path="res://textures/hwc.svg" type="Texture" id=3]
 [ext_resource path="res://jumpscares/willow/willow_dead.gd" type="Script" id=4]
+[ext_resource path="res://textures/winerror.png" type="Texture" id=5]
+[ext_resource path="res://font/normal.tres" type="DynamicFont" id=6]
+[ext_resource path="res://theme/Classic311/Classic311.tres" type="Theme" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -31,10 +34,58 @@ tracks/0/keys = {
 "update": 0,
 "values": [ "10% complete." ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Particles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Particles2D:lifetime")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.01 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CenterContainer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "go"
-length = 10.0
+length = 15.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("VBoxContainer/Label3:text")
 tracks/0/interp = 1
@@ -47,6 +98,69 @@ tracks/0/keys = {
 "update": 1,
 "values": [ "10% complete.", "20% complete.", "45% complete.", "0% complete.", "69% complete.", "100% complete." ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Particles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 10, 10.9, 14.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Particles2D:lifetime")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.01, 10.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CenterContainer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 10.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 2
+emission_box_extents = Vector3( 200, 400, 200 )
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends Button
+
+func _pressed():
+	EventMan.return_to_title()
+"
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -129,3 +243,60 @@ stretch_mode = 6
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )
 anims/go = SubResource( 5 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 255, 189 )
+scale = Vector2( 0.8, 0.8 )
+emitting = false
+amount = 255
+lifetime = 0.01
+speed_scale = 0.0
+visibility_rect = Rect2( -350, -450, 700, 900 )
+draw_order = 1
+process_material = SubResource( 6 )
+texture = ExtResource( 5 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 7 )
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+margin_left = 126.0
+margin_top = 131.0
+margin_right = 426.0
+margin_bottom = 261.0
+rect_min_size = Vector2( 300, 130 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+margin_top = 12.0
+margin_right = 280.0
+margin_bottom = 72.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "If your computer breaks while you're not looking, try looking away again. A watched pot never boils, after all."
+align = 1
+autowrap = true
+
+[node name="Button" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+margin_left = 90.0
+margin_top = 76.0
+margin_right = 190.0
+margin_bottom = 98.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 4
+theme = ExtResource( 7 )
+text = "OK"
+script = SubResource( 7 )
