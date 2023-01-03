@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://jumpscares/base/base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://jumpscares/willow/willow.gd" type="Script" id=2]
 [ext_resource path="res://jumpscares/willow/glitch.tres" type="Material" id=3]
+[ext_resource path="res://music/spooky/buzz2.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -21,6 +22,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "glitch"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("TextureRect:material:shader_param/fade")
 tracks/0/interp = 1
@@ -28,10 +30,24 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 1.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("Buzz")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [node name="BaseJumpscare" instance=ExtResource( 1 )]
@@ -46,3 +62,6 @@ anims/glitch = SubResource( 2 )
 material = ExtResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="Buzz" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource( 4 )

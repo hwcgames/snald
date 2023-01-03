@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/buzz2.wav-9a58499de326ee708a5b92cb86e05a12.sample"
+
+[deps]
+
+source_file="res://music/spooky/buzz2.wav"
+dest_files=[ "res://.import/buzz2.wav-9a58499de326ee708a5b92cb86e05a12.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

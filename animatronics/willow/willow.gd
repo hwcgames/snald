@@ -23,7 +23,9 @@ func _ready():
 func new_state(id: int):
 	if id in visible_states:
 		show()
+		$BreathingPlayer.play()
 	else:
+		$BreathingPlayer.stop()
 		hide()
 
 func looking_at_monitor():
