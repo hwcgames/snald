@@ -6773,7 +6773,7 @@
 // entity 43
 {
 "classname" "AnimatronicPosition"
-"origin" "690 748 24"
+"origin" "690 748 0"
 "room_id" "observation"
 "angle" "-90"
 "animatronic_id" "gabe"
@@ -6876,7 +6876,7 @@
 "origin" "-70 424 0"
 "room_id" "trains"
 "animatronic_id" "lucas"
-"animation" "trains_idle"
+"animation" "trains_idle_loop"
 "state_id" "0"
 "angle" "180"
 }
@@ -8095,4 +8095,10 @@
 "power" "0"
 "radius" "2"
 "energy" ".2"
+}
+// entity 166
+{
+"classname" "Decoration"
+"origin" "614 258 1"
+"id" "ballpit"
 }
