@@ -23,4 +23,6 @@ func play():
 		sub_player.add_animation(animation_name, animation)
 		add_child(sub_player)
 		sub_player.play(animation_name)
+		if animation_name == "ArmatureAction":
+			sub_player.advance(10.0)
 		sub_player.connect("animation_finished", sub_player, "queue_free")

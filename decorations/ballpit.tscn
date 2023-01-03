@@ -5,6 +5,7 @@
 [ext_resource path="res://decorations/ballpit/balls.tres" type="Material" id=3]
 
 [node name="ballpit" instance=ExtResource( 1 )]
+transform = Transform( 0.597622, 0, 0, 0, 0.597622, 0, 0, 0, 0.597622, 0, 0, 0 )
 script = ExtResource( 2 )
 
 [node name="Plane" parent="." index="1"]
