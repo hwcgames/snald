@@ -1,17 +1,62 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://jumpscares/base/base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://jumpscares/gabe/gabe.gd" type="Script" id=2]
-
-[sub_resource type="SpatialMaterial" id=1]
-flags_unshaded = true
-albedo_color = Color( 0, 0, 0, 1 )
+[ext_resource path="res://jumpscares/gabe/gundead.gdshader" type="Shader" id=3]
 
 [sub_resource type="SphereMesh" id=2]
-material = SubResource( 1 )
 flip_faces = true
 radial_segments = 4
 rings = 2
+
+[sub_resource type="OpenSimplexNoise" id=5]
+seed = 4
+octaves = 1
+period = 32.1
+lacunarity = 1.99
+
+[sub_resource type="NoiseTexture" id=6]
+seamless = true
+noise = SubResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 3 )
+shader_param/red = Color( 1, 0, 0, 1 )
+shader_param/blk = null
+shader_param/noise_fac = 1.446
+shader_param/threshold = 2.5
+shader_param/noise = SubResource( 6 )
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:material/0:shader_param/threshold")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.5 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "blood"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:material/0:shader_param/threshold")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 2.5, 0.0 ]
+}
 
 [node name="BaseJumpscare" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -21,4 +66,8 @@ wait_time = 3.0
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="1"]
 mesh = SubResource( 2 )
-material/0 = null
+material/0 = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+anims/RESET = SubResource( 7 )
+anims/blood = SubResource( 8 )

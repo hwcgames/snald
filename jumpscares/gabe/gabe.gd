@@ -1,7 +1,6 @@
 extends BaseJumpscare
 
 func _ready():
-	$Timer.start()
-	yield($Timer, "timeout")
-	$Timer.stop()
+	$AnimationPlayer.play("blood")
+	yield($AnimationPlayer, "animation_finished")
 	emit_signal("finished", true)
