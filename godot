@@ -9,7 +9,7 @@ TYPE=${TYPE-x11.64}
 if [ ! -f ~/.local/bin/godot-$VERSION-$TYPE ]; then
 	echo "We don't have the correct Godot version, so we'll download it."
 	mkdir -p ~/.local/bin
-	wget -O godot-$VERSION-$TYPE.zip https://downloads.tuxfamily.org/godotengine/$VERSION/Godot_v$VERSION-${BRANCH}_$TYPE.zip
+	wget -q -O godot-$VERSION-$TYPE.zip https://downloads.tuxfamily.org/godotengine/$VERSION/Godot_v$VERSION-${BRANCH}_$TYPE.zip
 	unzip -o godot-$VERSION-$TYPE.zip
 	rm godot-$VERSION-$TYPE.zip
 	mv Godot_v$VERSION*$TYPE ~/.local/bin/godot-$VERSION-$TYPE
@@ -19,7 +19,7 @@ if [ ! -d ~/.local/share/godot/templates/$VERSION.$BRANCH ]; then
 	echo "We don't have the export templates, so we'll download them."
 	mkdir -p ~/.local/share/godot/templates/$VERSION.$BRANCH
 	pushd ~/.local/share/godot/templates/$VERSION.$BRANCH
-	wget -O godot-$VERSION-templates.zip https://downloads.tuxfamily.org/godotengine/$VERSION/Godot_v$VERSION-${BRANCH}_export_templates.tpz
+	wget -q -O godot-$VERSION-templates.zip https://downloads.tuxfamily.org/godotengine/$VERSION/Godot_v$VERSION-${BRANCH}_export_templates.tpz
 	unzip -o godot-$VERSION-templates.zip
 	rm godot-$VERSION-templates.zip
 	mv templates/* .
