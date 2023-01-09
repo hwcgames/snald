@@ -17,13 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cache Godot templates
-        id: cache_godot
+        id: cache_godot_templates
         uses: actions/cache@v3
         with:
           path: ~/.local/share/godot
           key: ${{ matrix.target }}-godot-templates
       - name: Cache Godot binaries
-        id: cache_godot
+        id: cache_godot_binaries
         uses: actions/cache@v3
         with:
           path: ~/.local/bin
