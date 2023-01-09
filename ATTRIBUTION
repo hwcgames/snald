@@ -21,9 +21,6 @@ Violin Iliev, MIT license:
 Josh "Shifty" Palmer, MIT license:
 	`addons/qodot`
 
-teebarjunk, MIT license:
-	`addons/teeb*`
-
 Apache License:
 	`font/OpenSans`
 
@@ -36,5 +33,5 @@ Tanner Carlson-Huber, all rights reserved:
 
 Willow and Tanner Carlson-Huber, Lucas Kisner, all rights reserved:
 	All files under `mdlsrc`
-	`animatronics/gabe/gabe.{blend,glb}` and related graphical assets
+	All files with `*.glb`
 
