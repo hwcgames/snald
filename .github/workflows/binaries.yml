@@ -20,9 +20,7 @@ jobs:
         id: cache_godot
         uses: actions/cache@v3
         with:
-          path:
-            - ~/.local/share/godot
-            - ~/.local/bin
+          path: ~/.local/*godot*
           key: ${{ matrix.target }}-godot-things
       - name: Checkout
         uses: actions/checkout@v2
