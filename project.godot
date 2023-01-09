@@ -438,5 +438,5 @@ textures/depth_pattern="%s/depth.%s"
 
 [rendering]
 
-gles3/shaders/shader_compilation_mode=2
 environment/default_environment="res://default_env.tres"
+gles3/shaders/shader_compilation_mode=2

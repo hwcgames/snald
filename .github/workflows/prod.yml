@@ -5,119 +5,40 @@ on:
       - "*"
 
 env:
-  GODOT_VERSION: 3.4.1
   EXPORT_NAME: snald
 
 jobs:
-  export-windows:
-    name: Windows Export
+  export:
+    strategy:
+      fail-fast: true
+      matrix:
+        target: [windows, mac, linux]
+    name: Matrix Export
     runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:3.4.1
     steps:
+      - name: Cache Godot stuff
+        id: cache_godot
+        uses: actions/cache@v3
+        with:
+          path:
+            - ~/.local/share/godot
+            - ~/.local/bin
+          key: ${{ matrix.target }}-godot-things
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          lfs: true
-      - name: Setup
+      - name: Build
         run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
-      - name: Windows Build
-        run: |
-          mkdir -v -p build/windows
-          godot -v --export "Windows Desktop" build/windows/$EXPORT_NAME.exe
-          mkdir -p build/windows/maps
-          cp -r maps/*.map build/windows/maps
-          cp -r addons/qodot/bin/win64/* LICENSE ATTRIBUTION build/windows
+          SNALD_TARGET=${{ matrix.target }} TYPE=linux_headless.64 ./build.sh
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
-          name: windows
-          path: build/windows
-
-  export-linux:
-    name: Linux Export
-    runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:3.4.1
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          lfs: true
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
-      - name: Linux Build
-        run: |
-          mkdir -v -p build/linux
-          godot -v --export "Linux/X11" build/linux/$EXPORT_NAME.x86_64
-          mkdir -p build/linux/maps
-          cp -r maps/*.map build/linux/maps
-          cp -r addons/qodot/bin/x11/* LICENSE ATTRIBUTION build/linux
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: linux
-          path: build/linux
-
-  export-mac:
-    name: Mac Export
-    runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:3.4.1
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          lfs: true
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
-      - name: Mac Build
-        run: |
-          mkdir -v -p build/mac
-          godot -v --export "Mac OSX" build/mac/$EXPORT_NAME.zip
-          mkdir -p build/mac/maps
-          cp -r maps/*.map build/mac/maps
-          cp -r addons/qodot/bin/osx/* LICENSE ATTRIBUTION build/mac
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: mac
-          path: build/mac
-
-  export-web:
-    name: Web Export
-    runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:3.4.1
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          lfs: true
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
-      - name: Web Build
-        run: |
-          SNALD_TARGET=Web ./build.sh
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: Web
-          path: build/Web
-
+          name: ${{ matrix.target }}
+          path: build/${{ matrix.target }}
 
   itch-stable:
     name: Upload to itch.io
     runs-on: ubuntu-latest
-    needs: [export-windows, export-linux, export-mac, export-web]
+    needs: [export]
     strategy:
       fail-fast: true
       matrix:
@@ -125,7 +46,6 @@ jobs:
           - windows
           - mac
           - linux
-          - Web
     steps:
       - uses: actions/download-artifact@v2.0.8
         with:
