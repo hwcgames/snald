@@ -86,6 +86,7 @@ map_path = "maps/texture-test.map"
 night_index = 0
 time_to_completion = 3600
 victory_scene = "res://scenes/victory/victory_n1.tscn"
+test_mode = true
 
 [node name="Controls" type="ScrollContainer" parent="."]
 visible = false

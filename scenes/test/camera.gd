@@ -1,6 +1,6 @@
 extends Camera
 
-export(float, 0.0, 1.0) var sensitivity = 0.25
+export(float, 0.0, 1.0) var sensitivity = 1.0
 
 # Mouse state
 var _mouse_position = Vector2(0.0, 0.0)
