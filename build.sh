@@ -12,10 +12,10 @@ mkdir -p $BUILD_DIR
 export NAME="snald"
 # Determine godot output profile
 if [ "$SNALD_TARGET" == "mac" ]; then
-	export GODOT_PROFILE="Mac OSX"
+	export GODOT_PROFILE="MacOSX"
 	export EXTENSION="app"
 elif [ "$SNALD_TARGET" == "windows" ]; then
-	export GODOT_PROFILE="Windows Desktop"
+	export GODOT_PROFILE="WindowsDesktop"
 	export EXTENSION="exe"
 elif [ "$SNALD_TARGET" == "web" ]; then
 	export GODOT_PROFILE="HTML5"

@@ -16,12 +16,18 @@ jobs:
     name: Matrix Export
     runs-on: ubuntu-latest
     steps:
-      - name: Cache Godot stuff
+      - name: Cache Godot templates
         id: cache_godot
         uses: actions/cache@v3
         with:
-          path: ~/.local/*godot*
-          key: ${{ matrix.target }}-godot-things
+          path: ~/.local/share/godot
+          key: ${{ matrix.target }}-godot-templates
+      - name: Cache Godot binaries
+        id: cache_godot
+        uses: actions/cache@v3
+        with:
+          path: ~/.local/bin
+          key: ${{ matrix.target }}-godot-binaries
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build
