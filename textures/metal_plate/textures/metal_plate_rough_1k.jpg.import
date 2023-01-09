@@ -15,7 +15,7 @@ dest_files=[ "res://.import/metal_plate_rough_1k.jpg-77859a0eaf98ac072cd759aec9e
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

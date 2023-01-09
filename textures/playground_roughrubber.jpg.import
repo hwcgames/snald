@@ -14,8 +14,8 @@ dest_files=[ "res://.import/playground_roughrubber.jpg-37790f2c3d6fd5c9f287cf0b0
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

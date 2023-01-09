@@ -15,7 +15,7 @@ dest_files=[ "res://.import/beam_wall_01_nor_gl_1k.jpg-9d3119eb443d44cd96e2db566
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=1

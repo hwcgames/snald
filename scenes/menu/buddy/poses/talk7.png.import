@@ -14,7 +14,7 @@ dest_files=[ "res://.import/talk7.png-eb6c71331d86253eb6112813509444d7.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

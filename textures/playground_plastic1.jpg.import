@@ -14,8 +14,8 @@ dest_files=[ "res://.import/playground_plastic1.jpg-eb69ca08f7456a10f4699236d31e
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

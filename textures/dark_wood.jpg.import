@@ -14,8 +14,8 @@ dest_files=[ "res://.import/dark_wood.jpg-9a8404f7d50bf3fcc12bb1c41bc1f4cd.stex"
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

@@ -15,7 +15,7 @@ dest_files=[ "res://.import/floor_tiles_04_nor_gl_1k.jpg-3e5ef9edf1630d6cd531476
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=1

@@ -15,7 +15,7 @@ dest_files=[ "res://.import/metal_plate_diff_1k.jpg-8a66d75e4d021bf631a49d1863ba
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

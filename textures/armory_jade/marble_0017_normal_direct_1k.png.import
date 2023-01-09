@@ -14,8 +14,8 @@ dest_files=[ "res://.import/marble_0017_normal_direct_1k.png-14513772186fd8140aa
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.3
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

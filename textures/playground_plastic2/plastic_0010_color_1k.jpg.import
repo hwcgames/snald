@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/plastic_0010_color_1k.jpg-e6c39716744c6379fa9724acbb2e1ef9.s3tc.stex"
-path.etc2="res://.import/plastic_0010_color_1k.jpg-e6c39716744c6379fa9724acbb2e1ef9.etc2.stex"
+path="res://.import/plastic_0010_color_1k.jpg-e6c39716744c6379fa9724acbb2e1ef9.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/playground_plastic2/plastic_0010_color_1k.jpg"
-dest_files=[ "res://.import/plastic_0010_color_1k.jpg-e6c39716744c6379fa9724acbb2e1ef9.s3tc.stex", "res://.import/plastic_0010_color_1k.jpg-e6c39716744c6379fa9724acbb2e1ef9.etc2.stex" ]
+dest_files=[ "res://.import/plastic_0010_color_1k.jpg-e6c39716744c6379fa9724acbb2e1ef9.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

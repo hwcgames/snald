@@ -15,7 +15,7 @@ dest_files=[ "res://.import/large_sandstone_blocks_arm_1k.jpg-c9bccb7e574bb33ef1
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

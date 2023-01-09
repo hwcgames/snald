@@ -15,7 +15,7 @@ dest_files=[ "res://.import/rusty_metal_02_diff_1k.jpg-c62ff3f7efe6e44fe287b0862
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

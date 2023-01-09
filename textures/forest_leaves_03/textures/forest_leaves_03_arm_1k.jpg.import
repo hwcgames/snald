@@ -15,7 +15,7 @@ dest_files=[ "res://.import/forest_leaves_03_arm_1k.jpg-9220c34a3582de07373774aa
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

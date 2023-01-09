@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/fabric_0021_roughness_1k.jpg-38c50e19f99cd0d74fb62d569c46d2d3.s3tc.stex"
-path.etc2="res://.import/fabric_0021_roughness_1k.jpg-38c50e19f99cd0d74fb62d569c46d2d3.etc2.stex"
+path="res://.import/fabric_0021_roughness_1k.jpg-38c50e19f99cd0d74fb62d569c46d2d3.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/playground_polecloth/fabric_0021_roughness_1k.jpg"
-dest_files=[ "res://.import/fabric_0021_roughness_1k.jpg-38c50e19f99cd0d74fb62d569c46d2d3.s3tc.stex", "res://.import/fabric_0021_roughness_1k.jpg-38c50e19f99cd0d74fb62d569c46d2d3.etc2.stex" ]
+dest_files=[ "res://.import/fabric_0021_roughness_1k.jpg-38c50e19f99cd0d74fb62d569c46d2d3.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

@@ -15,7 +15,7 @@ dest_files=[ "res://.import/concrete_floor_worn_001_nor_gl_1k.jpg-d7fa1e2ef5b39c
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=1

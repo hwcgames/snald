@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/wood_0048_roughness_1k.jpg-da0fad315c84cd5f23a843e6c28b0ec9.s3tc.stex"
-path.etc2="res://.import/wood_0048_roughness_1k.jpg-da0fad315c84cd5f23a843e6c28b0ec9.etc2.stex"
+path="res://.import/wood_0048_roughness_1k.jpg-da0fad315c84cd5f23a843e6c28b0ec9.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/old_wood/wood_0048_roughness_1k.jpg"
-dest_files=[ "res://.import/wood_0048_roughness_1k.jpg-da0fad315c84cd5f23a843e6c28b0ec9.s3tc.stex", "res://.import/wood_0048_roughness_1k.jpg-da0fad315c84cd5f23a843e6c28b0ec9.etc2.stex" ]
+dest_files=[ "res://.import/wood_0048_roughness_1k.jpg-da0fad315c84cd5f23a843e6c28b0ec9.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

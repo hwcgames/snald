@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/marble_0017_height_1k.png-cd98a94a5173c1d4d791ba2e33fd2285.s3tc.stex"
-path.etc2="res://.import/marble_0017_height_1k.png-cd98a94a5173c1d4d791ba2e33fd2285.etc2.stex"
+path="res://.import/marble_0017_height_1k.png-cd98a94a5173c1d4d791ba2e33fd2285.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/armory_jade/marble_0017_height_1k.png"
-dest_files=[ "res://.import/marble_0017_height_1k.png-cd98a94a5173c1d4d791ba2e33fd2285.s3tc.stex", "res://.import/marble_0017_height_1k.png-cd98a94a5173c1d4d791ba2e33fd2285.etc2.stex" ]
+dest_files=[ "res://.import/marble_0017_height_1k.png-cd98a94a5173c1d4d791ba2e33fd2285.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.3
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

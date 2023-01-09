@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/armory_jade.jpg-bf2c7f580dbfd13fc26c2aa4b00d7283.s3tc.stex"
-path.etc2="res://.import/armory_jade.jpg-bf2c7f580dbfd13fc26c2aa4b00d7283.etc2.stex"
+path="res://.import/armory_jade.jpg-bf2c7f580dbfd13fc26c2aa4b00d7283.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/armory_jade.jpg"
-dest_files=[ "res://.import/armory_jade.jpg-bf2c7f580dbfd13fc26c2aa4b00d7283.s3tc.stex", "res://.import/armory_jade.jpg-bf2c7f580dbfd13fc26c2aa4b00d7283.etc2.stex" ]
+dest_files=[ "res://.import/armory_jade.jpg-bf2c7f580dbfd13fc26c2aa4b00d7283.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

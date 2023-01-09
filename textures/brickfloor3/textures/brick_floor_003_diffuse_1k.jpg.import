@@ -15,7 +15,7 @@ dest_files=[ "res://.import/brick_floor_003_diffuse_1k.jpg-f4e3ffb80d32fdc3605ba
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

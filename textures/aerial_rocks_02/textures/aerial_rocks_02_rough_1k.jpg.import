@@ -15,7 +15,7 @@ dest_files=[ "res://.import/aerial_rocks_02_rough_1k.jpg-145766256823cc576c0bf05
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

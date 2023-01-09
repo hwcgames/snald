@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/metal_0071_color_1k.jpg-4eff25e17ff4e1293d0658264c925918.s3tc.stex"
-path.etc2="res://.import/metal_0071_color_1k.jpg-4eff25e17ff4e1293d0658264c925918.etc2.stex"
+path="res://.import/metal_0071_color_1k.jpg-4eff25e17ff4e1293d0658264c925918.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/playground_slide/metal_0071_color_1k.jpg"
-dest_files=[ "res://.import/metal_0071_color_1k.jpg-4eff25e17ff4e1293d0658264c925918.s3tc.stex", "res://.import/metal_0071_color_1k.jpg-4eff25e17ff4e1293d0658264c925918.etc2.stex" ]
+dest_files=[ "res://.import/metal_0071_color_1k.jpg-4eff25e17ff4e1293d0658264c925918.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

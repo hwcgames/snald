@@ -15,7 +15,7 @@ dest_files=[ "res://.import/denim_fabric_rough_1k.jpg-f9d8d4e84a19cbd489bc5a2a35
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

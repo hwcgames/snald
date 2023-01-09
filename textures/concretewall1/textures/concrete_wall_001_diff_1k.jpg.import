@@ -15,7 +15,7 @@ dest_files=[ "res://.import/concrete_wall_001_diff_1k.jpg-57e8c762caf250f27621ca
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

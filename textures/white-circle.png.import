@@ -2,21 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/white-circle.png-86e46082766a2dae7787ac91d0e3a662.s3tc.stex"
-path.etc2="res://.import/white-circle.png-86e46082766a2dae7787ac91d0e3a662.etc2.stex"
+path="res://.import/white-circle.png-86e46082766a2dae7787ac91d0e3a662.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/white-circle.png"
-dest_files=[ "res://.import/white-circle.png-86e46082766a2dae7787ac91d0e3a662.s3tc.stex", "res://.import/white-circle.png-86e46082766a2dae7787ac91d0e3a662.etc2.stex" ]
+dest_files=[ "res://.import/white-circle.png-86e46082766a2dae7787ac91d0e3a662.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

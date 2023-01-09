@@ -14,8 +14,8 @@ dest_files=[ "res://.import/wood_0010_basecolor_1k.jpg-ea61050f47f8dcda62e2f0689
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.2
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

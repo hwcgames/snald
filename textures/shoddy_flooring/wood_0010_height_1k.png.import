@@ -14,8 +14,8 @@ dest_files=[ "res://.import/wood_0010_height_1k.png-7af66eaff7baa9642337842fced8
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.3
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
