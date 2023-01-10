@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://eggs/chicken.gd" type="Script" id=1]
 [ext_resource path="res://scenes/menu/save_flag_button.gd" type="Script" id=2]
+[ext_resource path="res://scenes/disable_unless_flag.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/menu/ControlsMenu.gd" type="Script" id=5]
 
@@ -88,6 +89,9 @@ time_to_completion = 3600
 victory_scene = "res://scenes/victory/victory_n1.tscn"
 test_mode = true
 
+[node name="DisableUnlessFlag" parent="Graphics + Sound/VBoxContainer/Test Level" instance=ExtResource( 3 )]
+flag_to_check = "developer"
+
 [node name="Controls" type="ScrollContainer" parent="."]
 visible = false
 anchor_right = 1.0
@@ -104,7 +108,7 @@ size_flags_horizontal = 3
 script = ExtResource( 5 )
 
 [node name="Reset" type="Button" parent="Controls/VBoxContainer"]
-margin_right = 952.0
+margin_right = 169.0
 margin_bottom = 20.0
 size_flags_horizontal = 0
 text = "Reset controls to default"
@@ -125,7 +129,7 @@ __meta__ = {
 
 [node name="Settings" type="VBoxContainer" parent="Misc"]
 margin_right = 632.0
-margin_bottom = 129.0
+margin_bottom = 111.0
 size_flags_horizontal = 3
 alignment = 1
 __meta__ = {
@@ -133,54 +137,46 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Misc/Settings"]
-margin_right = 952.0
+margin_right = 632.0
 margin_bottom = 31.0
 text = "
-Settings"
+Misc. Settings"
 align = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Misc/Settings"]
-margin_top = 35.0
-margin_right = 952.0
-margin_bottom = 59.0
-alignment = 1
-
-[node name="TextEdit" type="LineEdit" parent="Misc/Settings/HBoxContainer"]
-margin_left = 412.0
-margin_right = 540.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 128, 0 )
-align = 1
-placeholder_text = "How fun!"
-
-[node name="EasterEggChicken" type="Node" parent="Misc/Settings/HBoxContainer"]
-script = ExtResource( 1 )
 
 [node name="CheckBox" type="CheckBox" parent="Misc/Settings"]
-margin_left = 349.0
-margin_top = 63.0
-margin_right = 603.0
-margin_bottom = 87.0
+margin_left = 221.0
+margin_top = 35.0
+margin_right = 411.0
+margin_bottom = 59.0
 size_flags_horizontal = 4
-text = "Enable Experimental Controller GUI"
+text = "Enable Controller Support"
 align = 1
 script = ExtResource( 2 )
 
-[node name="Label3" type="Label" parent="Misc/Settings"]
-margin_top = 91.0
-margin_right = 952.0
-margin_bottom = 105.0
-text = "(controllers only work in-game, sorry)"
-align = 1
-
 [node name="Button" type="Button" parent="Misc/Settings"]
-margin_left = 424.0
-margin_top = 127.0
-margin_right = 528.0
-margin_bottom = 147.0
+margin_left = 264.0
+margin_top = 63.0
+margin_right = 368.0
+margin_bottom = 83.0
 size_flags_horizontal = 4
 text = "Clear Save File"
 script = SubResource( 7 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Misc/Settings"]
+margin_top = 87.0
+margin_right = 632.0
+margin_bottom = 111.0
+alignment = 1
+
+[node name="TextEdit" type="LineEdit" parent="Misc/Settings/HBoxContainer"]
+margin_left = 252.0
+margin_right = 380.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 128, 0 )
+align = 1
+
+[node name="EasterEggChicken" type="Node" parent="Misc/Settings/HBoxContainer"]
+script = ExtResource( 1 )
 
 [connection signal="pressed" from="Graphics + Sound/VBoxContainer/Test Level" to="Graphics + Sound/VBoxContainer/Test Level/NightConfig" method="run"]
 [connection signal="text_changed" from="Misc/Settings/HBoxContainer/TextEdit" to="Misc/Settings/HBoxContainer/EasterEggChicken" method="new_text"]

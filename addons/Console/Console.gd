@@ -70,7 +70,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed(input_action):
 		if visible:
 			hide();
-		else:
+		elif PersistMan.get_key("developer"):
 			popup();
 			line.clear();
 			line.grab_focus();

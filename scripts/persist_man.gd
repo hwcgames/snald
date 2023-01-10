@@ -30,8 +30,8 @@ func reset():
 	save_game()
 	get_tree().quit()
 
-func get_key(key):
-	return persistent_dict[key] if key in persistent_dict else null
+func get_key(key, default=false):
+	return persistent_dict[key] if key in persistent_dict else default
 
 func set_flag(key: String, val=true):
 	if persistent_dict.get(key, false) != val:

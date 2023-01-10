@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scenes/menu/settings.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=2]
@@ -24,7 +24,6 @@
 [ext_resource path="res://textures/traincarta.png" type="Texture" id=22]
 [ext_resource path="res://scenes/menu/scene_button.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/menu/hide_on_web.tscn" type="PackedScene" id=24]
-[ext_resource path="res://font/worry.tres" type="DynamicFont" id=25]
 [ext_resource path="res://cutscenes/Test.tscn" type="PackedScene" id=28]
 [ext_resource path="res://scenes/menu/cutscene_button.tscn" type="PackedScene" id=29]
 
@@ -36,6 +35,7 @@ func _pressed():
 "
 
 [sub_resource type="AnimatedTexture" id=2]
+flags = 4
 frames = 9
 frame_0/texture = ExtResource( 16 )
 frame_1/texture = ExtResource( 18 )
@@ -458,21 +458,6 @@ margin_left = 211.0
 margin_top = 70.0
 margin_right = -99.0
 margin_bottom = -60.0
-
-[node name="WebWarning" type="Label" parent="."]
-visible = false
-anchor_right = 0.275
-anchor_bottom = 0.131
-margin_left = 10.0
-margin_top = 10.0
-custom_fonts/font = ExtResource( 25 )
-text = "Beware!!! Running SNALD on web or mobile requires a workaround for map loading, this makes the game very laggy and i'm not entirely sure why.
-
-If you want to play the game more comfortably, please switch to a native version of the game."
-autowrap = true
-
-[node name="hide_on_web" parent="WebWarning" instance=ExtResource( 24 )]
-negate = true
 
 [connection signal="pressed" from="ThingsBar/HBoxContainer/Go" to="Error" method="show"]
 [connection signal="pressed" from="ThingsBar/HBoxContainer/CalendarButton" to="LevelWindow" method="show"]
