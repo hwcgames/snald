@@ -1,6 +1,7 @@
 extends Camera
+class_name FreeCam
 
-export(float, 0.0, 1.0) var sensitivity = 1.0
+export(float, 0.0, 1.0) var sensitivity = 0.125
 
 # Mouse state
 var _mouse_position = Vector2(0.0, 0.0)
@@ -25,6 +26,18 @@ func _input(event):
 	# Receives mouse motion
 	if event is InputEventMouseMotion:
 		_mouse_position = event.relative
+		# Only rotates mouse if the mouse is captured
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			_mouse_position *= sensitivity
+			var yaw = _mouse_position.x
+			var pitch = _mouse_position.y
+			
+			# Prevents looking up/down too far
+			pitch = clamp(pitch, -90 - _total_pitch, 90 - _total_pitch)
+			_total_pitch += pitch
+		
+			rotate_y(deg2rad(-yaw))
+			rotate_object_local(Vector3(1,0,0), deg2rad(-pitch))
 	
 	# Receives mouse button input
 	if event is InputEventMouseButton:
@@ -54,8 +67,8 @@ func _input(event):
 
 # Updates mouselook and movement every frame
 func _process(delta):
-	current = true
-	_update_mouselook()
+	if !current:
+		current = true
 	_update_movement(delta)
 
 # Updates camera movement
@@ -81,19 +94,3 @@ func _update_movement(delta):
 		_velocity.z = clamp(_velocity.z + offset.z, -_vel_multiplier, _vel_multiplier)
 	
 		translate(_velocity * delta)
-
-# Updates mouse look 
-func _update_mouselook():
-	# Only rotates mouse if the mouse is captured
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		_mouse_position *= sensitivity
-		var yaw = _mouse_position.x
-		var pitch = _mouse_position.y
-		_mouse_position = Vector2(0, 0)
-		
-		# Prevents looking up/down too far
-		pitch = clamp(pitch, -90 - _total_pitch, 90 - _total_pitch)
-		_total_pitch += pitch
-	
-		rotate_y(deg2rad(-yaw))
-		rotate_object_local(Vector3(1,0,0), deg2rad(-pitch))
