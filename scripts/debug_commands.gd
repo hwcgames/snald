@@ -2,6 +2,8 @@ extends Node
 
 func _ready():
 	Console.connect_node(self)
+	if Engine.editor_hint:
+		EventMan.circuit_on("cheater")
 
 const win_help = "wins the game"
 func win_cmd():
@@ -127,8 +129,12 @@ func reload_cmd():
 	if not EventMan.circuit("cheater"):
 		Console.print("Only cheaters can perform filthy acts at a reasonable price.")
 		return
-	var _drop = get_tree().reload_current_scene()
-	LevelLoader.load_level(LevelLoader.map)
+	var map = get_tree().get_nodes_in_group("map")[0]
+	if map:
+		EventMan.pause = true
+		map.verify_and_build()
+		yield(map, "build_complete")
+		EventMan.pause = false
 
 const pause_help = "The ultimate stand. (Pauses and unpauses power, temperature, and character movements.)"
 func pause_cmd():

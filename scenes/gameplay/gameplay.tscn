@@ -79,7 +79,7 @@ shader_param/resolution_scale = 1
 [node name="gameplay" type="Spatial"]
 script = ExtResource( 3 )
 
-[node name="QodotMap" type="Spatial" parent="."]
+[node name="QodotMap" type="Spatial" parent="." groups=["map"]]
 script = ExtResource( 1 )
 map_file = ""
 inverse_scale_factor = 16.0
@@ -106,6 +106,7 @@ layers = 2
 material_override = ExtResource( 4 )
 extra_cull_margin = 16384.0
 mesh = SubResource( 3 )
+material/0 = null
 
 [node name="DisableUnlessFlag" parent="MeshInstance" instance=ExtResource( 7 )]
 flag_to_check = "post-process"
@@ -116,6 +117,7 @@ layers = 4
 material_override = SubResource( 5 )
 extra_cull_margin = 16384.0
 mesh = SubResource( 3 )
+material/0 = null
 
 [node name="DisableUnlessFlag" parent="MeshInstance2" instance=ExtResource( 7 )]
 flag_to_check = "post-process"
