@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/test/camera.gd" type="Script" id=1]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=2]
@@ -116,6 +116,19 @@ shader_param/color_depth = 8
 shader_param/dithering = false
 shader_param/resolution_scale = 1
 
+[sub_resource type="GDScript" id=11]
+script/source = "extends Button
+
+func _pressed():
+	text = \"Building...\"
+	var map = get_tree().get_nodes_in_group(\"map\")[0]
+	EventMan.pause = true
+	map.build_map()
+	yield(map, \"build_complete\")
+	EventMan.pause = false
+	text = \"Reload Level\"
+"
+
 [node name="test" type="Spatial"]
 script = ExtResource( 4 )
 
@@ -184,6 +197,13 @@ margin_top = 24.0
 margin_right = 122.0
 margin_bottom = 44.0
 text = "Character Control"
+
+[node name="CharacterControl2" type="Button" parent="Control/VBoxContainer"]
+margin_top = 48.0
+margin_right = 122.0
+margin_bottom = 68.0
+text = "Reload Level"
+script = SubResource( 11 )
 
 [node name="Circuits" type="WindowDialog" parent="Control"]
 anchor_top = 0.4
