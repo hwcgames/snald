@@ -7609,7 +7609,7 @@
 // entity 148
 {
 "classname" "SnaldLight"
-"origin" "-4 705 50"
+"origin" "-4 704 54"
 "always_on" "1"
 "flicker_below" "100"
 "power" "0"
@@ -7804,4 +7804,100 @@
 "classname" "Decoration"
 "origin" "614 258 1"
 "id" "ballpit"
+}
+// entity 167
+{
+"classname" "Decoration"
+"origin" "225 817 25"
+"id" "box"
+"angle" "72"
+"rotation" "0"
+}
+// entity 168
+{
+"classname" "DecorTrainTrain"
+"origin" "-119 383 33"
+"model_name" "train1"
+"scale" "0.75"
+"speed" "2"
+"track_name" "trainroom1"
+}
+// entity 169
+{
+"classname" "DecorTrainPath"
+"origin" "-119 385 33"
+"track_name" "trainroom1"
+"index" "0.5"
+}
+// entity 170
+{
+"classname" "DecorTrainPath"
+"origin" "-107 407 33"
+"track_name" "trainroom1"
+"index" "1"
+}
+// entity 171
+{
+"classname" "DecorTrainPath"
+"origin" "-134 441 33"
+"track_name" "trainroom1"
+"index" "4"
+}
+// entity 172
+{
+"classname" "DecorTrainPath"
+"origin" "-120 463 33"
+"track_name" "trainroom1"
+"index" "5"
+}
+// entity 173
+{
+"classname" "DecorTrainTrain"
+"origin" "-144 402 73"
+"model_name" "train1"
+"scale" "0.5"
+"speed" "3"
+"track_name" "trainroom2"
+}
+// entity 174
+{
+"classname" "DecorTrainPath"
+"origin" "-105 441 33"
+"track_name" "trainroom1"
+"index" "6"
+}
+// entity 175
+{
+"classname" "DecorTrainPath"
+"origin" "-134 408 33"
+"track_name" "trainroom1"
+"index" "0"
+}
+// entity 176
+{
+"classname" "DecorTrainPath"
+"origin" "-144 396 73"
+"track_name" "trainroom2"
+"index" "0"
+}
+// entity 177
+{
+"classname" "DecorTrainPath"
+"origin" "-116 424 73"
+"track_name" "trainroom2"
+"index" "4"
+}
+// entity 178
+{
+"classname" "DecorTrainPath"
+"origin" "-144 452 73"
+"track_name" "trainroom2"
+"index" "8"
+}
+// entity 179
+{
+"classname" "DecorTrainPath"
+"origin" "-172 424 73"
+"track_name" "trainroom2"
+"index" "12"
 }

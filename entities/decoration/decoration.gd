@@ -9,6 +9,6 @@ func _ready():
 	var inst: Spatial = scene.instance();
 	for key in properties.keys():
 		inst.set_meta(key, properties[key])
-	if "rotation" in properties:
-		rotation_degrees.y = float(properties["rotation"])
+	if "angle" in properties:
+		rotation_degrees.y = float(properties["angle"])
 	add_child(inst)
