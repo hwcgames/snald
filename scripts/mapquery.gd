@@ -1,7 +1,7 @@
 extends Node
 
 func query(filter: Dictionary) -> Array:
-	var map = $"/root/gameplay/QodotMap"
+	var map = get_tree().get_nodes_in_group("map")[0]
 	if not map is QodotMap:
 		return []
 	var matches = []
