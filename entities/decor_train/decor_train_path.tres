@@ -10,7 +10,7 @@ description = ""
 qodot_internal = false
 base_classes = [  ]
 class_properties = {
-"index": 0,
+"index": 0.0,
 "track_name": "default"
 }
 class_property_descriptions = {
