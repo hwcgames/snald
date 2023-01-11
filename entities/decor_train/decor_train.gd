@@ -42,7 +42,7 @@ func _ready():
 		path.curve.add_point(curr, -handle * to_prev.length() * 1.3, handle * to_next.length() * 1.3)
 	add_child(path)
 	path.global_transform = Transform.IDENTITY
-	follower.rotation_mode = follower.ROTATION_Y
+	follower.rotation_mode = follower.ROTATION_NONE
 	follower.loop = true
 	path.add_child(follower)
 	follower.add_child(train)
