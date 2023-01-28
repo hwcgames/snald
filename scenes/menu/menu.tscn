@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scenes/menu/settings.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=2]
@@ -24,8 +24,82 @@
 [ext_resource path="res://textures/traincarta.png" type="Texture" id=22]
 [ext_resource path="res://scenes/menu/scene_button.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/menu/hide_on_web.tscn" type="PackedScene" id=24]
+[ext_resource path="res://textures/doors-fg.png" type="Texture" id=25]
+[ext_resource path="res://textures/teletubby.png" type="Texture" id=26]
+[ext_resource path="res://scenes/menu/Teletubby.gd" type="Script" id=27]
 [ext_resource path="res://cutscenes/Test.tscn" type="PackedScene" id=28]
 [ext_resource path="res://scenes/menu/cutscene_button.tscn" type="PackedScene" id=29]
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 158.968, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 416.861, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "peek"
+length = 5.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 158.968, -0.25, 0, 0.9, 48.6142, 175.819, -0.25, 0, 0.25, 0, 179.152, -0.3, 16.6667, 0.3, -23.3333, 172.486, -0.2, 27.5, 0.3, 33.3333, 162.146, -0.94, 9.50604, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.7, 2.2, 2.5, 5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 416.861, -0.25, 0, 0.25, 0, 368.18, -0.25, 0, 0.25, 0, 382.069, 0, -42.3611, 0.25, 0, 364.708, -0.25, 0, 0.38, 17.3611, 323.628, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.1, 1.6, 2.62, 5 )
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "withdraw"
+length = 5.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 162.146, -0.25, 0, 0.25, 0, 160.557, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 323.628, -0.25, 0, 0.25, 0, 420.263, -0.25, 0, 0.25, 0, 422.347, -0.25, 0, 0.6, -4.16666, 334.152, -0.04, 29.1667, 0.16, 0.694427, 341.791, -0.19, -4.86111, 0.31, 13.8889, 417.486, -0.19, -0.694427, 0.25, 0, 418.18, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.7, 2.8, 3.44, 4, 4.4, 5 )
+}
 
 [sub_resource type="GDScript" id=9]
 script/source = "extends Button
@@ -100,6 +174,32 @@ anchor_bottom = 1.0
 texture = ExtResource( 13 )
 expand = true
 stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Teletubby" type="Sprite" parent="."]
+position = Vector2( 158.968, 416.861 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 26 )
+script = ExtResource( 27 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Teletubby"]
+anims/RESET = SubResource( 10 )
+anims/peek = SubResource( 11 )
+anims/withdraw = SubResource( 12 )
+
+[node name="Timer" type="Timer" parent="Teletubby"]
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 25 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Control" parent="." instance=ExtResource( 23 )]
 anchor_right = 0.0
@@ -217,7 +317,6 @@ expand_icon = true
 script = SubResource( 8 )
 
 [node name="LevelWindow" type="WindowDialog" parent="."]
-visible = true
 margin_left = 477.0
 margin_top = 97.0
 margin_right = 617.0
