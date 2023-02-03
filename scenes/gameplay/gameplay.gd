@@ -22,6 +22,7 @@ func _ready():
 		loading_bar.remove_and_skip()
 	else:
 		$QodotMap.call_deferred("emit_signal", "build_complete")
+	EventMan.start_time = OS.get_unix_time()	
 	# Spawn characters
 	var difficulties = $"/root/EventMan".difficulties
 	for animatronic in difficulties.keys():

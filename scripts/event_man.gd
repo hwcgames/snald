@@ -38,6 +38,8 @@ onready var power_timer = Timer.new()
 onready var temperature_timer = Timer.new()
 onready var animatronic_timer = Timer.new()
 
+var start_time = 0;
+
 func _ready():
 	add_child(power_timer)
 	power_timer.wait_time = .5
@@ -76,6 +78,7 @@ func reset():
 	song = load("res://music/night_ambience.ogg")
 	time_before_start_music = 20.0
 	start_cutscene = null
+	start_time = 0
 	CVars._ready()
 
 func register(animatronic_id: String, difficulty: int):
