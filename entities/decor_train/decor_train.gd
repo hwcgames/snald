@@ -7,8 +7,10 @@ var track_name = "default"
 var model_name = "train1"
 var speed = 1.0
 var size = 1.0
+var offset = 0.0
 
 var train: Spatial
+var path: Path
 onready var follower = PathFollow.new()
 
 func _ready():
@@ -17,6 +19,7 @@ func _ready():
 	model_name = str(properties["model_name"]) if "model_name" in properties else model_name
 	speed = float(properties["speed"]) if "speed" in properties else 1.0
 	size = float(properties["scale"]) if "scale" in properties else 1.0
+	offset = float(properties["offset"]) if "offset" in properties else 0.0
 	# Load the train scene
 	var sc = load("res://eggs/trains/train_models/"+model_name+"/"+model_name+".glb")
 	train = sc.instance()
@@ -24,7 +27,7 @@ func _ready():
 	# Get all of the train landmarks
 	path_segments = MapQuery.query({"classname": "DecorTrainPath", "track_name": track_name})
 	path_segments.sort_custom(self, "cmp_segment")
-	var path = Path.new()
+	path = Path.new()
 	for segment_index in range(len(path_segments)) + [0]:
 		var segment = path_segments[segment_index];
 		var next_index = segment_index + 1
@@ -44,6 +47,7 @@ func _ready():
 	path.global_transform = Transform.IDENTITY
 	follower.rotation_mode = follower.ROTATION_NONE
 	follower.loop = true
+	follower.offset = offset
 	path.add_child(follower)
 	follower.add_child(train)
 
@@ -54,7 +58,9 @@ var last_pos = Vector3(0, 0, 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	follower.offset += delta * speed
+	follower.offset += (delta * speed)
+	if path && follower.offset > path.curve.get_baked_length():
+		follower.offset = offset
 	if train:
 		train.look_at(last_pos, Vector3.UP)
 		last_pos = train.global_transform.origin

@@ -7853,7 +7853,7 @@
 // entity 173
 {
 "classname" "DecorTrainTrain"
-"origin" "-144 402 73"
+"origin" "-140 396 73"
 "model_name" "train1"
 "scale" "0.5"
 "speed" "3"
@@ -7900,4 +7900,24 @@
 "origin" "-172 424 73"
 "track_name" "trainroom2"
 "index" "12"
+}
+// entity 180
+{
+"classname" "DecorTrainTrain"
+"origin" "-125 403 73"
+"model_name" "train1"
+"scale" "0.5"
+"speed" "3"
+"track_name" "trainroom2"
+"offset" "-0.9"
+}
+// entity 181
+{
+"classname" "DecorTrainTrain"
+"origin" "-116 418 73"
+"model_name" "train1"
+"scale" "0.5"
+"speed" "3"
+"track_name" "trainroom2"
+"offset" "-1.8"
 }
