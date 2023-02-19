@@ -125,7 +125,7 @@ func _pressed():
 	EventMan.pause = true
 	map.build_map()
 	yield(map, \"build_complete\")
-	EventMan.pause = false
+	EventMan.pause = true
 	text = \"Reload Level\"
 "
 
@@ -198,7 +198,7 @@ margin_right = 122.0
 margin_bottom = 44.0
 text = "Character Control"
 
-[node name="CharacterControl2" type="Button" parent="Control/VBoxContainer"]
+[node name="Reload" type="Button" parent="Control/VBoxContainer"]
 margin_top = 48.0
 margin_right = 122.0
 margin_bottom = 68.0

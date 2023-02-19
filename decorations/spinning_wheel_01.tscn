@@ -5,3 +5,4 @@
 [node name="spinning_wheel_01" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 3.45757, 0, 0, 0, 3.45757, 0, 0, 0, 3.45757, 0, 0, 0 )

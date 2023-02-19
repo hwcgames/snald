@@ -5,3 +5,4 @@
 [node name="brass_pan_01" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 6.36045, 0, 0, 0, 6.36045, 0, 0, 0, 6.36045, 0, -0.0880113, 0 )

@@ -5,3 +5,4 @@
 [node name="pot_enamel_01" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 6.91685, 0, 0, 0, 6.91685, 0, 0, 0, 6.91685, 0, 0, 0 )

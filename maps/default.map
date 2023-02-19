@@ -5829,6 +5829,31 @@
 ( 768 768 96 ) ( 768 768 112 ) ( 512 768 112 ) __TB_empty 0 0 0 1 1
 ( 768 408 112 ) ( 768 768 112 ) ( 768 768 96 ) __TB_empty 0 0 0 1 1
 }
+// brush 639
+{
+( 60 20 56 ) ( 48 48 56 ) ( 48 48 60 ) beam_wall_01 0 68 90 0.05 0.045
+( 60 20 60 ) ( 128 20 60 ) ( 128 20 56 ) beam_wall_01 0 0 0 0.05 0.05
+( 128 20 56 ) ( 128 48 56 ) ( 48 48 56 ) beam_wall_01 0 0 0 0.05 0.05
+( 48 48 60 ) ( 128 48 60 ) ( 128 20 60 ) beam_wall_01 0 0 0 0.05 0.05
+( 128 48 56 ) ( 128 48 60 ) ( 48 48 60 ) beam_wall_01 0 0 0 0.05 0.05
+( 128 20 60 ) ( 128 48 60 ) ( 128 48 56 ) beam_wall_01 0 0 0 0.05 0.05
+}
+// brush 640
+{
+( 64 48 40 ) ( 64 48 56 ) ( 64 28 56 ) beam_wall_01 0 0 90 0.05 0.05
+( 68 28 56 ) ( 68 48 40 ) ( 64 48 40 ) beam_wall_01 0 -76 0 0.05 0.07
+( 64 48 56 ) ( 68 48 56 ) ( 68 28 56 ) beam_wall_01 0 0 90 0.05 0.05
+( 68 48 40 ) ( 68 48 56 ) ( 64 48 56 ) beam_wall_01 0 0 90 0.05 0.05
+( 68 28 56 ) ( 68 48 56 ) ( 68 48 40 ) beam_wall_01 0 0 90 0.05 0.05
+}
+// brush 641
+{
+( 116 48 40 ) ( 116 48 56 ) ( 116 28 56 ) beam_wall_01 0 0 90 0.05 0.05
+( 120 28 56 ) ( 120 48 40 ) ( 116 48 40 ) beam_wall_01 0 -76 0 0.05 0.07
+( 116 48 56 ) ( 120 48 56 ) ( 120 28 56 ) beam_wall_01 0 0 90 0.05 0.05
+( 120 48 40 ) ( 120 48 56 ) ( 116 48 56 ) beam_wall_01 0 0 90 0.05 0.05
+( 120 28 56 ) ( 120 48 56 ) ( 120 48 40 ) beam_wall_01 0 0 90 0.05 0.05
+}
 }
 // entity 1
 {
@@ -7945,4 +7970,453 @@
 "flicker_below" "10"
 "flicker_chance" "0.01"
 "energy" ".5"
+}
+// entity 185
+{
+"classname" "Decoration"
+"origin" "-49 -113 1"
+"id" "barrel_03"
+}
+// entity 186
+{
+"classname" "Decoration"
+"origin" "-48 -112 37"
+"angle" "35"
+"id" "alarm_clock_01"
+}
+// entity 187
+{
+"classname" "Decoration"
+"origin" "106 -45 42"
+"id" "baseball_01"
+}
+// entity 188
+{
+"classname" "Decoration"
+"origin" "73 -36 40"
+"id" "bench_vice_01"
+"angle" "90"
+}
+// entity 189
+{
+"classname" "Decoration"
+"origin" "56 -52 1"
+"id" "brass_pan_01"
+"angle" "-110"
+}
+// entity 190
+{
+"classname" "Decoration"
+"origin" "74 48 77"
+"id" "cassette_player"
+"angle" "270"
+}
+// entity 191
+{
+"classname" "Decoration"
+"origin" "108 -43 66"
+"id" "carved_wooden_elephant"
+"angle" "250"
+}
+// entity 192
+{
+"classname" "Decoration"
+"origin" "95 -42 42"
+"id" "carrot_cake"
+}
+// entity 193
+{
+"classname" "Decoration"
+"origin" "78 -50 40"
+"id" "croissant"
+"angle" "60"
+}
+// entity 194
+{
+"classname" "Decoration"
+"origin" "611 181 -11"
+"scale" "5"
+"id" "food_pomegranate_01"
+}
+// entity 195
+{
+"classname" "Decoration"
+"origin" "710 182 32"
+"id" "Drill_01"
+"scale" "1"
+"angle" "135"
+}
+// entity 196
+{
+"classname" "Decoration"
+"origin" "587 81 73"
+"id" "garden_hose_wall_mounted_01"
+"angle" "90"
+}
+// entity 197
+{
+"classname" "Decoration"
+"origin" "691 316 0"
+"id" "garden_gloves_01"
+"scale" "3"
+"angle" "-70"
+}
+// entity 198
+{
+"classname" "Decoration"
+"origin" "601 377 0"
+"id" "lateral_sea_marker"
+}
+// entity 199
+{
+"classname" "Decoration"
+"origin" "570 304 14"
+"id" "Megaphone_01"
+"angle" "-90"
+}
+// entity 200
+{
+"classname" "Decoration"
+"origin" "750 370 52"
+"id" "marble_bust_01"
+"angle" "180"
+"scale" "5"
+}
+// entity 201
+{
+"classname" "Decoration"
+"origin" "616 333 95"
+"id" "SchoolChair_01"
+"scale" "-1"
+}
+// entity 202
+{
+"classname" "Decoration"
+"origin" "1006 686 32"
+"id" "pot_enamel_01"
+"angle" "-10"
+}
+// entity 203
+{
+"classname" "Decoration"
+"origin" "1006 687 55"
+"id" "ratchet_wrench"
+}
+// entity 204
+{
+"classname" "Decoration"
+"origin" "1009 640 32"
+"id" "spinning_wheel_01"
+"angle" "90"
+}
+// entity 205
+{
+"classname" "Decoration"
+"origin" "736 463 0"
+"id" "potted_plant_04"
+"scale" "3"
+}
+// entity 206
+{
+"classname" "Decoration"
+"origin" "570 653 40"
+"id" "CashRegister_01"
+"angle" "-90"
+}
+// entity 207
+{
+"classname" "Decoration"
+"origin" "588 654 40"
+"id" "CashRegister_01"
+"angle" "-110"
+}
+// entity 208
+{
+"classname" "Decoration"
+"origin" "598 637 40"
+"id" "CashRegister_01"
+"angle" "-140"
+}
+// entity 209
+{
+"classname" "Decoration"
+"origin" "598 616 40"
+"id" "CashRegister_01"
+"angle" "180"
+}
+// entity 210
+{
+"classname" "Decoration"
+"origin" "597 599 40"
+"id" "CashRegister_01"
+"angle" "180"
+}
+// entity 211
+{
+"classname" "Decoration"
+"origin" "601 586 40"
+"id" "CashRegister_01"
+"angle" "180"
+}
+// entity 212
+{
+"classname" "Decoration"
+"origin" "595 576 40"
+"id" "CashRegister_01"
+"angle" "180"
+}
+// entity 213
+{
+"classname" "Decoration"
+"origin" "599 562 40"
+"id" "CashRegister_01"
+"angle" "180"
+}
+// entity 214
+{
+"classname" "Decoration"
+"origin" "606 545 40"
+"id" "CashRegister_01"
+"angle" "180"
+}
+// entity 215
+{
+"classname" "Decoration"
+"origin" "516 650 30"
+"id" "carrot_cake"
+"angle" "90"
+}
+// entity 216
+{
+"classname" "Decoration"
+"origin" "519 645 26"
+"id" "carrot_cake"
+"angle" "80"
+}
+// entity 217
+{
+"classname" "Decoration"
+"origin" "525 638 29"
+"id" "carrot_cake"
+"angle" "80"
+}
+// entity 218
+{
+"classname" "Decoration"
+"origin" "533 642 26"
+"id" "carrot_cake"
+"angle" "90"
+}
+// entity 219
+{
+"classname" "Decoration"
+"origin" "535 642 29"
+"id" "carrot_cake"
+"angle" "110"
+}
+// entity 220
+{
+"classname" "Decoration"
+"origin" "530 638 26"
+"id" "carrot_cake"
+"angle" "110"
+}
+// entity 221
+{
+"classname" "Decoration"
+"origin" "525 646 28"
+"id" "carrot_cake"
+"angle" "90"
+}
+// entity 222
+{
+"classname" "Decoration"
+"origin" "518 650 26"
+"id" "carrot_cake"
+"angle" "90"
+}
+// entity 223
+{
+"classname" "Decoration"
+"origin" "528 653 28"
+"id" "carrot_cake"
+"angle" "90"
+}
+// entity 224
+{
+"classname" "Decoration"
+"origin" "521 647 31"
+"id" "carrot_cake"
+"angle" "90"
+}
+// entity 225
+{
+"classname" "Decoration"
+"origin" "518.036 639.938 12"
+"id" "food_lime_01"
+"angle" "330"
+}
+// entity 226
+{
+"classname" "Decoration"
+"origin" "516.072 644.536 12"
+"id" "food_lime_01"
+"angle" "350"
+}
+// entity 227
+{
+"classname" "Decoration"
+"origin" "517.036 638.206 15"
+"id" "food_lime_01"
+"angle" "350"
+}
+// entity 228
+{
+"classname" "Decoration"
+"origin" "533.572 641.866 15"
+"id" "food_lime_01"
+"angle" "320"
+}
+// entity 229
+{
+"classname" "Decoration"
+"origin" "528.5 639.866 14"
+"id" "food_lime_01"
+"angle" "330"
+}
+// entity 230
+{
+"classname" "Decoration"
+"origin" "535.062 638.768 14"
+"id" "food_lime_01"
+"angle" "330"
+}
+// entity 231
+{
+"classname" "Decoration"
+"origin" "534.366 643.83 17"
+"id" "food_lime_01"
+"angle" "330"
+}
+// entity 232
+{
+"classname" "Decoration"
+"origin" "524.464 640.66 16"
+"id" "food_lime_01"
+"angle" "330"
+}
+// entity 233
+{
+"classname" "Decoration"
+"origin" "532.464 648.928 12"
+"id" "food_lime_01"
+"angle" "330"
+}
+// entity 234
+{
+"classname" "Decoration"
+"origin" "521.634 643.562 12"
+"id" "food_lime_01"
+"angle" "320"
+}
+// entity 235
+{
+"classname" "Decoration"
+"origin" "529.036 631.938 0"
+"id" "potted_plant_04"
+"angle" "30"
+"scale" "0.5"
+}
+// entity 236
+{
+"classname" "Decoration"
+"origin" "522.072 631.536 0"
+"id" "potted_plant_04"
+"angle" "50"
+"scale" "0.5"
+}
+// entity 237
+{
+"classname" "Decoration"
+"origin" "538.036 632.206 0"
+"id" "potted_plant_04"
+"angle" "50"
+"scale" "0.5"
+}
+// entity 238
+{
+"classname" "Decoration"
+"origin" "516.572 635.866 0"
+"id" "potted_plant_04"
+"angle" "20"
+"scale" "0.5"
+}
+// entity 239
+{
+"classname" "Decoration"
+"origin" "524.5 637.866 0"
+"id" "potted_plant_04"
+"angle" "30"
+"scale" "0.5"
+}
+// entity 240
+{
+"classname" "Decoration"
+"origin" "539.062 640.768 0"
+"id" "potted_plant_04"
+"angle" "30"
+"scale" "0.5"
+}
+// entity 241
+{
+"classname" "Decoration"
+"origin" "522.366 641.83 0"
+"id" "potted_plant_04"
+"angle" "30"
+"scale" "0.5"
+}
+// entity 242
+{
+"classname" "Decoration"
+"origin" "534.464 638.66 0"
+"id" "potted_plant_04"
+"angle" "30"
+"scale" "0.5"
+}
+// entity 243
+{
+"classname" "Decoration"
+"origin" "527.464 642.928 0"
+"id" "potted_plant_04"
+"angle" "30"
+"scale" "0.5"
+}
+// entity 244
+{
+"classname" "Decoration"
+"origin" "517.634 641.562 0"
+"id" "potted_plant_04"
+"angle" "20"
+"scale" "0.5"
+}
+// entity 245
+{
+"classname" "Decoration"
+"origin" "585 644 0"
+"id" "Television_01"
+"angle" "225"
+}
+// entity 246
+{
+"classname" "Decoration"
+"origin" "555 644 0"
+"id" "Television_01"
+"angle" "270"
+}
+// entity 247
+{
+"classname" "Decoration"
+"origin" "591 616 0"
+"id" "Television_01"
+"angle" "195"
 }

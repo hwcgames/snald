@@ -5,3 +5,4 @@
 [node name="garden_gloves_01" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 5.46875, 0, 0, 0, 5.46875, 0, 0, 0, 5.46875, 0, 0, 0 )

@@ -11,4 +11,7 @@ func _ready():
 		inst.set_meta(key, properties[key])
 	if "angle" in properties:
 		rotation_degrees.y = float(properties["angle"])
+		
+	if "scale" in properties:
+		scale *= float(properties["scale"])
 	add_child(inst)

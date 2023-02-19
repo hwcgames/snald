@@ -5,3 +5,4 @@
 [node name="Drill_01" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 6.18537, 0, 0, 0, 6.18537, 0, 0, 0, 6.18537, 0, 0, 0 )

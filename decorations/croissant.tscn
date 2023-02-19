@@ -5,3 +5,4 @@
 [node name="croissant" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 3.51106, 0, 0, 0, 3.51106, 0, 0, 0, 3.51106, 0, -0.011486, 0 )

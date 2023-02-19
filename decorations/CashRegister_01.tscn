@@ -5,3 +5,4 @@
 [node name="CashRegister_01" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 2.00282, 0, 0, 0, 2.00282, 0, 0, 0, 2.00282, 0, 0, 0 )

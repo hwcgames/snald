@@ -5,3 +5,4 @@
 [node name="carrot_cake" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 2.56194, 0, 0, 0, 2.56194, 0, 0, 0, 2.56194, 0, -0.00339182, 0 )

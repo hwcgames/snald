@@ -5,3 +5,4 @@
 [node name="food_lime_01" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 7.55246, 0, 0, 0, 7.55246, 0, 0, 0, 7.55246, 0, 0, 0 )

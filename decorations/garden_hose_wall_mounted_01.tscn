@@ -5,3 +5,4 @@
 [node name="garden_hose_wall_mounted_01" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 3.92265, 0, 0, 0, 3.92265, 0, 0, 0, 3.92265, 0, 0, 0 )

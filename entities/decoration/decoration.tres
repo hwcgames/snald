@@ -11,14 +11,15 @@ description = ""
 qodot_internal = false
 base_classes = [  ]
 class_properties = {
+"angle": 0.0,
 "id": "default",
-"angle": 0.0
+"scale": 1.0
 }
 class_property_descriptions = {
 }
 meta_properties = {
 "color": Color( 0.898039, 1, 0, 1 ),
-"size": AABB( -1, -1, -1, 1, 1, 1 )
+"size": AABB( -1, -1, 0, 1, 1, 1 )
 }
 node_options = "----------------------------------------------------------------"
 node_class = "Spatial"

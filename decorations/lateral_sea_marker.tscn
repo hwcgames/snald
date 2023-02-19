@@ -5,3 +5,4 @@
 [node name="lateral_sea_marker" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.689181, 0, 0, 0, 0.689181, 0, 0, 0, 0.689181, 0, 0, 0 )

@@ -3,5 +3,7 @@
 [ext_resource path="res://decorations/brass_diya_lantern/model.gltf" type="PackedScene" id=1]
 
 [node name="brass_diya_lantern" type="Spatial"]
+transform = Transform( 3.98167, 0, 0, 0, 3.98167, 0, 0, 0, 3.98167, 0, 0, 0 )
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.382798, 0 )

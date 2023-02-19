@@ -5,3 +5,4 @@
 [node name="Television_01" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 2.48982, 0, 0, 0, 2.48982, 0, 0, 0, 2.48982, 0, 0, 0 )

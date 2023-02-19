@@ -3,5 +3,6 @@
 [ext_resource path="res://decorations/alarm_clock_01/model.gltf" type="PackedScene" id=1]
 
 [node name="alarm_clock_01" type="Spatial"]
+transform = Transform( 4.76114, 0, 0, 0, 4.76114, 0, 0, 0, 4.76114, 0, 0, 0 )
 
 [node name="model" parent="." instance=ExtResource( 1 )]

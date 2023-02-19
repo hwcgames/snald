@@ -5,3 +5,4 @@
 [node name="bench_vice_01" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 2.12, 0, 0, 0, 2.12, 0, 0, 0, 2.12, 0, 0, 0 )

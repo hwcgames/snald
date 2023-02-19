@@ -5,3 +5,4 @@
 [node name="Megaphone_01" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 3.91837, 0, 0, 0, 3.91837, 0, 0, 0, 3.91837, 0, 0.305324, 0 )

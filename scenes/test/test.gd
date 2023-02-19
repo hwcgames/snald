@@ -28,6 +28,7 @@ func _ready():
 	# Enable cheats when running in the editor
 	if OS.is_debug_build():
 		EventMan.circuit_on("cheater")
+	EventMan.pause = true
 	# Write all save flags as circuits
 	for key in PersistMan.persistent_dict.keys():
 		var val = PersistMan.persistent_dict[key]

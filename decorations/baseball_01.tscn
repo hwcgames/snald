@@ -5,3 +5,4 @@
 [node name="baseball_01" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 4.14076, 0, 0, 0, 4.14076, 0, 0, 0, 4.14076, 0, 0.153734, 0 )

@@ -5,3 +5,4 @@
 [node name="barrel_03" type="Spatial"]
 
 [node name="model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 2.47577, 0, 0, 0, 2.47577, 0, 0, 0, 2.47577, 0, 0, 0 )
