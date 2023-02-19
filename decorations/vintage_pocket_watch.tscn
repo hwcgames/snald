@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://decorations/vintage_pocket_watch/model.gltf" type="PackedScene" id=1]
+
+[node name="vintage_pocket_watch" type="Spatial"]
+
+[node name="model" parent="." instance=ExtResource( 1 )]

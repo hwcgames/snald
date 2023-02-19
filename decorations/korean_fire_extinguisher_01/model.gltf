@@ -1,0 +1,384 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.4.50",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "korean_fire_extinguisher_01"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "korean_fire_extinguisher_01_body",
+            "normalTexture" : {
+                "index" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 2
+                }
+            }
+        },
+        {
+            "alphaMode" : "BLEND",
+            "doubleSided" : true,
+            "name" : "korean_fire_extinguisher_01_glass",
+            "normalTexture" : {
+                "index" : 3
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    1,
+                    1,
+                    1,
+                    0.30000001192092896
+                ],
+                "baseColorTexture" : {
+                    "index" : 4
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 5
+                }
+            }
+        },
+        {
+            "alphaMode" : "BLEND",
+            "name" : "korean_fire_extinguisher_01_paper",
+            "normalTexture" : {
+                "index" : 6
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 7
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 8
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "02_low",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "TEXCOORD_0" : 1,
+                        "NORMAL" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "TEXCOORD_0" : 5,
+                        "NORMAL" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "TEXCOORD_0" : 9,
+                        "NORMAL" : 10
+                    },
+                    "indices" : 11,
+                    "material" : 2
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        },
+        {
+            "sampler" : 0,
+            "source" : 3
+        },
+        {
+            "sampler" : 0,
+            "source" : 4
+        },
+        {
+            "sampler" : 0,
+            "source" : 5
+        },
+        {
+            "sampler" : 0,
+            "source" : 6
+        },
+        {
+            "sampler" : 0,
+            "source" : 7
+        },
+        {
+            "sampler" : 0,
+            "source" : 8
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "korean_fire_extinguisher_01_body_nor_gl_1k",
+            "uri" : "korean_fire_extinguisher_01_body_nor_gl_1k.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "korean_fire_extinguisher_01_body_diff_1k",
+            "uri" : "korean_fire_extinguisher_01_body_diff_1k.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "korean_fire_extinguisher_01_body_metal.png-korean_fire_extinguisher_01_body_rough.png",
+            "uri" : "korean_fire_extinguisher_01_body_metal_png-korean_fire_extinguisher_01_body_rough_png.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "korean_fire_extinguisher_01_glass_nor_gl_1k",
+            "uri" : "korean_fire_extinguisher_01_glass_nor_gl_1k.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "korean_fire_extinguisher_01_glass_diff_1k",
+            "uri" : "korean_fire_extinguisher_01_glass_diff_1k.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "korean_fire_extinguisher_01_glass_metal-korean_fire_extinguisher_01_glass_rough",
+            "uri" : "korean_fire_extinguisher_01_glass_metal-korean_fire_extinguisher_01_glass_rough.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "korean_fire_extinguisher_01_paper_nor_gl_1k",
+            "uri" : "korean_fire_extinguisher_01_paper_nor_gl_1k.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "korean_fire_extinguisher_01_paper_diff-korean_fire_extinguisher_01_paper_opacity",
+            "uri" : "korean_fire_extinguisher_01_paper_diff-korean_fire_extinguisher_01_paper_opacity.png"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "korean_fire_extinguisher_01_paper_metal-korean_fire_extinguisher_01_paper_rough",
+            "uri" : "korean_fire_extinguisher_01_paper_metal-korean_fire_extinguisher_01_paper_rough.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 3452,
+            "max" : [
+                0.13949598371982574,
+                0.6590997576713562,
+                0.24420279264450073
+            ],
+            "min" : [
+                -0.13949596881866455,
+                -3.978568940965488e-08,
+                -0.12324045598506927
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 3452,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 3452,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 13323,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 140,
+            "max" : [
+                0.021115895360708237,
+                0.5971118211746216,
+                0.07201548665761948
+            ],
+            "min" : [
+                -0.02108774706721306,
+                0.5549080967903137,
+                0.06598098576068878
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 140,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 140,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 468,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 8,
+            "max" : [
+                -0.0016376094426959753,
+                0.5321212410926819,
+                0.007371075451374054
+            ],
+            "min" : [
+                -0.08279979974031448,
+                0.47684013843536377,
+                -0.07724466919898987
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 8,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 8,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5123,
+            "count" : 12,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 41424,
+            "byteOffset" : 0,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 27616,
+            "byteOffset" : 41424,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 41424,
+            "byteOffset" : 69040,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 26646,
+            "byteOffset" : 110464,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1680,
+            "byteOffset" : 137112,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1120,
+            "byteOffset" : 138792,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1680,
+            "byteOffset" : 139912,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 936,
+            "byteOffset" : 141592,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 96,
+            "byteOffset" : 142528,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 64,
+            "byteOffset" : 142624,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 96,
+            "byteOffset" : 142688,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 24,
+            "byteOffset" : 142784,
+            "target" : 34963
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 142808,
+            "uri" : "model.bin"
+        }
+    ]
+}

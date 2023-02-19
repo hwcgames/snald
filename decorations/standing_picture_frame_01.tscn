@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://decorations/standing_picture_frame_01/model.gltf" type="PackedScene" id=1]
+
+[node name="standing_picture_frame_01" type="Spatial"]
+
+[node name="model" parent="." instance=ExtResource( 1 )]
