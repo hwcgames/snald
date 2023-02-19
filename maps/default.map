@@ -7924,7 +7924,7 @@
 // entity 182
 {
 "classname" "Decoration"
-"origin" "-64 -79 47"
+"origin" "-63 -79 47"
 "id" "poster"
 "circuit" "looking_at_poster"
 }
