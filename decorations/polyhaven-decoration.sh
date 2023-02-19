@@ -26,3 +26,5 @@ if [ ! -f $(realpath $(dirname $0))/$DECORNAME.tscn ]; then
 	cat $(realpath $(dirname $0))/phmodel.tscn.template | sed s/NAME/$DECORNAME/g > $(realpath $(dirname $0))/$DECORNAME.tscn
 fi
 for i in $OUTFILE/*.jpg; do magick $i -resize 10% -quality 60% $i; done
+for i in $OUTFILE/*.png; do magick $i -resize 10% -quality 60% $i; done
+for i in $OUTFILE/*.exr; do magick $i -resize 10% -quality 60% $i; done

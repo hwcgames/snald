@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/Lantern_01_brass_metallic-Lantern_01_brass_roughness.jpg-a3c8cb2d9cf8171c8e938cbdd341fd4b.s3tc.stex"
+path.etc2="res://.import/Lantern_01_brass_metallic-Lantern_01_brass_roughness.jpg-a3c8cb2d9cf8171c8e938cbdd341fd4b.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://decorations/Lantern_01/Lantern_01_brass_metallic-Lantern_01_brass_roughness.jpg"
+dest_files=[ "res://.import/Lantern_01_brass_metallic-Lantern_01_brass_roughness.jpg-a3c8cb2d9cf8171c8e938cbdd341fd4b.s3tc.stex", "res://.import/Lantern_01_brass_metallic-Lantern_01_brass_roughness.jpg-a3c8cb2d9cf8171c8e938cbdd341fd4b.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.3
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
