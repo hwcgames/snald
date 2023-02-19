@@ -7921,3 +7921,28 @@
 "track_name" "trainroom2"
 "offset" "-1.8"
 }
+// entity 182
+{
+"classname" "Decoration"
+"origin" "-64 -79 47"
+"id" "poster"
+"circuit" "looking_at_poster"
+}
+// entity 183
+{
+"classname" "LookDetector"
+"origin" "-63 -79 63"
+"circuit" "looking_at_poster"
+"threshold" "0.18"
+}
+// entity 184
+{
+"classname" "SnaldLight"
+"origin" "-59 -79 78"
+"radius" "4"
+"always_on" "1"
+"power" "0"
+"flicker_below" "10"
+"flicker_chance" "0.01"
+"energy" ".5"
+}
