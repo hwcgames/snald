@@ -1,0 +1,160 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.4.50",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "wicker_basket_01"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "wicker_basket_01",
+            "normalTexture" : {
+                "index" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1
+                },
+                "metallicFactor" : 0,
+                "metallicRoughnessTexture" : {
+                    "index" : 2
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Vert.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "TEXCOORD_0" : 1,
+                        "NORMAL" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "wicker_basket_01_nor_gl",
+            "uri" : "wicker_basket_01_nor_gl.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "wicker_basket_01_diff_1k",
+            "uri" : "wicker_basket_01_diff_1k.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "wicker_basket_01_rough",
+            "uri" : "wicker_basket_01_rough.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 7447,
+            "max" : [
+                0.19134199619293213,
+                0.11649076640605927,
+                0.14707215130329132
+            ],
+            "min" : [
+                -0.19188226759433746,
+                -0.0009166551753878593,
+                -0.14794304966926575
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 7447,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 7447,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 29094,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 89364,
+            "byteOffset" : 0,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 59576,
+            "byteOffset" : 89364,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 89364,
+            "byteOffset" : 148940,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 58188,
+            "byteOffset" : 238304,
+            "target" : 34963
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 296492,
+            "uri" : "model.bin"
+        }
+    ]
+}

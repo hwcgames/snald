@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://decorations/seeding_tray_01/model.gltf" type="PackedScene" id=1]
+
+[node name="seeding_tray_01" type="Spatial"]
+
+[node name="model" parent="." instance=ExtResource( 1 )]

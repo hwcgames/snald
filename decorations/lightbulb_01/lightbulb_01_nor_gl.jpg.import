@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/lightbulb_01_nor_gl.jpg-a2a0102ab532f6d1b63bd1e08484694e.s3tc.stex"
+path.etc2="res://.import/lightbulb_01_nor_gl.jpg-a2a0102ab532f6d1b63bd1e08484694e.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://decorations/lightbulb_01/lightbulb_01_nor_gl.jpg"
+dest_files=[ "res://.import/lightbulb_01_nor_gl.jpg-a2a0102ab532f6d1b63bd1e08484694e.s3tc.stex", "res://.import/lightbulb_01_nor_gl.jpg-a2a0102ab532f6d1b63bd1e08484694e.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.3
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=1
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

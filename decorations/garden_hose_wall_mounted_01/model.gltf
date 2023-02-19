@@ -1,0 +1,241 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.4.50",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "garden_hose_wall_bracket"
+        },
+        {
+            "mesh" : 1,
+            "name" : "garden_hose",
+            "translation" : [
+                -0.013036099262535572,
+                -0.05608365684747696,
+                0.06431593745946884
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "garden_hose_wall_mounted_01",
+            "normalTexture" : {
+                "index" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 2
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Plane.005",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "TEXCOORD_0" : 1,
+                        "NORMAL" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cable.002",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "TEXCOORD_0" : 5,
+                        "NORMAL" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "garden_hose_wall_mounted_01_nor_gl",
+            "uri" : "garden_hose_wall_mounted_01_nor_gl.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "garden_hose_wall_mounted_01_diff_1k",
+            "uri" : "garden_hose_wall_mounted_01_diff_1k.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "garden_hose_wall_mounted_01_metal-garden_hose_wall_mounted_01_rough",
+            "uri" : "garden_hose_wall_mounted_01_metal-garden_hose_wall_mounted_01_rough.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 356,
+            "max" : [
+                0.0170611385256052,
+                0.1718122363090515,
+                0.24452096223831177
+            ],
+            "min" : [
+                -0.01706114038825035,
+                -0.020800409838557243,
+                -0.00578818004578352
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 356,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 356,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 966,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 6859,
+            "max" : [
+                0.24543419480323792,
+                0.31135961413383484,
+                0.17619623243808746
+            ],
+            "min" : [
+                -0.22129417955875397,
+                -0.24564228951931,
+                -0.06708825379610062
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 6859,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 6859,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 34020,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 4272,
+            "byteOffset" : 0,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2848,
+            "byteOffset" : 4272,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4272,
+            "byteOffset" : 7120,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1932,
+            "byteOffset" : 11392,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 82308,
+            "byteOffset" : 13324,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 54872,
+            "byteOffset" : 95632,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 82308,
+            "byteOffset" : 150504,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 68040,
+            "byteOffset" : 232812,
+            "target" : 34963
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 300852,
+            "uri" : "model.bin"
+        }
+    ]
+}

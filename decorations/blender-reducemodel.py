@@ -13,9 +13,8 @@ modifier.angle_limit = 0.349
 for texture in bpy.data.textures:
 	if texture.is_embedded_data or not texture is bpy.types.ImageTexture:
 		continue
-	if not texture.filepath.endswith("exr"):
-		continue
-	texture.image.filepath = texture.filepath.replace(".exr", ".jpg")
+	# texture.image.filepath = texture.filepath.replace(".exr", ".jpg")
+	# texture.image.filepath = texture.filepath.replace(".png", ".jpg")
 	
 
 bpy.ops.export_scene.gltf(

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://decorations/tire_pump/model.gltf" type="PackedScene" id=1]
+
+[node name="tire_pump" type="Spatial"]
+
+[node name="model" parent="." instance=ExtResource( 1 )]

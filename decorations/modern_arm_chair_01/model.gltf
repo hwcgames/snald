@@ -1,0 +1,268 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.4.50",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "blend_export.001",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "modern_arm_chair_01"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "modern_arm_chair_01_legs",
+            "normalTexture" : {
+                "index" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 2
+                }
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "modern_arm_chair_01_pillow",
+            "normalTexture" : {
+                "index" : 3
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 4
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 5
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.007",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "TEXCOORD_0" : 1,
+                        "NORMAL" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "TEXCOORD_0" : 5,
+                        "NORMAL" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        },
+        {
+            "sampler" : 0,
+            "source" : 3
+        },
+        {
+            "sampler" : 0,
+            "source" : 4
+        },
+        {
+            "sampler" : 0,
+            "source" : 5
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "modern_arm_chair_01_legs_nor_gl_1k",
+            "uri" : "modern_arm_chair_01_legs_nor_gl_1k.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "modern_arm_chair_01_legs_diff_1k",
+            "uri" : "modern_arm_chair_01_legs_diff_1k.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "modern_arm_chair_01_legs_metal-modern_arm_chair_01_legs_rough",
+            "uri" : "modern_arm_chair_01_legs_metal-modern_arm_chair_01_legs_rough.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "modern_arm_chair_01_pillow_nor_gl_1k",
+            "uri" : "modern_arm_chair_01_pillow_nor_gl_1k.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "modern_arm_chair_01_pillow_diff_1k",
+            "uri" : "modern_arm_chair_01_pillow_diff_1k.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "modern_arm_chair_01_pillow_metal-modern_arm_chair_01_pillow_rough",
+            "uri" : "modern_arm_chair_01_pillow_metal-modern_arm_chair_01_pillow_rough.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 971,
+            "max" : [
+                0.4128301441669464,
+                0.8698092699050903,
+                0.41110995411872864
+            ],
+            "min" : [
+                -0.40610313415527344,
+                0.000725900346878916,
+                -0.56038498878479
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 971,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 971,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 2568,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 218,
+            "max" : [
+                0.35764873027801514,
+                1.0232336521148682,
+                0.3840439021587372
+            ],
+            "min" : [
+                -0.3537101149559021,
+                0.35492751002311707,
+                -0.5587284564971924
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 218,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 218,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 762,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 11652,
+            "byteOffset" : 0,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7768,
+            "byteOffset" : 11652,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 11652,
+            "byteOffset" : 19420,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5136,
+            "byteOffset" : 31072,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2616,
+            "byteOffset" : 36208,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1744,
+            "byteOffset" : 38824,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2616,
+            "byteOffset" : 40568,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1524,
+            "byteOffset" : 43184,
+            "target" : 34963
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 44708,
+            "uri" : "model.bin"
+        }
+    ]
+}
