@@ -82,9 +82,10 @@ jobs:
           path: build/windows
       - name: "Create zips"
         run: |
-          cd build && zip -r9 windows.zip build/windows
-          cd build && zip -r9 mac.zip build/mac
-          cd build && zip -r9 linux.zip build/linux
+          cd build
+          zip -r9 windows.zip windows
+          zip -r9 mac.zip mac
+          zip -r9 linux.zip linux
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "build/windows.zip,build/mac.zip,build/linux.zip"
