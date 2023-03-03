@@ -21,6 +21,7 @@ var _a = false
 var _d = false
 var _q = false
 var _e = false
+var _spc = false
 
 func _input(event):
 	# Receives mouse motion
@@ -64,12 +65,18 @@ func _input(event):
 				_q = event.pressed
 			KEY_E:
 				_e = event.pressed
+			KEY_SPACE:
+				_spc = event.pressed
 
 # Updates mouselook and movement every frame
 func _process(delta):
 	if !current:
 		current = true
 	_update_movement(delta)
+	# Set light
+	if _spc:
+		$SpotLight.visible = !$SpotLight.visible
+	_spc = false;
 
 # Updates camera movement
 func _update_movement(delta):

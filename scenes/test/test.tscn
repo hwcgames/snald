@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/test/camera.gd" type="Script" id=1]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=2]
@@ -129,12 +129,27 @@ func _pressed():
 	text = \"Reload Level\"
 "
 
+[sub_resource type="Environment" id=12]
+background_energy = 0.0
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.0
+ambient_light_sky_contribution = 0.0
+fog_enabled = true
+fog_color = Color( 0, 0, 0, 1 )
+fog_sun_color = Color( 0, 0, 0, 1 )
+fog_depth_begin = 0.0
+fog_depth_end = 30.0
+glow_bloom = 1.0
+
 [node name="test" type="Spatial"]
 script = ExtResource( 4 )
 
 [node name="Camera" type="Camera" parent="."]
 script = ExtResource( 1 )
 sensitivity = 0.25
+
+[node name="SpotLight" type="SpotLight" parent="Camera"]
+spot_range = 4096.0
 
 [node name="QodotMap" type="Spatial" parent="." groups=["map"]]
 script = ExtResource( 2 )
@@ -286,6 +301,9 @@ text = "Goto"
 
 [node name="CompletionTimer" type="Timer" parent="."]
 wait_time = 60.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 12 )
 
 [connection signal="pressed" from="Control/VBoxContainer/CircuitControl" to="Control/Circuits" method="show"]
 [connection signal="pressed" from="Control/VBoxContainer/CharacterControl" to="Control/CharacterControl" method="show"]
