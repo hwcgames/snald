@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://decorations/ferris/ferris.glb" type="PackedScene" id=1]
+
+[node name="ferris" type="Spatial"]
+
+[node name="ferris" parent="." instance=ExtResource( 1 )]
