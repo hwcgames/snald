@@ -48,6 +48,7 @@ jobs:
       - name: Build MDBook
         run: |
           cargo install mdbook-admonish
+          cd book
           mdbook-admonish install .
           mdbook build
       - name: Upload Artifact
