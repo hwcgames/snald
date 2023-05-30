@@ -12,6 +12,10 @@ func win_cmd():
 		return
 	EventMan.completed()
 
+const quick_reset_help = "Resets the game's state without reloading the map."
+func quick_reset_cmd():
+	EventMan.quick_reset()
+
 const cheater_cheater_pumpkin_eater_help = "With great power comes great responsibility... (Enables cheats.)"
 func cheater_cheater_pumpkin_eater_cmd():
 	PersistMan.set_flag("cheater", true)

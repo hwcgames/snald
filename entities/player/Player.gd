@@ -10,6 +10,7 @@ var turn_speed = 30
 var primary_label = "Z/A"
 var secondary_label = "X/B"
 export var DEBUG = false
+var dead
 
 func _ready():
 	add_to_group("player")
@@ -28,6 +29,13 @@ func _ready():
 	add_child(camera)
 	print("Setting up jumpscare handler")
 	_err = $"/root/EventMan".connect("jumpscare", self, "jumpscare")
+	EventMan.connect("reset", self, "reset")
+
+func reset():
+	rotation_degrees.y = properties["angle"]
+	turn_speed = float(properties["speed"] if "speed" in properties else turn_speed)
+	$Camera.transform.origin = Vector3.ZERO
+
 func temperature_tick():
 	if $"/root/EventMan".temperature <= CVars.get_float("player_slow_threshold"):
 		turn_speed = 60 - (50 - $"/root/EventMan".temperature)
@@ -95,11 +103,22 @@ func jumpscare(character: String, scene: String):
 	var kill_player = jumpscare.kill_player
 	path = "res://jumpscares/"+character+"/"+scene+"_dead.tscn"
 	remove_visitor(jumpscare)
+	# Load the jumpscare scene
+#	if kill_player:
+#		if file.file_exists(path):
+#			var _err = get_tree().change_scene(path)
+#		else:
+#			var _err = get_tree().change_scene("res://jumpscares/dummy/dummy_dead.tscn")
 	if kill_player:
+		var dead_scene: PackedScene
 		if file.file_exists(path):
-			var _err = get_tree().change_scene(path)
+			dead_scene = load(path)
 		else:
-			var _err = get_tree().change_scene("res://jumpscares/dummy/dummy_dead.tscn")
+			dead_scene = load("res://jumpscares/dummy/dummy_dead.tscn")
+		get_tree().paused = true
+		dead = dead_scene.instance()
+		add_child(dead)
+		dead.connect("finished", self, "dead_screen_finished")
 
 func remove_visitor(n: Node):
 	for i in n.get_children():
@@ -171,3 +190,11 @@ func process_buttons():
 	if last_secondary_on is QodotEntity and last_secondary_on != secondary_node:
 		$"/root/EventMan".circuit_off(last_secondary_on.properties["circuit"])
 		last_secondary_on = null
+
+func dead_screen_finished(exit: bool):
+	get_tree().paused = false
+	remove_visitor(dead)
+	if exit:
+		EventMan.return_to_title()
+	else:
+		EventMan.quick_reset()

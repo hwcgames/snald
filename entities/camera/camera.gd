@@ -23,6 +23,10 @@ func _ready():
 	camera = $Camera
 	remove_child(camera)
 	$Viewport.add_child(camera)
+	reset()
+	EventMan.connect("reset", self, "reset")
+
+func reset():
 	camera = $"Viewport/Camera"
 	rotation_degrees.x = properties["elevation"] if "elevation" in properties else -20
 	angle = 180 + properties["angle"] if "angle" in properties else 0
@@ -33,7 +37,6 @@ func _ready():
 		max_angle = properties["max_angle"]
 	manual = (properties["rotates_manually"] == 1) if "rotates_manually" in properties else false
 	camera.global_transform = global_transform
-	pass # Replace with function body.
 
 var movement_dir = 1.0
 

@@ -9,7 +9,15 @@ func _ready():
 	var _drop = EventMan.connect("on", self, "on")
 	yield(get_parent(), "build_complete")
 	rotation_degrees.y = float(properties["angle"])
+	EventMan.connect("reset", self, "reset")
 	pass # Replace with function body.
+
+func reset():
+	while len(batteries) > 0:
+		var b: Node = batteries.pop_front()
+		if not b:
+			return
+		remove_visitor(b)
 
 func on(circuit: String):
 	if circuit == "give_battery":

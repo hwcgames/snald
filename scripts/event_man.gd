@@ -14,6 +14,7 @@ signal jumpscare(character, scene)
 signal animatronic_tick
 signal power_tick
 signal temperature_tick
+signal reset
 
 signal push_camera_pad(state)
 signal push_camera_selection(id)
@@ -33,6 +34,7 @@ export var pause = false
 export var song: AudioStream = preload("res://music/night_ambience.ogg")
 export var time_before_start_music = 20.0
 export var start_cutscene: PackedScene
+var night_config
 
 onready var power_timer = Timer.new()
 onready var temperature_timer = Timer.new()
@@ -151,6 +153,17 @@ func return_to_title():
 	reset()
 	var _err = get_tree().change_scene("res://scenes/menu/menu.tscn")
 
+func quick_reset():
+	reset()
+	night_config.instance().apply()
+	for character in difficulties.keys():
+		push_state(character, 0)
+	push_camera_pad(false)
+	for circuit_id in circuit_states.keys():
+		if not circuit_id.begins_with("__"):
+			circuit_off(circuit_id)
+	emit_signal("reset")
+	
 func completed():
 	$"/root/PersistMan".set_flag(completion_flag, true)
 	$"/root/PersistMan".save_game()

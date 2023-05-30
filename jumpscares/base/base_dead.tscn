@@ -1,16 +1,36 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends VBoxContainer
+
+signal finished(exit)
+"
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Button
 
 func _pressed():
-	$\"/root/EventMan\".return_to_title()
+	$\"../\".emit_signal(\"finished\", true)
+"
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Button
+
+func _unhandled_key_input(event):
+	if event is InputEventKey:
+		if event.scancode == KEY_R:
+			_pressed()
+
+func _pressed():
+	$\"../../../\".emit_signal(\"finished\", false)
 "
 
 [node name="Dead" type="VBoxContainer"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
+script = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -36,6 +56,22 @@ script = SubResource( 1 )
 [node name="Timer" type="Timer" parent="Button"]
 wait_time = 5.0
 autostart = true
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Control" type="MarginContainer" parent="Node"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Node/Control"]
+margin_right = 109.0
+margin_bottom = 20.0
+text = "Quick Reset (R)"
+script = SubResource( 2 )
 
 [connection signal="pressed" from="Button" to="Button" method="_pressed"]
 [connection signal="ready" from="Button" to="Button" method="hide"]

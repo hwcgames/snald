@@ -33,6 +33,10 @@ func _ready():
 	$OmniLight.omni_range = properties["radius"] if "radius" in properties else 16
 	set_process(true)
 	call_deferred("set_process", true)
+	EventMan.connect("reset", self, "reset")
+
+func reset():
+	depleted = false
 
 var lit = false
 

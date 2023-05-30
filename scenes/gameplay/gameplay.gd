@@ -7,7 +7,7 @@ func _ready():
 	if Engine.editor_hint:
 		return
 	randomize()
-	if not LevelLoader.prebuilt:
+	if not (LevelLoader.prebuilt or EventMan.circuit("__reloading")):
 		build(LevelLoader.map)
 		# Loading screen
 		EventMan.pause = true
@@ -22,7 +22,6 @@ func _ready():
 		loading_bar.remove_and_skip()
 	else:
 		$QodotMap.call_deferred("emit_signal", "build_complete")
-	EventMan.start_time = OS.get_unix_time()	
 	# Spawn characters
 	var difficulties = $"/root/EventMan".difficulties
 	for animatronic in difficulties.keys():
@@ -33,6 +32,11 @@ func _ready():
 	# Enable cheats when running in the editor
 	if OS.is_debug_build():
 		EventMan.circuit_on("cheater")
+	reset()
+	EventMan.connect("reset", self, "reset")
+
+func reset():
+	EventMan.start_time = OS.get_unix_time()
 	# Start the cutscene if it exists
 	if EventMan.start_cutscene:
 		CutsceneMan.start_cutscene(EventMan.start_cutscene)
@@ -47,8 +51,8 @@ func _ready():
 	# Set up music start timer
 	$MusicStarter.wait_time = EventMan.time_before_start_music
 	$MusicStarter.start()
-	yield($MusicStarter, "timeout")
 	$AudioStreamPlayer.stop()
+	yield($MusicStarter, "timeout")
 	$AudioStreamPlayer.stream = EventMan.song
 	$AudioStreamPlayer.play()
 
@@ -62,6 +66,11 @@ func spawn_animatronic(animatronic):
 		instance.add_to_group("animatronics")
 	else:
 		print("Tried to load an animatronic ", animatronic, " which does not exist.")
+
+func node_owner_visitor(node: Node):
+	node.owner = self
+	for child in node.get_children():
+		node_owner_visitor(child)
 
 func completed_build():
 	return

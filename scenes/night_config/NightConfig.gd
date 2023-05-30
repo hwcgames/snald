@@ -19,8 +19,7 @@ export var cvar_floats: Dictionary = Dictionary()
 export var cvar_bools: Dictionary = Dictionary()
 export var test_mode = false
 
-func run():
-	EventMan.reset()
+func apply():
 	EventMan.difficulties = difficulties
 	EventMan.passive_power = passive_power
 	EventMan.passive_temperature = passive_temperature
@@ -32,7 +31,6 @@ func run():
 	EventMan.song = song
 	EventMan.time_before_start_music = time_before_start_music
 	EventMan.start_cutscene = start_cutscene
-	
 	# Write cvars
 	for key in cvar_ints.keys():
 		CVars.set_int(key, cvar_ints[key])
@@ -40,7 +38,12 @@ func run():
 		CVars.set_float(key, cvar_floats[key])
 	for key in cvar_bools.keys():
 		CVars.set_bool(key, cvar_bools[key])
-	
+	EventMan.night_config = PackedScene.new()
+	EventMan.night_config.pack(self)
+
+func run():
+	EventMan.reset()
+	apply()
 	LevelLoader.load_level(map_path, test_mode)
 
 func set_map(map):

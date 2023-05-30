@@ -7,7 +7,6 @@
 
 [node name="Label" parent="." index="0"]
 margin_top = 216.0
-margin_right = 640.0
 margin_bottom = 264.0
 text = "Congratulations! You are now promoted to deceased.
 (When you hear Gabe reload his gun, you don't have much time left.
