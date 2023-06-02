@@ -8420,3 +8420,11 @@
 "id" "Television_01"
 "angle" "195"
 }
+// entity 248
+{
+"classname" "Decoration"
+"origin" "-49 -47 0"
+"id" "ferris"
+"scale" "0.5"
+"angle" "-14"
+}
