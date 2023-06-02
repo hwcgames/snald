@@ -58,7 +58,7 @@ func circuit_on(name):
 		set_process(true)
 		on_now = true
 		goal_energy = energy
-		if "instant_on" in properties and properties["instant_on"] == 1:
+		if "instant_on" in properties and properties["instant_on"] == 1 and $OmniLight.light_energy < 0.3:
 			$AudioStreamPlayer3D.stop()
 			$AudioStreamPlayer3D.play()
 			$"/root/EventMan".power -= power
