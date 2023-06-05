@@ -36,6 +36,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Listener" type="Listener" parent="Camera"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0 )
+current = true
+
 [node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0.3386 )
 light_energy = 0.1

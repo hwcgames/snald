@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hehe.ogg-3fc1e3d77894f7e6e6a3fc5df75473b4.oggstr"
+
+[deps]
+
+source_file="res://music/hehe.ogg"
+dest_files=[ "res://.import/hehe.ogg-3fc1e3d77894f7e6e6a3fc5df75473b4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

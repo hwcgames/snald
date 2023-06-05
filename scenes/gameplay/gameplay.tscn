@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=1]
 [ext_resource path="res://fgd.tres" type="Resource" id=2]
@@ -7,6 +7,15 @@
 [ext_resource path="res://music/night_ambience.ogg" type="AudioStream" id=5]
 [ext_resource path="res://eggs/egg-phone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/disable_unless_flag.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/random_sounds/random_sounds.gd" type="Script" id=8]
+[ext_resource path="res://music/boops/boop1.ogg" type="AudioStream" id=9]
+[ext_resource path="res://music/boops/boop5.ogg" type="AudioStream" id=10]
+[ext_resource path="res://music/boops/boop2.ogg" type="AudioStream" id=11]
+[ext_resource path="res://music/boops/boop3.ogg" type="AudioStream" id=12]
+[ext_resource path="res://scenes/random_sounds/sound.gd" type="Script" id=13]
+[ext_resource path="res://music/boops/boop4.ogg" type="AudioStream" id=14]
+[ext_resource path="res://music/hehe.ogg" type="AudioStream" id=15]
+[ext_resource path="res://music/thwomp.ogg" type="AudioStream" id=16]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -134,5 +143,44 @@ one_shot = true
 one_shot = true
 
 [node name="FunnyPhone" parent="." instance=ExtResource( 6 )]
+
+[node name="RandomBgSounds" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="Boop1" type="AudioStreamPlayer3D" parent="RandomBgSounds"]
+stream = ExtResource( 9 )
+script = ExtResource( 13 )
+weight = 0.1
+
+[node name="Boop2" type="AudioStreamPlayer3D" parent="RandomBgSounds"]
+stream = ExtResource( 11 )
+script = ExtResource( 13 )
+weight = 0.1
+
+[node name="Boop3" type="AudioStreamPlayer3D" parent="RandomBgSounds"]
+stream = ExtResource( 12 )
+script = ExtResource( 13 )
+weight = 0.1
+
+[node name="Boop4" type="AudioStreamPlayer3D" parent="RandomBgSounds"]
+stream = ExtResource( 14 )
+script = ExtResource( 13 )
+weight = 0.1
+
+[node name="Boop5" type="AudioStreamPlayer3D" parent="RandomBgSounds"]
+stream = ExtResource( 10 )
+script = ExtResource( 13 )
+weight = 0.1
+
+[node name="Hehe" type="AudioStreamPlayer3D" parent="RandomBgSounds"]
+stream = ExtResource( 15 )
+pitch_scale = 0.5
+script = ExtResource( 13 )
+weight = 0.001
+
+[node name="Thwomp" type="AudioStreamPlayer3D" parent="RandomBgSounds"]
+stream = ExtResource( 16 )
+script = ExtResource( 13 )
+weight = 0.4
 
 [connection signal="build_complete" from="QodotMap" to="." method="completed_build"]

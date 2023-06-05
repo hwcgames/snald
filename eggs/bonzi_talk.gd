@@ -16,7 +16,7 @@ const hints = [
 	"If you're having trouble on a level, try being good at the game",
 	"Never give up, giving up is for losers",
 	"Have you tried turning it off and on again?",
-	"Make sure your computer is turned on before attempting night 4",
+	"Make sure your computer is powered on before attempting night 4",
 	"There's a secret phrase that you can use to get into the sound test screen",
 	"There's a secret phrase that you can use to activate a speedrun timer",
 	"If you hear a noise from the vent, it means someone's pointing a gun at you",
@@ -43,7 +43,10 @@ const hints = [
 	"Did you know this game used to have lore? It was dumb but pretty funny. You see the story was a tragic one about dealing with grief, with a supernatural twist, very interesting! It all started a long time ago when",
 	"Corrupt government buildings are gender-neutral bathrooms",
 	"Kel from OMORI is the pinnacle of character design",
-	"Polaris' favorite weapons are the ones that break the geneva convention!"
+	"Polaris' favorite weapons are the ones that break the geneva convention!",
+	"Florida Man teaches pet lizard to run on water, google Roko's Basilisk to learn more",
+	"Gex",
+	"1 hour of silence occasionally broken by Mario 64 Thwomp sound effect"
 ]
 
 var spooky_hints = [
@@ -52,7 +55,9 @@ var spooky_hints = [
 	"The lights keep us safe",
 	"What makes reality real",
 	OS.get_environment("USERNAME") + ", I can't breathe",
-	"I can't breathe"
+	"I can't breathe",
+	"Discord sex hack 2023 (real) (not clickbait)",
+	"You just lost The Game"
 ]
 
 # Called when the node enters the scene tree for the first time.
