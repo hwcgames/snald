@@ -37,6 +37,9 @@ func _ready():
 
 func reset():
 	depleted = false
+	on_now = (properties["always_on"] == 1) if "always_on" in properties else false
+	goal_energy = energy * (1 if on_now else 0)
+	flickering = false
 
 var lit = false
 
