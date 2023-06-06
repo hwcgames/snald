@@ -5,7 +5,6 @@
 [ext_resource path="res://scenes/gameplay/gameplay.gd" type="Script" id=3]
 [ext_resource path="res://textures/ps1-post.tres" type="Material" id=4]
 [ext_resource path="res://music/night_ambience.ogg" type="AudioStream" id=5]
-[ext_resource path="res://eggs/egg-phone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/disable_unless_flag.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/random_sounds/random_sounds.gd" type="Script" id=8]
 [ext_resource path="res://music/boops/boop1.ogg" type="AudioStream" id=9]
@@ -16,6 +15,7 @@
 [ext_resource path="res://music/boops/boop4.ogg" type="AudioStream" id=14]
 [ext_resource path="res://music/hehe.ogg" type="AudioStream" id=15]
 [ext_resource path="res://music/thwomp.ogg" type="AudioStream" id=16]
+[ext_resource path="res://scripts/phone-boye.gd" type="Script" id=17]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -142,8 +142,6 @@ one_shot = true
 [node name="CompletionTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="FunnyPhone" parent="." instance=ExtResource( 6 )]
-
 [node name="RandomBgSounds" type="Node" parent="."]
 script = ExtResource( 8 )
 
@@ -182,5 +180,14 @@ weight = 0.001
 stream = ExtResource( 16 )
 script = ExtResource( 13 )
 weight = 0.4
+
+[node name="UnfunnyPhone" type="Node" parent="."]
+script = ExtResource( 17 )
+
+[node name="FunnyPhone" type="Node" parent="."]
+script = ExtResource( 17 )
+ringer_path = "res://eggs/phone/ring.mp3"
+night_paths = [ "res://eggs/phone/n1.mp3", "res://eggs/phone/n2.mp3", "res://eggs/phone/n3.mp3", "res://eggs/phone/n4.mp3", "res://eggs/phone/n5.mp3", "res://eggs/phone/n6.mp3" ]
+funny = true
 
 [connection signal="build_complete" from="QodotMap" to="." method="completed_build"]

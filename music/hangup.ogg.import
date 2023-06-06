@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hangup.ogg-6a7344d48e8b1aca5c6ad64fa25c4fa5.oggstr"
+
+[deps]
+
+source_file="res://music/hangup.ogg"
+dest_files=[ "res://.import/hangup.ogg-6a7344d48e8b1aca5c6ad64fa25c4fa5.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
