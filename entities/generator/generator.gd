@@ -12,10 +12,11 @@ var gen_time = 10
 var power_increment_tick = 0
 
 onready var model = $Generator
-
+onready var tween = Tween.new()
 
 func _ready():
 	yield(get_parent(), "build_complete")
+	add_child(tween)
 	rotation_degrees.y = properties["angle"] if "angle" in properties else 0
 	power_regen = properties["power"] if "power" in properties else .25
 	circuit = properties["circuit"] if "circuit" in properties else "generator"
@@ -62,3 +63,11 @@ func power_tick():
 			else:
 				power_increment_tick += 1
 		model.energy = min(power_regen, 1)
+	var desired_pitch
+	if EventMan.power > 95:
+		desired_pitch = 2.0
+	else:
+		desired_pitch = 1.0
+	if $AudioStreamPlayer.pitch_scale != desired_pitch:
+		tween.interpolate_property($AudioStreamPlayer, "pitch_scale", $AudioStreamPlayer.pitch_scale, desired_pitch, 0.5)
+		tween.start()

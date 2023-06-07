@@ -92,11 +92,13 @@ wait_time = 10.0
 [node name="MeshInstance" type="MeshInstance" parent="."]
 visible = false
 mesh = SubResource( 1 )
+material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.193131 )
 visible = false
 mesh = SubResource( 2 )
+material/0 = null
 
 [node name="gen_timer" type="Timer" parent="."]
 
