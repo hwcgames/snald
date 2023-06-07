@@ -6,9 +6,11 @@ var CAMERA = preload("res://scenes/camera_ui/camera_ui.tscn")
 onready var camera: Control = CAMERA.instance()
 var min_angle = 0
 var max_angle = 0
+var limit_turns = true
 var turn_speed = 30
 var primary_label = "Z/A"
 var secondary_label = "X/B"
+var allow_camera = true
 export var DEBUG = false
 var dead
 
@@ -24,9 +26,12 @@ func _ready():
 	min_angle = properties["min_angle"]
 	max_angle = properties["max_angle"]
 	turn_speed = float(properties["speed"] if "speed" in properties else turn_speed)
+	limit_turns = properties["limit_turns"] == 1 if "limit_turns" in properties else limit_turns
+	allow_camera = properties["allow_camera"] == 1 if "allow_camera" in properties else allow_camera
 	var _err = $"/root/EventMan".connect("temperature_tick", self, "temperature_tick")
-	print("Bringing camera UI into tree")
-	add_child(camera)
+	if allow_camera:
+		print("Bringing camera UI into tree")
+		add_child(camera)
 	print("Setting up jumpscare handler")
 	_err = $"/root/EventMan".connect("jumpscare", self, "jumpscare")
 	EventMan.connect("reset", self, "reset")
@@ -48,6 +53,9 @@ func _process(delta):
 	# Check whether the camera is bounded
 	var left_bounded = rotation_degrees.y < min_angle and not DEBUG
 	var right_bounded = rotation_degrees.y > max_angle and not DEBUG
+	if not limit_turns:
+		right_bounded = false
+		left_bounded = false
 	# Determine which direction to move
 	var movement = 0.0
 	if (mouse_x < 0.1 or Input.is_action_pressed("ui_left")) and not right_bounded and not $"/root/EventMan".circuit("player_camera_pad") and not CutsceneMan.player_cutscene_mode:
@@ -193,8 +201,8 @@ func process_buttons():
 
 func dead_screen_finished(exit: bool):
 	get_tree().paused = false
-	remove_visitor(dead)
 	if exit:
 		EventMan.return_to_title()
 	else:
 		EventMan.quick_reset()
+		remove_visitor(dead)

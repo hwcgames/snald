@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/test/camera.gd"
 }, {
+"base": "Player",
+"class": "FreeRoamPlayer",
+"language": "GDScript",
+"path": "res://entities/fr_player/fr_player.gd"
+}, {
 "base": "AnimatronicBase",
 "class": "Gabe",
 "language": "GDScript",
@@ -270,6 +275,7 @@ _global_script_class_icons={
 "DecorTrain": "",
 "EasterEgg": "",
 "FreeCam": "",
+"FreeRoamPlayer": "",
 "Gabe": "",
 "GeometryGroup": "",
 "Jojo": "",

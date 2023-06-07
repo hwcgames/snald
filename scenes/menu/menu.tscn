@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://scenes/menu/settings.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://scenes/menu/Teletubby.gd" type="Script" id=27]
 [ext_resource path="res://cutscenes/Test.tscn" type="PackedScene" id=28]
 [ext_resource path="res://scenes/menu/cutscene_button.tscn" type="PackedScene" id=29]
+[ext_resource path="res://cutscenes/IntroStory/IntroStory.tscn" type="PackedScene" id=30]
 
 [sub_resource type="Animation" id=10]
 length = 0.001
@@ -337,6 +338,32 @@ margin_right = -10.0
 margin_bottom = -10.0
 focus_mode = 2
 
+[node name="Night 0" type="Button" parent="LevelWindow/Choose a Night"]
+margin_left = 33.0
+margin_right = 87.0
+margin_bottom = 22.0
+size_flags_horizontal = 4
+text = "Night 0"
+script = SubResource( 3 )
+
+[node name="NightConfig" parent="LevelWindow/Choose a Night/Night 0" instance=ExtResource( 2 )]
+difficulties = {
+"lucas": 1
+}
+map_path = "maps/intro-story.map"
+night_index = -1
+completion_flag = "intro_story"
+time_to_completion = 999999999999
+victory_scene = "res://scenes/victory/victory_n1.tscn"
+time_before_start_music = 0.0
+start_cutscene = ExtResource( 30 )
+cvar_ints = {
+}
+cvar_floats = {
+}
+cvar_bools = {
+}
+
 [node name="Night 1" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
 margin_right = 87.0
@@ -563,6 +590,7 @@ margin_bottom = -60.0
 [connection signal="pressed" from="ThingsBar/HBoxContainer/CalendarButton" to="LevelWindow" method="show"]
 [connection signal="pressed" from="ThingsBar/HBoxContainer/SettingsButton" to="SettingsWindow" method="show"]
 [connection signal="pressed" from="ThingsBar/HBoxContainer/AboutButton" to="LogoWindow" method="show"]
+[connection signal="pressed" from="LevelWindow/Choose a Night/Night 0" to="LevelWindow/Choose a Night/Night 0/NightConfig" method="run"]
 [connection signal="pressed" from="LevelWindow/Choose a Night/Night 1" to="LevelWindow/Choose a Night/Night 1/NightConfig" method="run"]
 [connection signal="pressed" from="LevelWindow/Choose a Night/Night 2" to="LevelWindow/Choose a Night/Night 2/NightConfig" method="run"]
 [connection signal="pressed" from="LevelWindow/Choose a Night/Night 3" to="LevelWindow/Choose a Night/Night 3/NightConfig" method="run"]
