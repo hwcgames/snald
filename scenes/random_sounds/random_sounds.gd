@@ -4,6 +4,8 @@ class_name RandomBgSounds
 export var chance = 0.05
 
 func _ready():
+	if EventMan.funny_mode():
+		chance *= 5
 	EventMan.connect("power_tick", self, "tick")
 
 func tick():
