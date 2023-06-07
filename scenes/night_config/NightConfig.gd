@@ -50,15 +50,13 @@ func set_map(map):
 	map_path = map
 
 func set_night(night: int):
-	night_index = night + 1;
+	night_index = night - 1;
 
 func set_difficulty(difficulty: int, character: String):
 	difficulties[character] = difficulty
 
 func set_duration(seconds: float):
 	time_to_completion = seconds
-
-
 
 func set_test_mode(to: bool):
 	test_mode = to
