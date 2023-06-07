@@ -6631,7 +6631,7 @@
 // entity 56
 {
 "classname" "Camera"
-"origin" "48 116 88"
+"origin" "64 100 88"
 "angle" "30"
 "fov" "100"
 "name" "Office Door"
@@ -7205,7 +7205,7 @@
 "animatronic_id" "lucas"
 "animation" "nearby_stare"
 "state_id" "13"
-"angle" "180"
+"angle" "220"
 }
 // entity 107
 {
