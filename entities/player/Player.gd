@@ -205,3 +205,4 @@ func dead_screen_finished(exit: bool):
 		EventMan.return_to_title()
 	else:
 		EventMan.quick_reset()
+		remove_visitor(dead)

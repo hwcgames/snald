@@ -10,6 +10,7 @@ func _ready():
 			break
 	var player: FreeRoamPlayer = get_tree().get_nodes_in_group("player")[0]
 	CutsceneMan.player_cutscene_mode = true
+	yield(get_tree(), "idle_frame")
 	player_look_at_lucas(player, lucas)
 	while abs(player.rotation_degrees.y - CutsceneMan.player_cutscene_goal) > 0.1:
 		yield(get_tree(), "idle_frame")

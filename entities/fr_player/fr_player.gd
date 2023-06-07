@@ -6,9 +6,14 @@ onready var raycast = $RayCast
 onready var areacast = $AreaCast
 var height = 2.5
 var y_vel = 0.0
+var init_position: Vector3
 
 func _ready():
+	init_position = global_transform.origin
 	speed = float(properties["move_speed"] if "move_speed" in properties else speed)
+
+func reset():
+	global_transform.origin = init_position
 
 func _physics_process(delta):
 	if not raycast.is_colliding():
