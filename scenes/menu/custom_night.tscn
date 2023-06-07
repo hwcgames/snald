@@ -13,6 +13,7 @@ resizable = true
 [node name="NightConfig" parent="." instance=ExtResource( 3 )]
 difficulties = {
 }
+night_index = 0
 completion_flag = "n7"
 victory_scene = "res://scenes/victory/victory_n1.tscn"
 cvar_bools = {

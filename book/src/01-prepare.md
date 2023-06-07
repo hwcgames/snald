@@ -53,3 +53,5 @@ On Linux, you can run `snald_folder.sh` and paste in the path to your TrenchBroo
 Next, open the project in Godot and open the `snald_folder.tres` file there. Check the box in the inspector that says 'Export File'. It will immediately uncheck itself, and the FGD file will have been generated.
 
 ![A screenshot of the Godot editor. The snald folder file is selected in the bottom-left, and there is an arrow pointing toward the Export File checkbox in the top-right.](godot-export-file.png)
+
+Also, to enable developer features in your save file, type `shibboleet` into the text field in settings.

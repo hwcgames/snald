@@ -13,6 +13,12 @@ var last_camera: Spatial
 
 signal camera_change(id)
 
+func _ready():
+	EventMan.connect("reset", self, "reset")
+
+func reset():
+	self.texture = null
+
 func _process(_delta):
 	var p = get_parent()
 	p.size = p.get_parent().rect_size
@@ -28,7 +34,7 @@ func apply_camera(camera_node):
 	_drop = tween.interpolate_method(filter, "put_noise_op", 1, 0.02, 1.0, transition, easing)
 	_drop = tween.start()
 	sfx.play()
-	_ready()
+#	_ready()
 	if last_camera_id:
 		$"/root/EventMan".circuit_off("camera."+last_camera_id)
 		$"/root/EventMan".circuit_off("camera."+last_camera_room)

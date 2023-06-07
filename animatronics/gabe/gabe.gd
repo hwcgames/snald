@@ -15,7 +15,12 @@ func _ready():
 	var _drop = $"/root/EventMan".connect("on", self, "on")
 #	$"/root/EventMan".connect("noisy", self, "noisy")
 	_drop = $AimingTimer.connect("timeout", self, "shoot")
-	
+	EventMan.connect("reset", self, "reset")
+
+func reset():
+	if night_index != 0:
+		yield(get_tree(), "idle_frame")
+		assume_state(16)
 
 func difficulty_offset():
 	var heat_increase = 0

@@ -35,8 +35,8 @@ own_world = true
 transparent_bg = true
 render_target_v_flip = true
 
-[node name="monitor-content" parent="Viewport" instance=ExtResource( 2 )]
-
 [node name="ParentForMonitorCharacters" type="Control" parent="Viewport"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="monitor-content" parent="Viewport" instance=ExtResource( 2 )]

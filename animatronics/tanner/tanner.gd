@@ -31,10 +31,17 @@ export var punishment_songs: PoolStringArray = []
 
 signal song_finished
 
+func reset():
+	length = self.difficulty
+	timer.stop()
+	timer.wait_time = get_node("../CompletionTimer").wait_time / 3.9
+	timer.start()
+
 func _ready():
 	length = self.difficulty
 	assume_state(0)
 	EventMan.connect("on", self, "on")
+	EventMan.connect("reset", self, "reset")
 	timer.connect("timeout", self, "finish_boombox")
 	while true:
 		# TBD how timer should work
