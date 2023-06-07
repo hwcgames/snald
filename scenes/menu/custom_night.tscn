@@ -78,7 +78,7 @@ margin_left = 253.0
 margin_right = 453.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 200, 0 )
-text = "res://maps/default.map"
+text = "maps/default.map"
 caret_blink = true
 caret_blink_speed = 0.5
 

@@ -11,7 +11,7 @@ onready var player = AudioStreamPlayer.new()
 onready var level = $"../QodotMap"
 onready var ringer = load(ringer_path)
 onready var hangup = load(hangup_path)
-onready var night = load(night_paths[EventMan.night_index]) if EventMan.night_index < len(night_paths) else null
+onready var night = load(night_paths[EventMan.night_index]) if EventMan.night_index >= 0 and EventMan.night_index < len(night_paths) else null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
