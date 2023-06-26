@@ -41,7 +41,7 @@ func reset():
 var movement_dir = 1.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	if not viewed:
 		return
 	# Get mouse X

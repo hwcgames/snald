@@ -45,7 +45,7 @@ func populate_cameras(selected: String):
 				button.release_focus()
 	pass
 
-func _process(_delta):
+func _physics_process(_delta):
 	if !EventMan.circuit("player_camera_pad"):
 		return
 	if Input.is_action_just_pressed("ui_accept"):
@@ -58,7 +58,3 @@ func _process(_delta):
 		if current_index < 0:
 			current_index = len(cameras) - 1
 		camera_viewport.apply_camera(cameras[current_index])
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

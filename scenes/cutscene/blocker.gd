@@ -8,7 +8,7 @@ func _input(event):
 
 var pressed_last_frame = false
 
-func _process(_delta):
+func _physics_process(_delta):
 	if Input.is_mouse_button_pressed(0) and not pressed_last_frame:
 		get_parent().advance_cutscene()
 		pressed_last_frame = true

@@ -60,7 +60,3 @@ func setup_camera():
 	var zoom = max(rel_width, rel_height)
 	camera.zoom = Vector2(1,1) * zoom * 1.2
 	print(rel_width,' ',rel_height)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

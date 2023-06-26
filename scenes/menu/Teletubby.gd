@@ -9,7 +9,7 @@ func _ready():
 	$Timer.wait_time = 60
 	roll()
 
-func _process(_delta):
+func _physics_process(_delta):
 	if now:
 		go()
 		now = false

@@ -14,7 +14,7 @@ func start():
 	if get_child_count() == 0:
 		add_child(timer_.instance())
 
-func _process(_delta):
+func _physics_process(_delta):
 	if counting:
 		timer += 1
 		$Control/Timer.text = str(floor(timer))

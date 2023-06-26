@@ -355,12 +355,6 @@ time_to_completion = 999999999999
 victory_scene = "res://scenes/victory/victory_n1.tscn"
 time_before_start_music = 0.0
 start_cutscene = ExtResource( 30 )
-cvar_ints = {
-}
-cvar_floats = {
-}
-cvar_bools = {
-}
 
 [node name="Night 1" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0

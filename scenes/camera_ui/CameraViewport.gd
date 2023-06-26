@@ -19,7 +19,7 @@ func _ready():
 func reset():
 	self.texture = null
 
-func _process(_delta):
+func _physics_process(_delta):
 	var p = get_parent()
 	p.size = p.get_parent().rect_size
 

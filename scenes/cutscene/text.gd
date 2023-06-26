@@ -13,7 +13,7 @@ func _ready():
 var timer: float
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	timer += delta
 	if timer > speed and speed > 0 and visible_characters < len(text):
 		timer = 0

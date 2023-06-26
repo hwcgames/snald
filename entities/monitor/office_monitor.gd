@@ -28,8 +28,3 @@ func pop_monitor_chars():
 		texturerect.texture = viewportt
 		$Viewport/ParentForMonitorCharacters.add_child(texturerect)
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

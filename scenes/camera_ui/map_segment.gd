@@ -48,7 +48,3 @@ func on(circuit: String):
 func off(circuit: String):
 	if circuit == "camera." + room_id:
 		set_color()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

@@ -21,7 +21,3 @@ func compare_camera(a,b):
 	var a_ = a.properties["camera_id"]
 	var b_ = b.properties["camera_id"]
 	return a_.casecmp_to(b_) == -1
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

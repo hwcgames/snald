@@ -21,5 +21,5 @@ func update_properties():
 func _ready() -> void:
 	update_properties()
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	rotate(rotate_axis, deg2rad(rotate_speed * delta))

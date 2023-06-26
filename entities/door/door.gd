@@ -40,7 +40,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	if height != -INF && since_updated < open_time:
 		var power = ease(min(since_updated / open_time, 1), easing)
 		var from = Vector3.UP * height * (0 if open else 1)

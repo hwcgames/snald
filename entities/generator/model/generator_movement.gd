@@ -11,7 +11,7 @@ func _ready():
 	energy = 0
 	$OmniLight.light_energy = 0
 
-func _process(delta):
+func _physics_process(delta):
 	if not $Cylinder001:
 		return
 	# Turn gears

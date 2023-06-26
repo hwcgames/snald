@@ -22,7 +22,7 @@ func reset_mouse():
 	$Pointer.transform.origin = get_viewport().size / 2
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(_delta):
 	if get_tree().current_scene is Control or $"/root/EventMan".circuit("player_camera_pad") and $"/root/PersistMan".get_key("controller_mode"):
 		var movement = Vector2.ZERO
 		movement.x += Input.get_action_strength("vmouse_right")-Input.get_action_strength("vmouse_left")

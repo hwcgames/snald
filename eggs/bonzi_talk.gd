@@ -72,7 +72,7 @@ var talk_clock = 0.0
 var counter = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	talk_clock += delta
 	if talk_clock > talk_interval and talking:
 		talk_clock = 0

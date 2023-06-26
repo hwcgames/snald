@@ -3,8 +3,8 @@ class_name SoundChoice
 
 export var weight = 1.0
 
-func _ready():
-	EventMan.connect("on", self, "on")
+#func _ready():
+#	EventMan.connect("on", self, "play")
 
 func go():
 	var rel = get_tree().get_nodes_in_group("player")[0].global_transform.origin

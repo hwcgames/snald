@@ -20,10 +20,6 @@ func _ready():
 	grab_focus()
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 "
 
 [sub_resource type="GDScript" id=9]

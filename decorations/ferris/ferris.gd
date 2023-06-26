@@ -14,7 +14,3 @@ func on_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 			$"../boop".stop()
 			$"../boop".stream = load(boops[rand_range(0, len(boops))])
 			$"../boop".play()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

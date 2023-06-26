@@ -57,7 +57,7 @@ func cmp_segment(a, b):
 var last_pos = Vector3(0, 0, 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	follower.offset += (delta * speed)
 	if path && follower.offset > path.curve.get_baked_length():
 		follower.offset = offset

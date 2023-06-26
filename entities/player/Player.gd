@@ -47,7 +47,7 @@ func temperature_tick():
 	else:
 		turn_speed = float(properties["speed"] if "speed" in properties else turn_speed)
 
-func _process(delta):
+func _physics_process(delta):
 	# Get mouse X
 	var mouse_x = get_viewport().get_mouse_position().x / get_viewport().size.x
 	# Check whether the camera is bounded

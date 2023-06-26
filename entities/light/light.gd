@@ -16,6 +16,8 @@ var depleted = false
 var goal_energy = energy
 
 func _ready():
+	tween = Tween.new()
+	add_child(tween)
 	# Set angle correctly
 	yield(get_parent(), "build_complete")
 	var _err = $"/root/EventMan".connect("on", self, "circuit_on")
@@ -34,24 +36,33 @@ func _ready():
 	set_process(true)
 	call_deferred("set_process", true)
 	EventMan.connect("reset", self, "reset")
+	if on_now:
+		$OmniLight.light_energy = goal_energy
+	else:
+		$OmniLight.light_energy = 0
 
 func reset():
+	tween.remove_all()
 	depleted = false
 	on_now = (properties["always_on"] == 1) if "always_on" in properties else false
 	goal_energy = energy * (1 if on_now else 0)
+	$OmniLight.light_energy = goal_energy
 	flickering = false
 
 var lit = false
+var tween: Tween
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	$OmniLight.light_energy = lerp($OmniLight.light_energy, goal_energy, delta * 10)
+func _physics_process(delta):
+#	$OmniLight.light_energy = lerp($OmniLight.light_energy, goal_energy, min(delta * 10, 1))
 	if abs($OmniLight.light_energy - goal_energy) < 0.01 and not flickering:
 		call_deferred("set_process", false)
 	if flickering and on_now and not depleted:
 		var rand = randf()
 		if rand <= flicker_chance:
-			$OmniLight.light_energy = 0
+			tween.remove_all()
+			tween.interpolate_property($OmniLight, "light_energy", 0, goal_energy, 1.0, Tween.TRANS_QUART, Tween.EASE_OUT)
+			tween.start()
 			$AudioStreamPlayer3D.stop()
 			$AudioStreamPlayer3D.play()
 	pass
@@ -66,21 +77,26 @@ func circuit_on(name):
 			$AudioStreamPlayer3D.play()
 			$"/root/EventMan".power -= power
 			$OmniLight.light_energy = goal_energy
+		else:
+			tween.remove_all()
+			tween.interpolate_property($OmniLight, "light_energy", $OmniLight.light_energy, goal_energy, 0.25, Tween.TRANS_QUART, Tween.EASE_OUT)
+			tween.start()
 
 func circuit_off(name):
 	if circuit != "" and name == circuit:
 		set_process(true)
 		on_now = false
 		goal_energy = 0
+		tween.remove_all()
+		tween.interpolate_property($OmniLight, "light_energy", $OmniLight.light_energy, goal_energy, 1.0, Tween.TRANS_QUART, Tween.EASE_OUT)
+		tween.start()
 
 func power_tick():
 	if on_now:
 		$"/root/EventMan".power -= power
 	if $"/root/EventMan".power <= 0:
-		goal_energy = 0
 		depleted = true
-		$OmniLight.light_energy /= 2
-		on_now = false
+		circuit_off(circuit)
 	if $"/root/EventMan".power < flicker_below:
 		set_process(true)
 		flickering = true

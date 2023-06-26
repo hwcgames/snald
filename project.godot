@@ -359,6 +359,7 @@ settings/crash_handler/message="Please file an issue with this log at https://gi
 
 window/size/width=640
 window/size/height=480
+window/vsync/use_vsync=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
@@ -485,7 +486,9 @@ file_logging/enable_file_logging=true
 
 [physics]
 
+common/physics_fps=30
 common/enable_pause_aware_picking=true
+common/physics_interpolation=true
 
 [qodot]
 
@@ -498,5 +501,5 @@ textures/depth_pattern="%s/depth.%s"
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
 gles3/shaders/shader_compilation_mode=2
+environment/default_environment="res://default_env.tres"

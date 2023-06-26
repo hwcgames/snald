@@ -39,8 +39,7 @@ func state_machine():
 		return 0
 	else:
 		return state + 1
-#func _process(delta):
-#	pass
+
 func on(circuit):
 	if circuit == "player_camera_pad":
 		var timer = Timer.new()
