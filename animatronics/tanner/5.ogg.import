@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/5.ogg-dadc5b1bcb6257930e301c2fb9e69880.oggstr"
+
+[deps]
+
+source_file="res://animatronics/tanner/5.ogg"
+dest_files=[ "res://.import/5.ogg-dadc5b1bcb6257930e301c2fb9e69880.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
