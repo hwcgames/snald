@@ -187,3 +187,13 @@ func cvar_cmd(cvar: String, type: String, value):
 		var correct_type = expr.execute([value])
 		print(correct_type)
 		CVars.call(("get" if getting else "set") + "_" + type, cvar, correct_type)
+
+const put_txt_help = "Puts text on the screen"
+func put_txt_cmd(content: String):
+	if !CutsceneMan.cutscene_is_running():
+		CutsceneMan.start_cutscene(PackedScene.new())
+	CutsceneMan.put_text(content)
+
+const del_txt_help = "Deletes the default text."
+func del_txt_help():
+	CutsceneMan.remove_text()

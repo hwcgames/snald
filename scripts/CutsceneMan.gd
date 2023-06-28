@@ -8,7 +8,15 @@ var player_cutscene_goal: float = 0.0
 signal advance_cutscene
 
 func _ready():
+	EventMan.connect("reset", self, "reset")
+	EventMan.connect("jumpscare", self, "jumpscare")
 	pass # Replace with function body.
+
+func reset():
+	stop_cutscene()
+
+func jumpscare(_a, _b):
+	reset()
 
 func remove(node: Node):
 	for i in node.get_children():
