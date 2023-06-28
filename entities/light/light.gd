@@ -14,6 +14,8 @@ var on_now = false
 var flickering = false
 var depleted = false
 var goal_energy = energy
+var hue = 0
+var saturation = 0
 
 func _ready():
 	tween = Tween.new()
@@ -31,6 +33,9 @@ func _ready():
 	energy = float(properties["energy"]) if "energy" in properties else 0.5
 	goal_energy = energy * (1 if on_now else 0)
 	power = properties["power"] if "power" in properties else 0.1
+	hue = (float(properties["hue"]) / 360) if "hue" in properties else hue
+	saturation = properties["saturation"] if "saturation" in properties else saturation
+	$OmniLight.light_color = Color.from_hsv(hue, saturation, 1.0)
 	$AudioStreamPlayer3D.stream = load(properties["buzz"]) if "buzz" in properties else null
 	$OmniLight.omni_range = properties["radius"] if "radius" in properties else 16
 	set_process(true)

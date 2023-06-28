@@ -17,9 +17,11 @@ class_properties = {
 "energy": ".5",
 "flicker_below": 10.0,
 "flicker_chance": 0.01,
+"hue": 0.0,
 "instant_on": 0,
 "power": 0.1,
-"radius": 16.0
+"radius": 16.0,
+"saturation": 0.0
 }
 class_property_descriptions = {
 "always_on": "Whether the light is always on, rather than part of a circuit.",
