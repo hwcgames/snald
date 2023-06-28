@@ -58,9 +58,9 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=7]
 shader = SubResource( 4 )
-shader_param/color_depth = 8
-shader_param/dithering = false
-shader_param/resolution_scale = 1
+shader_param/color_depth = 5
+shader_param/dithering = true
+shader_param/resolution_scale = 4
 
 [sub_resource type="QuadMesh" id=5]
 size = Vector2( 2, 2 )
@@ -112,9 +112,9 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=9]
 shader = SubResource( 8 )
-shader_param/color_depth = 8
-shader_param/dithering = false
-shader_param/resolution_scale = 1
+shader_param/color_depth = 5
+shader_param/dithering = true
+shader_param/resolution_scale = 4
 
 [sub_resource type="GDScript" id=11]
 script/source = "extends Button
@@ -130,16 +130,6 @@ func _pressed():
 "
 
 [sub_resource type="Environment" id=12]
-background_energy = 0.0
-ambient_light_color = Color( 1, 1, 1, 1 )
-ambient_light_energy = 0.0
-ambient_light_sky_contribution = 0.0
-fog_enabled = true
-fog_color = Color( 0, 0, 0, 1 )
-fog_sun_color = Color( 0, 0, 0, 1 )
-fog_depth_begin = 0.0
-fog_depth_end = 30.0
-glow_bloom = 1.0
 
 [node name="test" type="Spatial"]
 script = ExtResource( 4 )
@@ -173,22 +163,22 @@ set_owner_batch_size = 16
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
+visible = false
 layers = 2
 material_override = SubResource( 7 )
 extra_cull_margin = 16384.0
 mesh = SubResource( 5 )
-material/0 = null
 
 [node name="DisableUnlessFlag" parent="MeshInstance" instance=ExtResource( 5 )]
 flag_to_check = "post-process"
 default = true
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
+visible = false
 layers = 4
 material_override = SubResource( 9 )
 extra_cull_margin = 16384.0
 mesh = SubResource( 5 )
-material/0 = null
 
 [node name="DisableUnlessFlag" parent="MeshInstance2" instance=ExtResource( 5 )]
 flag_to_check = "post-process"

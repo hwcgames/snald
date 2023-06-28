@@ -28,7 +28,7 @@ func load_level(level_file: String, test_mode = false):
 func setup_level(test_mode = false):
 	if not test_mode:
 		var completion: Timer = get_node("/root/gameplay/CompletionTimer")
-		completion.wait_time = $"/root/EventMan".time_to_completion
+		completion.wait_time = EventMan.time_to_completion
 		var _err = completion.connect("timeout", $"/root/EventMan", "completed")
 		completion.start()
 	else:

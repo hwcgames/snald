@@ -36,6 +36,7 @@ tracks/1/keys = {
 script = ExtResource( 1 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
+portal_mode = 4
 light_bake_mode = 0
 shadow_enabled = true
 
