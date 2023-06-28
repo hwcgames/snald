@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/power full.ogg-fe6ee34cbd2156a77b97469f729dd0f2.oggstr"
+
+[deps]
+
+source_file="res://entities/generator/power full.ogg"
+dest_files=[ "res://.import/power full.ogg-fe6ee34cbd2156a77b97469f729dd0f2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
