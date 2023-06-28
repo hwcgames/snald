@@ -165,9 +165,6 @@ font_data = ExtResource( 6 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -348,13 +345,17 @@ script = SubResource( 3 )
 difficulties = {
 "lucas": 1
 }
-map_path = "maps/intro-story.map"
+map_path = "maps/intro-story-concat.map"
 night_index = -1
 completion_flag = "intro_story"
 time_to_completion = 999999999999
 victory_scene = "res://scenes/victory/victory_n1.tscn"
 time_before_start_music = 0.0
 start_cutscene = ExtResource( 30 )
+cvar_bools = {
+"fr_player": true,
+"normal_player": false
+}
 
 [node name="Night 1" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0

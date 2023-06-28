@@ -20,6 +20,8 @@ floats = {
 "song_length_increase_rate": 2.0
 }
 bools = {
+"fr_player": true,
 "funny_mode": false,
+"normal_player": true,
 "show_song_notes": true
 }

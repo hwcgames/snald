@@ -90,6 +90,7 @@ shader_param/resolution_scale = 1
 script = ExtResource( 3 )
 
 [node name="QodotMap" type="Spatial" parent="." groups=["map"]]
+unique_name_in_owner = true
 script = ExtResource( 1 )
 map_file = ""
 inverse_scale_factor = 16.0
@@ -109,14 +110,15 @@ tree_attach_batch_size = 16
 set_owner_batch_size = 16
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+unique_name_in_owner = true
 environment = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 layers = 2
 material_override = ExtResource( 4 )
+cast_shadow = 0
 extra_cull_margin = 16384.0
 mesh = SubResource( 3 )
-material/0 = null
 
 [node name="DisableUnlessFlag" parent="MeshInstance" instance=ExtResource( 7 )]
 flag_to_check = "post-process"
@@ -125,9 +127,9 @@ default = true
 [node name="MeshInstance2" type="MeshInstance" parent="."]
 layers = 4
 material_override = SubResource( 5 )
+cast_shadow = 0
 extra_cull_margin = 16384.0
 mesh = SubResource( 3 )
-material/0 = null
 
 [node name="DisableUnlessFlag" parent="MeshInstance2" instance=ExtResource( 7 )]
 flag_to_check = "post-process"

@@ -12,12 +12,19 @@ func _ready():
 	init_position = global_transform.origin
 	speed = float(properties["move_speed"] if "move_speed" in properties else speed)
 
+func remove_if_unwanted():
+	if not CVars.get_bool("fr_player"):
+		remove_visitor(self)
+		return true
+
 func reset():
 	global_transform.origin = init_position
 
 func _physics_process(delta):
+	if delta > 0.1:
+		delta = 0.1
 	if not raycast.is_colliding():
-		y_vel -= 1.0
+		y_vel -= 30.0 * delta
 		transform.origin.y += y_vel * delta
 		return
 	y_vel = 0

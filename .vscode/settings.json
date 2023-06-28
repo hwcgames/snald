@@ -14,5 +14,6 @@
 		"**/.hg/store/**": true,
 		".flatpak/**": true,
 		"_build/**": true
-	}
+	},
+	"deno.enable": true
 }
