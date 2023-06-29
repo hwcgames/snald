@@ -1,6 +1,8 @@
 extends Node
 
 func _ready():
+	var env: WorldEnvironment = $"/root/gameplay/%WorldEnvironment"
+	env.environment = preload("res://cutscenes/IntroStory/intro_story_environment.tres")
 	EventMan.pause = true
 	var lucas: Lucas
 	for character in get_tree().get_nodes_in_group("animatronics"):

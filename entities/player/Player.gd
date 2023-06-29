@@ -15,10 +15,13 @@ export var DEBUG = false
 var dead
 
 func _ready():
+	if remove_if_unwanted():
+		return
+	set_physics_process(false)
 	add_to_group("player")
 	yield(get_parent(), "build_complete")
 	if EventMan.circuit("test_mode"):
-		set_process(false)
+		set_physics_process(false)
 		$Camera.current = false
 		return
 	print("Set player angle to default")
@@ -35,6 +38,13 @@ func _ready():
 	print("Setting up jumpscare handler")
 	_err = $"/root/EventMan".connect("jumpscare", self, "jumpscare")
 	EventMan.connect("reset", self, "reset")
+	$Camera.current = true
+	set_physics_process(true)
+
+func remove_if_unwanted():
+	if not CVars.get_bool("normal_player"):
+		remove_visitor(self)
+		return true
 
 func reset():
 	rotation_degrees.y = properties["angle"]

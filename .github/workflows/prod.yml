@@ -28,6 +28,9 @@ jobs:
         with:
           path: ~/.local/bin
           key: ${{ matrix.target }}-godot-binaries
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build

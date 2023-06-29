@@ -6,6 +6,9 @@ fi
 export SNALD_TARGET=${SNALD_TARGET,,}
 export SNALD_TARGET=${SNALD_TARGET/darwin/mac}
 
+# Compile intro story map
+deno run --allow-read --allow-write=maps/intro-story-concat.map update_intro_story.js
+
 # Create destination
 export BUILD_DIR=./build/$SNALD_TARGET
 mkdir -p $BUILD_DIR
