@@ -8,6 +8,7 @@ func _ready():
 func reset():
 	$"%TabContainer".current_tab = 0
 	$"%LogContainer".stop_spooling()
+	$"%Login".mapping = []
 
 func on(circuit):
 	if circuit == "computer_restart":
