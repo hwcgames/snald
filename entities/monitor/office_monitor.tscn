@@ -27,7 +27,9 @@ script = ExtResource( 1 )
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015695 )
 mesh = SubResource( 3 )
-material/0 = null
+
+[node name="restart_timer" type="Timer" parent="MeshInstance"]
+wait_time = 10.0
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 196, 128 )
@@ -40,3 +42,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="monitor-content" parent="Viewport" instance=ExtResource( 2 )]
+unique_name_in_owner = true

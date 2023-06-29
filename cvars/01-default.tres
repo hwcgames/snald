@@ -17,6 +17,7 @@ floats = {
 "noisy_diff_boost": 8.0,
 "player_slow_threshold": 50.0,
 "punishment_song_length": 20.0,
+"reboot_time": 10.0,
 "song_length_increase_rate": 2.0
 }
 bools = {

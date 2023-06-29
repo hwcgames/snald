@@ -24,6 +24,8 @@ func _physics_process(_delta):
 	p.size = p.get_parent().rect_size
 
 func apply_camera(camera_node):
+	if EventMan.circuit("computer_is_down"):
+		return;
 	var _drop = tween.remove_all()
 	var easing = 1
 	var transition = 2

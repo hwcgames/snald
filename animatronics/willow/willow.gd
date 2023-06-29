@@ -8,6 +8,7 @@ class_name Willow
 
 onready var monitor_world = $display_on_monitor
 var visible_states = [4]
+var lookaway = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,13 +50,30 @@ func on(circuit):
 		yield(timer,"timeout")
 		timer.remove_and_skip()
 		if state == 4:
+			$"/root/EventMan".jumpscare("willow", "willow")
 			assume_state(0)
 		else:
-			animatronic_tick()
+			lookaway_attack()
+	if circuit == "computer_restart":
+			assume_state(0)
 
 func off(circuit):
 	if circuit == "looking_at_monitor":
 		if state == 4:
+			$"/root/EventMan".jumpscare("willow", "willow")
 			assume_state(0)
 		else:
-			animatronic_tick()
+			lookaway_attack()
+			
+func difficulty_offset():
+	if lookaway:
+		return -ceil(difficulty/2)
+	return 0
+	
+func lookaway_attack():
+	lookaway = true
+	animatronic_tick()
+	lookaway = false
+	
+	
+

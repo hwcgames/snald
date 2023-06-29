@@ -14,6 +14,7 @@ func _ready():
 	scale.x = properties["width"] if "width" in properties else 1
 	scale.y = properties["height"] if "height" in properties else 1
 	call_deferred("pop_monitor_chars")
+	EventMan.connect("on", self, "on")
 
 func pop_monitor_chars():
 	for character in get_tree().get_nodes_in_group("display_on_monitor"):
@@ -28,3 +29,8 @@ func pop_monitor_chars():
 		texturerect.texture = viewportt
 		$Viewport/ParentForMonitorCharacters.add_child(texturerect)
 	pass # Replace with function body.
+
+func on(circuit):
+	if circuit == "computer_restart":
+		print("the computer is off now")
+		
