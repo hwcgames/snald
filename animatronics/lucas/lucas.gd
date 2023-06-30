@@ -79,6 +79,10 @@ func _ready():
 
 var jumpscaring = false
 
+func reset():
+	EventMan.disconnect("on", self, "attack_if_window_opens_circuit_handler")
+	EventMan.disconnect("on", self, "vent_flashbang")
+
 func power_tick():
 	if EventMan.power > 0 or jumpscaring:
 		return

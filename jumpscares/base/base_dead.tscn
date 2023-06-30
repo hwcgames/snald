@@ -32,6 +32,14 @@ anchor_bottom = 1.0
 alignment = 1
 script = SubResource( 3 )
 
+[node name="Node2" type="Node" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Node2"]
+margin_top = 222.0
+margin_right = 640.0
+margin_bottom = 222.0
+color = Color( 0.298039, 0.298039, 0.298039, 1 )
+
 [node name="Label" type="Label" parent="."]
 margin_top = 224.0
 margin_right = 640.0
@@ -55,11 +63,6 @@ wait_time = 5.0
 autostart = true
 
 [node name="Node" type="Node" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="Node"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.298039, 0.298039, 0.298039, 1 )
 
 [node name="Control" type="MarginContainer" parent="Node"]
 anchor_top = 1.0
