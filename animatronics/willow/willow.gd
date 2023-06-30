@@ -67,7 +67,7 @@ func off(circuit):
 			
 func difficulty_offset():
 	if lookaway:
-		return -ceil(difficulty/2)
+		return -ceil(difficulty * .75)
 	return 0
 	
 func lookaway_attack():
