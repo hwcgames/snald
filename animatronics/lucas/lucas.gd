@@ -76,12 +76,17 @@ func _ready():
 	animation_player = get_node("lucas/AnimationPlayer")
 	# Add listener for powertick so we can run special behavior when it runs out
 	var _drop = EventMan.connect("power_tick", self, "power_tick")
+	EventMan.connect("reset", self, "reset")
 
 var jumpscaring = false
 
 func reset():
 	EventMan.disconnect("on", self, "attack_if_window_opens_circuit_handler")
 	EventMan.disconnect("on", self, "vent_flashbang")
+
+	hunt_accumulation = 0.0
+	hunt_target = null
+	have_hunted = false
 
 func power_tick():
 	if EventMan.power > 0 or jumpscaring:
@@ -202,6 +207,8 @@ func hunt_path():
 	return HUNT_PATHS[hunt_target][state]
 
 func attack_if_window_opens_circuit_handler(circuit: String):
+	if state == 0:
+		return
 	if circuit == window_circuit:
 		$"/root/EventMan".jumpscare("lucas", "window")
 		hide()
@@ -220,6 +227,8 @@ func walked_away_from_window():
 	assume_state(0)
 
 func vent_flashbang(circuit: String):
+	if state == 0:
+		return
 	if circuit == office_vent_flash:
 		$"/root/EventMan".jumpscare("lucas", "vent")
 
