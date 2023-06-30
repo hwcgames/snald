@@ -19,6 +19,7 @@ func _physics_process(_delta):
 	if player == null:
 		return
 	var c: Camera = player.get_node("Camera")
+	var rel = c.global_transform.xform_inv(self.global_transform.origin).normalized()
 	var p = c.unproject_position(global_transform.origin) / get_viewport().size
 	p = p.x
 	if p < 0:
@@ -28,7 +29,7 @@ func _physics_process(_delta):
 	else:
 		p = 0
 	var active = p < properties["threshold"]
-	if active and not EventMan.circuit(properties["circuit"]):
+	if active and not EventMan.circuit(properties["circuit"]) and rel.z < 0:
 		EventMan.circuit_on(properties["circuit"])
 	elif not active and EventMan.circuit(properties["circuit"]):
 		EventMan.circuit_off(properties["circuit"])
