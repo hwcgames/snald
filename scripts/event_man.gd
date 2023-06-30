@@ -94,21 +94,23 @@ func power_tick():
 	if power < 0 and (difficulties["lucas"] if "lucas" in difficulties else 0) <= 0:
 		difficulties["lucas"] = 1
 		$"/root/gameplay".spawn_animatronic("lucas")
-	power -= passive_power
+	power -= (passive_power + temperature_power_draw)
 	emit_signal("power_tick")
 	power_timer.start()
+
+var temperature_power_draw = 0
 
 func temperature_tick():
 	if pause:
 		return
 	if temperature > 120:
 		temperature = 120
-		passive_power = .5
+		temperature_power_draw = .5
 	if temperature < 20:
 		temperature = 20
-		passive_power = .5
+		temperature_power_draw = .5
 	else:
-		passive_power = 0
+		temperature_power_draw = 0
 	temperature -= passive_temperature
 	emit_signal("temperature_tick")
 	temperature_timer.start()

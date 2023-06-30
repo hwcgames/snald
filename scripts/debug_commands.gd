@@ -195,5 +195,11 @@ func put_txt_cmd(content: String):
 	CutsceneMan.put_text(content)
 
 const del_txt_help = "Deletes the default text."
-func del_txt_help():
+func del_txt_cmd():
 	CutsceneMan.remove_text()
+
+const overpowered_help = "Don't bother with power and temperature when debugging!"
+func overpowered_cmd():
+	EventMan.passive_power = -20
+	EventMan.passive_temperature = -1
+

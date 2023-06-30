@@ -47,4 +47,5 @@ func state_machine():
 			else:
 				# $DogSoundsPlayer.play()   #actually add that sound ok???
 				$MovementTimer.wait_time = gen_time()
+				assume_state(0)
 				return 0
