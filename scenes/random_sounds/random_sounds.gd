@@ -6,6 +6,8 @@ export var chance = 0.05
 func _ready():
 	if EventMan.funny_mode():
 		chance *= 5
+	if EventMan.night_index >= 4:
+		chance = 0
 	EventMan.connect("power_tick", self, "tick")
 
 func tick():

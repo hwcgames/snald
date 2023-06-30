@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scenes/menu/settings.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=2]
@@ -30,6 +30,8 @@
 [ext_resource path="res://cutscenes/Test.tscn" type="PackedScene" id=28]
 [ext_resource path="res://scenes/menu/cutscene_button.tscn" type="PackedScene" id=29]
 [ext_resource path="res://cutscenes/IntroStory/IntroStory.tscn" type="PackedScene" id=30]
+[ext_resource path="res://music/stare.ogg" type="AudioStream" id=31]
+[ext_resource path="res://cutscenes/Night5.tscn" type="PackedScene" id=32]
 
 [sub_resource type="Animation" id=10]
 length = 0.001
@@ -439,6 +441,7 @@ difficulties = {
 }
 completion_flag = "n4"
 time_to_completion = 720
+victory_scene = "res://scenes/victory/victory_n4.tscn"
 
 [node name="Night 5" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 33.0
@@ -452,8 +455,21 @@ text = "Night 5"
 flag_to_check = "n4"
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 5" instance=ExtResource( 2 )]
+difficulties = {
+"gabe": 14,
+"jojo": 16,
+"lucas": 16,
+"redman": 17,
+"tanner": 20,
+"willow": 10
+}
+passive_power = -0.5
 night_index = 4
 completion_flag = "n5"
+victory_scene = "res://eggs/victory_n5.tscn"
+song = ExtResource( 31 )
+time_before_start_music = 0.0
+start_cutscene = ExtResource( 32 )
 
 [node name="Night \?\?\?" type="Button" parent="LevelWindow/Choose a Night"]
 margin_left = 34.0

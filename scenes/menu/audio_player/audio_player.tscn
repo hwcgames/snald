@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/menu/audio_player/audio_player.gd" type="Script" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Panel
+
+export var stream: AudioStream
+
+func _ready():
+	$\"%AudioPlayer\".stream = stream
+"
+
+[node name="Control" type="Panel"]
+rect_min_size = Vector2( 256, 32 )
+size_flags_horizontal = 3
+script = SubResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+custom_constants/separation = 8
+
+[node name="PlayPauseButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+margin_right = 24.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 24, 0 )
+toggle_mode = true
+text = ">"
+
+[node name="Scrubber" type="HSlider" parent="HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 32.0
+margin_top = 3.0
+margin_right = 202.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 100000.0
+tick_count = 16
+ticks_on_borders = true
+
+[node name="Timer" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 210.0
+margin_top = 4.0
+margin_right = 246.0
+margin_bottom = 18.0
+text = "00:00"
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource( 1 )

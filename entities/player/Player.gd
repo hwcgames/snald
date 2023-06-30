@@ -68,9 +68,9 @@ func _physics_process(delta):
 		left_bounded = false
 	# Determine which direction to move
 	var movement = 0.0
-	if (mouse_x < 0.1 or Input.is_action_pressed("ui_left")) and not right_bounded and not $"/root/EventMan".circuit("player_camera_pad") and not CutsceneMan.player_cutscene_mode:
+	if (mouse_x < 0.05 or Input.is_action_pressed("ui_left")) and not right_bounded and not $"/root/EventMan".circuit("player_camera_pad") and not CutsceneMan.player_cutscene_mode:
 		movement += 1
-	if (mouse_x > 0.9 or Input.is_action_pressed("ui_right")) and not left_bounded and not $"/root/EventMan".circuit("player_camera_pad") and not CutsceneMan.player_cutscene_mode:
+	if (mouse_x > 0.95 or Input.is_action_pressed("ui_right")) and not left_bounded and not $"/root/EventMan".circuit("player_camera_pad") and not CutsceneMan.player_cutscene_mode:
 		movement -= 1
 	# Apply cutscene movement override
 	if CutsceneMan.player_cutscene_mode:

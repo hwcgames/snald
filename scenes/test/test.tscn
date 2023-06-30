@@ -60,7 +60,7 @@ void fragment() {
 shader = SubResource( 4 )
 shader_param/color_depth = 5
 shader_param/dithering = true
-shader_param/resolution_scale = 4
+shader_param/resolution_scale = 1
 
 [sub_resource type="QuadMesh" id=5]
 size = Vector2( 2, 2 )
@@ -114,7 +114,7 @@ void fragment() {
 shader = SubResource( 8 )
 shader_param/color_depth = 5
 shader_param/dithering = true
-shader_param/resolution_scale = 4
+shader_param/resolution_scale = 1
 
 [sub_resource type="GDScript" id=11]
 script/source = "extends Button

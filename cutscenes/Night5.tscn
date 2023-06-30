@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+func _ready():
+	if EventMan.has_reset:
+		CutsceneMan.stop_cutscene()
+		return
+	yield(get_tree().create_timer(4), \"timeout\")
+	CutsceneMan.put_text(\"Welcome to night 5. Congratulations on making it this far.\")
+	yield(get_tree().create_timer(4), \"timeout\")
+	CutsceneMan.put_text(\"None of the developers have beaten this night.\")
+	yield(get_tree().create_timer(3.5), \"timeout\")
+	CutsceneMan.put_text(\"We don't even know if it's possible.\")
+	yield(get_tree().create_timer(3.5), \"timeout\")
+	CutsceneMan.put_text(\"Good luck.\")
+	yield(get_tree().create_timer(4), \"timeout\")
+	CutsceneMan.stop_cutscene()
+"
+
+[node name="Node" type="Node"]
+script = SubResource( 1 )

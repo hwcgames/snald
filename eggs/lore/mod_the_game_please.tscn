@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="mod_the_game_nerd" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 635.0
+margin_bottom = 475.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 630.0
+margin_bottom = 82.0
+text = "Hey! Have you ever modded a game before? SNALD is fully open-source, so you can use all of the same tools we used to make the game. There's a file next to the game that contains a book that you can open in your web browser. If you're launching the game with the Itch.IO client, you can click index.html when starting the game. Otherwise, you can open the file at 'book/index.html' in your web browser."
+autowrap = true

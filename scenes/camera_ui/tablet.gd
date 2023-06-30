@@ -27,7 +27,7 @@ func _ready():
 func _process(_delta):
 	var mouse_pos = get_viewport().get_mouse_position()
 	mouse_pos /= get_viewport().size
-	if ((mouse_pos.y > 0.9 and mouse_pos.x > 0.3 and mouse_pos.x < 0.7) or Input.is_action_pressed("ui_down")) and not depleted and not CutsceneMan.player_cutscene_mode:
+	if ((mouse_pos.y > 0.95 and mouse_pos.x > 0.3 and mouse_pos.x < 0.7) or Input.is_action_pressed("ui_down")) and not depleted and not CutsceneMan.player_cutscene_mode:
 		if not suppress:
 			suppress = true
 			if active:

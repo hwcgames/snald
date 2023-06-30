@@ -31,6 +31,10 @@ export var punishment_songs: PoolStringArray = []
 
 signal song_finished
 
+func _physics_process(_delta):
+	if boomboxing and not EventMan.circuit("noisy"):
+		EventMan.circuit_on("noisy")
+
 func reset():
 	length = self.difficulty
 	timer.stop()
@@ -46,6 +50,8 @@ func _ready():
 	while true:
 		# TBD how timer should work
 		timer.wait_time = get_node("../CompletionTimer").wait_time / 3.9
+		if difficulty >= 20:
+			timer.wait_time = 20
 		timer.start()
 		song_is_correct = false
 		yield(timer, "timeout")
@@ -69,6 +75,7 @@ func _ready():
 			EventMan.circuit_off("give_battery")
 			length += CVars.get_float("song_length_increase_rate")
 		else:
+			PersistMan.set_flag('tanner_song_failed', true)
 			ap.play("failure")
 			yield(ap, "animation_finished")
 			timer.wait_time = CVars.get_float("punishment_song_length")
@@ -78,6 +85,13 @@ func _ready():
 			tween.interpolate_property(punisher, "volume_db", -10, 0, 1)
 			tween.start()
 			var song = load(punishment_songs[rand_range(0, len(punishment_songs))])
+			if killscreen:
+				song = load("res://music/night5.ogg")
+				for i in range(CVars.get_int("tanner_n20_battery_count")):
+					EventMan.circuit_on("give_battery")
+					EventMan.circuit_off("give_battery")
+					yield(get_tree(), "idle_frame")
+					yield(get_tree(), "idle_frame")
 			punisher.stream = song
 			punisher.play()
 			boomboxing = true
@@ -131,6 +145,10 @@ func check_song():
 
 func play_note(note: int):
 	print("Note " + str(note))
+	var sound = load('res://animatronics/tanner/'+str(note)+'.ogg')
+	$AudioStreamPlayer3D.stop()
+	$AudioStreamPlayer3D.stream = sound
+	$AudioStreamPlayer3D.play()
 	var slot_index = piano_index + note - 1
 	var mat: SpatialMaterial = mesh.surface_get_material(slot_index)
 	tween.interpolate_property(mat, "albedo_color", note_colors[note - 1], piano_key_color, 0.5)
@@ -157,6 +175,9 @@ func play_song():
 		if CVars.get_bool("show_song_notes"):
 			CutsceneMan.put_text(string, Vector2(0.5, 0.6), 0, true, "tanner_song_text")
 		yield($NoteTimer, "timeout")
+	if difficulty >= 20:
+		song_is_correct = false
+		emit_signal("song_finished")
 
 func gen_song():
 	var roll_for_deterministic_song = rand_range(0,20) < CVars.get_float("deterministic_song_chance")

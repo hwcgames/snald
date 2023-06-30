@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 ints = {
+"tanner_n20_battery_count": 6
 }
 floats = {
 "battery_charge": 30.0,

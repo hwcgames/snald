@@ -7868,7 +7868,7 @@
 {
 "classname" "DecorTrainTrain"
 "origin" "-119 383 33"
-"model_name" "train1"
+"model_name" "PainEngine"
 "scale" "0.75"
 "speed" "2"
 "track_name" "trainroom1"
@@ -7905,8 +7905,8 @@
 {
 "classname" "DecorTrainTrain"
 "origin" "-140 396 73"
-"model_name" "train1"
-"scale" "0.5"
+"model_name" "Bullet"
+"scale" "0.25"
 "speed" "3"
 "track_name" "trainroom2"
 }
@@ -7956,8 +7956,8 @@
 {
 "classname" "DecorTrainTrain"
 "origin" "-125 403 73"
-"model_name" "train1"
-"scale" "0.5"
+"model_name" "Boxcar"
+"scale" "0.25"
 "speed" "3"
 "track_name" "trainroom2"
 "offset" "-0.9"
@@ -7966,8 +7966,8 @@
 {
 "classname" "DecorTrainTrain"
 "origin" "-116 418 73"
-"model_name" "train1"
-"scale" "0.5"
+"model_name" "Boxcar"
+"scale" "0.25"
 "speed" "3"
 "track_name" "trainroom2"
 "offset" "-1.8"

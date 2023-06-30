@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://eggs/trains/garand/garand.gd" type="Script" id=1]
-[ext_resource path="res://eggs/trains/train_models/train1/train1.glb" type="PackedScene" id=2]
+[ext_resource path="res://eggs/trains/train_models/PainEngine/PainEngine.glb" type="PackedScene" id=2]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.304421, 0.403175, 0.760153 )

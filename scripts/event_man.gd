@@ -34,6 +34,7 @@ export var pause = false
 export var song: AudioStream = preload("res://music/night_ambience.ogg")
 export var time_before_start_music = 20.0
 export var start_cutscene: PackedScene
+export var has_reset = false
 var night_config
 
 onready var power_timer = Timer.new()
@@ -76,6 +77,7 @@ func reset():
 	between_scene = null
 	completion_scene = null
 	LevelLoader.map = null
+	has_reset = false
 	CutsceneMan.player_cutscene_mode = false
 	song = load("res://music/night_ambience.ogg")
 	time_before_start_music = 20.0
@@ -150,6 +152,8 @@ func circuit(name):
 
 func jumpscare(character, scene_name):
 	emit_signal("jumpscare", character, scene_name)
+	PersistMan.set_flag('died_'+character, true)
+	PersistMan.set_flag('died_'+character+'_'+scene_name, true)
 
 func return_to_title():
 	reset()
@@ -157,6 +161,7 @@ func return_to_title():
 
 func quick_reset():
 	reset()
+	has_reset = true
 	night_config.instance().apply()
 	for character in difficulties.keys():
 		push_state(character, 0)
