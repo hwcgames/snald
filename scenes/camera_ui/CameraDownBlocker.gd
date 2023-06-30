@@ -10,8 +10,13 @@ extends ColorRect
 func _ready():
 	EventMan.connect("on", self, "on")
 	EventMan.connect("off", self, "off")
+	EventMan.connect("reset", self, "reset")
 	hide()
 	pass # Replace with function body.
+
+func reset():
+	hide()
+	$"%MapTexture".show()
 
 func on(circuit: String):
 	if circuit == "computer_is_down":
