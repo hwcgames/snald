@@ -33,7 +33,7 @@ func state_machine():
 		return state + 1 
 	if state in [4,5,6,7,8,9]:
 		$MovementTimer.wait_time = 0.3 if state == 9 else 1
-		glide_to_state(state+1, 0.29 if state == 9 else 0.98)
+		glide_to_state(state+1, 0.25 if state == 9 else 0.95)
 		return state
 	match state:
 		3:
@@ -41,11 +41,12 @@ func state_machine():
 			glide_to_state(4, 0.98)
 			return state
 		10:
+			$MovementTimer.stop()
 			if EventMan.circuit(office_door_circuit):
 				$"/root/EventMan".jumpscare("jojo", "jojo")
 				return 0
 			else:
 				# $DogSoundsPlayer.play()   #actually add that sound ok???
 				$MovementTimer.wait_time = gen_time()
-				assume_state(0)
+				call_deferred("assume_state", 0)
 				return 0

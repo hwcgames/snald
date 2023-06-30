@@ -203,3 +203,13 @@ func overpowered_cmd():
 	EventMan.passive_power = -20
 	EventMan.passive_temperature = -1
 
+const jojo_a_go_go_help = "make jojo go"
+func jojo_a_go_go_cmd():
+	var jojo: Jojo
+	for a in get_tree().get_nodes_in_group('animatronic'):
+		if a is Jojo:
+			jojo = a
+	if not jojo:
+		return
+	jojo.get_node("MovementTimer").emit_signal("timeout")
+
