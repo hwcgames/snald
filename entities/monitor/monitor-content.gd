@@ -26,6 +26,7 @@ func reboot():
 	$"%TabContainer".current_tab = 1
 	$"%LogContainer".start_spooling()
 	timer.wait_time = CVars.get_float("reboot_time")
+	timer.start()
 	yield(timer, "timeout")
 	$"%LogContainer".stop_spooling()
 	$"%TabContainer".current_tab = 2
