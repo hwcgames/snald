@@ -7,6 +7,11 @@ func _ready():
 	if EventMan.has_reset:
 		CutsceneMan.stop_cutscene()
 		return
+	EventMan.pause = true
+	var nc = EventMan.night_config.instance()
+	nc.time_to_completion -= 20
+	EventMan.night_config = PackedScene.new()
+	EventMan.night_config.pack(nc)
 	yield(get_tree().create_timer(4), \"timeout\")
 	CutsceneMan.put_text(\"Welcome to night 5. Congratulations on making it this far.\")
 	yield(get_tree().create_timer(4), \"timeout\")
@@ -16,6 +21,7 @@ func _ready():
 	yield(get_tree().create_timer(3.5), \"timeout\")
 	CutsceneMan.put_text(\"Good luck.\")
 	yield(get_tree().create_timer(4), \"timeout\")
+	EventMan.pause = false
 	CutsceneMan.stop_cutscene()
 "
 

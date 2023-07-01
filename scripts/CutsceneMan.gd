@@ -50,7 +50,7 @@ func put_text(text: String, position=Vector2(0.5, 0.5), speed=0.01, centered=tru
 	text_s.anchor_top = position.y
 	text_s.anchor_bottom = position.y
 	text_s.add_font_override("Font", font)
-	text_s.grow_horizontal = -1 if centered else 1
+	text_s.grow_horizontal = 2 if centered else 1
 	$Blocker.add_child(text_s)
 
 func remove_text(id="default_text_id", time=0.5, transition=Tween.TRANS_LINEAR, easing=Tween.EASE_IN_OUT):

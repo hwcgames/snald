@@ -36,15 +36,13 @@ func _physics_process(_delta):
 		EventMan.circuit_on("noisy")
 
 func reset():
-	length = self.difficulty
-	assume_state(0)
-	boomboxing = false
-	timer.stop()
-	timer.wait_time = get_node("../CompletionTimer").wait_time / 3.9
-	if difficulty >= 20:
-		timer.wait_time = 20
-	timer.start()
-	song_is_correct = false
+	get_parent().call_deferred("spawn_animatronic", "tanner")
+	remove_visitor(self)
+
+func remove_visitor(n: Node):
+	for c in n.get_children():
+		remove_visitor(c)
+	n.queue_free()
 
 func _ready():
 	length = self.difficulty
@@ -56,7 +54,7 @@ func _ready():
 		# TBD how timer should work
 		timer.wait_time = get_node("../CompletionTimer").wait_time / 3.9
 		if difficulty >= 20:
-			timer.wait_time = 20
+			timer.wait_time = 2 if EventMan.has_reset else 20
 		timer.start()
 		song_is_correct = false
 		yield(timer, "timeout")
@@ -150,7 +148,7 @@ func check_song():
 
 func play_note(note: int):
 	print("Note " + str(note))
-	var sound = load('res://animatronics/tanner/'+str(note)+'.ogg')
+	var sound = load('res://animatronics/tanner/'+str(note-1)+'.ogg')
 	$AudioStreamPlayer3D.stop()
 	$AudioStreamPlayer3D.stream = sound
 	$AudioStreamPlayer3D.play()

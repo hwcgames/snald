@@ -83,7 +83,6 @@ var jumpscaring = false
 func reset():
 	EventMan.disconnect("on", self, "attack_if_window_opens_circuit_handler")
 	EventMan.disconnect("on", self, "vent_flashbang")
-
 	hunt_accumulation = 0.0
 	hunt_target = null
 	have_hunted = false
