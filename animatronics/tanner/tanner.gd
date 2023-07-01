@@ -37,9 +37,14 @@ func _physics_process(_delta):
 
 func reset():
 	length = self.difficulty
+	assume_state(0)
+	boomboxing = false
 	timer.stop()
 	timer.wait_time = get_node("../CompletionTimer").wait_time / 3.9
+	if difficulty >= 20:
+		timer.wait_time = 20
 	timer.start()
+	song_is_correct = false
 
 func _ready():
 	length = self.difficulty
