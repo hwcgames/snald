@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/booting.mp3-1ac38a785c8acd6983082d9a7b8ac703.mp3str"
+
+[deps]
+
+source_file="res://music/booting.mp3"
+dest_files=[ "res://.import/booting.mp3-1ac38a785c8acd6983082d9a7b8ac703.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=5.0

@@ -218,8 +218,6 @@ margin_left = -161.0
 margin_top = -176.0
 margin_right = 0.0
 margin_bottom = -33.0
-talk_frames = PoolStringArray( "res://scenes/menu/buddy/poses/talk1.png", "res://scenes/menu/buddy/poses/talk2.png", "res://scenes/menu/buddy/poses/talk3.png", "res://scenes/menu/buddy/poses/talk4.png", "res://scenes/menu/buddy/poses/talk5.png", "res://scenes/menu/buddy/poses/talk6.png", "res://scenes/menu/buddy/poses/talk7.png", "res://scenes/menu/buddy/poses/talk8.png", "res://scenes/menu/buddy/poses/talk9.png" )
-talk_sounds = PoolStringArray( "res://scenes/menu/buddy/sounds/talk1.ogg", "res://scenes/menu/buddy/sounds/talk2.ogg", "res://scenes/menu/buddy/sounds/talk4.ogg", "res://scenes/menu/buddy/sounds/talk5.ogg", "res://scenes/menu/buddy/sounds/talk6.ogg" )
 
 [node name="ThingsBar" type="Panel" parent="."]
 anchor_top = 1.0
