@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>games.handlewithcare.snald</id>
+  
+  <name>SNALD</name>
+  <summary>Spooky Vent-Patrollin&apos; Door-Controllin&apos; Game</summary>
+  
+  <metadata_license>CC-BY-4.0</metadata_license>
+  <project_license>MPL-2.0</project_license>
+  
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>gamepad</control>
+  </supports>
+  
+  <description>
+    <p>
+      An open-source stay-in-place horror game that doesn&apos;t take itself too seriously.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">games.handlewithcare.snald.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://pub.handlewithcare.games/snald-screenshots/1.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://pub.handlewithcare.games/snald-screenshots/2.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://pub.handlewithcare.games/snald-screenshots/3.png</image>
+    </screenshot>
+  </screenshots>
+</component>
