@@ -18,6 +18,7 @@ signal reset
 
 signal push_camera_pad(state)
 signal push_camera_selection(id)
+signal character_moves_in(room)
 
 export var difficulties: Dictionary = {}
 export var power: float = 100.0

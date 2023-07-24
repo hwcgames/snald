@@ -15,6 +15,7 @@ signal camera_change(id)
 
 func _ready():
 	EventMan.connect("reset", self, "reset")
+	EventMan.connect("character_moves_in", self, "character_moves_in")
 
 func reset():
 	self.texture = null
@@ -26,15 +27,7 @@ func _physics_process(_delta):
 func apply_camera(camera_node):
 	if EventMan.circuit("computer_is_down"):
 		return;
-	var _drop = tween.remove_all()
-	var easing = 1
-	var transition = 2
-	_drop = tween.interpolate_method(filter, "put_aberration", 0.3, 0.0001, 1.0, transition, easing)
-	_drop = tween.interpolate_method(filter, "put_warp", 1, 0, 1.0, transition, easing)
-	_drop = tween.interpolate_method(filter, "put_roll_size", 1, 16, 1.0, transition, easing)
-	_drop = tween.interpolate_method(filter, "put_distort", 2, 0.01, 1.0, transition, easing)
-	_drop = tween.interpolate_method(filter, "put_noise_op", 1, 0.02, 1.0, transition, easing)
-	_drop = tween.start()
+	static_go()
 	sfx.play()
 #	_ready()
 	if last_camera_id:
@@ -69,3 +62,18 @@ func _mouse_entered():
 
 func _mouse_exited():
 	mouse_inside = false
+
+func character_moves_in(room: String):
+	if room == last_camera_room:
+		static_go()
+
+func static_go():
+	var _drop = tween.remove_all()
+	var easing = 1
+	var transition = 2
+	_drop = tween.interpolate_method(filter, "put_aberration", 0.3, 0.0001, 1.0, transition, easing)
+	_drop = tween.interpolate_method(filter, "put_warp", 1, 0, 1.0, transition, easing)
+	_drop = tween.interpolate_method(filter, "put_roll_size", 1, 16, 1.0, transition, easing)
+	_drop = tween.interpolate_method(filter, "put_distort", 2, 0.01, 1.0, transition, easing)
+	_drop = tween.interpolate_method(filter, "put_noise_op", 1, 0.02, 1.0, transition, easing)
+	_drop = tween.start()

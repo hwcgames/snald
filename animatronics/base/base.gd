@@ -49,6 +49,8 @@ func assume_state(new_state: int):
 	if room != target.get_room():
 		$"/root/EventMan".circuit_off(id + "." + room)
 		$"/root/EventMan".circuit_on(id + "." + target.get_room())
+	EventMan.emit_signal("character_moves_in", room)
+	EventMan.emit_signal("character_moves_in", target.get_room())
 	self.state = new_state
 	room = target.get_room()
 	emit_signal("change_state", new_state)
