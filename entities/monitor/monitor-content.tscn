@@ -30,7 +30,6 @@ custom_styles/panel = SubResource( 2 )
 tabs_visible = false
 
 [node name="On" type="Control" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -38,16 +37,14 @@ anchor_bottom = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 32.0
+margin_top = 25.0
 margin_right = 61.0
 margin_bottom = 64.0
 grow_vertical = 0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Power" type="HBoxContainer" parent="TabContainer/On/VBoxContainer"]
+unique_name_in_owner = true
 margin_right = 697.0
 margin_bottom = 34.0
 
@@ -69,6 +66,7 @@ text = "1"
 valign = 2
 
 [node name="Temperature" type="HBoxContainer" parent="TabContainer/On/VBoxContainer"]
+unique_name_in_owner = true
 margin_top = 38.0
 margin_right = 697.0
 margin_bottom = 72.0
@@ -92,18 +90,15 @@ valign = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/On"]
 anchor_right = 1.0
-margin_left = 16.0
-margin_top = 16.0
+margin_left = 10.0
+margin_top = 10.0
 margin_right = 64.0
-margin_bottom = 32.0
+margin_bottom = 27.0
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PowerMeter" type="TextureProgress" parent="TabContainer/On/HBoxContainer"]
 margin_right = 16.0
-margin_bottom = 16.0
+margin_bottom = 17.0
 rect_min_size = Vector2( 16, 16 )
 max_value = 101.0
 rounded = true
@@ -117,7 +112,7 @@ nine_patch_stretch = true
 [node name="TemperatureMeter" type="TextureProgress" parent="TabContainer/On/HBoxContainer"]
 margin_left = 20.0
 margin_right = 36.0
-margin_bottom = 16.0
+margin_bottom = 17.0
 rect_min_size = Vector2( 16, 16 )
 min_value = 40.0
 max_value = 110.0
@@ -132,7 +127,7 @@ nine_patch_stretch = true
 [node name="MiniClock" type="TextureProgress" parent="TabContainer/On/HBoxContainer"]
 margin_left = 40.0
 margin_right = 56.0
-margin_bottom = 16.0
+margin_bottom = 17.0
 rect_min_size = Vector2( 16, 16 )
 texture_under = ExtResource( 3 )
 texture_progress = ExtResource( 3 )
@@ -140,8 +135,24 @@ fill_mode = 4
 tint_under = Color( 0.505882, 0.505882, 0.505882, 1 )
 nine_patch_stretch = true
 
+[node name="Time" type="HBoxContainer" parent="TabContainer/On"]
+unique_name_in_owner = true
+anchor_left = 1.0
+anchor_right = 1.0
+margin_right = -5.0
+grow_horizontal = 0
+
+[node name="Number" type="Label" parent="TabContainer/On/Time"]
+margin_right = 14.0
+margin_bottom = 34.0
+grow_vertical = 0
+custom_fonts/font = ExtResource( 1 )
+text = "1"
+valign = 2
+
 [node name="LogContainer" type="VBoxContainer" parent="TabContainer"]
 unique_name_in_owner = true
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 6 )

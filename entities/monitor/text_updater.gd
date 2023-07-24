@@ -20,5 +20,12 @@ func power_tick():
 	call_deferred("update")
 
 func update():
-	$Power/Number.text = str(power) + "%"
-	$Temperature/Number.text = str(temperature) + " K"
+	$"%Power/Number".text = str(power) + "%"
+	$"%Temperature/Number".text = str(temperature) + " K"
+	var timeFrac: float = float(OS.get_unix_time() - EventMan.start_time) / float(EventMan.time_to_completion);
+	var minutes = ceil(6 * 60 * timeFrac / 5) * 5
+	var hours = floor(minutes / 60)
+	minutes = int(floor(minutes)) % 60
+	if hours == 0:
+		hours = 12
+	$"%Time/Number".text = str(hours) + ':' + ('0' if minutes < 10 else '') + str(minutes)
