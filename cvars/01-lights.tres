@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scripts/stored_cvars.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+ints = {
+}
+floats = {
+"default_light_power_consumption": 0.0,
+"outdoor_light_power_consumption": 0.1,
+"vent_light_power_consumption": 8.0
+}
+bools = {
+}
+tables = {
+}

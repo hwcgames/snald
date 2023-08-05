@@ -11,15 +11,15 @@ description = ""
 qodot_internal = false
 base_classes = [  ]
 class_properties = {
-"always_on": 1,
+"always_on": true,
 "buzz": "res://music/stare.ogg",
 "circuit": "",
-"energy": ".5",
+"energy": 0.5,
 "flicker_below": 10.0,
 "flicker_chance": 0.01,
 "hue": 0.0,
 "instant_on": 0,
-"power": 0.1,
+"power": "default_light_power_consumption",
 "radius": 16.0,
 "saturation": 0.0
 }
@@ -29,7 +29,7 @@ class_property_descriptions = {
 "energy": "The energy of the light.",
 "flicker_below": "The power threshold below which the light will flicker.",
 "flicker_chance": "The chance every frame for the light to start a flicker.",
-"power": "The power consumed by the light each power tick",
+"power": "The float CVar name this light should read its power consumption from.",
 "radius": "The radius of the light"
 }
 meta_properties = {

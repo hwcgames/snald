@@ -25,14 +25,14 @@ func _ready():
 	var _err = $"/root/EventMan".connect("on", self, "circuit_on")
 	_err = $"/root/EventMan".connect("off", self, "circuit_off")
 	_err = $"/root/EventMan".connect("power_tick", self, "power_tick")
-	on_now = (properties["always_on"] == 1) if "always_on" in properties else false
-	always_on = (properties["always_on"] == 1) if "always_on" in properties else false
+	on_now = (int(properties["always_on"]) == 1) if "always_on" in properties else false
+	always_on = (int(properties["always_on"]) == 1) if "always_on" in properties else false
 	circuit = properties["circuit"] if "circuit" in properties else ""
 	flicker_below = properties["flicker_below"] if "flicker_below" in properties else 10.0
 	flicker_chance = properties["flicker_chance"] if "flicker_chance" in properties else 0.01
 	energy = float(properties["energy"]) if "energy" in properties else 0.5
 	goal_energy = energy * (1 if on_now else 0)
-	power = properties["power"] if "power" in properties else 0.1
+	power = CVars.get_float(properties["power"]) if "power" in properties else CVars.get_float("default_light_power_consumption")
 	hue = (float(properties["hue"]) / 360) if "hue" in properties else hue
 	saturation = properties["saturation"] if "saturation" in properties else saturation
 	$OmniLight.light_color = Color.from_hsv(hue, saturation, 1.0)

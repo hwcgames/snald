@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scripts/stored_cvars.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+ints = {
+}
+floats = {
+"gabe_base_shoot_time": 50.0,
+"lucas_hunt_accumulation_rate": 0.01,
+"lucas_n1_wait_time": 5.0,
+"noisy_diff_boost": 8.0,
+}
+bools = {
+}
+tables = {
+}

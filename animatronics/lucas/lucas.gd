@@ -20,56 +20,9 @@ onready var HUNT_TARGETS = [
 	{"window": 0.5, "door": 0.25, "vent": 0.25}
 ][night]
 
-var ROOM_CANDIDATES = {
-	0: [1],
-	1: [0, 2, 7],
-	2: [1, 3],
-	3: [2, 4],
-	4: [3, 5, 6],
-	5: [4],
-	6: [4, 7],
-	7: [1, 6, 8],
-	8: [7]
-}
+var ROOM_CANDIDATES = CVars.get_table(CVars.get_table("lucas_table_ids").get("neighbors"))
 
-var HUNT_PATHS = {
-	"window": {
-		0: 1,
-		1: 2,
-		2: 3,
-		3: 4,
-		4: 9,
-		5: 4,
-		6: 4,
-		7: 6,
-		8: 7,
-		9: 10,
-	},
-	"door": {
-		0: 1,
-		1: 13,
-		2: 1,
-		3: 2,
-		4: 6,
-		5: 4,
-		6: 7,
-		7: 13,
-		8: 7
-	},
-	"vent": {
-		0: 1,
-		1: 2,
-		2: 14,
-		3: 2,
-		4: 3,
-		5: 4,
-		6: 7,
-		7: 8,
-		8: 15,
-		14: 16,
-		15: 16
-	}
-}
+var HUNT_PATHS = CVars.get_table(CVars.get_table("lucas_table_ids").get("paths"))
 
 func _ready():
 	call_deferred("assume_state", 0)

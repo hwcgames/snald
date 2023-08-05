@@ -5925,7 +5925,6 @@
 "energy" ".5"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "8"
 "buzz" "res://entities/light/stare.wav"
 }
@@ -5952,7 +5951,7 @@
 "energy" ".5"
 "flicker_below" "100"
 "flicker_chance" "0.01"
-"power" ".1"
+"power" "outdoor_light_power_consumption"
 "radius" "8"
 "buzz" "res://music/stare.ogg"
 }
@@ -5960,7 +5959,9 @@
 {
 "classname" "SnaldDoor"
 "circuit" "office_door_toggle"
-"power_consumption" ".4"
+"power_consumption" "office_door_power_consumption"
+"affects_temperature" "office_door_affects_temperature"
+"temperature_scale" "office_door_temperature_scale"
 "sound" "true"
 // brush 0
 {
@@ -6408,7 +6409,9 @@
 {
 "classname" "SnaldDoor"
 "circuit" "window_toggle"
-"affects_temperature" "1"
+"affects_temperature" "window_affects_temperature"
+"power_consumption" "window_power_consumption"
+"temperature_scale" "window_temperature_scale"
 // brush 0
 {
 ( 68 -132 84 ) ( 68 -140 84 ) ( 68 -132 32 ) beam_wall_01 8 0 0 0.02 0.02
@@ -6799,7 +6802,6 @@
 "energy" ".35"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "10"
 }
 // entity 68
@@ -6811,7 +6813,6 @@
 "energy" ".25"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "18"
 }
 // entity 69
@@ -6823,7 +6824,6 @@
 "energy" ".25"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "13"
 }
 // entity 70
@@ -6835,7 +6835,6 @@
 "energy" ".25"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "13"
 }
 // entity 71
@@ -6847,7 +6846,6 @@
 "energy" ".25"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "13"
 }
 // entity 72
@@ -6859,7 +6857,6 @@
 "energy" ".25"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "13"
 }
 // entity 73
@@ -6871,7 +6868,6 @@
 "energy" ".4"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "14"
 }
 // entity 74
@@ -6883,7 +6879,6 @@
 "energy" ".15"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "13"
 }
 // entity 75
@@ -6895,7 +6890,6 @@
 "energy" ".15"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "13"
 }
 // entity 76
@@ -6906,7 +6900,6 @@
 "circuit" ""
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "13"
 "energy" ".5"
 }
@@ -6921,7 +6914,7 @@
 "always_on" "0"
 "flicker_below" "10"
 "flicker_chance" "0.01"
-"power" "8"
+"power" "vent_light_power_consumption"
 "buzz" "res://music/flash.ogg"
 }
 // entity 78
@@ -6954,7 +6947,6 @@
 "energy" ".25"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "15"
 }
 // entity 81
@@ -6966,7 +6958,6 @@
 "energy" ".25"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "15"
 }
 // entity 82
@@ -6978,7 +6969,6 @@
 "energy" ".25"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "15"
 }
 // entity 83
@@ -6990,7 +6980,6 @@
 "energy" ".3"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "6"
 }
 // entity 84
@@ -7002,7 +6991,6 @@
 "energy" ".2"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "4"
 }
 // entity 85
@@ -7014,7 +7002,6 @@
 "energy" ".2"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "14"
 }
 // entity 86
@@ -7026,7 +7013,6 @@
 "energy" ".2"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "10"
 }
 // entity 87
@@ -7038,7 +7024,6 @@
 "energy" ".5"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "9"
 }
 // entity 88
@@ -7050,7 +7035,6 @@
 "energy" ".1"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "12"
 }
 // entity 89
@@ -7292,7 +7276,6 @@
 "energy" ".2"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "7"
 }
 // entity 113
@@ -7663,7 +7646,6 @@
 "origin" "-4 704 54"
 "always_on" "1"
 "flicker_below" "100"
-"power" "0"
 "radius" "6"
 "flicker_chance" ".2"
 "energy" ".1"
@@ -7677,7 +7659,6 @@
 "circuit" "office_door_toggle_not"
 "radius" "0.1"
 "energy" "50"
-"power" "0"
 }
 // entity 150
 {
@@ -7751,7 +7732,6 @@
 "energy" ".2"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "4"
 }
 // entity 158
@@ -7763,7 +7743,6 @@
 "energy" ".2"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "10"
 }
 // entity 159
@@ -7775,7 +7754,6 @@
 "energy" ".35"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "10"
 }
 // entity 160
@@ -7787,7 +7765,6 @@
 "energy" ".2"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "4"
 }
 // entity 161
@@ -7799,7 +7776,6 @@
 "energy" ".2"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "4"
 }
 // entity 162
@@ -7811,7 +7787,6 @@
 "energy" ".2"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "4"
 }
 // entity 163
@@ -7823,7 +7798,6 @@
 "energy" ".2"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "4"
 }
 // entity 164
@@ -7835,7 +7809,6 @@
 "energy" ".2"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "4"
 }
 // entity 165
@@ -7846,7 +7819,6 @@
 "circuit" "camera.officedoor_cam"
 "flicker_below" "10"
 "flicker_chance" ".001"
-"power" "0"
 "radius" "2"
 "energy" ".2"
 }
@@ -7992,7 +7964,6 @@
 "origin" "-59 -79 78"
 "radius" "4"
 "always_on" "1"
-"power" "0"
 "flicker_below" "10"
 "flicker_chance" "0.01"
 "energy" ".5"
@@ -8470,7 +8441,6 @@
 "circuit" "outdoor_light"
 "radius" "0.15"
 "energy" "30"
-"power" "0"
 }
 // entity 250
 {

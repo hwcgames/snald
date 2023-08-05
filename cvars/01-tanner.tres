@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scripts/stored_cvars.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+ints = {
+"tanner_n20_battery_count": 6
+}
+floats = {
+"deterministic_song_chance": 2.0,
+"punishment_song_length": 20.0,
+"song_length_increase_rate": 2.0,
+}
+bools = {
+"show_song_notes": true
+}
+tables = {
+}

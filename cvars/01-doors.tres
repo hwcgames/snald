@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scripts/stored_cvars.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+ints = {
+}
+floats = {
+"default_door_consumption": 0.0,
+"default_door_temperature_scale": 1.0,
+"office_door_power_consumption": 0.4,
+"office_door_temperature_scale": 1.0,
+"window_power_consumption": 0.0,
+"window_temperature_scale": 1.0
+}
+bools = {
+"default_door_affects_temperature": false,
+"office_door_affects_temperature": false,
+"window_affects_temperature": true
+}
+tables = {
+}

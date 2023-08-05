@@ -5,26 +5,19 @@
 [resource]
 script = ExtResource( 1 )
 ints = {
-"tanner_n20_battery_count": 6
 }
 floats = {
 "battery_charge": 30.0,
-"deterministic_song_chance": 2.0,
-"gabe_base_shoot_time": 50.0,
 "generator_fail_threshold": 20.0,
 "hot_threshold": 90.0,
-"lucas_hunt_accumulation_rate": 0.01,
-"lucas_n1_wait_time": 5.0,
-"noisy_diff_boost": 8.0,
 "player_slow_threshold": 50.0,
-"punishment_song_length": 20.0,
-"reboot_time": 10.0,
-"song_length_increase_rate": 2.0
+"reboot_time": 10.0
 }
 bools = {
 "force_opening": false,
 "fr_player": true,
 "funny_mode": false,
-"normal_player": true,
-"show_song_notes": true
+"normal_player": true
+}
+tables = {
 }

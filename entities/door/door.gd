@@ -10,6 +10,7 @@ var circuit = "default"
 var depleted = false
 var power_consumption = 1
 var affects_temperature = 0
+var temperature_scale = 1
 var closing = preload("res://music/motor.ogg")
 var closed = preload("res://music/door-sound.ogg")
 var opened = preload("res://music/door-sound-opened.ogg")
@@ -29,12 +30,13 @@ func _ready():
 	open_time = properties["open_time"] if "open_time" in properties else open_time
 	easing = properties["easing"] if "easing" in properties else easing
 	circuit = properties["circuit"] if "circuit" in properties else circuit
-	power_consumption = properties["power_consumption"] if "power_consumption" in properties else 0
-	affects_temperature = properties["affects_temperature"] if "affects_temperature" in properties else 0
+	power_consumption = CVars.get_float(properties["power_consumption"]) if "power_consumption" in properties else 0
+	affects_temperature = CVars.get_bool(properties["affects_temperature"]) if "affects_temperature" in properties else false
+	temperature_scale = CVars.get_float(properties["temperature_scale"]) if "temperature_scale" in properties else 1
 	var _err = $"/root/EventMan".connect("on", self, "on")
 	_err = $"/root/EventMan".connect("off", self, "off")
 	_err = $"/root/EventMan".connect("power_tick", self, "power_tick")
-	if affects_temperature == 1:
+	if affects_temperature:
 		_err = $"/root/EventMan".connect("temperature_tick", self, "temperature_tick")
 	add_child(player)
 
@@ -79,6 +81,6 @@ func power_tick():
 
 func temperature_tick():
 	if open == false:
-		$"/root/EventMan".temperature += 2
+		$"/root/EventMan".temperature += 2 * temperature_scale
 	else:
-		$'/root/EventMan'.temperature -= 1
+		$'/root/EventMan'.temperature -= 1 * temperature_scale

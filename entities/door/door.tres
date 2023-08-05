@@ -11,12 +11,13 @@ description = ""
 qodot_internal = false
 base_classes = [  ]
 class_properties = {
-"affects_temperature": 0,
+"affects_temperature": "default_door_affects_temperature",
 "circuit": "default",
 "easing": -2.0,
 "open_time": 1.0,
-"power_consumption": 0.0,
-"sound": "false"
+"power_consumption": "default_door_consumption",
+"sound": "false",
+"temperature_scale": "default_door_temperature_scale"
 }
 class_property_descriptions = {
 }
