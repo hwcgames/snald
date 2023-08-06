@@ -8,6 +8,4 @@ This book documents SNALD's engine features and guides you through getting start
 
 SNALD's development and build automation happen on a Linux system, so we include scripts to make setup easy there. They'll probably require some modification to work on MacOS, but if you're willing to do some digging they should work. When something can be done easily with a helper script, you'll see a notice like this:
 
-```admonish tip
-On Linux, you can run `foo.sh` to accomplish bar more easily.
-```
+> *On Linux,* you can run `foo.sh` to accomplish bar more easily.

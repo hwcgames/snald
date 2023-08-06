@@ -50,9 +50,7 @@ jobs:
       - uses: drmingdrmer/mdbook-full@main
       - name: Build MDBook
         run: |
-          cargo install mdbook-admonish
           cd book
-          mdbook-admonish install .
           mdbook build
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
