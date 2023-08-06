@@ -6,6 +6,7 @@ var original_difficulty = 0;
 export var flashbang_circuit = "office_vent_flash_momentary"
 
 func _ready():
+	$MovementTimer.wait_time = CVars.get_float("gabe_tick_interval")
 	animation_player = get_node("gabe/AnimationPlayer")
 	if night_index == 0:
 		EventMan.circuit_off("save.gabe_glass_broken")

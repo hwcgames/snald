@@ -12,16 +12,22 @@ var heat_increase = 0
 var noise_increase = 0
 
 func gen_time():
-	return rand_range(130 - (6 * (difficulty + heat_increase + noise_increase)), 180 - (8 * difficulty + heat_increase + noise_increase))
+	return rand_range(
+		CVars.get_float("jojo_min_move_time_base")
+		- (CVars.get_float("jojo_min_reduction_fac") * (difficulty + heat_increase + noise_increase)),
+		CVars.get_float("jojo_max_move_time_base")
+		- (CVars.get_float("jojo_max_reduction_fac") * difficulty + heat_increase + noise_increase))
 
 func animatronic_tick():
-	heat_increase = ($"/root/EventMan".temperature - 90) / 6 if $"/root/EventMan".temperature >= 90 else 0
+	var hot_threshold = CVars.get_float("hot_threshold")
+	heat_increase = ($"/root/EventMan".temperature - hot_threshold) / 6 if $"/root/EventMan".temperature >= hot_threshold else 0
 	noise_increase = 8 if $"/root/EventMan".circuit("noisy") == true else 0
 	$MovementTimer.wait_time = gen_time()
 	assume_state(state_machine())
 	$MovementTimer.start()
 
 func _ready():
+	$MovementTimer.wait_time = CVars.get_float("jojo_tick_interval")
 	animation_player = get_node("jojo/AnimationPlayer")
 	$MovementTimer.wait_time = gen_time()
 	$MovementTimer.start()

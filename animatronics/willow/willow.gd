@@ -12,6 +12,7 @@ var lookaway = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$MovementTimer.wait_time = CVars.get_float("willow_tick_interval")
 	animation_player = $wolo/AnimationPlayer
 	add_to_group("display_on_monitor")
 	connect("change_state", self, "new_state")

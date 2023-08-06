@@ -11,7 +11,6 @@ mid_height = 3.0
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 2 )
 note_colors = [ Color( 1, 0, 0, 1 ), Color( 1, 0.683333, 0, 1 ), Color( 0.783333, 1, 0, 1 ), Color( 0, 1, 0.816667, 1 ), Color( 0, 0, 1, 1 ), Color( 0.7, 0, 1, 1 ), Color( 1, 0, 0.75, 1 ), Color( 1, 0, 0, 1 ) ]
-punishment_songs = PoolStringArray( "res://music/Congratulations! You have been promoted to Deceased.ogg", "res://music/Cylindrical_Test_Subject.ogg", "res://music/cereal.ogg", "res://music/joj.ogg", "res://music/Party In The Office!.ogg", "res://music/the song that plays when he kills you.ogg" )
 
 [node name="tanner" parent="." instance=ExtResource( 1 )]
 

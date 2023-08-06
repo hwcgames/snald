@@ -25,6 +25,7 @@ var ROOM_CANDIDATES = CVars.get_table(CVars.get_table("lucas_table_ids").get("ne
 var HUNT_PATHS = CVars.get_table(CVars.get_table("lucas_table_ids").get("paths"))
 
 func _ready():
+	$MovementTimer.wait_time = CVars.get_float("lucas_tick_interval")
 	call_deferred("assume_state", 0)
 	animation_player = get_node("lucas/AnimationPlayer")
 	# Add listener for powertick so we can run special behavior when it runs out

@@ -7,9 +7,11 @@ script = ExtResource( 1 )
 ints = {
 }
 floats = {
-"lucas_hunt_accumulation_rate": 0.01,
-"lucas_n1_wait_time": 5.0,
-"noisy_diff_boost": 8.0
+"jojo_min_move_time_base": 130.0,
+"jojo_max_move_time_base": 180.0,
+"jojo_min_reduction_fac": 6.0,
+"jojo_max_reduction_fac": 8.0,
+"jojo_tick_interval": 5.0
 }
 bools = {
 }

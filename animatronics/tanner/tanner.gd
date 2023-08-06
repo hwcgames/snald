@@ -22,12 +22,10 @@ var boomboxing: bool = false
 var length: int = 0
 var note_wait: float = 0.5
 
-var song_choices: Array = [
-	PoolIntArray([1,2,3,4,5,6,7,8])
-]
+var song_choices: Array = CVars.get_table(CVars.get_table("tanner_tables").get("deterministic_songs")).songs
 export var note_samples: Array = []
 export var note_colors: Array = []
-export var punishment_songs: PoolStringArray = []
+export var punishment_songs: Array = CVars.get_table(CVars.get_table("tanner_tables").get("punishment_songs")).songs
 
 signal song_finished
 

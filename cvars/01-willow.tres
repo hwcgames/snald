@@ -7,9 +7,7 @@ script = ExtResource( 1 )
 ints = {
 }
 floats = {
-"lucas_hunt_accumulation_rate": 0.01,
-"lucas_n1_wait_time": 5.0,
-"noisy_diff_boost": 8.0
+"willow_tick_interval": 12.0
 }
 bools = {
 }

@@ -4,6 +4,7 @@ export var office_door_circuit = "office_door_toggle"
 var wait_counter = 3
 
 func _ready():
+	$MovementTimer.wait_time = CVars.get_float("redman_tick_interval")
 	animation_player = $redman/AnimationPlayer
 	assume_state(0)
 	$MovementTimer.start()
@@ -35,7 +36,7 @@ func state_machine():
 			var roll = randf()
 			if roll <.66:
 				var _drop = $AttackTimer.connect("timeout", self, "attempt_attack")
-				$AttackTimer.wait_time = 31 - difficulty - difficulty_offset()
+				$AttackTimer.wait_time = CVars.get_float("redman_base_wait_time") - difficulty - difficulty_offset()
 				$AttackTimer.start()
 				return 6
 			else:
@@ -50,7 +51,7 @@ func state_machine():
 			var roll = randf()
 			if roll <.66:
 				var _drop = $AttackTimer.connect("timeout", self, "attempt_attack")
-				$AttackTimer.wait_time = 31 - difficulty - difficulty_offset()
+				$AttackTimer.wait_time = CVars.get_float("redman_base_wait_time") - difficulty - difficulty_offset()
 				$AttackTimer.start()
 				return 6
 			else:

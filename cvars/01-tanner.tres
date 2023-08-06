@@ -16,4 +16,23 @@ bools = {
 "show_song_notes": true
 }
 tables = {
+"tanner_tables": {
+"punishment_songs": "tanner_punishment_songs",
+"deterministic_songs": "tanner_deterministic_songs"
+},
+"tanner_punishment_songs": {
+"songs": [
+"res://music/Congratulations! You have been promoted to Deceased.ogg",
+"res://music/Cylindrical_Test_Subject.ogg",
+"res://music/cereal.ogg",
+"res://music/joj.ogg",
+"res://music/Party In The Office!.ogg",
+"res://music/the song that plays when he kills you.ogg"
+]
+},
+"tanner_deterministic_songs": {
+"songs": [
+[1,2,3,4,5,6,7,8]
+]
+}
 }
