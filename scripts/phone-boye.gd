@@ -20,6 +20,7 @@ func _ready():
 		call_deferred("remove_and_skip")
 		return
 	add_child(player)
+	player.volume_db = -10
 	yield(level, "build_complete")
 	player.stream = ringer
 	player.play()
