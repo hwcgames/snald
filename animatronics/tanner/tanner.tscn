@@ -15,7 +15,6 @@ note_colors = [ Color( 1, 0, 0, 1 ), Color( 1, 0.683333, 0, 1 ), Color( 0.783333
 [node name="tanner" parent="." instance=ExtResource( 1 )]
 
 [node name="Timer" type="Timer" parent="."]
-autostart = true
 
 [node name="Tween" type="Tween" parent="."]
 

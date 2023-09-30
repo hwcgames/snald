@@ -34,6 +34,8 @@ func _physics_process(_delta):
 		EventMan.circuit_on("noisy")
 
 func reset():
+	timer.stop()
+	punisher.stop()
 	get_parent().call_deferred("spawn_animatronic", "tanner")
 	remove_visitor(self)
 
@@ -50,12 +52,12 @@ func _ready():
 	timer.connect("timeout", self, "finish_boombox")
 	while true:
 		# TBD how timer should work
-		timer.wait_time = get_node("../CompletionTimer").wait_time / 3.9
+		var start_wait_time = get_node("../CompletionTimer").wait_time / (CVars.get_int("tanner_challenge_amt") + 1.9)
 		if difficulty >= 20:
-			timer.wait_time = 2 if EventMan.has_reset else 20
-		timer.start()
+			start_wait_time = 2 if EventMan.has_reset else 20
+		var start_timer = get_tree().create_timer(start_wait_time)
 		song_is_correct = false
-		yield(timer, "timeout")
+		yield(start_timer, "timeout")
 		# Play explosion noise
 		EventMan.circuit_on("tanner_broken_ceiling")
 		ap.play("enter")
@@ -79,8 +81,9 @@ func _ready():
 			PersistMan.set_flag('tanner_song_failed', true)
 			ap.play("failure")
 			yield(ap, "animation_finished")
-			timer.wait_time = CVars.get_float("punishment_song_length")
-			timer.start()
+			if not killscreen:
+				timer.wait_time = CVars.get_float("punishment_song_length")
+				timer.start()
 			EventMan.circuit_on("noisy")
 			tween.interpolate_property($"/root/gameplay/AudioStreamPlayer", "volume_db", 0, -10, 1)
 			tween.interpolate_property(punisher, "volume_db", -10, 0, 1)
@@ -127,6 +130,7 @@ func check_song():
 		goal_song = PoolIntArray([])
 		player_song = goal_song
 		song_is_correct = false
+		$NoteTimer.queue_free()
 		emit_signal("song_finished")
 	if len(goal_song) == 0:
 		player_song = PoolIntArray([])
