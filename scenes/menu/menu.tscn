@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://scenes/menu/settings.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=2]
@@ -27,8 +27,7 @@
 [ext_resource path="res://textures/doors-fg.png" type="Texture" id=25]
 [ext_resource path="res://textures/teletubby.png" type="Texture" id=26]
 [ext_resource path="res://scenes/menu/Teletubby.gd" type="Script" id=27]
-[ext_resource path="res://cutscenes/Test.tscn" type="PackedScene" id=28]
-[ext_resource path="res://scenes/menu/cutscene_button.tscn" type="PackedScene" id=29]
+[ext_resource path="res://textures/blex.png" type="Texture" id=28]
 [ext_resource path="res://cutscenes/IntroStory/IntroStory.tscn" type="PackedScene" id=30]
 [ext_resource path="res://music/stare.ogg" type="AudioStream" id=31]
 [ext_resource path="res://cutscenes/Night5.tscn" type="PackedScene" id=32]
@@ -220,8 +219,8 @@ margin_left = -161.0
 margin_top = -176.0
 margin_right = 0.0
 margin_bottom = -33.0
-talk_frames = PoolStringArray( "res://scenes/menu/buddy/poses/talk1.png", "res://scenes/menu/buddy/poses/talk2.png", "res://scenes/menu/buddy/poses/talk3.png", "res://scenes/menu/buddy/poses/talk4.png", "res://scenes/menu/buddy/poses/talk5.png", "res://scenes/menu/buddy/poses/talk6.png", "res://scenes/menu/buddy/poses/talk7.png", "res://scenes/menu/buddy/poses/talk8.png", "res://scenes/menu/buddy/poses/talk9.png" )
-talk_sounds = PoolStringArray( "res://scenes/menu/buddy/sounds/talk1.ogg", "res://scenes/menu/buddy/sounds/talk2.ogg", "res://scenes/menu/buddy/sounds/talk4.ogg", "res://scenes/menu/buddy/sounds/talk5.ogg", "res://scenes/menu/buddy/sounds/talk6.ogg" )
+talk_frames = PoolStringArray(  )
+talk_sounds = PoolStringArray(  )
 
 [node name="ThingsBar" type="Panel" parent="."]
 anchor_top = 1.0
@@ -345,9 +344,7 @@ text = "Night 0"
 script = SubResource( 3 )
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 0" instance=ExtResource( 2 )]
-difficulties = {
-"lucas": 1
-}
+difficulty_table = "n0"
 map_path = "maps/intro-story-concat.map"
 night_index = -1
 completion_flag = "intro_story"
@@ -369,12 +366,7 @@ text = "Night 1"
 script = SubResource( 3 )
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 1" instance=ExtResource( 2 )]
-difficulties = {
-"gabe": 6,
-"jojo": 3,
-"lucas": 3,
-"redman": 5
-}
+difficulty_table = "n1"
 night_index = 0
 victory_scene = "res://scenes/victory/victory_n1.tscn"
 
@@ -390,13 +382,7 @@ text = "Night 2"
 flag_to_check = "n1"
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 2" instance=ExtResource( 2 )]
-difficulties = {
-"gabe": 8,
-"jojo": 6,
-"lucas": 6,
-"redman": 8,
-"willow": 7
-}
+difficulty_table = "n2"
 night_index = 1
 completion_flag = "n2"
 
@@ -412,13 +398,7 @@ text = "Night 3"
 flag_to_check = "n2"
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 3" instance=ExtResource( 2 )]
-difficulties = {
-"gabe": 11,
-"jojo": 10,
-"lucas": 10,
-"redman": 11,
-"willow": 9
-}
+difficulty_table = "n3"
 night_index = 2
 completion_flag = "n3"
 time_to_completion = 720
@@ -435,14 +415,7 @@ text = "Night 4"
 flag_to_check = "n3"
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 4" instance=ExtResource( 2 )]
-difficulties = {
-"gabe": 14,
-"jojo": 14,
-"lucas": 12,
-"redman": 14,
-"tanner": 10,
-"willow": 14
-}
+difficulty_table = "n4"
 completion_flag = "n4"
 time_to_completion = 720
 victory_scene = "res://scenes/victory/victory_n4.tscn"
@@ -459,14 +432,7 @@ text = "Night 5"
 flag_to_check = "n4"
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 5" instance=ExtResource( 2 )]
-difficulties = {
-"gabe": 15,
-"jojo": 16,
-"lucas": 16,
-"redman": 17,
-"tanner": 20,
-"willow": 15
-}
+difficulty_table = "n5"
 night_index = 4
 completion_flag = "n5"
 victory_scene = "res://eggs/victory_n5.tscn"
@@ -565,29 +531,30 @@ margin_bottom = -3.0
 [node name="Error" type="WindowDialog" parent="."]
 margin_left = 70.0
 margin_top = 311.0
-margin_right = 154.0
-margin_bottom = 351.0
-window_title = "Shit"
+margin_right = 155.0
+margin_bottom = 361.0
+rect_min_size = Vector2( 85, 50 )
+window_title = "Gex"
+resizable = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Error"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="Label" type="Label" parent="Error/VBoxContainer"]
-margin_right = 67.0
-margin_bottom = 14.0
-text = "Shit"
-align = 1
-valign = 1
-
-[node name="Button" parent="Error/VBoxContainer" instance=ExtResource( 29 )]
-margin_top = 18.0
-margin_right = 67.0
-margin_bottom = 40.0
-scene = ExtResource( 28 )
+[node name="TextureRect" type="TextureRect" parent="Error"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = -1.0
+margin_right = -4.0
+margin_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 28 )
+expand = true
+stretch_mode = 7
 
 [node name="CustomNight" parent="." instance=ExtResource( 21 )]
 margin_left = 211.0

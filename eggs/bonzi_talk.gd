@@ -1,4 +1,3 @@
-tool
 extends TextureRect
 
 var talking = false
@@ -46,7 +45,8 @@ const hints = [
 	"Polaris' favorite weapons are the ones that break the geneva convention!",
 	"Florida Man teaches pet lizard to run on water, google Roko's Basilisk to learn more",
 	"Gex",
-	"1 hour of silence occasionally broken by Mario 64 Thwomp sound effect"
+	"1 hour of silence occasionally broken by Mario 64 Thwomp sound effect",
+	"eval:special_gex()"
 ]
 
 var spooky_hints = [
@@ -57,11 +57,13 @@ var spooky_hints = [
 	OS.get_environment("USERNAME") + ", I can't breathe",
 	"I can't breathe",
 	"Discord sex hack 2023 (real) (not clickbait)",
-	"You just lost The Game"
+	"You just lost The Game",
+	"Just pretend he isn't here"
 ]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	rescan_frames()
 	$Polygon2D.hide()
 	texture.atlas = idle_tex
 	pass # Replace with function body.
@@ -79,30 +81,31 @@ func _physics_process(delta):
 		talk()
 	if Engine.editor_hint:
 		counter += 1
-	if Engine.editor_hint and ((counter % 600) == 0):
-		counter = 0
-		talk_frames = PoolStringArray([])
-		talk_sounds = PoolStringArray([])
-		var dir = Directory.new()
-		dir.open("res://scenes/menu/buddy/poses")
-		dir.list_dir_begin(true, true)
-		var next = "a"
-		while next != "":
-			next = dir.get_next()
-			if not ("talk" in next and next.ends_with("png")):
-				continue
-			talk_frames.append("res://scenes/menu/buddy/poses/"+next)
-		dir.list_dir_end()
-		var dir2 = Directory.new()
-		dir2.open("res://scenes/menu/buddy/sounds")
-		dir2.list_dir_begin(true, true)
-		next = "a"
-		while next != "":
-			next = dir2.get_next()
-			if not (next.ends_with("ogg") and "talk" in next):
-				continue
-			talk_sounds.append("res://scenes/menu/buddy/sounds/"+next)
-		dir2.list_dir_end()
+
+func rescan_frames():
+	counter = 0
+	talk_frames = PoolStringArray([])
+	talk_sounds = PoolStringArray([])
+	var dir = Directory.new()
+	dir.open("res://scenes/menu/buddy/poses")
+	dir.list_dir_begin(true, true)
+	var next = "a"
+	while next != "":
+		next = dir.get_next()
+		if not ("talk" in next and next.ends_with("png")):
+			continue
+		talk_frames.append("res://scenes/menu/buddy/poses/"+next)
+	dir.list_dir_end()
+	var dir2 = Directory.new()
+	dir2.open("res://scenes/menu/buddy/sounds")
+	dir2.list_dir_begin(true, true)
+	next = "a"
+	while next != "":
+		next = dir2.get_next()
+		if not (next.ends_with("ogg") and "talk" in next):
+			continue
+		talk_sounds.append("res://scenes/menu/buddy/sounds/"+next)
+	dir2.list_dir_end()
 
 func talk():
 	$Polygon2D.show()
@@ -131,6 +134,10 @@ func _gui_input(event):
 		if event.pressed and event.button_index == 1:
 			talking = true
 			talk_string = choose_string()
+			if talk_string.begins_with("eval:"):
+				var expr = Expression.new()
+				expr.parse(talk_string.substr(5))
+				talk_string = expr.execute([], self)
 			talk_position = 0
 			$Polygon2D.show()
 	pass # Replace with function body.
@@ -148,3 +155,9 @@ func choose_string():
 		hint_cursor += 1
 		return hints[hint_cursor-1]
 	pass
+
+func special_gex():
+	if $"../Error".visible:
+		return "I love gex!"
+	else:
+		return ":("
