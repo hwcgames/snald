@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 if [ -z "$SNALD_TARGET" ]; then
 	export SNALD_TARGET=$(uname)
 fi

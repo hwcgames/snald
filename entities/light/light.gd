@@ -49,7 +49,7 @@ func _ready():
 func reset():
 	tween.remove_all()
 	depleted = false
-	on_now = (properties["always_on"] == 1) if "always_on" in properties else false
+	on_now = (int(properties["always_on"]) == 1) if "always_on" in properties else false
 	goal_energy = energy * (1 if on_now else 0)
 	$OmniLight.light_energy = goal_energy
 	flickering = false
