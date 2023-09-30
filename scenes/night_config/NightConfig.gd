@@ -1,8 +1,7 @@
 extends Node
 
-export var difficulties: Dictionary = {
-	"randy": 10
-}
+export var difficulty_override: Dictionary = {}
+export var difficulty_table: String
 export var map_path: String = "maps/default.map"
 export var passive_power = 0.0
 export var passive_temperature = 0.0
@@ -20,6 +19,11 @@ export var cvar_bools: Dictionary = Dictionary()
 export var test_mode = false
 
 func apply():
+	var difficulties = CVars.get_table(difficulty_table) if len(difficulty_table) > 0 else {}
+	CVars.merge_dictionary(
+		difficulty_override,
+		difficulties
+	)
 	EventMan.difficulties = difficulties
 	EventMan.passive_power = passive_power
 	EventMan.passive_temperature = passive_temperature
@@ -28,7 +32,8 @@ func apply():
 	EventMan.time_to_completion = time_to_completion
 	EventMan.between_scene = load(between_scene)
 	EventMan.completion_scene = load(victory_scene)
-	EventMan.song = song
+	if "tanner" in difficulties and difficulties["tanner"] >= 20:
+		EventMan.song = preload("res://music/stare.ogg")
 	EventMan.time_before_start_music = time_before_start_music
 	EventMan.start_cutscene = start_cutscene
 	# Write cvars
@@ -53,7 +58,7 @@ func set_night(night: int):
 	night_index = night - 1;
 
 func set_difficulty(difficulty: int, character: String):
-	difficulties[character] = difficulty
+	difficulty_override[character] = difficulty
 
 func set_duration(seconds: float):
 	time_to_completion = seconds

@@ -219,6 +219,8 @@ margin_left = -161.0
 margin_top = -176.0
 margin_right = 0.0
 margin_bottom = -33.0
+talk_frames = PoolStringArray(  )
+talk_sounds = PoolStringArray(  )
 
 [node name="ThingsBar" type="Panel" parent="."]
 anchor_top = 1.0
@@ -342,9 +344,7 @@ text = "Night 0"
 script = SubResource( 3 )
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 0" instance=ExtResource( 2 )]
-difficulties = {
-"lucas": 1
-}
+difficulty_table = "n0"
 map_path = "maps/intro-story-concat.map"
 night_index = -1
 completion_flag = "intro_story"
@@ -366,12 +366,7 @@ text = "Night 1"
 script = SubResource( 3 )
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 1" instance=ExtResource( 2 )]
-difficulties = {
-"gabe": 6,
-"jojo": 3,
-"lucas": 3,
-"redman": 5
-}
+difficulty_table = "n1"
 night_index = 0
 victory_scene = "res://scenes/victory/victory_n1.tscn"
 
@@ -387,13 +382,7 @@ text = "Night 2"
 flag_to_check = "n1"
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 2" instance=ExtResource( 2 )]
-difficulties = {
-"gabe": 8,
-"jojo": 6,
-"lucas": 6,
-"redman": 8,
-"willow": 7
-}
+difficulty_table = "n2"
 night_index = 1
 completion_flag = "n2"
 
@@ -409,13 +398,7 @@ text = "Night 3"
 flag_to_check = "n2"
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 3" instance=ExtResource( 2 )]
-difficulties = {
-"gabe": 11,
-"jojo": 10,
-"lucas": 10,
-"redman": 11,
-"willow": 9
-}
+difficulty_table = "n3"
 night_index = 2
 completion_flag = "n3"
 time_to_completion = 720
@@ -432,14 +415,7 @@ text = "Night 4"
 flag_to_check = "n3"
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 4" instance=ExtResource( 2 )]
-difficulties = {
-"gabe": 14,
-"jojo": 14,
-"lucas": 12,
-"redman": 14,
-"tanner": 10,
-"willow": 14
-}
+difficulty_table = "n4"
 completion_flag = "n4"
 time_to_completion = 720
 victory_scene = "res://scenes/victory/victory_n4.tscn"
@@ -456,14 +432,7 @@ text = "Night 5"
 flag_to_check = "n4"
 
 [node name="NightConfig" parent="LevelWindow/Choose a Night/Night 5" instance=ExtResource( 2 )]
-difficulties = {
-"gabe": 14,
-"jojo": 16,
-"lucas": 16,
-"redman": 17,
-"tanner": 20,
-"willow": 10
-}
+difficulty_table = "n5"
 passive_power = -0.5
 night_index = 4
 completion_flag = "n5"

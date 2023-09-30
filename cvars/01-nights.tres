@@ -1,0 +1,54 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scripts/stored_cvars.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+ints = {
+}
+floats = {
+"lucas_tick_interval": 8
+}
+bools = {
+}
+tables = {
+"n0": {
+	"lucas": 1
+},
+"n1": {
+	"gabe": 6,
+	"jojo": 3,
+	"lucas": 3,
+	"redman": 5
+},
+"n2": {
+	"gabe": 8,
+	"jojo": 6,
+	"lucas": 6,
+	"redman": 8,
+	"willow": 7
+},
+"n3": {
+	"gabe": 11,
+	"jojo": 10,
+	"lucas": 10,
+	"redman": 11,
+	"willow": 9
+},
+"n4": {
+"gabe": 14,
+"jojo": 14,
+"lucas": 12,
+"redman": 14,
+"tanner": 10,
+"willow": 14
+},
+"n5": {
+	"gabe": 14,
+	"jojo": 16,
+	"lucas": 16,
+	"redman": 17,
+	"tanner": 20,
+	"willow": 10
+}
+}
