@@ -13,6 +13,7 @@ func _ready():
 		hide()
 	var _drop = EventMan.connect("on", self, "on")
 	_drop = EventMan.connect("off", self, "off")
+	_drop = EventMan.connect("reset", self, "reset")
 	pass # Replace with function body.
 
 func on(c: String):
@@ -21,4 +22,11 @@ func on(c: String):
 
 func off(c: String):
 	if c == circuit:
+		hide()
+
+func reset():
+	var show_at_start = (properties["starting_state"] == 1) if "starting_state" in properties else true
+	if show_at_start:
+		show()
+	else:
 		hide()

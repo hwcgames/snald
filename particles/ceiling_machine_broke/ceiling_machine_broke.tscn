@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://particles/ceiling_machine_broke/ceiling_machine_broke.tres" type="Material" id=1]
+[ext_resource path="res://particles/ceiling_machine_broke/ceiling_piece.tres" type="CubeMesh" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Particles" type="Particles" parent="."]
+emitting = false
+amount = 256
+one_shot = true
+explosiveness = 0.89
+randomness = 0.55
+process_material = ExtResource( 1 )
+draw_pass_1 = ExtResource( 2 )

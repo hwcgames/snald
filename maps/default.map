@@ -8655,3 +8655,56 @@
 ( 109 -44.36319353492529 50 ) ( 108.74999999999999 -45.29620623681755 48 ) ( 108.74999999999999 -45.296206236817504 50 ) forest_leaves_03 0 0 0 1 1
 }
 }
+// entity 254
+{
+"classname" "GeometryGroup"
+"circuit" "tanner_broken_ceiling_not"
+// brush 0
+{
+( 38 4 98 ) ( 36 26 98 ) ( 36 26 108 ) floor_tiles_04_1k 0 0 0 1 1
+( 38 4 108 ) ( 48 -16 108 ) ( 48 -16 98 ) floor_tiles_04_1k 0 0 0 1 1
+( 62 42 98 ) ( 62 42 108 ) ( 36 26 108 ) floor_tiles_04_1k 0 0 0 1 1
+( 48 -16 108 ) ( 76 -22 108 ) ( 76 -22 98 ) floor_tiles_04_1k 0 0 0 1 1
+( 108 46 98 ) ( 108 46 108 ) ( 62 42 108 ) floor_tiles_04_1k 0 0 0 1 1
+( 76 -22 98 ) ( 118 -2 98 ) ( 116 46 98 ) floor_tiles_04_1k 0 0 0 1 1
+( 116 46 108 ) ( 118 -2 108 ) ( 76 -22 108 ) floor_tiles_04_1k 0 0 0 1 1
+( 116 46 98 ) ( 116 46 108 ) ( 108 46 108 ) floor_tiles_04_1k 0 0 0 1 1
+( 76 -22 108 ) ( 118 -2 108 ) ( 118 -2 98 ) floor_tiles_04_1k 0 0 0 1 1
+( 118 -2 98 ) ( 118 -2 108 ) ( 116 46 108 ) floor_tiles_04_1k 0 0 0 1 1
+}
+}
+// entity 255
+{
+"classname" "particle"
+"origin" "80 6 96"
+"always_on" "0"
+"material" "res://particles/ceiling_machine_broke/ceiling_machine_broke.tres"
+"drawpass" "res://particles/ceiling_machine_broke/ceiling_piece.tres"
+"amount" "256"
+"explosiveness" "0.9"
+"lifetime" "1"
+"one_shot" "1"
+"randomness" ".55"
+"circuit" "tanner_broken_ceiling_momentary"
+}
+// entity 256
+{
+"classname" "Momentary"
+"origin" "120 40 88"
+"in_circuit" "tanner_broken_ceiling"
+"out_circuit" "tanner_broken_ceiling_momentary"
+}
+// entity 257
+{
+"classname" "particle"
+"origin" "80 16 136"
+"always_on" "0"
+"material" "res://particles/snow/small_snow.tres"
+"drawpass" "res://particles/snow/snowball.tres"
+"amount" "60"
+"explosiveness" ".2"
+"lifetime" "3"
+"one_shot" "0"
+"randomness" ".55"
+"circuit" "tanner_broken_ceiling"
+}

@@ -16,6 +16,7 @@ func _ready():
 	yield(get_parent(), "build_complete")
 	var _err = $"/root/EventMan".connect("on", self, "circuit_on")
 	_err = $"/root/EventMan".connect("off", self, "circuit_off")
+	_err = $"/root/EventMan".connect("reset", self, "reset")
 	on_now = (properties["always_on"] == 1) if "always_on" in properties else false
 	always_on = (properties["always_on"] == 1) if "always_on" in properties else false
 	circuit = properties["circuit"] if "circuit" in properties else ""
@@ -35,5 +36,10 @@ func circuit_on(name):
 		$emitter.emitting = true
 
 func circuit_off(name):
-	if circuit != "" and name == circuit:
+	if circuit != "" and name == circuit and not $emitter.one_shot:
 		$emitter.emitting = false
+
+func reset():
+	$emitter.emitting = false;
+	yield(get_tree(), "idle_frame")
+	$emitter.emitting = always_on;
