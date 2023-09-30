@@ -140,12 +140,14 @@ func check_song():
 			goal_song = PoolIntArray([])
 			player_song = goal_song
 			song_is_correct = false
+			$NoteTimer.stop()
 			emit_signal("song_finished")
 			return
 	if len(player_song) == len(goal_song):
 		goal_song = PoolIntArray([])
 		player_song = goal_song
 		song_is_correct = true
+		$NoteTimer.stop()
 		emit_signal("song_finished")
 
 func play_note(note: int):

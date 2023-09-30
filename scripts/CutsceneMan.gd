@@ -40,6 +40,8 @@ func cutscene_is_running():
 	return len(get_children()) > 0
 
 func put_text(text: String, position=Vector2(0.5, 0.5), speed=0.01, centered=true, id="default_text_id", font=preload("res://font/normal.tres")):
+	if not $Blocker:
+		return
 	remove_text(id)
 	var text_s = cutscene_text.instance()
 	text_s.id = id
@@ -54,6 +56,8 @@ func put_text(text: String, position=Vector2(0.5, 0.5), speed=0.01, centered=tru
 	$Blocker.add_child(text_s)
 
 func remove_text(id="default_text_id", time=0.5, transition=Tween.TRANS_LINEAR, easing=Tween.EASE_IN_OUT):
+	if not $Blocker:
+		return
 	var tween = Tween.new();
 	add_child(tween)
 	var any_found = []
