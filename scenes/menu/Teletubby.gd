@@ -20,6 +20,7 @@ func roll():
 	randomize()
 	if rand_range(0, 20) < 1:
 		go()
+	$Timer.start()
 
 func go():
 	visible = true

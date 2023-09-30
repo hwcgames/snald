@@ -46,7 +46,8 @@ const hints = [
 	"Polaris' favorite weapons are the ones that break the geneva convention!",
 	"Florida Man teaches pet lizard to run on water, google Roko's Basilisk to learn more",
 	"Gex",
-	"1 hour of silence occasionally broken by Mario 64 Thwomp sound effect"
+	"1 hour of silence occasionally broken by Mario 64 Thwomp sound effect",
+	"eval:special_gex()"
 ]
 
 var spooky_hints = [
@@ -57,7 +58,8 @@ var spooky_hints = [
 	OS.get_environment("USERNAME") + ", I can't breathe",
 	"I can't breathe",
 	"Discord sex hack 2023 (real) (not clickbait)",
-	"You just lost The Game"
+	"You just lost The Game",
+	"Just pretend he isn't here"
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -131,6 +133,10 @@ func _gui_input(event):
 		if event.pressed and event.button_index == 1:
 			talking = true
 			talk_string = choose_string()
+			if talk_string.begins_with("eval:"):
+				var expr = Expression.new()
+				expr.parse(talk_string.substr(5))
+				talk_string = expr.execute([], self)
 			talk_position = 0
 			$Polygon2D.show()
 	pass # Replace with function body.
@@ -148,3 +154,9 @@ func choose_string():
 		hint_cursor += 1
 		return hints[hint_cursor-1]
 	pass
+
+func special_gex():
+	if $"../Error".visible:
+		return "I love gex!"
+	else:
+		return ":("
