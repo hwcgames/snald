@@ -180,18 +180,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Teletubby" type="Sprite" parent="."]
+[node name="watching you" type="Sprite" parent="."]
 position = Vector2( 158.968, 416.861 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 26 )
 script = ExtResource( 27 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Teletubby"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="watching you"]
 anims/RESET = SubResource( 10 )
 anims/peek = SubResource( 11 )
 anims/withdraw = SubResource( 12 )
 
-[node name="Timer" type="Timer" parent="Teletubby"]
+[node name="Timer" type="Timer" parent="watching you"]
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 anchor_right = 1.0
