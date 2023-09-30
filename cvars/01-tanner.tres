@@ -5,7 +5,8 @@
 [resource]
 script = ExtResource( 1 )
 ints = {
-"tanner_n20_battery_count": 6
+"tanner_n20_battery_count": 6,
+"tanner_challenge_amt": 3,
 }
 floats = {
 "deterministic_song_chance": 2.0,
