@@ -1,7 +1,12 @@
 [gd_scene format=2]
 
-[node name="Label" type="Label"]
+[node name="VBoxContainer" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="."]
 margin_right = 640.0
+margin_bottom = 116.0
 text = "You found a stack of punch cards piled high in the woods, and were curious as to its purpose.
 
 You weren't sure which order they went in. You realized, of course, that there were nearly two million unlabelled punch cards, and it would take more lifetimes of the universe than there are seconds in the lifetime of the universe to try every combination, but you didn't have anything better to do, so you brought your punched card reader into the woods and tried a random order. Shockingly, after only a week or so of reading cards, you got a program that worked."

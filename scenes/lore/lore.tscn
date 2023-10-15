@@ -1,17 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://theme/Classic311/Classic311.tres" type="Theme" id=1]
 [ext_resource path="res://font/normal.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/menu/scene_button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://font/opensans/OpenSans/OpenSans-Regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://scenes/lore/lore_button.gd" type="Script" id=5]
-[ext_resource path="res://eggs/lore/context.tscn" type="PackedScene" id=6]
-[ext_resource path="res://eggs/lore/tutorial.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/disable_unless_flag.tscn" type="PackedScene" id=8]
-[ext_resource path="res://eggs/lore/garand_lore.tscn" type="PackedScene" id=9]
-[ext_resource path="res://eggs/lore/n5song.tscn" type="PackedScene" id=10]
-[ext_resource path="res://eggs/lore/n1song.tscn" type="PackedScene" id=11]
-[ext_resource path="res://eggs/lore/mod_the_game_please.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/lore/LorePopulator.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
@@ -36,122 +29,30 @@ margin_right = -10.0
 margin_bottom = -10.0
 scroll_horizontal_enabled = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/ScrollContainer"]
-margin_right = 209.0
-margin_bottom = 212.0
+[node name="MarginContainer" type="MarginContainer" parent="Panel2/ScrollContainer"]
+margin_right = 214.0
+margin_bottom = 44.0
+custom_constants/margin_left = 5
 
-[node name="Label" type="Label" parent="Panel2/ScrollContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/ScrollContainer/MarginContainer"]
+margin_left = 5.0
+margin_right = 214.0
+margin_bottom = 44.0
+script = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Panel2/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_right = 209.0
 margin_bottom = 39.0
 custom_fonts/font = ExtResource( 2 )
 text = "Welcome to Michaelsoft Traincarta.
 Please make your selection."
 
-[node name="ColorRect" type="ColorRect" parent="Panel2/ScrollContainer/VBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="Panel2/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 43.0
 margin_right = 209.0
 margin_bottom = 44.0
 rect_min_size = Vector2( 0, 1 )
 color = Color( 0, 0, 0, 1 )
-
-[node name="Context" type="Control" parent="Panel2/ScrollContainer/VBoxContainer"]
-margin_top = 48.0
-margin_right = 209.0
-margin_bottom = 72.0
-rect_min_size = Vector2( 0, 24 )
-
-[node name="LoreButton" type="Button" parent="Panel2/ScrollContainer/VBoxContainer/Context"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-text = "Context"
-script = ExtResource( 5 )
-lore_scene = ExtResource( 6 )
-lore_parent_path = NodePath("../../../../../Panel3/ScrollContainer")
-
-[node name="Tutorial" type="Control" parent="Panel2/ScrollContainer/VBoxContainer"]
-margin_top = 76.0
-margin_right = 209.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 0, 24 )
-
-[node name="LoreButton" type="Button" parent="Panel2/ScrollContainer/VBoxContainer/Tutorial"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-text = "Tutorial"
-script = ExtResource( 5 )
-lore_scene = ExtResource( 7 )
-lore_parent_path = NodePath("../../../../../Panel3/ScrollContainer")
-
-[node name="ModTheGameNerd" type="Control" parent="Panel2/ScrollContainer/VBoxContainer"]
-margin_top = 104.0
-margin_right = 209.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 0, 24 )
-
-[node name="LoreButton" type="Button" parent="Panel2/ScrollContainer/VBoxContainer/ModTheGameNerd"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-text = "Mod The Game"
-script = ExtResource( 5 )
-lore_scene = ExtResource( 12 )
-lore_parent_path = NodePath("../../../../../Panel3/ScrollContainer")
-
-[node name="GarandLore" type="Control" parent="Panel2/ScrollContainer/VBoxContainer"]
-margin_top = 132.0
-margin_right = 209.0
-margin_bottom = 156.0
-rect_min_size = Vector2( 0, 24 )
-
-[node name="DisableUnlessFlag" parent="Panel2/ScrollContainer/VBoxContainer/GarandLore" instance=ExtResource( 8 )]
-flag_to_check = "garand_lore"
-
-[node name="LoreButton" type="Button" parent="Panel2/ScrollContainer/VBoxContainer/GarandLore"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-text = "Armory: The Prized Possession"
-script = ExtResource( 5 )
-lore_scene = ExtResource( 9 )
-lore_parent_path = NodePath("../../../../../Panel3/ScrollContainer")
-
-[node name="NightMusic" type="Control" parent="Panel2/ScrollContainer/VBoxContainer"]
-margin_top = 160.0
-margin_right = 209.0
-margin_bottom = 184.0
-rect_min_size = Vector2( 0, 24 )
-
-[node name="DisableUnlessFlag" parent="Panel2/ScrollContainer/VBoxContainer/NightMusic" instance=ExtResource( 8 )]
-flag_to_check = "n1"
-
-[node name="LoreButton" type="Button" parent="Panel2/ScrollContainer/VBoxContainer/NightMusic"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-text = "Night Theme"
-script = ExtResource( 5 )
-lore_scene = ExtResource( 11 )
-lore_parent_path = NodePath("../../../../../Panel3/ScrollContainer")
-
-[node name="Night5Music" type="Control" parent="Panel2/ScrollContainer/VBoxContainer"]
-margin_top = 188.0
-margin_right = 209.0
-margin_bottom = 212.0
-rect_min_size = Vector2( 0, 24 )
-
-[node name="DisableUnlessFlag" parent="Panel2/ScrollContainer/VBoxContainer/Night5Music" instance=ExtResource( 8 )]
-flag_to_check = "n4"
-
-[node name="LoreButton" type="Button" parent="Panel2/ScrollContainer/VBoxContainer/Night5Music"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-text = "Night 5 Theme"
-script = ExtResource( 5 )
-lore_scene = ExtResource( 10 )
-lore_parent_path = NodePath("../../../../../Panel3/ScrollContainer")
 
 [node name="Panel3" type="Panel" parent="."]
 anchor_left = 0.5
@@ -160,13 +61,16 @@ anchor_bottom = 1.0
 margin_top = 32.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 313.0
+margin_bottom = 441.0
 scroll_horizontal_enabled = false
+
+[node name="LoreContainer" type="MarginContainer" parent="Panel3/ScrollContainer"]
+unique_name_in_owner = true
+margin_right = 300.0
+rect_min_size = Vector2( 300, 0 )
 
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0

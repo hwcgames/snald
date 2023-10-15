@@ -1,0 +1,36 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scripts/stored_cvars.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+ints = {
+}
+floats = {
+}
+bools = {
+}
+tables = {
+"lore_entries": {
+	"Context": {
+		"path": "res://eggs/lore/context.tscn",
+		"needs_flag": "none"
+	},
+	"Mod the Game": {
+		"path": "res://eggs/lore/mod_the_game_please.tscn",
+		"needs_flag": "none"
+	},
+	"Armory: The Prized Possession": {
+		"path": "res://eggs/lore/garand_lore.tscn",
+		"needs_flag": "garand_lore"
+	},
+	"Night Theme": {
+		"path": "res://eggs/lore/n1song.tscn",
+		"needs_flag": "n1"
+	},
+	"Night 5 Theme": {
+		"path": "res://eggs/lore/n5song.tscn",
+		"needs_flag": "n4"
+	}
+}
+}

@@ -28,5 +28,5 @@ autowrap = true
 [node name="AudioPlayer" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 52.0
 margin_right = 630.0
-margin_bottom = 100.0
+margin_bottom = 84.0
 stream = ExtResource( 2 )

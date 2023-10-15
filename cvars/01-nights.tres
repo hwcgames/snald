@@ -13,27 +13,129 @@ bools = {
 }
 tables = {
 "n0": {
-	"lucas": 1
+"lucas": 1
+},
+"n0_config": {
+"between_scene": "res://scenes/between/dummy.tscn",
+"completion_flag": "intro_story",
+"cvar_bools": {
+"fr_player": true,
+"normal_player": false
+},
+"cvar_floats": {
+},
+"cvar_ints": {
+},
+"difficulty_override": {
+},
+"difficulty_table": "n0",
+"map_path": "maps/intro-story-concat.map",
+"needs_flag": "none",
+"night_index": -1,
+"night_name": "Intro Story",
+"passive_power": 0,
+"passive_temperature": 0,
+"song": "res://music/night_ambience.ogg",
+"start_cutscene": "res://cutscenes/IntroStory/IntroStory.tscn",
+"test_mode": false,
+"time_before_start_music": 0,
+"time_to_completion": -1,
+"victory_scene": "res://scenes/victory/victory_n1.tscn"
 },
 "n1": {
-	"gabe": 6,
-	"jojo": 3,
-	"lucas": 3,
-	"redman": 5
+"gabe": 6,
+"jojo": 3,
+"lucas": 3,
+"redman": 5
+},
+"n1_config": {
+"between_scene": "res://scenes/between/dummy.tscn",
+"completion_flag": "n1",
+"cvar_bools": {
+},
+"cvar_floats": {
+},
+"cvar_ints": {
+},
+"difficulty_override": {
+},
+"difficulty_table": "n1",
+"map_path": "maps/default.map",
+"needs_flag": "none",
+"night_index": 0,
+"night_name": "Night 1",
+"passive_power": 0,
+"passive_temperature": 0,
+"song": "res://music/night_ambience.ogg",
+"start_cutscene": null,
+"test_mode": false,
+"time_before_start_music": 20,
+"time_to_completion": 360,
+"victory_scene": "res://scenes/victory/victory_n1.tscn"
 },
 "n2": {
-	"gabe": 8,
-	"jojo": 6,
-	"lucas": 6,
-	"redman": 8,
-	"willow": 7
+"gabe": 8,
+"jojo": 6,
+"lucas": 6,
+"redman": 8,
+"willow": 7
+},
+"n2_config": {
+"between_scene": "res://scenes/between/dummy.tscn",
+"completion_flag": "n2",
+"cvar_bools": {
+},
+"cvar_floats": {
+},
+"cvar_ints": {
+},
+"difficulty_override": {
+},
+"difficulty_table": "n2",
+"map_path": "maps/default.map",
+"needs_flag": "n1",
+"night_index": 1,
+"night_name": "Night 2",
+"passive_power": 0,
+"passive_temperature": 0,
+"song": "res://music/night_ambience.ogg",
+"start_cutscene": null,
+"test_mode": false,
+"time_before_start_music": 20,
+"time_to_completion": 360,
+"victory_scene": "res://scenes/victory/victory_n1.tscn"
 },
 "n3": {
-	"gabe": 11,
-	"jojo": 10,
-	"lucas": 10,
-	"redman": 11,
-	"willow": 9
+"gabe": 11,
+"jojo": 10,
+"lucas": 10,
+"redman": 11,
+"willow": 9
+},
+"n3_config": {
+"between_scene": "res://scenes/between/dummy.tscn",
+"completion_flag": "n3",
+"cvar_bools": {
+},
+"cvar_floats": {
+},
+"cvar_ints": {
+},
+"difficulty_override": {
+},
+"difficulty_table": "n3",
+"map_path": "maps/default.map",
+"needs_flag": "n2",
+"night_index": 2,
+"night_name": "Night 3",
+"passive_power": 0,
+"passive_temperature": 0,
+"song": "res://music/night_ambience.ogg",
+"start_cutscene": null,
+"test_mode": false,
+"time_before_start_music": 20,
+"time_to_completion": 360,
+"victory_scene": "res://scenes/victory/victory_n1.tscn"
 },
 "n4": {
 "gabe": 14,
@@ -43,6 +145,31 @@ tables = {
 "tanner": 10,
 "willow": 14
 },
+"n4_config": {
+"between_scene": "res://scenes/between/dummy.tscn",
+"completion_flag": "n4",
+"cvar_bools": {
+},
+"cvar_floats": {
+},
+"cvar_ints": {
+},
+"difficulty_override": {
+},
+"difficulty_table": "n4",
+"map_path": "maps/default.map",
+"needs_flag": "n3",
+"night_index": 3,
+"night_name": "Night 4",
+"passive_power": 0,
+"passive_temperature": 0,
+"song": "res://music/night_ambience.ogg",
+"start_cutscene": null,
+"test_mode": false,
+"time_before_start_music": 20,
+"time_to_completion": 360,
+"victory_scene": "res://scenes/victory/victory_n4.tscn"
+},
 "n5": {
 "gabe": 15,
 "jojo": 16,
@@ -50,5 +177,31 @@ tables = {
 "redman": 17,
 "tanner": 20,
 "willow": 15
-}
+},
+"n5_config": {
+"between_scene": "res://scenes/between/dummy.tscn",
+"completion_flag": "n5",
+"cvar_bools": {
+},
+"cvar_floats": {
+},
+"cvar_ints": {
+},
+"difficulty_override": {
+},
+"difficulty_table": "n5",
+"map_path": "maps/default.map",
+"needs_flag": "n4",
+"night_index": 4,
+"night_name": "Night 5",
+"passive_power": 0,
+"passive_temperature": 0,
+"song": "res://music/stare.ogg",
+"start_cutscene": null,
+"test_mode": false,
+"time_before_start_music": 0,
+"time_to_completion": 360,
+"victory_scene": "res://eggs/victory_n5.tscn"
+},
+"nights": [ "n0_config", "n1_config", "n2_config", "n3_config", "n4_config", "n5_config" ]
 }

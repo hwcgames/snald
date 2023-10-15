@@ -44,4 +44,4 @@ func play_pause(playing: bool):
 	if (not playing) and self.playing:
 		self.stop()
 		position = self.get_playback_position()
-	p_btn.text = '[]' if playing else '>'
+	p_btn.text = '||' if playing else '>'

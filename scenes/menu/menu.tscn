@@ -1,8 +1,7 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://scenes/menu/settings.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/disable_unless_flag.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/frying_pan.jpg" type="Texture" id=4]
 [ext_resource path="res://textures/hwc.svg" type="Texture" id=5]
 [ext_resource path="res://font/opensans/OpenSans/OpenSans-Italic.ttf" type="DynamicFontData" id=6]
@@ -28,11 +27,10 @@
 [ext_resource path="res://textures/teletubby.png" type="Texture" id=26]
 [ext_resource path="res://scenes/menu/Teletubby.gd" type="Script" id=27]
 [ext_resource path="res://textures/blex.png" type="Texture" id=28]
-[ext_resource path="res://cutscenes/IntroStory/IntroStory.tscn" type="PackedScene" id=30]
-[ext_resource path="res://music/stare.ogg" type="AudioStream" id=31]
-[ext_resource path="res://cutscenes/Night5.tscn" type="PackedScene" id=32]
+[ext_resource path="res://scenes/menu/Go.gd" type="Script" id=29]
 [ext_resource path="res://scenes/menu/StartupWarnings.gd" type="Script" id=33]
 [ext_resource path="res://font/normal.tres" type="DynamicFont" id=34]
+[ext_resource path="res://scenes/menu/NightPopulator.gd" type="Script" id=35]
 
 [sub_resource type="Animation" id=10]
 length = 0.001
@@ -139,26 +137,6 @@ func _pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
 "
 
-[sub_resource type="GDScript" id=3]
-script/source = "extends Button
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	grab_focus()
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-"
-
 [sub_resource type="DynamicFont" id=5]
 size = 14
 use_mipmaps = true
@@ -226,7 +204,7 @@ talk_sounds = PoolStringArray(  )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -32.0
+margin_top = -35.0
 grow_vertical = 0
 custom_styles/panel = ExtResource( 9 )
 
@@ -235,33 +213,34 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 3.0
+margin_top = -35.0
+margin_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 0
 rect_min_size = Vector2( 0, 32 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_constants/separation = 5
 
 [node name="Go" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_right = 37.0
-margin_bottom = 29.0
+margin_right = 47.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 0, 29 )
 hint_tooltip = "Open the Go Menu to start an application?"
 size_flags_horizontal = 0
-size_flags_vertical = 0
 custom_fonts/font = ExtResource( 10 )
 text = " GO "
+script = ExtResource( 29 )
+
+[node name="NightConfig" parent="ThingsBar/HBoxContainer/Go" instance=ExtResource( 2 )]
 
 [node name="DontGo" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 41.0
-margin_right = 97.0
-margin_bottom = 29.0
+margin_left = 52.0
+margin_right = 124.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 0, 29 )
 hint_tooltip = "Have you considered don't"
 size_flags_horizontal = 0
-size_flags_vertical = 0
 custom_fonts/font = ExtResource( 10 )
 text = " DON'T"
 script = SubResource( 9 )
@@ -269,52 +248,69 @@ script = SubResource( 9 )
 [node name="hide_on_web" parent="ThingsBar/HBoxContainer/DontGo" instance=ExtResource( 24 )]
 
 [node name="CalendarButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 101.0
-margin_right = 133.0
-margin_bottom = 29.0
-rect_min_size = Vector2( 32, 29 )
+margin_left = 129.0
+margin_right = 161.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 0 )
 hint_tooltip = "Doors Calendar
 "
-focus_neighbour_top = NodePath("../../../LevelWindow/Choose a Night/Night 1")
 size_flags_horizontal = 0
-size_flags_vertical = 0
-icon = ExtResource( 12 )
-expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="ThingsBar/HBoxContainer/CalendarButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 12 )
+stretch_mode = 4
 
 [node name="SettingsButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 137.0
-margin_right = 169.0
-margin_bottom = 29.0
+margin_left = 166.0
+margin_right = 198.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "Configure Doors
 "
 size_flags_horizontal = 0
-size_flags_vertical = 0
-icon = SubResource( 2 )
 expand_icon = true
 
+[node name="TextureRect" type="TextureRect" parent="ThingsBar/HBoxContainer/SettingsButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 2 )
+expand = true
+stretch_mode = 6
+
 [node name="AboutButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 173.0
-margin_right = 205.0
-margin_bottom = 29.0
+margin_left = 203.0
+margin_right = 235.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "About Doors OS"
 size_flags_horizontal = 0
-size_flags_vertical = 0
-icon = ExtResource( 8 )
 expand_icon = true
 
+[node name="TextureRect" type="TextureRect" parent="ThingsBar/HBoxContainer/AboutButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -2.0
+texture = ExtResource( 8 )
+stretch_mode = 4
+
 [node name="FullscreenButton" type="Button" parent="ThingsBar/HBoxContainer"]
-margin_left = 209.0
-margin_right = 241.0
-margin_bottom = 29.0
+margin_left = 240.0
+margin_right = 272.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 32, 29 )
 hint_tooltip = "magnifying glass? nah, that's a frying pan"
 size_flags_horizontal = 0
-size_flags_vertical = 0
-icon = ExtResource( 4 )
 expand_icon = true
 script = SubResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="ThingsBar/HBoxContainer/FullscreenButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
 
 [node name="LevelWindow" type="WindowDialog" parent="."]
 margin_left = 477.0
@@ -330,123 +326,22 @@ resizable = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
-margin_top = 10.0
+margin_top = 5.0
 margin_right = -10.0
 margin_bottom = -10.0
 focus_mode = 2
+script = ExtResource( 35 )
 
-[node name="Night 0" type="Button" parent="LevelWindow/Choose a Night"]
-margin_left = 33.0
-margin_right = 87.0
-margin_bottom = 22.0
-size_flags_horizontal = 4
-text = "Night 0"
-script = SubResource( 3 )
-
-[node name="NightConfig" parent="LevelWindow/Choose a Night/Night 0" instance=ExtResource( 2 )]
-difficulty_table = "n0"
-map_path = "maps/intro-story-concat.map"
-night_index = -1
-completion_flag = "intro_story"
-time_to_completion = 999999999999
-victory_scene = "res://scenes/victory/victory_n1.tscn"
-time_before_start_music = 0.0
-start_cutscene = ExtResource( 30 )
-cvar_bools = {
-"fr_player": true,
-"normal_player": false
-}
-
-[node name="Night 1" type="Button" parent="LevelWindow/Choose a Night"]
-margin_left = 33.0
-margin_right = 87.0
-margin_bottom = 22.0
-size_flags_horizontal = 4
-text = "Night 1"
-script = SubResource( 3 )
-
-[node name="NightConfig" parent="LevelWindow/Choose a Night/Night 1" instance=ExtResource( 2 )]
-difficulty_table = "n1"
-night_index = 0
-victory_scene = "res://scenes/victory/victory_n1.tscn"
-
-[node name="Night 2" type="Button" parent="LevelWindow/Choose a Night"]
-margin_left = 33.0
-margin_top = 26.0
-margin_right = 87.0
-margin_bottom = 48.0
-size_flags_horizontal = 4
-text = "Night 2"
-
-[node name="DisableUnlessFlag" parent="LevelWindow/Choose a Night/Night 2" instance=ExtResource( 3 )]
-flag_to_check = "n1"
-
-[node name="NightConfig" parent="LevelWindow/Choose a Night/Night 2" instance=ExtResource( 2 )]
-difficulty_table = "n2"
-night_index = 1
-completion_flag = "n2"
-
-[node name="Night 3" type="Button" parent="LevelWindow/Choose a Night"]
-margin_left = 33.0
-margin_top = 52.0
-margin_right = 87.0
-margin_bottom = 74.0
-size_flags_horizontal = 4
-text = "Night 3"
-
-[node name="DisableUnlessFlag" parent="LevelWindow/Choose a Night/Night 3" instance=ExtResource( 3 )]
-flag_to_check = "n2"
-
-[node name="NightConfig" parent="LevelWindow/Choose a Night/Night 3" instance=ExtResource( 2 )]
-difficulty_table = "n3"
-night_index = 2
-completion_flag = "n3"
-time_to_completion = 720
-
-[node name="Night 4" type="Button" parent="LevelWindow/Choose a Night"]
-margin_left = 33.0
-margin_top = 78.0
-margin_right = 87.0
-margin_bottom = 100.0
-size_flags_horizontal = 4
-text = "Night 4"
-
-[node name="DisableUnlessFlag" parent="LevelWindow/Choose a Night/Night 4" instance=ExtResource( 3 )]
-flag_to_check = "n3"
-
-[node name="NightConfig" parent="LevelWindow/Choose a Night/Night 4" instance=ExtResource( 2 )]
-difficulty_table = "n4"
-completion_flag = "n4"
-time_to_completion = 720
-victory_scene = "res://scenes/victory/victory_n4.tscn"
-
-[node name="Night 5" type="Button" parent="LevelWindow/Choose a Night"]
-margin_left = 33.0
-margin_top = 104.0
-margin_right = 87.0
-margin_bottom = 126.0
-size_flags_horizontal = 4
-text = "Night 5"
-
-[node name="DisableUnlessFlag" parent="LevelWindow/Choose a Night/Night 5" instance=ExtResource( 3 )]
-flag_to_check = "n4"
-
-[node name="NightConfig" parent="LevelWindow/Choose a Night/Night 5" instance=ExtResource( 2 )]
-difficulty_table = "n5"
-night_index = 4
-completion_flag = "n5"
-victory_scene = "res://eggs/victory_n5.tscn"
-song = ExtResource( 31 )
-time_before_start_music = 0.0
-start_cutscene = ExtResource( 32 )
-
-[node name="Night \?\?\?" type="Button" parent="LevelWindow/Choose a Night"]
-margin_left = 34.0
-margin_top = 130.0
-margin_right = 86.0
-margin_bottom = 152.0
-size_flags_horizontal = 4
-text = "Night ?"
+[node name="Custom Night" type="Button" parent="LevelWindow"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_right = -6.0
+margin_bottom = -6.0
+grow_vertical = 0
+size_flags_horizontal = 5
+text = "Custom Night"
 
 [node name="LogoWindow" type="WindowDialog" parent="."]
 anchor_left = 1.0
@@ -472,9 +367,9 @@ margin_top = -6.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LogoWindow/CenterContainer"]
 margin_left = 27.0
-margin_top = 9.0
+margin_top = 6.0
 margin_right = 123.0
-margin_bottom = 196.0
+margin_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 __meta__ = {
@@ -568,14 +463,7 @@ margin_top = 10.0
 custom_fonts/font = ExtResource( 34 )
 script = ExtResource( 33 )
 
-[connection signal="pressed" from="ThingsBar/HBoxContainer/Go" to="Error" method="show"]
 [connection signal="pressed" from="ThingsBar/HBoxContainer/CalendarButton" to="LevelWindow" method="show"]
 [connection signal="pressed" from="ThingsBar/HBoxContainer/SettingsButton" to="SettingsWindow" method="show"]
 [connection signal="pressed" from="ThingsBar/HBoxContainer/AboutButton" to="LogoWindow" method="show"]
-[connection signal="pressed" from="LevelWindow/Choose a Night/Night 0" to="LevelWindow/Choose a Night/Night 0/NightConfig" method="run"]
-[connection signal="pressed" from="LevelWindow/Choose a Night/Night 1" to="LevelWindow/Choose a Night/Night 1/NightConfig" method="run"]
-[connection signal="pressed" from="LevelWindow/Choose a Night/Night 2" to="LevelWindow/Choose a Night/Night 2/NightConfig" method="run"]
-[connection signal="pressed" from="LevelWindow/Choose a Night/Night 3" to="LevelWindow/Choose a Night/Night 3/NightConfig" method="run"]
-[connection signal="pressed" from="LevelWindow/Choose a Night/Night 4" to="LevelWindow/Choose a Night/Night 4/NightConfig" method="run"]
-[connection signal="pressed" from="LevelWindow/Choose a Night/Night 5" to="LevelWindow/Choose a Night/Night 5/NightConfig" method="run"]
-[connection signal="pressed" from="LevelWindow/Choose a Night/Night ???" to="CustomNight" method="show"]
+[connection signal="pressed" from="LevelWindow/Custom Night" to="CustomNight" method="show"]
