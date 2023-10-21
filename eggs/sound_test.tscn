@@ -19,9 +19,6 @@ func load_file(stream):
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
@@ -31,21 +28,21 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 170.0
+margin_left = 70.0
 margin_top = 155.0
-margin_right = 470.0
+margin_right = 570.0
 margin_bottom = 325.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 300.0
+margin_right = 500.0
 margin_bottom = 14.0
 text = "Sound Test"
 
 [node name="ColorRect" type="ColorRect" parent="CenterContainer/VBoxContainer"]
 margin_top = 18.0
-margin_right = 300.0
+margin_right = 500.0
 margin_bottom = 118.0
-rect_min_size = Vector2( 300, 100 )
+rect_min_size = Vector2( 500, 100 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/VBoxContainer/ColorRect"]
 anchor_right = 1.0
@@ -57,7 +54,7 @@ margin_bottom = -5.0
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/ColorRect/ScrollContainer"]
-anchor_right = 1.0
+margin_right = 490.0
 size_flags_horizontal = 3
 script = ExtResource( 7 )
 __meta__ = {
@@ -66,20 +63,20 @@ __meta__ = {
 
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 122.0
-margin_right = 300.0
+margin_right = 500.0
 margin_bottom = 142.0
 text = "Play"
 
 [node name="Escape" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 146.0
-margin_right = 300.0
+margin_right = 500.0
 margin_bottom = 166.0
 text = "Escape"
 script = SubResource( 2 )
 
 [node name="Panel" type="Panel" parent="CenterContainer/VBoxContainer"]
 margin_top = 170.0
-margin_right = 300.0
+margin_right = 500.0
 margin_bottom = 170.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

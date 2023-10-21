@@ -61,16 +61,19 @@ anchor_bottom = 1.0
 margin_top = 32.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel3"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 313.0
-margin_bottom = 441.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 scroll_horizontal_enabled = false
 
 [node name="LoreContainer" type="MarginContainer" parent="Panel3/ScrollContainer"]
 unique_name_in_owner = true
 margin_right = 300.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 300, 0 )
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
 
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0

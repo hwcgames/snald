@@ -1,7 +1,8 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://scenes/menu/settings.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/night_config/NightConfig.tscn" type="PackedScene" id=2]
+[ext_resource path="res://font/comic/ComicNeue-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://textures/frying_pan.jpg" type="Texture" id=4]
 [ext_resource path="res://textures/hwc.svg" type="Texture" id=5]
 [ext_resource path="res://font/opensans/OpenSans/OpenSans-Italic.ttf" type="DynamicFontData" id=6]
@@ -28,6 +29,7 @@
 [ext_resource path="res://scenes/menu/Teletubby.gd" type="Script" id=27]
 [ext_resource path="res://textures/blex.png" type="Texture" id=28]
 [ext_resource path="res://scenes/menu/Go.gd" type="Script" id=29]
+[ext_resource path="res://scenes/menu/new_lore.gd" type="Script" id=30]
 [ext_resource path="res://scenes/menu/StartupWarnings.gd" type="Script" id=33]
 [ext_resource path="res://font/normal.tres" type="DynamicFont" id=34]
 [ext_resource path="res://scenes/menu/NightPopulator.gd" type="Script" id=35]
@@ -102,6 +104,12 @@ tracks/1/keys = {
 "points": PoolRealArray( 323.628, -0.25, 0, 0.25, 0, 420.263, -0.25, 0, 0.25, 0, 422.347, -0.25, 0, 0.6, -4.16666, 334.152, -0.04, 29.1667, 0.16, 0.694427, 341.791, -0.19, -4.86111, 0.31, 13.8889, 417.486, -0.19, -0.694427, 0.25, 0, 418.18, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1.7, 2.8, 3.44, 4, 4.4, 5 )
 }
+
+[sub_resource type="DynamicFont" id=13]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
 
 [sub_resource type="GDScript" id=9]
 script/source = "extends Button
@@ -187,6 +195,17 @@ margin_bottom = 493.0
 rect_scale = Vector2( 0.5, 0.5 )
 icon = ExtResource( 22 )
 target = "res://scenes/lore/lore.tscn"
+
+[node name="NewEncarta" type="Label" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_right = -98.4941
+margin_bottom = -78.8899
+rect_min_size = Vector2( 16, 16 )
+custom_fonts/font = SubResource( 13 )
+text = "New!"
+script = ExtResource( 30 )
 
 [node name="buddy" parent="." instance=ExtResource( 11 )]
 anchor_left = 1.0

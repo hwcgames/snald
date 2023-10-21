@@ -77,8 +77,6 @@ align = 0
 script = SubResource( 8 )
 
 [node name="NightConfig" parent="Graphics + Sound/VBoxContainer/Test Level" instance=ExtResource( 4 )]
-difficulties = {
-}
 map_path = "maps/texture-test.map"
 night_index = 0
 time_to_completion = 3600
@@ -155,7 +153,7 @@ margin_top = 63.0
 margin_right = 368.0
 margin_bottom = 83.0
 size_flags_horizontal = 4
-text = "Clear Save File"
+text = "Clear Save File (No confirmation)"
 script = SubResource( 7 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Misc/Settings"]
@@ -170,6 +168,7 @@ margin_right = 380.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 128, 0 )
 align = 1
+placeholder_text = "Cheat Code"
 
 [node name="EasterEggChicken" type="Node" parent="Misc/Settings/HBoxContainer"]
 script = ExtResource( 1 )

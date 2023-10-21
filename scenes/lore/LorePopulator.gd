@@ -24,6 +24,7 @@ func switch_lore(key):
 	for child in $"%LoreContainer".get_children():
 		destroy_node(child)
 	var lore_scene = load(lore.path)
+	PersistMan.set_flag("lore_seen_"+key, true)
 	var s = lore_scene.instance()
 	$"%LoreContainer".add_child(s)
 

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ringtone.ogg-8280a59f59c3b157da92a5135aaf5a4a.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

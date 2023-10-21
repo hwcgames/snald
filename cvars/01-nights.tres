@@ -7,7 +7,6 @@ script = ExtResource( 1 )
 ints = {
 }
 floats = {
-"lucas_tick_interval": 8
 }
 bools = {
 }

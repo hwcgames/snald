@@ -14,7 +14,7 @@ floats = {
 "reboot_time": 10.0
 }
 bools = {
-"force_opening": true,
+"force_opening": false,
 "fr_player": true,
 "funny_mode": false,
 "normal_player": true

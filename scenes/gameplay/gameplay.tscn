@@ -186,6 +186,7 @@ weight = 0.4
 
 [node name="UnfunnyPhone" type="Node" parent="."]
 script = ExtResource( 17 )
+ringer_path = "res://music/ringtone.ogg"
 
 [node name="FunnyPhone" type="Node" parent="."]
 script = ExtResource( 17 )
