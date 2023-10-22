@@ -54,7 +54,7 @@ scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Graphics + Sound"]
 margin_right = 219.0
-margin_bottom = 48.0
+margin_bottom = 76.0
 alignment = 1
 
 [node name="post_process" type="CheckBox" parent="Graphics + Sound/VBoxContainer"]
@@ -66,11 +66,19 @@ script = ExtResource( 2 )
 flag = "post-process"
 default = true
 
+[node name="post_process2" type="CheckBox" parent="Graphics + Sound/VBoxContainer"]
+margin_top = 28.0
+margin_right = 219.0
+margin_bottom = 52.0
+text = "Wait for vertical sync"
+script = ExtResource( 2 )
+flag = "vsync"
+
 [node name="Test Level" type="Button" parent="Graphics + Sound/VBoxContainer"]
 margin_left = 23.0
-margin_top = 28.0
+margin_top = 56.0
 margin_right = 196.0
-margin_bottom = 48.0
+margin_bottom = 76.0
 size_flags_horizontal = 4
 text = "Enter Material Test Room"
 align = 0

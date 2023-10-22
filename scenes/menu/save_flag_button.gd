@@ -9,4 +9,5 @@ func _ready():
 func _toggled(button_pressed):
 	$"/root/PersistMan".set_flag(flag, button_pressed)
 	$"/root/PersistMan".save_game()
+	VideoSettings.apply()
 

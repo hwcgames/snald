@@ -19,6 +19,7 @@ func load_game():
 		return # Loading is a no-op when no save exists
 	game.open("user://snald.save", File.READ)
 	persistent_dict = parse_json(game.get_as_text())
+	VideoSettings.apply()
 
 func save_game():
 	var game = File.new()

@@ -336,7 +336,6 @@ config/icon="res://icon.png"
 
 LevelLoader="*res://scripts/level_loader.gd"
 EventMan="*res://scripts/event_man.gd"
-SpeedrunTimer="res://eggs/speedrun_timer.gd"
 PersistMan="*res://scripts/persist_man.gd"
 Console="*res://addons/Console/Console.gd"
 DebugCommands="*res://scripts/debug_commands.gd"
@@ -345,6 +344,7 @@ KeyPersistence="*res://scripts/KeyPersistence.gd"
 CutsceneMan="*res://scripts/CutsceneMan.gd"
 CVars="*res://scripts/CVars.gd"
 MapQuery="*res://scripts/mapquery.gd"
+VideoSettings="*res://scripts/video_settings.gd"
 
 [compression]
 
@@ -501,8 +501,10 @@ textures/depth_pattern="%s/depth.%s"
 [rendering]
 
 threads/thread_safe_bvh=true
+quality/spatial_partitioning/render_tree_balance=1.0
 portals/pvs/pvs_logging=true
 gles3/shaders/shader_compilation_mode=2
-quality/spatial_partitioning/use_bvh=false
+gles3/shaders/max_simultaneous_compiles=8
+gles3/shaders/shader_cache_size_mb=1024
 quality/spatial_partitioning/bvh_collision_margin=0.0
 environment/default_environment="res://default_env.tres"
