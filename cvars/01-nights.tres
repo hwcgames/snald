@@ -12,7 +12,6 @@ bools = {
 }
 tables = {
 "n0": {
-"lucas": 1
 },
 "n0_config": {
 "between_scene": "res://scenes/between/dummy.tscn",
@@ -28,7 +27,7 @@ tables = {
 "difficulty_override": {
 },
 "difficulty_table": "n0",
-"map_path": "maps/intro-story-concat.map",
+"map_path": "maps/intro-story.map",
 "needs_flag": "none",
 "night_index": -1,
 "night_name": "Intro Story",
@@ -38,7 +37,7 @@ tables = {
 "start_cutscene": "res://cutscenes/IntroStory/IntroStory.tscn",
 "test_mode": false,
 "time_before_start_music": 0,
-"time_to_completion": -1,
+"time_to_completion": 0,
 "victory_scene": "res://scenes/victory/victory_n1.tscn"
 },
 "n1": {

@@ -25,12 +25,13 @@ func _ready():
 		$Camera.current = false
 		return
 	print("Set player angle to default")
-	rotation_degrees.y = properties["angle"]
-	min_angle = properties["min_angle"]
-	max_angle = properties["max_angle"]
+	rotation_degrees.y = properties["angle"] if "angle" in properties else 0
+	min_angle = properties["min_angle"] if "min_angle" in properties else 0
+	max_angle = properties["max_angle"] if "min_angle" in properties else 0
 	turn_speed = float(properties["speed"] if "speed" in properties else turn_speed)
 	limit_turns = properties["limit_turns"] == 1 if "limit_turns" in properties else limit_turns
 	allow_camera = properties["allow_camera"] == 1 if "allow_camera" in properties else allow_camera
+	$"%Flashlight".light_energy *= properties["has_flashlight"] if "has_flashlight" in properties else 0
 	var _err = $"/root/EventMan".connect("temperature_tick", self, "temperature_tick")
 	if allow_camera:
 		print("Bringing camera UI into tree")
@@ -92,6 +93,7 @@ func _physics_process(delta):
 	if $"/root/PersistMan".get_key("controller_mode") and not $"/root/EventMan".circuit("player_camera_pad") and not CutsceneMan.player_cutscene_mode:
 		# Process controller buttons
 		process_buttons()
+	move_flashlight_to_mouse()
 
 func enable_debug():
 	DEBUG = true
@@ -216,3 +218,8 @@ func dead_screen_finished(exit: bool):
 	else:
 		EventMan.quick_reset()
 		remove_visitor(dead)
+
+func move_flashlight_to_mouse():
+	var mouse_pos = get_viewport().get_mouse_position()
+	var world_pos = $Camera.project_position(mouse_pos, 10)
+	$"%Flashlight".look_at(world_pos, Vector3.UP)

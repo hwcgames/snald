@@ -48,9 +48,6 @@ spot_angle_attenuation = 0.153893
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 anchor_right = 1.0
@@ -80,3 +77,11 @@ far = 20.0
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -1 )
 spot_range = 17.3967
 spot_angle = 31.3002
+
+[node name="Flashlight" type="SpotLight" parent="."]
+unique_name_in_owner = true
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.3, -0.2, 0 )
+light_energy = 0.5
+shadow_enabled = true
+spot_range = 20.0
+spot_angle = 22.5

@@ -13,6 +13,7 @@ base_classes = [  ]
 class_properties = {
 "allow_camera": 1,
 "angle": 0.0,
+"has_flashlight": 0,
 "limit_turns": 1,
 "max_angle": 180,
 "min_angle": 0,

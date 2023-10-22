@@ -20,9 +20,10 @@ func _ready():
 	pass # Replace with function body.
 
 func player_look_at_lucas(player: FreeRoamPlayer, lucas: Lucas):
-	var player_pos = player.global_transform.origin
-	var lucas_pos = lucas.global_transform.origin
-	var player_pos2 = Vector2(player_pos.x, player_pos.z)
-	var lucas_pos2 = Vector2(lucas_pos.x, lucas_pos.z)
-	var angle = player_pos2.angle_to(lucas_pos2)
-	CutsceneMan.player_cutscene_goal = angle * (180.0 / PI)
+#	var player_pos = player.global_transform.origin
+#	var lucas_pos = lucas.global_transform.origin
+#	var player_pos2 = Vector2(player_pos.x, player_pos.z)
+#	var lucas_pos2 = Vector2(lucas_pos.x, lucas_pos.z)
+#	var angle = player_pos2.angle_to(lucas_pos2)
+#	CutsceneMan.player_cutscene_goal = angle * (180.0 / PI)
+	pass

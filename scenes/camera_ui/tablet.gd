@@ -43,6 +43,7 @@ func up():
 	interp_target = 0
 	active = true
 	$"/root/EventMan".circuit_on("player_camera_pad")
+	$"%ViewportContainer".show()
 	tween.stop_all()
 	tween.interpolate_property(self, "anchor_top", self.anchor_top, 0, 0.25, Tween.TRANS_CIRC, Tween.EASE_IN_OUT)
 	tween.interpolate_property(self, "anchor_bottom", self.anchor_top, 0, 0.25, Tween.TRANS_CIRC, Tween.EASE_IN_OUT)
@@ -52,6 +53,7 @@ func down():
 	interp_target = 1
 	active = false
 	$"/root/EventMan".circuit_off("player_camera_pad")
+	$"%ViewportContainer".hide()
 	var focused = $TabletScreen/MapTexture/Viewport/Control.get_focus_owner()
 	if focused != null:
 		focused.release_focus()
