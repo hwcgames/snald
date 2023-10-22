@@ -501,6 +501,8 @@ textures/depth_pattern="%s/depth.%s"
 [rendering]
 
 threads/thread_safe_bvh=true
+quality/directional_shadow/size=2048
+quality/directional_shadow/size.mobile=1024
 quality/spatial_partitioning/render_tree_balance=1.0
 portals/pvs/pvs_logging=true
 gles3/shaders/shader_compilation_mode=2

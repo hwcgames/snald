@@ -63,7 +63,7 @@ var spooky_hints = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	rescan_frames()
+#	rescan_frames()
 	$Polygon2D.hide()
 	texture.atlas = idle_tex
 	pass # Replace with function body.
@@ -82,30 +82,30 @@ func _physics_process(delta):
 	if Engine.editor_hint:
 		counter += 1
 
-func rescan_frames():
-	counter = 0
-	talk_frames = PoolStringArray([])
-	talk_sounds = PoolStringArray([])
-	var dir = Directory.new()
-	dir.open("res://scenes/menu/buddy/poses")
-	dir.list_dir_begin(true, true)
-	var next = "a"
-	while next != "":
-		next = dir.get_next()
-		if not ("talk" in next and next.ends_with("png")):
-			continue
-		talk_frames.append("res://scenes/menu/buddy/poses/"+next)
-	dir.list_dir_end()
-	var dir2 = Directory.new()
-	dir2.open("res://scenes/menu/buddy/sounds")
-	dir2.list_dir_begin(true, true)
-	next = "a"
-	while next != "":
-		next = dir2.get_next()
-		if not (next.ends_with("ogg") and "talk" in next):
-			continue
-		talk_sounds.append("res://scenes/menu/buddy/sounds/"+next)
-	dir2.list_dir_end()
+#func rescan_frames():
+#	counter = 0
+#	talk_frames = PoolStringArray([])
+#	talk_sounds = PoolStringArray([])
+#	var dir = Directory.new()
+#	dir.open("res://scenes/menu/buddy/poses")
+#	dir.list_dir_begin(true, true)
+#	var next = "a"
+#	while next != "":
+#		next = dir.get_next()
+#		if not ("talk" in next and next.ends_with("png")):
+#			continue
+#		talk_frames.append("res://scenes/menu/buddy/poses/"+next)
+#	dir.list_dir_end()
+#	var dir2 = Directory.new()
+#	dir2.open("res://scenes/menu/buddy/sounds")
+#	dir2.list_dir_begin(true, true)
+#	next = "a"
+#	while next != "":
+#		next = dir2.get_next()
+#		if not (next.ends_with("ogg") and "talk" in next):
+#			continue
+#		talk_sounds.append("res://scenes/menu/buddy/sounds/"+next)
+#	dir2.list_dir_end()
 
 func talk():
 	$Polygon2D.show()
@@ -115,6 +115,7 @@ func talk():
 		$AudioStreamPlayer.stream = spooky_sound
 		texture.atlas = load("res://scenes/menu/buddy/poses/spooky.png")
 	else:
+		print("Made it here", talk_frames)
 		texture.atlas = load(talk_frames[randi() % len(talk_frames)])
 		$AudioStreamPlayer.stream = load(talk_sounds[randi() % len(talk_sounds)])
 	$AudioStreamPlayer.play()
