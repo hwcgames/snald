@@ -36,6 +36,8 @@ if [[ ! $SNALD_TARGET == "web" ]]; then
 	# Create the maps directory and copy the maps
 	mkdir -p $BUILD_DIR/maps
 	cp maps/*.map $BUILD_DIR/maps
+	# Copy library capsule and icon so people can add them to Steam
+	cp icon.png textures/library-capsule.jpg $BUILD_DIR
 	# Determine the library extension 
 	if [ "$SNALD_TARGET" == "mac" ]; then
 		export EXTENSION="dylib"
