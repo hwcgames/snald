@@ -12,25 +12,25 @@ bools = {
 }
 tables = {
 "lore_entries": {
-	"Context": {
-		"path": "res://eggs/lore/context.tscn",
-		"needs_flag": "none"
-	},
-	"Mod the Game": {
-		"path": "res://eggs/lore/mod_the_game_please.tscn",
-		"needs_flag": "none"
-	},
-	"Armory: The Prized Possession": {
-		"path": "res://eggs/lore/garand_lore.tscn",
-		"needs_flag": "garand_lore"
-	},
-	"Night Theme": {
-		"path": "res://eggs/lore/n1song.tscn",
-		"needs_flag": "n1"
-	},
-	"Night 5 Theme": {
-		"path": "res://eggs/lore/n5song.tscn",
-		"needs_flag": "n4"
-	}
+"Armory: The Prized Possession": {
+"needs_flag": "garand_lore",
+"path": "res://eggs/lore/garand_lore.tscn"
+},
+"Context": {
+"needs_flag": "none",
+"path": "res://eggs/lore/context.tscn"
+},
+"Mod the Game": {
+"needs_flag": "none",
+"path": "res://eggs/lore/mod_the_game_please.tscn"
+},
+"Night 5 Theme": {
+"needs_flag": "n4",
+"path": "res://eggs/lore/n5song.tscn"
+},
+"Night Theme": {
+"needs_flag": "n1",
+"path": "res://eggs/lore/n1song.tscn"
+}
 }
 }
