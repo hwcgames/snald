@@ -115,7 +115,6 @@ func talk():
 		$AudioStreamPlayer.stream = spooky_sound
 		texture.atlas = load("res://scenes/menu/buddy/poses/spooky.png")
 	else:
-		print("Made it here", talk_frames)
 		texture.atlas = load(talk_frames[randi() % len(talk_frames)])
 		$AudioStreamPlayer.stream = load(talk_sounds[randi() % len(talk_sounds)])
 	$AudioStreamPlayer.play()
