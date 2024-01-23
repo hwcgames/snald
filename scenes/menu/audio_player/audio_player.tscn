@@ -5,10 +5,19 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Panel
 
-export var stream: AudioStream
+export var stream: AudioStream setget set_stream, get_stream
 
-func _ready():
+#func _ready():
+#	$\"%AudioPlayer\".stream = stream
+
+func set_stream(stream):
+	$\"%PlayPauseButton\".pressed = false
 	$\"%AudioPlayer\".stream = stream
+	if $\"%AudioPlayer\".scrubber:
+		$\"%AudioPlayer\".scrubber.tick_count = int(floor(stream.get_length() / 10))
+
+func get_stream():
+	return $\"%AudioPlayer\".stream
 "
 
 [node name="Control" type="Panel"]

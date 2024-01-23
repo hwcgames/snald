@@ -12,7 +12,8 @@ func _ready():
 	scrubber.connect("drag_ended", self, "scrub")
 	scrubber.connect("drag_started", self, "scrub_start")
 	yield(get_tree(), "idle_frame")
-	scrubber.tick_count = int(floor(stream.get_length() / 10))
+	if stream:
+		scrubber.tick_count = int(floor(stream.get_length() / 10))
 
 func _process(_delta):
 	if not self.stream:
@@ -36,6 +37,7 @@ func scrub(changed: bool):
 
 func finished():
 	play_pause(false)
+	p_btn.pressed = false
 	position = 0
 
 func play_pause(playing: bool):

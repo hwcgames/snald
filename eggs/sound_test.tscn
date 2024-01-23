@@ -1,5 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://scenes/menu/audio_player/audio_player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://theme/Classic311/Classic311.tres" type="Theme" id=2]
 [ext_resource path="res://eggs/SoundTestPopulator.gd" type="Script" id=7]
 
 [sub_resource type="GDScript" id=2]
@@ -19,68 +21,92 @@ func load_file(stream):
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="ColorRect" type="TabContainer" parent="CenterContainer"]
 margin_left = 70.0
-margin_top = 155.0
+margin_top = 91.0
 margin_right = 570.0
-margin_bottom = 325.0
-
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 500.0
-margin_bottom = 14.0
-text = "Sound Test"
-
-[node name="ColorRect" type="ColorRect" parent="CenterContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 500.0
-margin_bottom = 118.0
+margin_bottom = 388.0
 rect_min_size = Vector2( 500, 100 )
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/VBoxContainer/ColorRect"]
+[node name="Sound Test" type="MarginContainer" parent="CenterContainer/ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 5.0
-margin_right = -5.0
-margin_bottom = -5.0
+margin_left = 4.0
+margin_top = 27.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 0
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 0
+
+[node name="Sound Test" type="VBoxContainer" parent="CenterContainer/ColorRect/Sound Test"]
+margin_left = 4.0
+margin_right = 488.0
+margin_bottom = 266.0
+
+[node name="Panel2" type="Panel" parent="CenterContainer/ColorRect/Sound Test/Sound Test"]
+margin_right = 484.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 200 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/ColorRect/Sound Test/Sound Test/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_bottom = -2.0
 scroll_horizontal_enabled = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/ColorRect/ScrollContainer"]
-margin_right = 490.0
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/ColorRect/Sound Test/Sound Test/Panel2/ScrollContainer"]
+margin_right = 484.0
+margin_bottom = 6.0
+size_flags_horizontal = 3
+custom_constants/margin_top = 3
+custom_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/ColorRect/Sound Test/Sound Test/Panel2/ScrollContainer/MarginContainer"]
+margin_top = 3.0
+margin_right = 484.0
+margin_bottom = 3.0
 size_flags_horizontal = 3
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 122.0
+[node name="AudioStreamPlayer" parent="CenterContainer/ColorRect/Sound Test/Sound Test" instance=ExtResource( 1 )]
+unique_name_in_owner = true
+margin_top = 204.0
+margin_right = 484.0
+margin_bottom = 236.0
+
+[node name="Button" type="Button" parent="CenterContainer/ColorRect/Sound Test/Sound Test"]
+visible = false
+margin_top = 362.0
 margin_right = 500.0
-margin_bottom = 142.0
+margin_bottom = 384.0
 text = "Play"
 
-[node name="Escape" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 146.0
-margin_right = 500.0
-margin_bottom = 166.0
+[node name="Escape" type="Button" parent="CenterContainer/ColorRect/Sound Test/Sound Test"]
+margin_top = 240.0
+margin_right = 484.0
+margin_bottom = 262.0
 text = "Escape"
 script = SubResource( 2 )
 
-[node name="Panel" type="Panel" parent="CenterContainer/VBoxContainer"]
-margin_top = 170.0
-margin_right = 500.0
-margin_bottom = 170.0
+[node name="Panel" type="Panel" parent="CenterContainer/ColorRect/Sound Test/Sound Test"]
+margin_top = 266.0
+margin_right = 484.0
+margin_bottom = 266.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
 script = SubResource( 1 )
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="AudioStreamPlayer" method="play"]
+[connection signal="pressed" from="CenterContainer/ColorRect/Sound Test/Sound Test/Button" to="CenterContainer/ColorRect/Sound Test/Sound Test/AudioStreamPlayer" method="_on_Button_pressed"]
+[connection signal="pressed" from="CenterContainer/ColorRect/Sound Test/Sound Test/Button" to="AudioStreamPlayer" method="play"]
