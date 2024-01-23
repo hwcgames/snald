@@ -118,7 +118,7 @@ func _pressed():
 	get_tree().quit()
 "
 
-[sub_resource type="AnimatedTexture" id=2]
+[sub_resource type="AnimatedTexture" id=3]
 flags = 4
 frames = 9
 frame_0/texture = ExtResource( 16 )
@@ -294,7 +294,7 @@ expand_icon = true
 [node name="TextureRect" type="TextureRect" parent="ThingsBar/HBoxContainer/SettingsButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 2 )
+texture = SubResource( 3 )
 expand = true
 stretch_mode = 6
 
