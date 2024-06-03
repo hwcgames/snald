@@ -201,5 +201,5 @@ tables = {
 "time_to_completion": 360,
 "victory_scene": "res://eggs/victory_n5.tscn"
 },
-"nights": [ "n0_config", "n1_config", "n2_config", "n3_config", "n4_config", "n5_config" ]
+"nights": [ "n1_config", "n2_config", "n3_config", "n4_config", "n5_config" ]
 }
