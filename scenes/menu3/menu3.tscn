@@ -1,0 +1,166 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://textures/doors-bg.png" type="Texture" id=1]
+[ext_resource path="res://theme/Classic311/Classic311.tres" type="Theme" id=2]
+[ext_resource path="res://font/Ubuntu_Mono/UbuntuMono-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://textures/doors-fg.png" type="Texture" id=4]
+[ext_resource path="res://scenes/menu3/SectionButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://textures/back.png" type="Texture" id=6]
+[ext_resource path="res://scenes/menu/NightPopulator.gd" type="Script" id=7]
+[ext_resource path="res://textures/gear/0004.png" type="Texture" id=8]
+[ext_resource path="res://textures/gear/0015.png" type="Texture" id=9]
+[ext_resource path="res://textures/gear/0001.png" type="Texture" id=10]
+[ext_resource path="res://textures/gear/0019.png" type="Texture" id=11]
+[ext_resource path="res://textures/gear/0018.png" type="Texture" id=12]
+[ext_resource path="res://textures/gear/0009.png" type="Texture" id=13]
+[ext_resource path="res://textures/gear/0014.png" type="Texture" id=14]
+[ext_resource path="res://scenes/menu/settings.tscn" type="PackedScene" id=15]
+[ext_resource path="res://font/normal.tres" type="DynamicFont" id=16]
+[ext_resource path="res://scenes/menu/StartupWarnings.gd" type="Script" id=17]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends TabContainer
+
+func _ready():
+	if !OS.is_debug_build():
+		tabs_visible = false
+"
+
+[sub_resource type="AnimatedTexture" id=3]
+flags = 4
+frames = 9
+frame_0/texture = ExtResource( 10 )
+frame_1/texture = ExtResource( 13 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 9 )
+frame_2/delay_sec = 0.0
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 12 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 13 )
+frame_5/delay_sec = 0.0
+frame_6/texture = ExtResource( 14 )
+frame_6/delay_sec = 0.0
+frame_7/texture = ExtResource( 8 )
+frame_7/delay_sec = 0.0
+frame_8/texture = ExtResource( 11 )
+frame_8/delay_sec = 0.0
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DoorsBg" type="TextureRect" parent="."]
+anchor_right = 0.5
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+
+[node name="DoorsFg" type="TextureRect" parent="."]
+anchor_right = 0.5
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 7
+
+[node name="TabThing" type="TabContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 3.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+script = SubResource( 2 )
+
+[node name="Main" type="VBoxContainer" parent="TabThing"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 30.0
+margin_right = -4.0
+margin_bottom = -4.0
+grow_horizontal = 2
+rect_min_size = Vector2( 128, 0 )
+alignment = 1
+
+[node name="SchedulingMenu" parent="TabThing/Main" instance=ExtResource( 5 )]
+margin_top = 179.0
+margin_right = 312.0
+margin_bottom = 219.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 1
+expand_icon = true
+target_tab = 1
+
+[node name="Settings" parent="TabThing/Main" instance=ExtResource( 5 )]
+margin_top = 223.0
+margin_right = 312.0
+margin_bottom = 263.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 1
+text = " Options "
+icon = SubResource( 3 )
+expand_icon = true
+target_tab = 2
+
+[node name="Schedule" type="Control" parent="TabThing"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 26.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabThing/Schedule"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_right = 1.0
+script = ExtResource( 7 )
+
+[node name="Control" type="Control" parent="TabThing/Schedule/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 23 )
+
+[node name="Back" parent="TabThing/Schedule" instance=ExtResource( 5 )]
+margin_left = -1.0
+margin_top = -4.0
+rect_min_size = Vector2( 22, 22 )
+size_flags_horizontal = 0
+text = ""
+icon = ExtResource( 6 )
+flat = false
+expand_icon = true
+
+[node name="Options" type="Control" parent="TabThing"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TabContainer" parent="TabThing/Options" instance=ExtResource( 15 )]
+margin_left = -4.0
+margin_top = 1.0
+margin_right = 4.0
+margin_bottom = 4.0
+
+[node name="Back" parent="TabThing/Options" instance=ExtResource( 5 )]
+margin_left = -1.0
+margin_top = -4.0
+rect_min_size = Vector2( 22, 22 )
+size_flags_horizontal = 0
+text = ""
+icon = ExtResource( 6 )
+flat = false
+expand_icon = true
+
+[node name="StartupWarnings" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+custom_fonts/font = ExtResource( 16 )
+script = ExtResource( 17 )
