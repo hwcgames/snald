@@ -7675,9 +7675,9 @@
 // entity 138
 {
 "classname" "AnimatronicPosition"
-"origin" "158 849 0"
+"origin" "158 849 16"
 "animatronic_id" "redman"
-"animation" "Sit"
+"animation" "idle_loop"
 "room_id" "foyer"
 "state_id" "4"
 "angle" "270"
@@ -8640,6 +8640,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "a"
 "_tb_id" "3"
+"_tb_linked_group_id" "{1c27eeb7-a7f8-483f-80c9-a608d87a8b57}"
 // brush 0
 {
 ( 44 22 112 ) ( 43 13 112 ) ( 43 13 96 ) tiled_floor 0 0 0 1 1
