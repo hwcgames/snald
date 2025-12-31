@@ -37,7 +37,7 @@ jobs:
         run: |
           SNALD_TARGET=${{ matrix.target }} TYPE=linux_headless.64 ./build.sh
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.target }}
           path: build/${{ matrix.target }}
@@ -53,7 +53,7 @@ jobs:
           cd book
           mdbook build
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: book
           path: book/book
